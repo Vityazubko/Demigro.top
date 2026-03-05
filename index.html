@@ -9,16 +9,14 @@
   <body>
     <div class="container">
       <header>
-        <h1>Demigro: рейтинги гравців, кланів і донатів</h1>
+        <h1>Demigro: Топ Баланс / Top Play</h1>
         <p>Дані за 21 лютого — 4 березня. За замовчуванням показано стан на 4 березня.</p>
       </header>
 
       <section class="controls">
         <div class="tabs" role="tablist" aria-label="Тип рейтингу">
-          <button class="tab active" data-view="balance">Топ Баланс</button>
-          <button class="tab" data-view="play">Top Play</button>
-          <button class="tab" data-view="clans">Топ Кланів</button>
-          <button class="tab" data-view="donates">Топ Донатів</button>
+          <button id="balanceTab" class="tab active" data-view="balance">Топ Баланс</button>
+          <button id="playTab" class="tab" data-view="play">Top Play</button>
         </div>
 
         <label class="date-select">
@@ -34,7 +32,7 @@
             <thead>
               <tr>
                 <th>#</th>
-                <th id="nameHeader">Гравець</th>
+                <th>Гравець</th>
                 <th id="valueHeader">Баланс</th>
               </tr>
             </thead>
@@ -42,19 +40,35 @@
           </table>
         </section>
 
-        <aside class="card">
-          <h2 id="detailsTitle">Деталі</h2>
-          <p id="detailsHint">Натисни на рядок у таблиці, щоб подивитися історію.</p>
+        <aside class="card" id="detailsCard">
+          <h2>Деталі гравця</h2>
+          <p id="detailsHint">Натисни на гравця в таблиці, щоб подивитися історію.</p>
           <div id="detailsContent" class="hidden">
-            <h3 id="entityName"></h3>
-            <div id="metaInfo" class="meta"></div>
-            <div class="stats-grid" id="statsGrid"></div>
+            <h3 id="playerName"></h3>
+            <div class="stats-grid">
+              <div>
+                <strong>Макс. баланс</strong>
+                <p id="peakBalance"></p>
+              </div>
+              <div>
+                <strong>Останній баланс</strong>
+                <p id="latestBalance"></p>
+              </div>
+              <div>
+                <strong>Макс. Top Play</strong>
+                <p id="peakPlay"></p>
+              </div>
+              <div>
+                <strong>Останній Top Play</strong>
+                <p id="latestPlay"></p>
+              </div>
+            </div>
 
-            <h4 id="history1Title">Історія</h4>
-            <ul id="history1" class="history-list"></ul>
+            <h4>Історія балансу</h4>
+            <ul id="balanceHistory" class="history-list"></ul>
 
-            <h4 id="history2Title">Додатково</h4>
-            <ul id="history2" class="history-list"></ul>
+            <h4>Історія гри (Top Play)</h4>
+            <ul id="playHistory" class="history-list"></ul>
           </div>
         </aside>
       </main>
