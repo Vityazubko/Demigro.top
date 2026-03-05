@@ -1,1 +1,65 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demigro — Топи гравців</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Demigro: рейтинги гравців, кланів і донатів</h1>
+        <p>Дані за 21 лютого — 4 березня. За замовчуванням показано стан на 4 березня.</p>
+      </header>
 
+      <section class="controls">
+        <div class="tabs" role="tablist" aria-label="Тип рейтингу">
+          <button class="tab active" data-view="balance">Топ Баланс</button>
+          <button class="tab" data-view="play">Top Play</button>
+          <button class="tab" data-view="clans">Топ Кланів</button>
+          <button class="tab" data-view="donates">Топ Донатів</button>
+        </div>
+
+        <label class="date-select">
+          Дата:
+          <select id="dateSelect"></select>
+        </label>
+      </section>
+
+      <main class="layout">
+        <section class="card">
+          <h2 id="tableTitle">Топ Баланс</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th id="nameHeader">Гравець</th>
+                <th id="valueHeader">Баланс</th>
+              </tr>
+            </thead>
+            <tbody id="leaderboardBody"></tbody>
+          </table>
+        </section>
+
+        <aside class="card">
+          <h2 id="detailsTitle">Деталі</h2>
+          <p id="detailsHint">Натисни на рядок у таблиці, щоб подивитися історію.</p>
+          <div id="detailsContent" class="hidden">
+            <h3 id="entityName"></h3>
+            <div id="metaInfo" class="meta"></div>
+            <div class="stats-grid" id="statsGrid"></div>
+
+            <h4 id="history1Title">Історія</h4>
+            <ul id="history1" class="history-list"></ul>
+
+            <h4 id="history2Title">Додатково</h4>
+            <ul id="history2" class="history-list"></ul>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
