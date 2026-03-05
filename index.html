@@ -1,1 +1,79 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demigro — Топи гравців</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Demigro: Топ Баланс / Top Play</h1>
+        <p>Дані за 21 лютого — 4 березня. За замовчуванням показано стан на 4 березня.</p>
+      </header>
 
+      <section class="controls">
+        <div class="tabs" role="tablist" aria-label="Тип рейтингу">
+          <button id="balanceTab" class="tab active" data-view="balance">Топ Баланс</button>
+          <button id="playTab" class="tab" data-view="play">Top Play</button>
+        </div>
+
+        <label class="date-select">
+          Дата:
+          <select id="dateSelect"></select>
+        </label>
+      </section>
+
+      <main class="layout">
+        <section class="card">
+          <h2 id="tableTitle">Топ Баланс</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Гравець</th>
+                <th id="valueHeader">Баланс</th>
+              </tr>
+            </thead>
+            <tbody id="leaderboardBody"></tbody>
+          </table>
+        </section>
+
+        <aside class="card" id="detailsCard">
+          <h2>Деталі гравця</h2>
+          <p id="detailsHint">Натисни на гравця в таблиці, щоб подивитися історію.</p>
+          <div id="detailsContent" class="hidden">
+            <h3 id="playerName"></h3>
+            <div class="stats-grid">
+              <div>
+                <strong>Макс. баланс</strong>
+                <p id="peakBalance"></p>
+              </div>
+              <div>
+                <strong>Останній баланс</strong>
+                <p id="latestBalance"></p>
+              </div>
+              <div>
+                <strong>Макс. Top Play</strong>
+                <p id="peakPlay"></p>
+              </div>
+              <div>
+                <strong>Останній Top Play</strong>
+                <p id="latestPlay"></p>
+              </div>
+            </div>
+
+            <h4>Історія балансу</h4>
+            <ul id="balanceHistory" class="history-list"></ul>
+
+            <h4>Історія гри (Top Play)</h4>
+            <ul id="playHistory" class="history-list"></ul>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
