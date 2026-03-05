@@ -9,6 +9,8 @@
   --accent: #7ab0ff;
   --accent-2: #7c7dff;
   --gold: #ffd66b;
+  --silver: #d7e2f0;
+  --bronze: #d8a16f;
 }
 
 * { box-sizing: border-box; }
@@ -112,6 +114,10 @@ tr.player-row { cursor: pointer; transition: .15s ease; }
 tr.player-row:hover { background: rgba(122, 176, 255, 0.12); }
 tr.player-row.top-1 { background: rgba(255, 214, 107, 0.12); }
 tr.player-row.top-1 td:first-child { color: var(--gold); font-weight: 700; }
+tr.player-row.top-2 { background: rgba(215, 226, 240, 0.12); }
+tr.player-row.top-2 td:first-child { color: var(--silver); font-weight: 700; }
+tr.player-row.top-3 { background: rgba(216, 161, 111, 0.12); }
+tr.player-row.top-3 td:first-child { color: var(--bronze); font-weight: 700; }
 
 .details-card h2 { margin-top: 0; }
 .empty-state { color: var(--muted); margin: 0; }
