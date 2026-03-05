@@ -17,7 +17,16 @@ const donationByPlayer = {
   SIGMA: 'гравець', BEFF: 'гравець', kostya2103: 'гравець', maksyarosh: 'гравець', lukyan187: 'status',
   ForteCa228: 'keerinam', edazfetg4ooo: 'keerinam', aboba2032: 'keerinam',
   Vityappro11: 'debryli', Varenyk: 'debryli', treaforik: 'debryli', 'wontz': 'debryli', Vortex1k: 'debryli', hipoma: 'debryli',
-  kasikm1: 'GOD', jtx_by: 'GOD', Paolo_Fermer: 'GOD', kampys231231: 'GOD', FairDemonYT: 'GOD'
+  kasikm1: 'GOD', jtx_by: 'GOD', Paolo_Fermer: 'GOD', kampys231231: 'GOD', FairDemonYT: 'GOD',
+  '07_YM': 'status', '05LONE12': 'status'
+};
+
+const donationHistoryByPlayer = {
+  // Можна додавати будь-якого гравця з датами зміни донату
+  treaforik: [
+    { from: '2025-02-21', donation: 'гравець' },
+    { from: '2025-02-27', donation: 'debryli' },
+  ],
 };
 
 const clans = {
@@ -86,7 +95,18 @@ const formatCurrency = (v) => `$${new Intl.NumberFormat('uk-UA').format(v ?? 0)}
 const formatPlay = (m) => `${Math.floor(m / 1440)}d ${Math.floor((m % 1440) / 60)}h ${m % 60}m`;
 const dateLabel = (d) => new Date(`${d}T00:00:00`).toLocaleDateString('uk-UA', { day: 'numeric', month: 'long' });
 const getSnapshot = (date) => snapshots.find((s) => s.date === date);
-const donationOf = (name) => donationByPlayer[name] || 'гравець';
+function donationOfAtDate(name, date) {
+  const history = donationHistoryByPlayer[name];
+  if (history?.length) {
+    const match = history
+      .filter((item) => item.from <= date)
+      .sort((a, b) => a.from.localeCompare(b.from))
+      .at(-1);
+    if (match) return match.donation;
+  }
+  return donationByPlayer[name] || 'гравець';
+}
+
 
 function daysDiffInclusive(start, end) {
   const ms = new Date(`${end}T00:00:00`) - new Date(`${start}T00:00:00`);
@@ -148,7 +168,7 @@ function clanBalanceAtDate(clanName, date) {
 
 function donationBalanceAtDate(group, date) {
   const snap = getSnapshot(date);
-  return Object.entries(snap.players).reduce((sum, [p, bal]) => (donationOf(p) === group ? sum + bal : sum), 0);
+  return Object.entries(snap.players).reduce((sum, [p, bal]) => (donationOfAtDate(p, date) === group ? sum + bal : sum), 0);
 }
 
 function renderStats(items) {
@@ -206,7 +226,7 @@ function showPlayerDetails(player) {
 
   const date = dateSelect.value;
   const clanInfo = getClanForPlayerAtDate(player, date);
-  const group = donationOf(player);
+  const group = donationOfAtDate(player, date);
   const balanceHistory = snapshots.filter((s) => s.players[player] !== undefined).map((s) => ({ date: s.date, value: s.players[player] }));
   const playHistory = snapshots.filter((s) => s.play[player] !== undefined).map((s) => ({ date: s.date, value: s.play[player] }));
   const peakBalance = balanceHistory.reduce((m, x) => (x.value > m.value ? x : m), { value: -1, date: '' });
@@ -283,7 +303,7 @@ function showDonateDetails(group) {
   detailsContent.classList.remove('hidden');
 
   const date = dateSelect.value;
-  const players = Object.keys(getSnapshot(date).players).filter((p) => donationOf(p) === group);
+  const players = Object.keys(getSnapshot(date).players).filter((p) => donationOfAtDate(p, date) === group);
   const history = dates.map((d) => ({ date: d, value: donationBalanceAtDate(group, d) }));
 
   detailsTitle.textContent = 'Профіль групи';
@@ -366,7 +386,7 @@ function renderLeaderboard() {
   } else if (view === 'donates') {
     tableTitle.textContent = 'Топ Донатів'; nameHeader.textContent = 'Група'; valueHeader.textContent = 'Баланс групи';
     tableSubtitle.textContent = `Без невизначених груп • ${dateLabel(date)} • Всього на сервері: ${formatCurrency(totalMoneyAtDate(date))}`;
-    const groups = [...new Set(Object.values(donationByPlayer))];
+    const groups = [...new Set(Object.keys(snap.players).map((p) => donationOfAtDate(p, date)))];
     rows = groups.map((d) => ({ name: d, value: donationBalanceAtDate(d, date), click: () => showDonateDetails(d), display: formatCurrency(donationBalanceAtDate(d, date)) }));
   } else if (view === 'updates') {
     tableTitle.textContent = 'Оновлення сервера'; nameHeader.textContent = 'Етап'; valueHeader.textContent = 'Період';
