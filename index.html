@@ -7,32 +7,41 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="bg-glow glow-1"></div>
+    <div class="bg-glow glow-2"></div>
+
     <div class="container">
-      <header>
-        <h1>Demigro: Топ Баланс / Top Play</h1>
-        <p>Дані за 21 лютого — 4 березня. За замовчуванням показано стан на 4 березня.</p>
+      <header class="hero card">
+        <p class="hero-badge">Demigro Analytics</p>
+        <h1>Рейтинги гравців, кланів і донатів</h1>
+        <p class="hero-subtitle">Сучасна панель перегляду статистики за 21 лютого — 4 березня.</p>
       </header>
 
-      <section class="controls">
+      <section class="controls card">
         <div class="tabs" role="tablist" aria-label="Тип рейтингу">
-          <button id="balanceTab" class="tab active" data-view="balance">Топ Баланс</button>
-          <button id="playTab" class="tab" data-view="play">Top Play</button>
+          <button class="tab active" data-view="balance">Топ Баланс</button>
+          <button class="tab" data-view="play">Top Play</button>
+          <button class="tab" data-view="clans">Топ Кланів</button>
+          <button class="tab" data-view="donates">Топ Донатів</button>
         </div>
 
         <label class="date-select">
-          Дата:
+          <span>Дата</span>
           <select id="dateSelect"></select>
         </label>
       </section>
 
       <main class="layout">
-        <section class="card">
-          <h2 id="tableTitle">Топ Баланс</h2>
+        <section class="card leaderboard-card">
+          <div class="card-head">
+            <h2 id="tableTitle">Топ Баланс</h2>
+            <p id="tableSubtitle">Оновлення за обрану дату</p>
+          </div>
           <table>
             <thead>
               <tr>
                 <th>#</th>
-                <th>Гравець</th>
+                <th id="nameHeader">Гравець</th>
                 <th id="valueHeader">Баланс</th>
               </tr>
             </thead>
@@ -40,35 +49,19 @@
           </table>
         </section>
 
-        <aside class="card" id="detailsCard">
-          <h2>Деталі гравця</h2>
-          <p id="detailsHint">Натисни на гравця в таблиці, щоб подивитися історію.</p>
+        <aside class="card details-card">
+          <h2 id="detailsTitle">Деталі</h2>
+          <p id="detailsHint" class="empty-state">Натисни на рядок у таблиці, щоб подивитися історію.</p>
           <div id="detailsContent" class="hidden">
-            <h3 id="playerName"></h3>
-            <div class="stats-grid">
-              <div>
-                <strong>Макс. баланс</strong>
-                <p id="peakBalance"></p>
-              </div>
-              <div>
-                <strong>Останній баланс</strong>
-                <p id="latestBalance"></p>
-              </div>
-              <div>
-                <strong>Макс. Top Play</strong>
-                <p id="peakPlay"></p>
-              </div>
-              <div>
-                <strong>Останній Top Play</strong>
-                <p id="latestPlay"></p>
-              </div>
-            </div>
+            <h3 id="entityName"></h3>
+            <div id="metaInfo" class="meta"></div>
+            <div class="stats-grid" id="statsGrid"></div>
 
-            <h4>Історія балансу</h4>
-            <ul id="balanceHistory" class="history-list"></ul>
+            <h4 id="history1Title">Історія</h4>
+            <ul id="history1" class="history-list"></ul>
 
-            <h4>Історія гри (Top Play)</h4>
-            <ul id="playHistory" class="history-list"></ul>
+            <h4 id="history2Title">Додатково</h4>
+            <ul id="history2" class="history-list"></ul>
           </div>
         </aside>
       </main>
