@@ -36,12 +36,12 @@ const clans = {
 };
 
 const serverUpdates = [
-  { title: 'НЕЗЕРСЬКИЙ ВАЙП', period: '29 липня - 5 серпня 2025', items: ['це перший вайп сервера'] },
-  { title: 'ОСТАННІЙ ВАЙП', period: '5 серпня - 12 серпня', items: ['добавили Талісман Останнього'] },
-  { title: 'ОСТАННЄ ЛІТО', period: '12 серпня - 30 серпня', items: ['видалили Замок Весторі і Аірдроп', 'Переробили спавн'] },
-  { title: 'ОСІННІЙ ВАЙП', period: '31 серпня - 30 вересня', items: ['Переробили спавн', '9 вересня добавили сферу Останнього'] },
-  { title: 'ПОВЕРНЕННЯ ДЕМІГРО', period: '25 січня - 14 лютого', items: ['Добавили Контейнер PTE'] },
-  { title: 'НОВА ЕРА', period: '14 лютого - 8 березня', items: ['Переробка сервера на новому хостингу', '21 лютого добавили /site, Клани, Кейс Талісманів', '22 лютого добавили Призи,Купця та Чарівника', '25 лютого добавили новий кейс ТнТ і нові 3 вида ТнТ', '27 лютого заміна кейса ТнТ', '28 лютого добавили TAB, /report, валюту Демігрики, Топ по часу на сервері, Рівні ендер Скрині, Новий магазин, Оновлення кітів'] },
+  { title: 'НЕЗЕРСЬКИЙ ВАЙП', period: '29 липня - 5 серпня 2025', start: '2025-07-29', end: '2025-08-05', items: ['це перший вайп сервера'] },
+  { title: 'ОСТАННІЙ ВАЙП', period: '5 серпня - 12 серпня', start: '2025-08-05', end: '2025-08-12', items: ['добавили Талісман Останнього'] },
+  { title: 'ОСТАННЄ ЛІТО', period: '12 серпня - 30 серпня', start: '2025-08-12', end: '2025-08-30', items: ['видалили Замок Весторі і Аірдроп', 'Переробили спавн'] },
+  { title: 'ОСІННІЙ ВАЙП', period: '31 серпня - 30 вересня', start: '2025-08-31', end: '2025-09-30', items: ['Переробили спавн', '9 вересня добавили сферу Останнього'] },
+  { title: 'ПОВЕРНЕННЯ ДЕМІГРО', period: '25 січня - 14 лютого', start: '2026-01-25', end: '2026-02-14', items: ['Добавили Контейнер PTE'] },
+  { title: 'НОВА ЕРА', period: '14 лютого - 8 березня', start: '2026-02-14', end: '2026-03-08', items: ['Переробка сервера на новому хостингу', '21 лютого добавили /site, Клани, Кейс Талісманів', '22 лютого добавили Призи,Купця та Чарівника', '25 лютого добавили новий кейс ТнТ і нові 3 вида ТнТ', '27 лютого заміна кейса ТнТ', '28 лютого добавили TAB, /report, валюту Демігрики, Топ по часу на сервері, Рівні ендер Скрині, Новий магазин, Оновлення кітів'] },
 ];
 
 const INFO_LINES = [
@@ -86,6 +86,11 @@ const formatPlay = (m) => `${Math.floor(m / 1440)}d ${Math.floor((m % 1440) / 60
 const dateLabel = (d) => new Date(`${d}T00:00:00`).toLocaleDateString('uk-UA', { day: 'numeric', month: 'long' });
 const getSnapshot = (date) => snapshots.find((s) => s.date === date);
 const donationOf = (name) => donationByPlayer[name] || 'невизначений';
+
+function daysDiffInclusive(start, end) {
+  const ms = new Date(`${end}T00:00:00`) - new Date(`${start}T00:00:00`);
+  return Math.floor(ms / 86400000) + 1;
+}
 
 function allowedDatesForView(v) {
   if (v === 'play') return dates.filter((d) => d >= '2025-03-02' && d <= '2025-03-04');
@@ -150,7 +155,7 @@ function renderStats(items) {
 }
 
 function detectLastSeen(player) {
-  if (manualLastSeen[player]) return `${dateLabel(manualLastSeen[player])} (ручне уточнення)`;
+  if (manualLastSeen[player]) return dateLabel(manualLastSeen[player]);
 
   let lastPlayChange = null;
   let prevPlay;
@@ -172,10 +177,10 @@ function detectLastSeen(player) {
     }
   }
 
-  if (lastPlayChange) return `${dateLabel(lastPlayChange)} (по зміні Top Play)`;
-  if (lastBalanceChange) return `${dateLabel(lastBalanceChange)} (по зміні балансу)`;
+  if (lastPlayChange) return dateLabel(lastPlayChange);
+  if (lastBalanceChange) return dateLabel(lastBalanceChange);
   const firstSeen = snapshots.find((s) => s.players[player] !== undefined || s.play[player] !== undefined)?.date;
-  return firstSeen ? `${dateLabel(firstSeen)} (перша поява)` : '—';
+  return firstSeen ? dateLabel(firstSeen) : '—';
 }
 
 function firstSeenDate(player) {
@@ -210,14 +215,14 @@ function showPlayerDetails(player) {
 
   detailsTitle.textContent = 'Профіль гравця';
   entityName.textContent = player;
-  metaInfo.textContent = `Клан: ${clanInfo.clan} • Роль: ${clanInfo.role} • Гравець: ${group}`;
+  metaInfo.textContent = `Клан: ${clanInfo.clan} • Донат: ${group}`;
   renderStats([
     { label: 'Макс. баланс', value: peakBalance.value >= 0 ? `${formatCurrency(peakBalance.value)} (${dateLabel(peakBalance.date)})` : '—' },
     { label: 'Баланс', value: formatCurrency(currentBalance) },
     { label: 'Перший раз на сервері', value: firstSeen ? dateLabel(firstSeen) : '—' },
     { label: 'Найвище місце', value: best ? `#${best.rank} (${dateLabel(best.date)})` : '—' },
     { label: 'Останній раз в мережі', value: detectLastSeen(player) },
-    { label: 'Поточний Top Play', value: playHistory.at(-1) ? formatPlay(playHistory.at(-1).value) : '—' },
+    { label: 'Час на Сервері', value: playHistory.at(-1) ? formatPlay(playHistory.at(-1).value) : '—' },
   ]);
 
   history1Title.textContent = 'Історія балансу (місце та зміна)';
@@ -268,7 +273,7 @@ function showClanDetails(clanName) {
   history1Title.textContent = 'Учасники клану';
   history2Title.textContent = 'Історія балансу клану';
   history1.innerHTML = membersNow.map((m) => `<li>Гравець: ${m.player} — ${m.role}</li>`).join('') || '<li>Немає учасників</li>';
-  history2.innerHTML = history.map((h) => `<li>${dateLabel(h.date)} — ${formatCurrency(h.value)} • Всього на сервері: ${formatCurrency(totalMoneyAtDate(h.date))}</li>`).join('');
+  history2.innerHTML = history.map((h) => `<li>${dateLabel(h.date)} — ${formatCurrency(h.value)}</li>`).join('');
 }
 
 function showDonateDetails(group) {
@@ -292,6 +297,23 @@ function showDonateDetails(group) {
   history2Title.textContent = 'Історія балансу групи';
   history1.innerHTML = players.map((p) => `<li>Гравець: ${p}</li>`).join('') || '<li>Немає гравців на цю дату</li>';
   history2.innerHTML = history.map((h) => `<li>${dateLabel(h.date)} — ${formatCurrency(h.value)}</li>`).join('');
+}
+
+function showSingleUpdateDetails(update) {
+  selected = { type: 'update-item', id: update.title };
+  detailsHint.classList.add('hidden');
+  detailsContent.classList.remove('hidden');
+  detailsTitle.textContent = 'Оновлення сервера';
+  entityName.textContent = update.title;
+  metaInfo.textContent = `${update.period} • Тривалість: ${daysDiffInclusive(update.start, update.end)} днів`;
+  renderStats([
+    { label: 'Тривалість', value: `${daysDiffInclusive(update.start, update.end)} днів` },
+    { label: 'Кількість змін', value: String(update.items.length) },
+  ]);
+  history1Title.textContent = 'Що було в цьому періоді';
+  history2Title.textContent = 'Додані / змінені фічі';
+  history1.innerHTML = `<li>${update.title} (${update.period})</li>`;
+  history2.innerHTML = update.items.map((item) => `<li>${item}</li>`).join('');
 }
 
 function showUpdatesDetails() {
@@ -348,7 +370,7 @@ function renderLeaderboard() {
   } else if (view === 'updates') {
     tableTitle.textContent = 'Оновлення сервера'; nameHeader.textContent = 'Етап'; valueHeader.textContent = 'Період';
     tableSubtitle.textContent = 'Натисни на етап для деталей';
-    rows = serverUpdates.map((u, i) => ({ name: u.title, value: serverUpdates.length - i, click: () => showUpdatesDetails(), display: u.period }));
+    rows = serverUpdates.map((u, i) => ({ name: u.title, value: serverUpdates.length - i, click: () => showSingleUpdateDetails(u), display: u.period }));
   } else {
     tableTitle.textContent = 'ІНФОРМАЦІЯ'; nameHeader.textContent = 'Розділ'; valueHeader.textContent = 'Дані';
     tableSubtitle.textContent = 'Натисни на рядок для повної інформації';
@@ -356,7 +378,7 @@ function renderLeaderboard() {
   }
 
   rows.sort((a, b) => b.value - a.value);
-  leaderboardBody.innerHTML = rows.map((r, i) => `<tr class="player-row ${i === 0 ? 'top-1' : ''}"><td>${i + 1}</td><td>${r.name}</td><td>${r.display}</td></tr>`).join('');
+  leaderboardBody.innerHTML = rows.map((r, i) => `<tr class="player-row ${i === 0 ? 'top-1' : i === 1 ? 'top-2' : i === 2 ? 'top-3' : ''}"><td>${i + 1}</td><td>${r.name}</td><td>${r.display}</td></tr>`).join('');
   [...leaderboardBody.querySelectorAll('tr')].forEach((tr, i) => tr.addEventListener('click', rows[i].click));
 
   if (selected) {
@@ -364,6 +386,10 @@ function renderLeaderboard() {
     if (selected.type === 'clan') showClanDetails(selected.id);
     if (selected.type === 'donate') showDonateDetails(selected.id);
     if (selected.type === 'updates') showUpdatesDetails();
+    if (selected.type === 'update-item') {
+      const item = serverUpdates.find((u) => u.title === selected.id);
+      if (item) showSingleUpdateDetails(item);
+    }
     if (selected.type === 'info') showInfoDetails();
   }
 }
@@ -385,4 +411,3 @@ function init() {
 }
 
 init();
- 
