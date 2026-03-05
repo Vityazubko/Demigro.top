@@ -16,7 +16,7 @@ const snapshots = [
 const donationByPlayer = {
   SIGMA: 'має', BEFF: 'має', kostya2103: 'має', maksyarosh: 'має', lukyan187: 'status',
   ForteCa228: 'keerinam', edazfetg4ooo: 'keerinam', aboba2032: 'keerinam',
-  Vityappro11: 'debryli', Varenyk: 'debryli', treaforik: 'debryli', 'wontzhi**er': 'debryli', Vortex1k: 'debryli',
+  Vityappro11: 'debryli', Varenyk: 'debryli', treaforik: 'debryli', 'wontzhi**er': 'debryli', Vortex1k: 'debryli', hipoma: 'debryli',
   kasikm1: 'GOD', jtx_by: 'GOD', Paolo_Fermer: 'GOD', kampys231231: 'GOD', FairDemonYT: 'GOD'
 };
 
@@ -26,7 +26,7 @@ const clans = {
     events: [
       { date: '2025-02-22', player: 'Vityappro11', role: 'leader', action: 'join' },
       { date: '2025-02-25', player: 'lukyan187', role: 'senior', action: 'join' },
-      { date: '2025-02-26', player: 'SIGMA', role: 'member', action: 'join' },
+      { date: '2025-02-26', player: 'SIGMA', role: 'senior', action: 'join' },
     ],
   },
   treaf: {
@@ -35,14 +35,35 @@ const clans = {
   },
 };
 
+const serverUpdates = [
+  { title: 'НЕЗЕРСЬКИЙ ВАЙП', period: '29 липня - 5 серпня 2025', items: ['це перший вайп сервера'] },
+  { title: 'ОСТАННІЙ ВАЙП', period: '5 серпня - 12 серпня', items: ['добавили Талісман Останнього'] },
+  { title: 'ОСТАННЄ ЛІТО', period: '12 серпня - 30 серпня', items: ['видалили Замок Весторі і Аірдроп', 'Переробили спавн'] },
+  { title: 'ОСІННІЙ ВАЙП', period: '31 серпня - 30 вересня', items: ['Переробили спавн', '9 вересня добавили сферу Останнього'] },
+  { title: 'ПОВЕРНЕННЯ ДЕМІГРО', period: '25 січня - 14 лютого', items: ['Добавили Контейнер PTE'] },
+  { title: 'НОВА ЕРА', period: '14 лютого - 8 березня', items: ['Переробка сервера на новому хостингу', '21 лютого добавили /site, Клани, Кейс Талісманів', '22 лютого добавили Призи,Купця та Чарівника', '25 лютого добавили новий кейс ТнТ і нові 3 вида ТнТ', '27 лютого заміна кейса ТнТ', '28 лютого добавили TAB, /report, валюту Демігрики, Топ по часу на сервері, Рівні ендер Скрині, Новий магазин, Оновлення кітів'] },
+];
+
+const INFO_LINES = [
+  'Сайт зробив Vityappro11',
+  'Це не офіційний сайт сервера',
+  'Офіційний сайт Демігро: https://sites.google.com/view/demigro/%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2%D0%BD%D0%B0-%D1%81%D1%82%D0%BE%D1%80%D1%96%D0%BD%D0%BA%D0%B0?authuser=0',
+  'Підпишіться на мій канал та канал Адміна',
+  'YOUTUBE: Мій канал UCEOL6x4uzVT31SRwXBG1tRQ',
+  'YOUTUBE: Канал Макса UC6aVFfxS51vymg45uIUCQ-w',
+  'TIKTOK: Мій канал www.tiktok.com/@vityapro132',
+  'TIKTOK: Канал Макса www.tiktok.com/@maksik_paksik70',
+];
+
+const manualLastSeen = { Varenyk: '2025-03-02', ForteCa228: '2025-03-02', kasikm1: '2025-03-01' };
+
 const dateSelect = document.getElementById('dateSelect');
 const leaderboardBody = document.getElementById('leaderboardBody');
 const tableTitle = document.getElementById('tableTitle');
+const tableSubtitle = document.getElementById('tableSubtitle');
 const valueHeader = document.getElementById('valueHeader');
 const nameHeader = document.getElementById('nameHeader');
-const tableSubtitle = document.getElementById('tableSubtitle');
 const tabs = document.querySelectorAll('.tab');
-
 const detailsTitle = document.getElementById('detailsTitle');
 const detailsHint = document.getElementById('detailsHint');
 const detailsContent = document.getElementById('detailsContent');
@@ -66,17 +87,52 @@ const dateLabel = (d) => new Date(`${d}T00:00:00`).toLocaleDateString('uk-UA', {
 const getSnapshot = (date) => snapshots.find((s) => s.date === date);
 const donationOf = (name) => donationByPlayer[name] || 'невизначений';
 
+function allowedDatesForView(v) {
+  if (v === 'play') return dates.filter((d) => d >= '2025-03-02' && d <= '2025-03-04');
+  if (v === 'clans') return dates.filter((d) => d >= '2025-02-22');
+  return dates;
+}
+
+function refreshDateSelect() {
+  const allowed = allowedDatesForView(view);
+  const prev = dateSelect.value;
+  dateSelect.innerHTML = '';
+  allowed.forEach((d) => {
+    const opt = document.createElement('option');
+    opt.value = d;
+    opt.textContent = dateLabel(d);
+    dateSelect.appendChild(opt);
+  });
+  dateSelect.value = allowed.includes(prev) ? prev : allowed[allowed.length - 1];
+}
+
+function totalMoneyAtDate(date) {
+  const snap = getSnapshot(date);
+  return Object.values(snap.players).reduce((a, b) => a + b, 0);
+}
+
+function rankMapForDate(sourceObj) {
+  const sorted = Object.entries(sourceObj).sort((a, b) => b[1] - a[1]).map(([name], idx) => [name, idx + 1]);
+  return Object.fromEntries(sorted);
+}
+
+function positionDelta(prevRank, curRank) {
+  if (!prevRank) return 'new';
+  if (prevRank === curRank) return '=';
+  if (prevRank > curRank) return `↑${prevRank - curRank}`;
+  return `↓${curRank - prevRank}`;
+}
+
 function getClanForPlayerAtDate(player, date) {
   for (const [clanName, clan] of Object.entries(clans)) {
-    const memberEvent = clan.events.filter((e) => e.player === player && e.date <= date).sort((a, b) => a.date.localeCompare(b.date)).at(-1);
-    if (memberEvent?.action === 'join') return { clan: clanName, role: memberEvent.role };
+    const event = clan.events.filter((e) => e.player === player && e.date <= date).sort((a, b) => a.date.localeCompare(b.date)).at(-1);
+    if (event?.action === 'join') return { clan: clanName, role: event.role };
   }
   return { clan: 'без клану', role: '—' };
 }
 
 function getClanMembersAtDate(clanName, date) {
-  const clan = clans[clanName];
-  return clan.events.filter((e) => e.action === 'join' && e.date <= date).map((e) => ({ player: e.player, role: e.role }));
+  return clans[clanName].events.filter((e) => e.action === 'join' && e.date <= date).map((e) => ({ player: e.player, role: e.role }));
 }
 
 function clanBalanceAtDate(clanName, date) {
@@ -84,9 +140,9 @@ function clanBalanceAtDate(clanName, date) {
   return getClanMembersAtDate(clanName, date).reduce((sum, m) => sum + (snap.players[m.player] || 0), 0);
 }
 
-function donationBalanceAtDate(donate, date) {
+function donationBalanceAtDate(group, date) {
   const snap = getSnapshot(date);
-  return Object.entries(snap.players).reduce((sum, [p, bal]) => (donationOf(p) === donate ? sum + bal : sum), 0);
+  return Object.entries(snap.players).reduce((sum, [p, bal]) => (donationOf(p) === group ? sum + bal : sum), 0);
 }
 
 function renderStats(items) {
@@ -94,6 +150,8 @@ function renderStats(items) {
 }
 
 function detectLastSeen(player) {
+  if (manualLastSeen[player]) return `${dateLabel(manualLastSeen[player])} (ручне уточнення)`;
+
   let lastPlayChange = null;
   let prevPlay;
   for (const s of snapshots) {
@@ -120,70 +178,148 @@ function detectLastSeen(player) {
   return firstSeen ? `${dateLabel(firstSeen)} (перша поява)` : '—';
 }
 
+function firstSeenDate(player) {
+  return snapshots.find((s) => s.players[player] !== undefined || s.play[player] !== undefined)?.date || null;
+}
+
+function bestRankInfo(player) {
+  let best = null;
+  for (const s of snapshots) {
+    if (s.players[player] === undefined) continue;
+    const ranks = rankMapForDate(s.players);
+    const r = ranks[player];
+    if (!best || r < best.rank) best = { rank: r, date: s.date };
+  }
+  return best;
+}
+
 function showPlayerDetails(player) {
   selected = { type: 'player', id: player };
   detailsHint.classList.add('hidden');
   detailsContent.classList.remove('hidden');
+
   const date = dateSelect.value;
   const clanInfo = getClanForPlayerAtDate(player, date);
-  const donation = donationOf(player);
+  const group = donationOf(player);
   const balanceHistory = snapshots.filter((s) => s.players[player] !== undefined).map((s) => ({ date: s.date, value: s.players[player] }));
   const playHistory = snapshots.filter((s) => s.play[player] !== undefined).map((s) => ({ date: s.date, value: s.play[player] }));
   const peakBalance = balanceHistory.reduce((m, x) => (x.value > m.value ? x : m), { value: -1, date: '' });
-  const latestBalance = balanceHistory.at(-1);
+  const currentBalance = getSnapshot(date).players[player] ?? 0;
+  const firstSeen = firstSeenDate(player);
+  const best = bestRankInfo(player);
 
   detailsTitle.textContent = 'Профіль гравця';
   entityName.textContent = player;
-  metaInfo.textContent = `Клан: ${clanInfo.clan} • Роль: ${clanInfo.role} • Донат: ${donation}`;
+  metaInfo.textContent = `Клан: ${clanInfo.clan} • Роль: ${clanInfo.role} • Гравець: ${group}`;
   renderStats([
     { label: 'Макс. баланс', value: peakBalance.value >= 0 ? `${formatCurrency(peakBalance.value)} (${dateLabel(peakBalance.date)})` : '—' },
-    { label: 'Останній баланс', value: latestBalance ? `${formatCurrency(latestBalance.value)} (${dateLabel(latestBalance.date)})` : '—' },
+    { label: 'Баланс', value: formatCurrency(currentBalance) },
+    { label: 'Перший раз на сервері', value: firstSeen ? dateLabel(firstSeen) : '—' },
+    { label: 'Найвище місце', value: best ? `#${best.rank} (${dateLabel(best.date)})` : '—' },
     { label: 'Останній раз в мережі', value: detectLastSeen(player) },
     { label: 'Поточний Top Play', value: playHistory.at(-1) ? formatPlay(playHistory.at(-1).value) : '—' },
   ]);
 
-  history1Title.textContent = 'Історія балансу';
-  history2Title.textContent = 'Історія гри (Top Play)';
-  history1.innerHTML = balanceHistory.map((i) => `<li>${dateLabel(i.date)} — ${formatCurrency(i.value)}</li>`).join('') || '<li>Немає даних</li>';
-  history2.innerHTML = playHistory.map((i) => `<li>${dateLabel(i.date)} — ${formatPlay(i.value)}</li>`).join('') || '<li>Немає даних</li>';
+  history1Title.textContent = 'Історія балансу (місце та зміна)';
+  history2Title.textContent = 'Історія Top Play (місце та зміна)';
+
+  const balanceRows = balanceHistory.map((row, idx) => {
+    const ranksNow = rankMapForDate(getSnapshot(row.date).players);
+    const curRank = ranksNow[player];
+    const prevRank = idx > 0 ? rankMapForDate(getSnapshot(balanceHistory[idx - 1].date).players)[player] : null;
+    return `<li>${dateLabel(row.date)} — ${formatCurrency(row.value)} • #${curRank} • ${positionDelta(prevRank, curRank)}</li>`;
+  });
+
+  const playRows = playHistory.map((row, idx) => {
+    const ranksNow = rankMapForDate(getSnapshot(row.date).play);
+    const curRank = ranksNow[player];
+    const prevRank = idx > 0 ? rankMapForDate(getSnapshot(playHistory[idx - 1].date).play)[player] : null;
+    return `<li>${dateLabel(row.date)} — ${formatPlay(row.value)} • #${curRank} • ${positionDelta(prevRank, curRank)}</li>`;
+  });
+
+  history1.innerHTML = balanceRows.join('') || '<li>Немає даних</li>';
+  history2.innerHTML = playRows.join('') || '<li>Немає даних</li>';
 }
 
 function showClanDetails(clanName) {
   selected = { type: 'clan', id: clanName };
   detailsHint.classList.add('hidden');
   detailsContent.classList.remove('hidden');
-  const membersNow = getClanMembersAtDate(clanName, dateSelect.value);
+
+  const date = dateSelect.value;
+  const membersNow = getClanMembersAtDate(clanName, date);
   const history = dates.filter((d) => d >= clans[clanName].createdAt).map((d) => ({ date: d, value: clanBalanceAtDate(clanName, d) }));
+
+  let latestMemberActivity = null;
+  for (const m of membersNow) {
+    const seenAuto = [...snapshots].reverse().find((s) => s.play[m.player] !== undefined || s.players[m.player] !== undefined)?.date;
+    const seen = manualLastSeen[m.player] || seenAuto;
+    if (seen && (!latestMemberActivity || seen > latestMemberActivity)) latestMemberActivity = seen;
+  }
+
   detailsTitle.textContent = 'Профіль клану';
   entityName.textContent = clanName;
-  metaInfo.textContent = `Створено: ${dateLabel(clans[clanName].createdAt)}`;
+  metaInfo.textContent = `Створено: ${dateLabel(clans[clanName].createdAt)} • Остання активність: ${latestMemberActivity ? dateLabel(latestMemberActivity) : '—'}`;
   renderStats([
-    { label: 'Поточний баланс клану', value: formatCurrency(clanBalanceAtDate(clanName, dateSelect.value)) },
-    { label: 'Макс. баланс клану', value: `${formatCurrency(Math.max(...history.map((h) => h.value)))} ` },
+    { label: 'Поточний баланс клану', value: formatCurrency(clanBalanceAtDate(clanName, date)) },
+    { label: 'Макс. баланс клану', value: formatCurrency(Math.max(...history.map((h) => h.value))) },
   ]);
+
   history1Title.textContent = 'Учасники клану';
   history2Title.textContent = 'Історія балансу клану';
-  history1.innerHTML = membersNow.map((m) => `<li>${m.player} — ${m.role}</li>`).join('') || '<li>Немає учасників</li>';
+  history1.innerHTML = membersNow.map((m) => `<li>Гравець: ${m.player} — ${m.role}</li>`).join('') || '<li>Немає учасників</li>';
+  history2.innerHTML = history.map((h) => `<li>${dateLabel(h.date)} — ${formatCurrency(h.value)} • Всього на сервері: ${formatCurrency(totalMoneyAtDate(h.date))}</li>`).join('');
+}
+
+function showDonateDetails(group) {
+  selected = { type: 'donate', id: group };
+  detailsHint.classList.add('hidden');
+  detailsContent.classList.remove('hidden');
+
+  const date = dateSelect.value;
+  const players = Object.keys(getSnapshot(date).players).filter((p) => donationOf(p) === group);
+  const history = dates.map((d) => ({ date: d, value: donationBalanceAtDate(group, d) }));
+
+  detailsTitle.textContent = 'Профіль групи';
+  entityName.textContent = group;
+  metaInfo.textContent = 'Об’єднаний баланс усіх гравців цієї групи';
+  renderStats([
+    { label: 'Поточний баланс групи', value: formatCurrency(donationBalanceAtDate(group, date)) },
+    { label: 'Макс. баланс групи', value: formatCurrency(Math.max(...history.map((h) => h.value))) },
+  ]);
+
+  history1Title.textContent = 'Гравці цієї групи';
+  history2Title.textContent = 'Історія балансу групи';
+  history1.innerHTML = players.map((p) => `<li>Гравець: ${p}</li>`).join('') || '<li>Немає гравців на цю дату</li>';
   history2.innerHTML = history.map((h) => `<li>${dateLabel(h.date)} — ${formatCurrency(h.value)}</li>`).join('');
 }
 
-function showDonateDetails(donate) {
-  selected = { type: 'donate', id: donate };
+function showUpdatesDetails() {
+  selected = { type: 'updates', id: 'updates' };
   detailsHint.classList.add('hidden');
   detailsContent.classList.remove('hidden');
-  const players = Object.keys(getSnapshot(dateSelect.value).players).filter((p) => donationOf(p) === donate);
-  const history = dates.map((d) => ({ date: d, value: donationBalanceAtDate(donate, d) }));
-  detailsTitle.textContent = 'Профіль донату';
-  entityName.textContent = donate;
-  metaInfo.textContent = 'Об’єднаний баланс усіх гравців з цим донатом';
-  renderStats([
-    { label: 'Поточний баланс донату', value: formatCurrency(donationBalanceAtDate(donate, dateSelect.value)) },
-    { label: 'Макс. баланс донату', value: formatCurrency(Math.max(...history.map((h) => h.value))) },
-  ]);
-  history1Title.textContent = 'Гравці з цим донатом';
-  history2Title.textContent = 'Історія балансу донату';
-  history1.innerHTML = players.map((p) => `<li>${p}</li>`).join('') || '<li>Немає гравців на цю дату</li>';
-  history2.innerHTML = history.map((h) => `<li>${dateLabel(h.date)} — ${formatCurrency(h.value)}</li>`).join('');
+  detailsTitle.textContent = 'Оновлення сервера';
+  entityName.textContent = 'Хронологія оновлень';
+  metaInfo.textContent = 'Офіційні етапи розвитку сервера';
+  renderStats([{ label: 'Кількість етапів', value: String(serverUpdates.length) }]);
+  history1Title.textContent = 'Етапи';
+  history2Title.textContent = 'Деталі';
+  history1.innerHTML = serverUpdates.map((u) => `<li>${u.title} (${u.period})</li>`).join('');
+  history2.innerHTML = serverUpdates.map((u) => `<li><strong>${u.title}</strong>: ${u.items.join(' • ')}</li>`).join('');
+}
+
+function showInfoDetails() {
+  selected = { type: 'info', id: 'info' };
+  detailsHint.classList.add('hidden');
+  detailsContent.classList.remove('hidden');
+  detailsTitle.textContent = 'ІНФОРМАЦІЯ';
+  entityName.textContent = 'Про цей сайт';
+  metaInfo.textContent = 'Контакти та посилання';
+  renderStats([]);
+  history1Title.textContent = 'Інфо';
+  history2Title.textContent = 'Соцмережі';
+  history1.innerHTML = INFO_LINES.slice(0, 4).map((x) => `<li>${x}</li>`).join('');
+  history2.innerHTML = INFO_LINES.slice(4).map((x) => `<li>${x}</li>`).join('');
 }
 
 function renderLeaderboard() {
@@ -193,41 +329,47 @@ function renderLeaderboard() {
 
   if (view === 'balance') {
     tableTitle.textContent = 'Топ Баланс'; nameHeader.textContent = 'Гравець'; valueHeader.textContent = 'Баланс';
-    tableSubtitle.textContent = `Актуальні баланси на ${dateLabel(date)}`;
+    tableSubtitle.textContent = `Актуальні баланси на ${dateLabel(date)} • Всього на сервері: ${formatCurrency(totalMoneyAtDate(date))}`;
     rows = Object.entries(snap.players).map(([n, v]) => ({ name: n, value: v, click: () => showPlayerDetails(n), display: formatCurrency(v) }));
   } else if (view === 'play') {
     tableTitle.textContent = 'Top Play'; nameHeader.textContent = 'Гравець'; valueHeader.textContent = 'Час';
-    tableSubtitle.textContent = `Ігровий час на ${dateLabel(date)}`;
+    tableSubtitle.textContent = `Доступно лише 2-4 березня • ${dateLabel(date)} • Всього на сервері: ${formatCurrency(totalMoneyAtDate(date))}`;
     rows = Object.entries(snap.play).map(([n, v]) => ({ name: n, value: v, click: () => showPlayerDetails(n), display: formatPlay(v) }));
   } else if (view === 'clans') {
     tableTitle.textContent = 'Топ Кланів'; nameHeader.textContent = 'Клан'; valueHeader.textContent = 'Баланс клану';
-    tableSubtitle.textContent = `Сумарні баланси кланів на ${dateLabel(date)}`;
-    rows = Object.keys(clans).map((c) => ({ name: c, value: clanBalanceAtDate(c, date), click: () => showClanDetails(c), display: formatCurrency(clanBalanceAtDate(c, date)) }));
+    tableSubtitle.textContent = `Доступно з 22 лютого • ${dateLabel(date)} • Всього на сервері: ${formatCurrency(totalMoneyAtDate(date))}`;
+    const visibleClans = Object.keys(clans).filter((c) => clans[c].createdAt <= date);
+    rows = visibleClans.map((c) => ({ name: c, value: clanBalanceAtDate(c, date), click: () => showClanDetails(c), display: formatCurrency(clanBalanceAtDate(c, date)) }));
+  } else if (view === 'donates') {
+    tableTitle.textContent = 'Топ Донатів'; nameHeader.textContent = 'Група'; valueHeader.textContent = 'Баланс групи';
+    tableSubtitle.textContent = `Без невизначених груп • ${dateLabel(date)} • Всього на сервері: ${formatCurrency(totalMoneyAtDate(date))}`;
+    const groups = [...new Set(Object.values(donationByPlayer))];
+    rows = groups.map((d) => ({ name: d, value: donationBalanceAtDate(d, date), click: () => showDonateDetails(d), display: formatCurrency(donationBalanceAtDate(d, date)) }));
+  } else if (view === 'updates') {
+    tableTitle.textContent = 'Оновлення сервера'; nameHeader.textContent = 'Етап'; valueHeader.textContent = 'Період';
+    tableSubtitle.textContent = 'Натисни на етап для деталей';
+    rows = serverUpdates.map((u, i) => ({ name: u.title, value: serverUpdates.length - i, click: () => showUpdatesDetails(), display: u.period }));
   } else {
-    tableTitle.textContent = 'Топ Донатів'; nameHeader.textContent = 'Донат'; valueHeader.textContent = 'Баланс донату';
-    tableSubtitle.textContent = `Сумарні баланси донат-груп на ${dateLabel(date)}`;
-    const donateTypes = [...new Set(Object.values(donationByPlayer).concat('невизначений'))];
-    rows = donateTypes.map((d) => ({ name: d, value: donationBalanceAtDate(d, date), click: () => showDonateDetails(d), display: formatCurrency(donationBalanceAtDate(d, date)) }));
+    tableTitle.textContent = 'ІНФОРМАЦІЯ'; nameHeader.textContent = 'Розділ'; valueHeader.textContent = 'Дані';
+    tableSubtitle.textContent = 'Натисни на рядок для повної інформації';
+    rows = [{ name: 'Про сайт', value: 1, click: () => showInfoDetails(), display: 'Контакти та посилання' }];
   }
 
   rows.sort((a, b) => b.value - a.value);
-  leaderboardBody.innerHTML = rows.map((r, i) => `<tr class="player-row ${i === 0 ? 'top-1' : ''}" data-name="${r.name}"><td>${i + 1}</td><td>${r.name}</td><td>${r.display}</td></tr>`).join('');
+  leaderboardBody.innerHTML = rows.map((r, i) => `<tr class="player-row ${i === 0 ? 'top-1' : ''}"><td>${i + 1}</td><td>${r.name}</td><td>${r.display}</td></tr>`).join('');
   [...leaderboardBody.querySelectorAll('tr')].forEach((tr, i) => tr.addEventListener('click', rows[i].click));
 
   if (selected) {
     if (selected.type === 'player') showPlayerDetails(selected.id);
     if (selected.type === 'clan') showClanDetails(selected.id);
     if (selected.type === 'donate') showDonateDetails(selected.id);
+    if (selected.type === 'updates') showUpdatesDetails();
+    if (selected.type === 'info') showInfoDetails();
   }
 }
 
 function init() {
-  dates.forEach((d) => {
-    const opt = document.createElement('option');
-    opt.value = d;
-    opt.textContent = dateLabel(d);
-    dateSelect.appendChild(opt);
-  });
+  refreshDateSelect();
   dateSelect.value = latestDate;
   dateSelect.addEventListener('change', renderLeaderboard);
 
@@ -235,6 +377,7 @@ function init() {
     tabs.forEach((t) => t.classList.remove('active'));
     tab.classList.add('active');
     view = tab.dataset.view;
+    refreshDateSelect();
     renderLeaderboard();
   }));
 
