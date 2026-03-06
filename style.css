@@ -202,3 +202,4 @@ tr.player-row.top-3 td:first-child { color: var(--bronze); font-weight: 700; }
 @media (max-width: 980px) {
   .layout { grid-template-columns: 1fr; }
 }
+
