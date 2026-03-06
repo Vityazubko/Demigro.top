@@ -536,6 +536,3 @@ function init() {
 }
 
 init();
-}
-
-init();
