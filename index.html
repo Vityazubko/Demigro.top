@@ -41,9 +41,19 @@
             <h2 id="tableTitle">Топ Баланс</h2>
             <p id="tableSubtitle">Оновлення за обрану дату</p>
           </div>
-          <div id="contentSwitch" class="content-switch hidden" aria-label="Перемикання платформи контенту">
-            <button id="contentTikTok" class="content-switch-btn active" type="button">TikTok</button>
-            <button id="contentYouTube" class="content-switch-btn" type="button">YouTube</button>
+          <div id="contentControls" class="content-controls hidden" aria-label="Контент фільтри">
+            <div class="control-group">
+              <button id="contentPlatformTikTok" class="control-btn active" type="button">TikTok</button>
+              <button id="contentPlatformYouTube" class="control-btn" type="button">YouTube</button>
+            </div>
+            <div class="control-group">
+              <button id="contentTypeVideos" class="control-btn active" type="button">Відео</button>
+              <button id="contentTypeChannels" class="control-btn" type="button">Канали</button>
+            </div>
+            <div id="videoSortControls" class="control-group">
+              <button id="contentSortViews" class="control-btn active" type="button">За переглядами</button>
+              <button id="contentSortLikes" class="control-btn" type="button">За лайками</button>
+            </div>
           </div>
           <table>
             <thead>
