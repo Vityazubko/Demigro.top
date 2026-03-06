@@ -154,36 +154,48 @@ tr.player-row.top-3 td:first-child { color: var(--bronze); font-weight: 700; }
 }
 
 
-.content-switch {
+.content-controls {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
-  margin-top: 10px;
+  margin: 10px 0 6px;
 }
 
-.content-switch-btn {
+.control-group {
+  display: inline-flex;
+  gap: 6px;
+}
+
+.control-btn {
   border: 1px solid var(--border);
-  background: #0f1930;
+  background: #101a30;
   color: var(--text);
   padding: 7px 10px;
-  border-radius: 9px;
+  border-radius: 10px;
   cursor: pointer;
+  transition: .15s ease;
 }
 
-.content-switch-btn.active {
-  border-color: transparent;
+.control-btn:hover {
+  border-color: #5d7bc0;
+}
+
+.control-btn.active {
   background: linear-gradient(130deg, var(--accent), var(--accent-2));
   color: #051024;
+  border-color: transparent;
   font-weight: 700;
 }
 
 .history-list a {
-  color: #a9cbff;
+  color: #9ec4ff;
   text-decoration: none;
 }
 
 .history-list a:hover {
   text-decoration: underline;
 }
+
 
 .hidden { display: none; }
 
