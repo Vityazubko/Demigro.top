@@ -91,15 +91,24 @@ const firstSeenOverrides = {
 };
 
 const contentVideos = [
-  { platform: 'tiktok', author: 'Varenyk/treaforik', title: 'Відкриття сервера', url: 'https://vt.tiktok.com/ZSud2Q6aJ/', date: '14 лютого', views: 267 },
-  { platform: 'tiktok', author: 'Varenyk/treaforik', title: 'ПвП', url: 'https://vt.tiktok.com/ZSud2u5Er/', date: '18 лютого', views: 369 },
-  { platform: 'tiktok', author: 'Varenyk/treaforik', title: 'Битва з Vortex1k', url: 'https://vt.tiktok.com/ZSud2nhMV/', date: '21 лютого', views: 207 },
-  { platform: 'tiktok', author: 'Varenyk/treaforik', title: 'Топ 1 сервера', url: 'https://vt.tiktok.com/ZSud2shgW/', date: '21 лютого', views: 310 },
-  { platform: 'tiktok', author: 'Varenyk/treaforik', title: 'Битва з FairDemonYT', url: 'https://vt.tiktok.com/ZSudjdED7/', date: '22 лютого', views: 221 },
-  { platform: 'tiktok', author: 'Vityappro11', title: 'Вбиваю Ендер Дракона на Деміґро', url: 'https://vt.tiktok.com/ZSudjkrrn/', date: '11 вересня', views: 0 },
-  { platform: 'tiktok', author: 'Vityappro11', title: 'AKSELEND vs DEMIGRO', url: 'https://vt.tiktok.com/ZSudjtwVQ/', date: '', views: 243 },
-  { platform: 'youtube', author: 'Vityappro11', title: 'Вбиваю Ендер Дракона на Демігро', url: 'https://youtube.com/shorts/hsXJGZhCAs8?si=ZFe9-hOGMZrwe1Sz', date: '11 вересня', views: 344 },
-  { platform: 'youtube', author: 'Vityappro11', title: 'AKSELEND vs DEMIGRO', url: 'https://youtube.com/shorts/KWamPGCoPsg?si=fdI65BANOtvFekP4', date: '22 листопада', views: 1598 },
+  { platform: 'tiktok', author: 'Varenyk/treaforik', title: 'Відкриття сервера', url: 'https://vt.tiktok.com/ZSud2Q6aJ/', date: '14 лютого', views: 273, likes: 9 },
+  { platform: 'tiktok', author: 'Varenyk/treaforik', title: 'ПвП', url: 'https://vt.tiktok.com/ZSud2u5Er/', date: '18 лютого', views: 371, likes: 10 },
+  { platform: 'tiktok', author: 'Varenyk/treaforik', title: 'Битва з Vortex1k', url: 'https://vt.tiktok.com/ZSud2nhMV/', date: '21 лютого', views: 211, likes: 8 },
+  { platform: 'tiktok', author: 'Varenyk/treaforik', title: 'Топ 1 сервера', url: 'https://vt.tiktok.com/ZSud2shgW/', date: '21 лютого', views: 320, likes: 7 },
+  { platform: 'tiktok', author: 'Varenyk/treaforik', title: 'Битва з FairDemonYT', url: 'https://vt.tiktok.com/ZSudjdED7/', date: '22 лютого', views: 221, likes: 5 },
+  { platform: 'tiktok', author: 'Vityappro11', title: 'Вбиваю Ендер Дракона на Деміґро', url: 'https://vt.tiktok.com/ZSudjkrrn/', date: '11 вересня', views: 267, likes: 11 },
+  { platform: 'tiktok', author: 'Vityappro11', title: 'AKSELEND vs DEMIGRO', url: 'https://vt.tiktok.com/ZSudjtwVQ/', date: '', views: 244, likes: 15 },
+  { platform: 'tiktok', author: 'Vityappro11', title: 'Сервер Демігро', url: '', date: '', views: 239, likes: 10 },
+  { platform: 'youtube', author: 'Vityappro11', title: 'Вбиваю Ендер Дракона на Демігро', url: 'https://youtube.com/shorts/hsXJGZhCAs8?si=ZFe9-hOGMZrwe1Sz', date: '11 вересня', views: 346, likes: 3 },
+  { platform: 'youtube', author: 'Vityappro11', title: 'AKSELEND vs DEMIGRO', url: 'https://youtube.com/shorts/KWamPGCoPsg?si=fdI65BANOtvFekP4', date: '22 листопада', views: 1599, likes: 8 },
+];
+
+const contentChannels = [
+  { platform: 'tiktok', name: 'Varenyk/treaforik', followers: 538, label: 'слідкувачів', url: 'https://www.tiktok.com/@zadr1t', owners: ['Varenyk', 'treaforik'] },
+  { platform: 'tiktok', name: 'Maksik_paksik7', followers: 88, label: 'слідкувачів', url: 'https://www.tiktok.com/@maksik_paksik70', owners: ['maksik_paksik7'] },
+  { platform: 'tiktok', name: 'Vityappro11', followers: 50, label: 'слідкувачів', url: 'https://www.tiktok.com/@vityapro132', owners: ['Vityappro11'] },
+  { platform: 'youtube', name: 'Vityappro11', followers: 33, label: 'підписники', url: '', owners: ['Vityappro11'] },
+  { platform: 'youtube', name: 'Maksik_paksik7', followers: 10, label: 'підписників', url: '', owners: ['maksik_paksik7'] },
 ];
 
 const pvpFights = [
@@ -125,13 +134,20 @@ const history1Title = document.getElementById('history1Title');
 const history2Title = document.getElementById('history2Title');
 const history1 = document.getElementById('history1');
 const history2 = document.getElementById('history2');
-const contentSwitch = document.getElementById('contentSwitch');
-const contentTikTok = document.getElementById('contentTikTok');
-const contentYouTube = document.getElementById('contentYouTube');
+const contentControls = document.getElementById('contentControls');
+const contentPlatformTikTok = document.getElementById('contentPlatformTikTok');
+const contentPlatformYouTube = document.getElementById('contentPlatformYouTube');
+const contentTypeVideos = document.getElementById('contentTypeVideos');
+const contentTypeChannels = document.getElementById('contentTypeChannels');
+const videoSortControls = document.getElementById('videoSortControls');
+const contentSortViews = document.getElementById('contentSortViews');
+const contentSortLikes = document.getElementById('contentSortLikes');
 
 let view = 'balance';
 let selected = null;
-let activeContentPlatform = 'tiktok';
+let contentPlatform = 'tiktok';
+let contentType = 'videos';
+let contentSort = 'views';
 
 const dates = snapshots.map((s) => s.date);
 const latestDate = dates[dates.length - 1];
@@ -177,14 +193,31 @@ function refreshDateSelect() {
   dateSelect.value = allowed.includes(prev) ? prev : allowed[allowed.length - 1];
 }
 
-function setContentSwitchVisible(visible) {
-  contentSwitch.classList.toggle('hidden', !visible);
+function setContentControlsVisible(visible) {
+  contentControls.classList.toggle('hidden', !visible);
 }
 
-function setActiveContentPlatform(platform) {
-  activeContentPlatform = platform;
-  contentTikTok.classList.toggle('active', platform === 'tiktok');
-  contentYouTube.classList.toggle('active', platform === 'youtube');
+function syncContentControlButtons() {
+  contentPlatformTikTok.classList.toggle('active', contentPlatform === 'tiktok');
+  contentPlatformYouTube.classList.toggle('active', contentPlatform === 'youtube');
+  contentTypeVideos.classList.toggle('active', contentType === 'videos');
+  contentTypeChannels.classList.toggle('active', contentType === 'channels');
+  videoSortControls.classList.toggle('hidden', contentType !== 'videos');
+  contentSortViews.classList.toggle('active', contentSort === 'views');
+  contentSortLikes.classList.toggle('active', contentSort === 'likes');
+}
+
+function videoOwners(video) {
+  if (video.author === 'Varenyk/treaforik') return ['Varenyk', 'treaforik'];
+  return [video.author];
+}
+
+function getPlayerChannels(player) {
+  return contentChannels.filter((c) => c.owners.includes(player));
+}
+
+function getPlayerVideos(player) {
+  return contentVideos.filter((v) => videoOwners(v).includes(player));
 }
 
 function totalMoneyAtDate(date) {
@@ -335,8 +368,19 @@ function showPlayerDetails(player) {
     return `<li>${dateLabel(row.date)} — ${formatPlay(row.value)} • #${curRank} • ${positionDelta(prevRank, curRank)}</li>`;
   });
 
+  const channels = getPlayerChannels(player);
+  const videos = getPlayerVideos(player).sort((a, b) => b.views - a.views);
+
+  const channelRows = channels.map((c) => `<li>Канал ${c.platform === 'tiktok' ? 'TikTok' : 'YouTube'}: ${c.name} — ${c.followers} ${c.label}${c.url ? ` • <a href="${c.url}" target="_blank" rel="noopener noreferrer">посилання</a>` : ''}</li>`);
+  const videoRows = videos.map((v) => `<li>${v.platform === 'tiktok' ? 'TikTok' : 'YouTube'} • ${v.title} — ${v.views} переглядів, ${v.likes} лайків${v.url ? ` • <a href="${v.url}" target="_blank" rel="noopener noreferrer">дивитись</a>` : ''}</li>`);
+
   history1.innerHTML = balanceRows.join('') || '<li>Немає даних</li>';
-  history2.innerHTML = playRows.join('') || '<li>Немає даних</li>';
+  history2.innerHTML = [
+    ...(playRows.length ? playRows : ['<li>Немає Top Play даних</li>']),
+    '<li><strong>— Контент гравця —</strong></li>',
+    ...(channelRows.length ? channelRows : ['<li>Каналів не знайдено</li>']),
+    ...(videoRows.length ? videoRows : ['<li>Відео не знайдено</li>']),
+  ].join('');
 }
 
 function showClanDetails(clanName) {
@@ -438,31 +482,8 @@ function showInfoDetails() {
   history2.innerHTML = INFO_LINES.slice(4).map((x) => `<li>${x}</li>`).join('');
 }
 
-function showContentPlatformDetails(platform) {
-  setActiveContentPlatform(platform);
-  selected = { type: 'content', id: platform };
-  detailsHint.classList.add('hidden');
-  detailsContent.classList.remove('hidden');
-  const videos = contentVideos
-    .filter((v) => v.platform === platform)
-    .sort((a, b) => b.views - a.views);
-  detailsTitle.textContent = 'Контент';
-  entityName.textContent = platform === 'tiktok' ? 'TikTok' : 'YouTube';
-  metaInfo.textContent = 'Лідерборд відео за переглядами (більше -> вище)';
-  renderStats([{ label: 'Кількість відео', value: String(videos.length) }]);
-  history1Title.textContent = 'Топ відео';
-  history2Title.textContent = 'Посилання на відео';
-  history1.innerHTML = videos
-    .map((v, idx) => `<li>#${idx + 1} ${v.title} — ${v.author} • ${v.views} переглядів${v.date ? ` • ${v.date}` : ''}</li>`)
-    .join('');
-  history2.innerHTML = videos
-    .map((v) => `<li><a href="${v.url}" target="_blank" rel="noopener noreferrer">Відкрити: ${v.title}</a></li>`)
-    .join('');
-}
-
-
 function showContentVideoDetails(video) {
-  selected = { type: 'content-video', id: video.url };
+  selected = { type: 'content-video', id: `${video.platform}::${video.title}` };
   detailsHint.classList.add('hidden');
   detailsContent.classList.remove('hidden');
 
@@ -471,47 +492,34 @@ function showContentVideoDetails(video) {
   metaInfo.textContent = `${video.platform === 'tiktok' ? 'TikTok' : 'YouTube'} • ${video.author}`;
   renderStats([
     { label: 'Перегляди', value: new Intl.NumberFormat('uk-UA').format(video.views) },
+    { label: 'Лайки', value: new Intl.NumberFormat('uk-UA').format(video.likes || 0) },
     { label: 'Дата', value: video.date || '—' },
   ]);
 
-  history1Title.textContent = 'Опис';
+  history1Title.textContent = 'Відео';
   history2Title.textContent = 'Посилання';
-  history1.innerHTML = `<li>${video.title} — ${video.author}</li>`;
-  history2.innerHTML = `<li><a href="${video.url}" target="_blank" rel="noopener noreferrer">Перейти до відео</a></li>`;
+  history1.innerHTML = `<li>${video.title} — ${video.views} переглядів • ${video.likes || 0} лайків</li>`;
+  history2.innerHTML = video.url ? `<li><a href="${video.url}" target="_blank" rel="noopener noreferrer">Відкрити відео</a></li>` : '<li>Посилання ще не додано</li>';
 }
 
-function showPvpPlayerDetails(player) {
-  selected = { type: 'pvp-player', id: player };
+function showContentChannelDetails(channel) {
+  selected = { type: 'content-channel', id: `${channel.platform}::${channel.name}` };
   detailsHint.classList.add('hidden');
   detailsContent.classList.remove('hidden');
 
-  const fights = pvpFights.filter((f) => f.player1 === player || f.player2 === player);
-  const stats = playerPvpStats(player);
-
-  detailsTitle.textContent = 'ПвП Профіль';
-  entityName.textContent = player;
-  metaInfo.textContent = 'Усі бої гравця в ПвП-режимі';
+  const channelVideos = contentVideos.filter((v) => v.platform === channel.platform && channel.owners.some((owner) => videoOwners(v).includes(owner))).sort((a, b) => b.views - a.views);
+  detailsTitle.textContent = 'Контент';
+  entityName.textContent = channel.name;
+  metaInfo.textContent = `${channel.platform === 'tiktok' ? 'TikTok' : 'YouTube'} канал`;
   renderStats([
-    { label: 'Перемоги', value: String(stats.wins) },
-    { label: 'Поразки', value: String(stats.losses) },
-    { label: 'Відсоток перемог', value: `${stats.rate}%` },
-    { label: 'Кількість боїв', value: String(fights.length) },
+    { label: channel.platform === 'tiktok' ? 'Слідкувачі' : 'Підписники', value: new Intl.NumberFormat('uk-UA').format(channel.followers) },
+    { label: 'Відео на сайті', value: String(channelVideos.length) },
   ]);
 
-  history1Title.textContent = 'Історія боїв';
-  history2Title.textContent = 'Результати';
-  history1.innerHTML = fights
-    .map((f) => {
-      const enemy = f.player1 === player ? f.player2 : f.player1;
-      return `<li>${f.date} — проти ${enemy}</li>`;
-    })
-    .join('') || '<li>Немає боїв</li>';
-  history2.innerHTML = fights
-    .map((f) => {
-      const result = f.winner === player ? 'Перемога' : 'Поразка';
-      return `<li>${f.date} — ${result} (переможець: ${f.winner})</li>`;
-    })
-    .join('') || '<li>Немає результатів</li>';
+  history1Title.textContent = 'Канал';
+  history2Title.textContent = 'Відео каналу';
+  history1.innerHTML = `<li>${channel.name} — ${channel.followers} ${channel.label}${channel.url ? ` • <a href="${channel.url}" target="_blank" rel="noopener noreferrer">перейти</a>` : ''}</li>`;
+  history2.innerHTML = channelVideos.map((v) => `<li>${v.title} — ${v.views} переглядів • ${v.likes || 0} лайків${v.url ? ` • <a href="${v.url}" target="_blank" rel="noopener noreferrer">дивитись</a>` : ''}</li>`).join('') || '<li>Немає відео</li>';
 }
 
 function showPvpDetails() {
@@ -561,29 +569,39 @@ function renderLeaderboard() {
     tableSubtitle.textContent = 'Натисни на рядок для повної інформації';
     rows = [{ name: 'Про сайт', value: 1, click: () => showInfoDetails(), display: 'Контакти та посилання' }];
   } else if (view === 'content') {
-    tableTitle.textContent = 'Контент'; nameHeader.textContent = 'Відео'; valueHeader.textContent = 'Перегляди';
-    tableSubtitle.textContent = `Лідерборд ${activeContentPlatform === 'tiktok' ? 'TikTok' : 'YouTube'}: більше переглядів = вище`;
-    const videos = contentVideos
-      .filter((v) => v.platform === activeContentPlatform)
-      .sort((a, b) => b.views - a.views);
-    rows = videos.map((v) => ({ name: v.title, value: v.views, click: () => showContentVideoDetails(v), display: `${new Intl.NumberFormat('uk-UA').format(v.views)}` }));
+    if (contentType === 'videos') {
+      tableTitle.textContent = 'Контент • Відео'; nameHeader.textContent = 'Відео'; valueHeader.textContent = contentSort === 'views' ? 'Перегляди' : 'Лайки';
+      tableSubtitle.textContent = `${contentPlatform === 'tiktok' ? 'TikTok' : 'YouTube'} • сортування: ${contentSort === 'views' ? 'за переглядами' : 'за лайками'}`;
+      const videos = contentVideos
+        .filter((v) => v.platform === contentPlatform)
+        .sort((a, b) => (b[contentSort] || 0) - (a[contentSort] || 0));
+      rows = videos.map((v) => ({
+        name: v.title,
+        value: v[contentSort] || 0,
+        click: () => showContentVideoDetails(v),
+        display: `${new Intl.NumberFormat('uk-UA').format(v[contentSort] || 0)}${contentSort === 'views' ? ' 👁' : ' ❤'}`,
+      }));
+    } else {
+      tableTitle.textContent = 'Контент • Канали'; nameHeader.textContent = 'Канал'; valueHeader.textContent = contentPlatform === 'tiktok' ? 'Слідкувачі' : 'Підписники';
+      tableSubtitle.textContent = `${contentPlatform === 'tiktok' ? 'TikTok' : 'YouTube'} • канали за кількістю підписників`;
+      const channels = contentChannels
+        .filter((c) => c.platform === contentPlatform)
+        .sort((a, b) => b.followers - a.followers);
+      rows = channels.map((c) => ({
+        name: c.name,
+        value: c.followers,
+        click: () => showContentChannelDetails(c),
+        display: `${new Intl.NumberFormat('uk-UA').format(c.followers)} ${c.label}`,
+      }));
+    }
   } else {
-    tableTitle.textContent = 'ПвП'; nameHeader.textContent = 'Гравець'; valueHeader.textContent = 'Winrate';
+    tableTitle.textContent = 'ПвП'; nameHeader.textContent = 'Режим'; valueHeader.textContent = 'Статус';
     tableSubtitle.textContent = 'ПвП ще в бета-версії';
-    const pvpPlayers = [...new Set(pvpFights.flatMap((f) => [f.player1, f.player2]))];
-    rows = pvpPlayers.map((player) => {
-      const stats = playerPvpStats(player);
-      const total = stats.wins + stats.losses;
-      return {
-        name: player,
-        value: stats.rate + total / 1000,
-        click: () => showPvpPlayerDetails(player),
-        display: `${stats.rate}% (${stats.wins}-${stats.losses})`,
-      };
-    });
+    rows = [{ name: 'Бої', value: pvpFights.length, click: () => showPvpDetails(), display: `${pvpFights.length}` }];
   }
 
-  setContentSwitchVisible(view === 'content');
+  setContentControlsVisible(view === 'content');
+  if (view === 'content') syncContentControlButtons();
   rows.sort((a, b) => b.value - a.value);
   leaderboardBody.innerHTML = rows.map((r, i) => `<tr class="player-row ${i === 0 ? 'top-1' : i === 1 ? 'top-2' : i === 2 ? 'top-3' : ''}"><td>${i + 1}</td><td>${r.name}</td><td>${r.display}</td></tr>`).join('');
   [...leaderboardBody.querySelectorAll('tr')].forEach((tr, i) => tr.addEventListener('click', rows[i].click));
@@ -598,13 +616,17 @@ function renderLeaderboard() {
       if (item) showSingleUpdateDetails(item);
     }
     if (selected.type === 'info') showInfoDetails();
-    if (selected.type === 'content') showContentPlatformDetails(selected.id);
     if (selected.type === 'content-video') {
-      const video = contentVideos.find((v) => v.url === selected.id);
+      const [platform, title] = selected.id.split('::');
+      const video = contentVideos.find((v) => v.platform === platform && v.title === title);
       if (video) showContentVideoDetails(video);
     }
+    if (selected.type === 'content-channel') {
+      const [platform, name] = selected.id.split('::');
+      const channel = contentChannels.find((c) => c.platform === platform && c.name === name);
+      if (channel) showContentChannelDetails(channel);
+    }
     if (selected.type === 'pvp') showPvpDetails();
-    if (selected.type === 'pvp-player') showPvpPlayerDetails(selected.id);
   }
 }
 
@@ -613,17 +635,35 @@ function init() {
   dateSelect.value = latestDate;
   dateSelect.addEventListener('change', renderLeaderboard);
 
-  contentTikTok.addEventListener('click', () => {
-    if (view !== 'content') return;
-    setActiveContentPlatform('tiktok');
-    showContentPlatformDetails('tiktok');
+
+  contentPlatformTikTok.addEventListener('click', () => {
+    contentPlatform = 'tiktok';
+    selected = null;
     renderLeaderboard();
   });
-
-  contentYouTube.addEventListener('click', () => {
-    if (view !== 'content') return;
-    setActiveContentPlatform('youtube');
-    showContentPlatformDetails('youtube');
+  contentPlatformYouTube.addEventListener('click', () => {
+    contentPlatform = 'youtube';
+    selected = null;
+    renderLeaderboard();
+  });
+  contentTypeVideos.addEventListener('click', () => {
+    contentType = 'videos';
+    selected = null;
+    renderLeaderboard();
+  });
+  contentTypeChannels.addEventListener('click', () => {
+    contentType = 'channels';
+    selected = null;
+    renderLeaderboard();
+  });
+  contentSortViews.addEventListener('click', () => {
+    contentSort = 'views';
+    selected = null;
+    renderLeaderboard();
+  });
+  contentSortLikes.addEventListener('click', () => {
+    contentSort = 'likes';
+    selected = null;
     renderLeaderboard();
   });
 
@@ -631,13 +671,6 @@ function init() {
     tabs.forEach((t) => t.classList.remove('active'));
     tab.classList.add('active');
     view = tab.dataset.view;
-    if (view === 'content') {
-      setActiveContentPlatform(activeContentPlatform);
-      showContentPlatformDetails(activeContentPlatform);
-    }
-    if (view === 'pvp') {
-      showPvpDetails();
-    }
     refreshDateSelect();
     renderLeaderboard();
   }));
