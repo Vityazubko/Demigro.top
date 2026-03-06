@@ -720,6 +720,3 @@ function init() {
 }
 
 init();
-}
-
-init();
