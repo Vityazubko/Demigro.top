@@ -8,10 +8,10 @@ const snapshots = [
   { date: '2025-02-27', players: { Vityappro11: 805884, Varenyk: 636068, Paolo_Fermer: 624253, edazfetg4ooo: 526361, 'wontz': 304418, kasikm1: 169968, aboba2032: 155349, '07_YM': 141670, belui228: 80000, lukyan187: 79024, hipoma: 68863, treaforik: 10737, Vortex1k: 40000, Nazar3321: 32000, ForteCa228: 25682, jtx_by: 25000, '05LONE12': 25000, BEFF: 10781, m0NESY: 10000, kampys231231: 10000, FairDemonYT: 7726, SIGMA: 3147, Varenyk228: 2100, GGlolick: 46 }, play: {} },
   { date: '2025-02-28', players: { Vityappro11: 913082, edazfetg4ooo: 670241, Varenyk: 636068, Paolo_Fermer: 522002, treaforik: 333659, 'wontz': 304418, aboba2032: 184845, kasikm1: 169968, '07_YM': 141670, lukyan187: 135042, belui228: 80000, hipoma: 68863, Vortex1k: 40000, Nazar3321: 32000, ForteCa228: 25682, jtx_by: 25000, '05LONE12': 25000, m0NESY: 10000, kampys231231: 10000, BEFF: 8845, FairDemonYT: 7726, SIGMA: 3147, Varenyk228: 2100, GGlolick: 46 }, play: {} },
   { date: '2025-03-01', players: { Vityappro11: 1017196, Varenyk: 636068, treaforik: 327585, 'wontz': 304418, aboba2032: 184845, kasikm1: 169968, edazfetg4ooo: 155992, '07_YM': 141670, lukyan187: 135042, belui228: 80000, ForteCa228: 79682, hipoma: 68863, Vortex1k: 40000, Nazar3321: 32000, jtx_by: 25000, '05LONE12': 25000, Paolo_Fermer: 22669, m0NESY: 10000, maksyarosh: 10000, kampys231231: 10000, kostya2103: 9175, BEFF: 8845, FairDemonYT: 7726, SIGMA: 3478, Varenyk228: 2100, GGlolick: 46 }, play: {} },
-  { date: '2025-03-02', players: { Vityappro11: 1017513, Varenyk: 636068, treaforik: 327585, 'wontz': 304418, aboba2032: 184845, kasikm1: 169968, edazfetg4ooo: 155992, '07_YM': 141670, lukyan187: 135042, belui228: 80000, ForteCa228: 79682, hipoma: 68863, Vortex1k: 40000, Nazar3321: 32000, jtx_by: 25000, '05LONE12': 25000, Paolo_Fermer: 22669, m0NESY: 10000, maksyarosh: 10000, kampys231231: 10000, kostya2103: 9175, BEFF: 8845, FairDemonYT: 7726, SIGMA: 3478, Varenyk228: 2100, GGlolick: 46 }, play: { maksik_paksik: 4881, edazfetg4ooo: 2458, PravyiNosok777: 1581, ForteCa228: 1534, treaforik: 1281, Paolo_Fermer: 1132, Vityappro11: 1087, Varenyk: 864, hipoma: 736, lukyan187: 596 } },
-  { date: '2025-03-03', players: { Vityappro11: 1023513, Varenyk: 636068, treaforik: 326443, 'wontz': 304418, aboba2032: 184845, kasikm1: 169968, '07_YM': 141670, lukyan187: 135042, belui228: 80000, ForteCa228: 79682, hipoma: 68863, Vortex1k: 40000, Nazar3321: 32000, jtx_by: 25000, '05LONE12': 25000, Paolo_Fermer: 22669, m0NESY: 10000, maksyarosh: 10000, kampys231231: 10000, kostya2103: 9175, BEFF: 8845, FairDemonYT: 7726, SIGMA: 3478, Varenyk228: 2100, GGlolick: 46, edazfetg4ooo: 11 }, play: { maksik_paksik: 4881, edazfetg4ooo: 2478, PravyiNosok777: 1581, ForteCa228: 1534, treaforik: 1284, Paolo_Fermer: 1137, Vityappro11: 1094, Varenyk: 864, hipoma: 741, lukyan187: 596 } },
-  { date: '2025-03-04', players: { Vityappro11: 1043995, Varenyk: 636068, treaforik: 325737, 'wontz': 304418, aboba2032: 184845, kasikm1: 169968, '07_YM': 148734, lukyan187: 135042, belui228: 80000, ForteCa228: 79682, hipoma: 68863, Vortex1k: 40000, Nazar3321: 32000, jtx_by: 25000, '05LONE12': 25000, Paolo_Fermer: 22669, m0NESY: 10000, maksyarosh: 10000, kampys231231: 10000, kostya2103: 9175, BEFF: 8845, FairDemonYT: 7726, SIGMA: 3478, Varenyk228: 2100, GGlolick: 46, edazfetg4ooo: 33 }, play: { maksik_paksik: 4899, edazfetg4ooo: 2484, '07_YM': 1784, PravyiNosok777: 1581, ForteCa228: 1534, treaforik: 1294, Vityappro11: 1147, Paolo_Fermer: 1137, Varenyk: 864, hipoma: 742 } },
-  { date: '2025-03-05', players: { Vityappro11: 1063338, Varenyk: 636068, treaforik: 325737, 'wontz': 304418, aboba2032: 184845, kasikm1: 169968, '07_YM': 148734, lukyan187: 135042, belui228: 80000, ForteCa228: 84682, hipoma: 68863, Vortex1k: 40000, Nazar3321: 32000, jtx_by: 25000, '05LONE12': 25000, Paolo_Fermer: 22669, m0NESY: 10000, maksyarosh: 10000, kampys231231: 10000, kostya2103: 9175, BEFF: 8845, FairDemonYT: 7726, SIGMA: 3478, Varenyk228: 2100, GGlolick: 46, edazfetg4ooo: 2671 }, play: { maksik_paksik: 5165, edazfetg4ooo: 2493, '07_YM': 1784, PravyiNosok777: 1581, ForteCa228: 1770, treaforik: 1299, Vityappro11: 1240, Paolo_Fermer: 1138, Varenyk: 864, hipoma: 743 } },
+  { date: '2025-03-02', players: { Vityappro11: 1017513, Varenyk: 636068, treaforik: 327585, 'wontz': 304418, aboba2032: 184845, kasikm1: 169968, edazfetg4ooo: 155992, '07_YM': 141670, lukyan187: 135042, belui228: 80000, ForteCa228: 79682, hipoma: 68863, Vortex1k: 40000, Nazar3321: 32000, jtx_by: 25000, '05LONE12': 25000, Paolo_Fermer: 22669, m0NESY: 10000, maksyarosh: 10000, kampys231231: 10000, kostya2103: 9175, BEFF: 8845, FairDemonYT: 7726, SIGMA: 3478, Varenyk228: 2100, GGlolick: 46 }, play: { maksik_paksik7: 4881, edazfetg4ooo: 2458, PravyiNosok777: 1581, ForteCa228: 1534, treaforik: 1281, Paolo_Fermer: 1132, Vityappro11: 1087, Varenyk: 864, hipoma: 736, lukyan187: 596 } },
+  { date: '2025-03-03', players: { Vityappro11: 1023513, Varenyk: 636068, treaforik: 326443, 'wontz': 304418, aboba2032: 184845, kasikm1: 169968, '07_YM': 141670, lukyan187: 135042, belui228: 80000, ForteCa228: 79682, hipoma: 68863, Vortex1k: 40000, Nazar3321: 32000, jtx_by: 25000, '05LONE12': 25000, Paolo_Fermer: 22669, m0NESY: 10000, maksyarosh: 10000, kampys231231: 10000, kostya2103: 9175, BEFF: 8845, FairDemonYT: 7726, SIGMA: 3478, Varenyk228: 2100, GGlolick: 46, edazfetg4ooo: 11 }, play: { maksik_paksik7: 4881, edazfetg4ooo: 2478, PravyiNosok777: 1581, ForteCa228: 1534, treaforik: 1284, Paolo_Fermer: 1137, Vityappro11: 1094, Varenyk: 864, hipoma: 741, lukyan187: 596 } },
+  { date: '2025-03-04', players: { Vityappro11: 1043995, Varenyk: 636068, treaforik: 325737, 'wontz': 304418, aboba2032: 184845, kasikm1: 169968, '07_YM': 148734, lukyan187: 135042, belui228: 80000, ForteCa228: 79682, hipoma: 68863, Vortex1k: 40000, Nazar3321: 32000, jtx_by: 25000, '05LONE12': 25000, Paolo_Fermer: 22669, m0NESY: 10000, maksyarosh: 10000, kampys231231: 10000, kostya2103: 9175, BEFF: 8845, FairDemonYT: 7726, SIGMA: 3478, Varenyk228: 2100, GGlolick: 46, edazfetg4ooo: 33 }, play: { maksik_paksik7: 4899, edazfetg4ooo: 2484, '07_YM': 1784, PravyiNosok777: 1581, ForteCa228: 1534, treaforik: 1294, Vityappro11: 1147, Paolo_Fermer: 1137, Varenyk: 864, hipoma: 742 } },
+  { date: '2025-03-05', players: { Vityappro11: 1063338, Varenyk: 636068, treaforik: 325737, 'wontz': 304418, aboba2032: 184845, kasikm1: 169968, '07_YM': 148734, lukyan187: 135042, belui228: 80000, ForteCa228: 84682, hipoma: 68863, Vortex1k: 40000, Nazar3321: 32000, jtx_by: 25000, '05LONE12': 25000, Paolo_Fermer: 22669, m0NESY: 10000, maksyarosh: 10000, kampys231231: 10000, kostya2103: 9175, BEFF: 8845, FairDemonYT: 7726, SIGMA: 3478, Varenyk228: 2100, GGlolick: 46, edazfetg4ooo: 2671 }, play: { maksik_paksik7: 5165, edazfetg4ooo: 2493, '07_YM': 1784, PravyiNosok777: 1581, ForteCa228: 1770, treaforik: 1299, Vityappro11: 1240, Paolo_Fermer: 1138, Varenyk: 864, hipoma: 743 } },
 ];
 
 const donationByPlayer = {
@@ -19,7 +19,8 @@ const donationByPlayer = {
   ForteCa228: 'keerinam', edazfetg4ooo: 'keerinam', aboba2032: 'keerinam',
   Vityappro11: 'debryli', Varenyk: 'debryli', treaforik: 'debryli', 'wontz': 'debryli', Vortex1k: 'debryli', hipoma: 'debryli',
   kasikm1: 'GOD', jtx_by: 'GOD', Paolo_Fermer: 'GOD', kampys231231: 'GOD', FairDemonYT: 'GOD',
-  '07_YM': 'status', '05LONE12': 'status'
+  '07_YM': 'status', '05LONE12': 'status',
+  maksik_paksik7: 'ADMIN', PravyiNosok777: 'ADMIN'
 };
 
 const donationHistoryByPlayer = {
@@ -75,6 +76,34 @@ const INFO_LINES = [
   'TIKTOK: Мій канал www.tiktok.com/@vityapro132',
   'TIKTOK: Канал Макса www.tiktok.com/@maksik_paksik0',
   'IP сервера: demigro.play.ski',
+];
+
+const firstSeenOverrides = {
+  maksik_paksik7: '2025-02-14',
+  treaforik: '2025-02-14',
+  Vityappro11: '2025-02-15',
+  PravyiNosok777: '2025-02-15',
+  '07_YM': '2025-02-17',
+  ForteCa228: '2025-02-17',
+  Varenyk: '2025-02-17',
+  Varenyk228: '2025-02-17',
+  '05LONE12': '2025-02-18',
+};
+
+const contentVideos = [
+  { platform: 'tiktok', author: 'Varenyk/treaforik', title: 'Відкриття сервера', url: 'https://vt.tiktok.com/ZSud2Q6aJ/', date: '14 лютого', views: 267 },
+  { platform: 'tiktok', author: 'Varenyk/treaforik', title: 'ПвП', url: 'https://vt.tiktok.com/ZSud2u5Er/', date: '18 лютого', views: 369 },
+  { platform: 'tiktok', author: 'Varenyk/treaforik', title: 'Битва з Vortex1k', url: 'https://vt.tiktok.com/ZSud2nhMV/', date: '21 лютого', views: 207 },
+  { platform: 'tiktok', author: 'Varenyk/treaforik', title: 'Топ 1 сервера', url: 'https://vt.tiktok.com/ZSud2shgW/', date: '21 лютого', views: 310 },
+  { platform: 'tiktok', author: 'Varenyk/treaforik', title: 'Битва з FairDemonYT', url: 'https://vt.tiktok.com/ZSudjdED7/', date: '22 лютого', views: 221 },
+  { platform: 'tiktok', author: 'Vityappro11', title: 'Вбиваю Ендер Дракона на Деміґро', url: 'https://vt.tiktok.com/ZSudjkrrn/', date: '11 вересня', views: 0 },
+  { platform: 'tiktok', author: 'Vityappro11', title: 'AKSELEND vs DEMIGRO', url: 'https://vt.tiktok.com/ZSudjtwVQ/', date: '', views: 243 },
+  { platform: 'youtube', author: 'Vityappro11', title: 'Вбиваю Ендер Дракона на Демігро', url: 'https://youtube.com/shorts/hsXJGZhCAs8?si=ZFe9-hOGMZrwe1Sz', date: '11 вересня', views: 344 },
+  { platform: 'youtube', author: 'Vityappro11', title: 'AKSELEND vs DEMIGRO', url: 'https://youtube.com/shorts/KWamPGCoPsg?si=fdI65BANOtvFekP4', date: '22 листопада', views: 1598 },
+];
+
+const pvpFights = [
+  { date: '5 березня', player1: 'treaforik', player2: 'kasikm1', winner: 'kasikm1' },
 ];
 
 const manualLastSeen = { Varenyk: '2025-03-02', ForteCa228: '2025-03-02', kasikm1: '2025-03-01' };
@@ -217,6 +246,7 @@ function detectLastSeen(player) {
 }
 
 function firstSeenDate(player) {
+  if (firstSeenOverrides[player]) return firstSeenOverrides[player];
   return snapshots.find((s) => s.players[player] !== undefined || s.play[player] !== undefined)?.date || null;
 }
 
@@ -229,6 +259,20 @@ function bestRankInfo(player) {
     if (!best || r < best.rank) best = { rank: r, date: s.date };
   }
   return best;
+}
+
+function playerPvpStats(player) {
+  let wins = 0;
+  let losses = 0;
+  for (const f of pvpFights) {
+    if (f.player1 === player || f.player2 === player) {
+      if (f.winner === player) wins += 1;
+      else losses += 1;
+    }
+  }
+  const total = wins + losses;
+  const rate = total ? Math.round((wins / total) * 100) : 0;
+  return { wins, losses, rate };
 }
 
 function showPlayerDetails(player) {
@@ -245,6 +289,7 @@ function showPlayerDetails(player) {
   const currentBalance = getSnapshot(date).players[player] ?? 0;
   const firstSeen = firstSeenDate(player);
   const best = bestRankInfo(player);
+  const pvp = playerPvpStats(player);
 
   detailsTitle.textContent = 'Профіль гравця';
   entityName.textContent = player;
@@ -256,6 +301,7 @@ function showPlayerDetails(player) {
     { label: 'Найвище місце', value: best ? `#${best.rank} (${dateLabel(best.date)})` : '—' },
     { label: 'Останній раз в мережі', value: detectLastSeen(player) },
     { label: 'Час на Сервері', value: playHistory.at(-1) ? formatPlay(playHistory.at(-1).value) : '—' },
+    { label: 'ПвП', value: `${pvp.wins} перемог / ${pvp.losses} поразок (${pvp.rate}% winrate)` },
   ]);
 
   history1Title.textContent = 'Історія балансу (місце та зміна)';
@@ -359,8 +405,9 @@ function showUpdatesDetails() {
   renderStats([{ label: 'Кількість етапів', value: String(serverUpdates.length) }]);
   history1Title.textContent = 'Етапи';
   history2Title.textContent = 'Деталі';
-  history1.innerHTML = serverUpdates.map((u) => `<li>${u.title} (${u.period})</li>`).join('');
-  history2.innerHTML = serverUpdates.map((u) => `<li><strong>${u.title}</strong>: ${u.items.join(' • ')}</li>`).join('');
+  const ordered = [...serverUpdates].reverse();
+  history1.innerHTML = ordered.map((u) => `<li>${u.title} (${u.period})</li>`).join('');
+  history2.innerHTML = ordered.map((u) => `<li><strong>${u.title}</strong>: ${u.items.join(' • ')}</li>`).join('');
 }
 
 function showInfoDetails() {
@@ -375,6 +422,37 @@ function showInfoDetails() {
   history2Title.textContent = 'Соцмережі';
   history1.innerHTML = INFO_LINES.slice(0, 4).map((x) => `<li>${x}</li>`).join('');
   history2.innerHTML = INFO_LINES.slice(4).map((x) => `<li>${x}</li>`).join('');
+}
+
+function showContentPlatformDetails(platform) {
+  selected = { type: 'content', id: platform };
+  detailsHint.classList.add('hidden');
+  detailsContent.classList.remove('hidden');
+  const videos = contentVideos
+    .filter((v) => v.platform === platform)
+    .sort((a, b) => b.views - a.views);
+  detailsTitle.textContent = 'Контент';
+  entityName.textContent = platform === 'tiktok' ? 'TikTok' : 'YouTube';
+  metaInfo.textContent = 'Відео відсортовані за переглядами (більше -> вище)';
+  renderStats([{ label: 'Кількість відео', value: String(videos.length) }]);
+  history1Title.textContent = 'Відео';
+  history2Title.textContent = 'Посилання';
+  history1.innerHTML = videos.map((v) => `<li>${v.title} — ${v.author} • ${v.views} переглядів</li>`).join('');
+  history2.innerHTML = videos.map((v) => `<li>${v.url}${v.date ? ` • ${v.date}` : ''}</li>`).join('');
+}
+
+function showPvpDetails() {
+  selected = { type: 'pvp', id: 'pvp' };
+  detailsHint.classList.add('hidden');
+  detailsContent.classList.remove('hidden');
+  detailsTitle.textContent = 'ПвП';
+  entityName.textContent = 'ПвП-статистика сервера';
+  metaInfo.textContent = 'ПвП ще в бета-версії, бо був лише один бій.';
+  renderStats([{ label: 'Кількість боїв', value: String(pvpFights.length) }]);
+  history1Title.textContent = 'Бої';
+  history2Title.textContent = 'Результати';
+  history1.innerHTML = pvpFights.map((f) => `<li>${f.date}: ${f.player1} vs ${f.player2}</li>`).join('');
+  history2.innerHTML = pvpFights.map((f) => `<li>Переможець: ${f.winner}</li>`).join('');
 }
 
 function renderLeaderboard() {
@@ -397,17 +475,29 @@ function renderLeaderboard() {
     rows = visibleClans.map((c) => ({ name: c, value: clanBalanceAtDate(c, date), click: () => showClanDetails(c), display: formatCurrency(clanBalanceAtDate(c, date)) }));
   } else if (view === 'donates') {
     tableTitle.textContent = 'Топ Донатів'; nameHeader.textContent = 'Група'; valueHeader.textContent = 'Баланс групи';
-    tableSubtitle.textContent = `Без невизначених груп • ${dateLabel(date)} • Всього на сервері: ${formatCurrency(totalMoneyAtDate(date))}`;
-    const groups = [...new Set(Object.keys(snap.players).map((p) => donationOfAtDate(p, date)))];
+    tableSubtitle.textContent = `${dateLabel(date)} • Всього на сервері: ${formatCurrency(totalMoneyAtDate(date))}`;
+    const groups = [...new Set(Object.keys(snap.players).map((p) => donationOfAtDate(p, date)))].filter((g) => g !== 'ADMIN');
     rows = groups.map((d) => ({ name: d, value: donationBalanceAtDate(d, date), click: () => showDonateDetails(d), display: formatCurrency(donationBalanceAtDate(d, date)) }));
   } else if (view === 'updates') {
     tableTitle.textContent = 'Оновлення сервера'; nameHeader.textContent = 'Етап'; valueHeader.textContent = 'Період';
     tableSubtitle.textContent = 'Натисни на етап для деталей';
-    rows = serverUpdates.map((u, i) => ({ name: u.title, value: serverUpdates.length - i, click: () => showSingleUpdateDetails(u), display: u.period }));
-  } else {
+    const ordered = [...serverUpdates].reverse();
+    rows = ordered.map((u, i) => ({ name: u.title, value: ordered.length - i, click: () => showSingleUpdateDetails(u), display: u.period }));
+  } else if (view === 'info') {
     tableTitle.textContent = 'Інформація'; nameHeader.textContent = 'Розділ'; valueHeader.textContent = 'Дані';
     tableSubtitle.textContent = 'Натисни на рядок для повної інформації';
     rows = [{ name: 'Про сайт', value: 1, click: () => showInfoDetails(), display: 'Контакти та посилання' }];
+  } else if (view === 'content') {
+    tableTitle.textContent = 'Контент'; nameHeader.textContent = 'Платформа'; valueHeader.textContent = 'Відео';
+    tableSubtitle.textContent = 'Переключайся між TikTok і YouTube';
+    rows = [
+      { name: 'TikTok', value: contentVideos.filter((v) => v.platform === 'tiktok').length, click: () => showContentPlatformDetails('tiktok'), display: `${contentVideos.filter((v) => v.platform === 'tiktok').length}` },
+      { name: 'YouTube', value: contentVideos.filter((v) => v.platform === 'youtube').length, click: () => showContentPlatformDetails('youtube'), display: `${contentVideos.filter((v) => v.platform === 'youtube').length}` },
+    ];
+  } else {
+    tableTitle.textContent = 'ПвП'; nameHeader.textContent = 'Режим'; valueHeader.textContent = 'Статус';
+    tableSubtitle.textContent = 'ПвП ще в бета-версії';
+    rows = [{ name: 'Бої', value: pvpFights.length, click: () => showPvpDetails(), display: `${pvpFights.length}` }];
   }
 
   rows.sort((a, b) => b.value - a.value);
@@ -424,6 +514,8 @@ function renderLeaderboard() {
       if (item) showSingleUpdateDetails(item);
     }
     if (selected.type === 'info') showInfoDetails();
+    if (selected.type === 'content') showContentPlatformDetails(selected.id);
+    if (selected.type === 'pvp') showPvpDetails();
   }
 }
 
@@ -441,6 +533,9 @@ function init() {
   }));
 
   renderLeaderboard();
+}
+
+init();
 }
 
 init();
