@@ -118,6 +118,7 @@ const pvpFights = [
 const manualLastSeen = { Varenyk: '2025-03-02', ForteCa228: '2025-03-02', kasikm1: '2025-03-01' };
 
 const dateSelect = document.getElementById('dateSelect');
+const dateSelectWrap = document.getElementById('dateSelectWrap');
 const leaderboardBody = document.getElementById('leaderboardBody');
 const tableTitle = document.getElementById('tableTitle');
 const tableSubtitle = document.getElementById('tableSubtitle');
@@ -134,6 +135,8 @@ const history1Title = document.getElementById('history1Title');
 const history2Title = document.getElementById('history2Title');
 const history1 = document.getElementById('history1');
 const history2 = document.getElementById('history2');
+const history3Title = document.getElementById('history3Title');
+const history3 = document.getElementById('history3');
 const contentControls = document.getElementById('contentControls');
 const contentPlatformTikTok = document.getElementById('contentPlatformTikTok');
 const contentPlatformYouTube = document.getElementById('contentPlatformYouTube');
@@ -177,6 +180,7 @@ function daysDiffInclusive(start, end) {
 function allowedDatesForView(v) {
   if (v === 'play') return dates.filter((d) => d >= '2025-03-02' && d <= '2025-03-05');
   if (v === 'clans') return dates.filter((d) => d >= '2025-02-22');
+  if (v === 'content') return ['2025-03-05'];
   return dates;
 }
 
@@ -191,6 +195,11 @@ function refreshDateSelect() {
     dateSelect.appendChild(opt);
   });
   dateSelect.value = allowed.includes(prev) ? prev : allowed[allowed.length - 1];
+}
+
+function setDateSelectVisibility() {
+  const hide = ['updates', 'info', 'pvp'].includes(view);
+  dateSelectWrap.classList.toggle('hidden', hide);
 }
 
 function setContentControlsVisible(visible) {
@@ -353,6 +362,9 @@ function showPlayerDetails(player) {
 
   history1Title.textContent = 'Історія балансу (місце та зміна)';
   history2Title.textContent = 'Історія Top Play (місце та зміна)';
+  history3Title.textContent = 'Контент гравця';
+  history3Title.classList.remove('hidden');
+  history3.classList.remove('hidden');
 
   const balanceRows = balanceHistory.map((row, idx) => {
     const ranksNow = rankMapForDate(getSnapshot(row.date).players);
@@ -375,18 +387,25 @@ function showPlayerDetails(player) {
   const videoRows = videos.map((v) => `<li>${v.platform === 'tiktok' ? 'TikTok' : 'YouTube'} • ${v.title} — ${v.views} переглядів, ${v.likes} лайків${v.url ? ` • <a href="${v.url}" target="_blank" rel="noopener noreferrer">дивитись</a>` : ''}</li>`);
 
   history1.innerHTML = balanceRows.join('') || '<li>Немає даних</li>';
-  history2.innerHTML = [
-    ...(playRows.length ? playRows : ['<li>Немає Top Play даних</li>']),
-    '<li><strong>— Контент гравця —</strong></li>',
+  history2.innerHTML = playRows.join('') || '<li>Немає Top Play даних</li>';
+  history3.innerHTML = [
     ...(channelRows.length ? channelRows : ['<li>Каналів не знайдено</li>']),
     ...(videoRows.length ? videoRows : ['<li>Відео не знайдено</li>']),
   ].join('');
+}
+
+
+function hideThirdHistoryBlock() {
+  history3Title.classList.add('hidden');
+  history3.classList.add('hidden');
+  history3.innerHTML = '';
 }
 
 function showClanDetails(clanName) {
   selected = { type: 'clan', id: clanName };
   detailsHint.classList.add('hidden');
   detailsContent.classList.remove('hidden');
+  hideThirdHistoryBlock();
 
   const date = dateSelect.value;
   const membersNow = getClanMembersAtDate(clanName, date);
@@ -417,6 +436,7 @@ function showDonateDetails(group) {
   selected = { type: 'donate', id: group };
   detailsHint.classList.add('hidden');
   detailsContent.classList.remove('hidden');
+  hideThirdHistoryBlock();
 
   const date = dateSelect.value;
   const players = Object.keys(getSnapshot(date).players).filter((p) => donationOfAtDate(p, date) === group);
@@ -440,6 +460,7 @@ function showSingleUpdateDetails(update) {
   selected = { type: 'update-item', id: update.title };
   detailsHint.classList.add('hidden');
   detailsContent.classList.remove('hidden');
+  hideThirdHistoryBlock();
   detailsTitle.textContent = 'Оновлення сервера';
   entityName.textContent = update.title;
   metaInfo.textContent = `${update.period} • Тривалість: ${daysDiffInclusive(update.start, update.end)} днів`;
@@ -457,6 +478,7 @@ function showUpdatesDetails() {
   selected = { type: 'updates', id: 'updates' };
   detailsHint.classList.add('hidden');
   detailsContent.classList.remove('hidden');
+  hideThirdHistoryBlock();
   detailsTitle.textContent = 'Оновлення сервера';
   entityName.textContent = 'Хронологія оновлень';
   metaInfo.textContent = 'Офіційні етапи розвитку сервера';
@@ -472,6 +494,7 @@ function showInfoDetails() {
   selected = { type: 'info', id: 'info' };
   detailsHint.classList.add('hidden');
   detailsContent.classList.remove('hidden');
+  hideThirdHistoryBlock();
   detailsTitle.textContent = 'Інформація';
   entityName.textContent = 'Про цей сайт';
   metaInfo.textContent = 'Контакти та посилання';
@@ -486,6 +509,7 @@ function showContentVideoDetails(video) {
   selected = { type: 'content-video', id: `${video.platform}::${video.title}` };
   detailsHint.classList.add('hidden');
   detailsContent.classList.remove('hidden');
+  hideThirdHistoryBlock();
 
   detailsTitle.textContent = 'Контент';
   entityName.textContent = video.title;
@@ -506,6 +530,7 @@ function showContentChannelDetails(channel) {
   selected = { type: 'content-channel', id: `${channel.platform}::${channel.name}` };
   detailsHint.classList.add('hidden');
   detailsContent.classList.remove('hidden');
+  hideThirdHistoryBlock();
 
   const channelVideos = contentVideos.filter((v) => v.platform === channel.platform && channel.owners.some((owner) => videoOwners(v).includes(owner))).sort((a, b) => b.views - a.views);
   detailsTitle.textContent = 'Контент';
@@ -526,6 +551,7 @@ function showPvpDetails() {
   selected = { type: 'pvp', id: 'pvp' };
   detailsHint.classList.add('hidden');
   detailsContent.classList.remove('hidden');
+  hideThirdHistoryBlock();
   detailsTitle.textContent = 'ПвП';
   entityName.textContent = 'ПвП-статистика сервера';
   metaInfo.textContent = 'ПвП ще в бета-версії, бо був лише один бій.';
@@ -595,11 +621,21 @@ function renderLeaderboard() {
       }));
     }
   } else {
-    tableTitle.textContent = 'ПвП'; nameHeader.textContent = 'Режим'; valueHeader.textContent = 'Статус';
+    tableTitle.textContent = 'ПвП'; nameHeader.textContent = 'ГРАВЕЦЬ'; valueHeader.textContent = 'WINRATE';
     tableSubtitle.textContent = 'ПвП ще в бета-версії';
-    rows = [{ name: 'Бої', value: pvpFights.length, click: () => showPvpDetails(), display: `${pvpFights.length}` }];
+    const pvpPlayers = [...new Set(pvpFights.flatMap((f) => [f.player1, f.player2]))];
+    rows = pvpPlayers.map((player) => {
+      const stats = playerPvpStats(player);
+      return {
+        name: player,
+        value: stats.rate,
+        click: () => showPvpDetails(),
+        display: `${stats.rate}% (${stats.wins}-${stats.losses})`,
+      };
+    });
   }
 
+  setDateSelectVisibility();
   setContentControlsVisible(view === 'content');
   if (view === 'content') syncContentControlButtons();
   rows.sort((a, b) => b.value - a.value);
@@ -671,11 +707,19 @@ function init() {
     tabs.forEach((t) => t.classList.remove('active'));
     tab.classList.add('active');
     view = tab.dataset.view;
+    if (view === 'pvp') {
+      selected = { type: 'pvp', id: 'pvp' };
+    } else if (view !== 'balance' && selected?.type === 'pvp') {
+      selected = null;
+    }
     refreshDateSelect();
     renderLeaderboard();
   }));
 
   renderLeaderboard();
+}
+
+init();
 }
 
 init();
