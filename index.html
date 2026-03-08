@@ -9,11 +9,12 @@
   <body>
     <div class="bg-glow glow-1"></div>
     <div class="bg-glow glow-2"></div>
+
     <div class="container">
       <header class="hero card">
         <p class="hero-badge">Demigro Analytics</p>
         <h1>Рейтинги гравців, кланів і донатів</h1>
-        <p class="hero-subtitle">Сучасна панель перегляду статистики за 21 лютого — 7 березня.</p>
+        <p class="hero-subtitle" id="heroSubtitle">Сучасна панель перегляду статистики за 21 лютого — 4 березня.</p>
       </header>
 
       <section class="controls card">
@@ -78,6 +79,10 @@
           <div id="detailsContent" class="hidden">
             <h3 id="entityName"></h3>
             <div id="metaInfo" class="meta"></div>
+            <div id="detailsWipeWrap" class="date-select hidden">
+              <span>Вайп у профілі</span>
+              <select id="detailsWipeSelect"></select>
+            </div>
             <div class="stats-grid" id="statsGrid"></div>
 
             <h4 id="history1Title">Історія</h4>
@@ -92,10 +97,6 @@
         </aside>
       </main>
     </div>
-
-    <script src="script.js"></script>
-  </body>
-</html>
 
     <script src="script.js"></script>
   </body>
