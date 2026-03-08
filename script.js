@@ -14,6 +14,7 @@ const snapshots = [
   { date: '2025-03-05', players: { Vityappro11: 1063338, Varenyk: 636068, treaforik: 325737, 'wontz': 304418, aboba2032: 184845, kasikm1: 169968, '07_YM': 148734, lukyan187: 135042, belui228: 80000, ForteCa228: 84682, hipoma: 68863, Vortex1k: 40000, Nazar3321: 32000, jtx_by: 25000, '05LONE12': 25000, Paolo_Fermer: 22669, m0NESY: 10000, maksyarosh: 10000, kampys231231: 10000, kostya2103: 9175, BEFF: 8845, FairDemonYT: 7726, SIGMA: 3478, Varenyk228: 2100, GGlolick: 46, edazfetg4ooo: 2671 }, play: { maksik_paksik7: 5165, edazfetg4ooo: 2493, '07_YM': 1784, PravyiNosok777: 1581, ForteCa228: 1770, treaforik: 1299, Vityappro11: 1240, Paolo_Fermer: 1138, Varenyk: 864, hipoma: 743 } },
   { date: '2025-03-06', players: { Vityappro11: 1148491, Varenyk: 636068, treaforik: 326169, 'wontz': 304418, aboba2032: 184738, kasikm1: 169968, '07_YM': 148856, lukyan187: 135042, belui228: 80000, ForteCa228: 104682, hipoma: 68863, Vortex1k: 40000, Nazar3321: 32000, jtx_by: 25000, '05LONE12': 25000, Paolo_Fermer: 22669, m0NESY: 10000, maksyarosh: 10000, kampys231231: 10000, kostya2103: 9175, BEFF: 9087, FairDemonYT: 7726, SIGMA: 3478, Varenyk228: 2100, GGlolick: 46, edazfetg4ooo: 8602 }, play: { maksik_paksik7: 5377, edazfetg4ooo: 2565, '07_YM': 1946, PravyiNosok777: 1600, ForteCa228: 1920, treaforik: 1302, Vityappro11: 1496, Paolo_Fermer: 1138, Varenyk: 864, hipoma: 744 } },
   { date: '2025-03-07', players: { Vityappro11: 107255, ForteCa228: 61482, treaforik: 39546, '07_YM': 11640, edazfetg4ooo: 2222, BEFF: 824, Varenyk: 733 }, play: {} },
+  { date: '2025-03-08', players: { Vityappro11: 362621, ForteCa228: 336032, TIKTOK_BMW_EDIT: 187566, treaforik: 55145, edazfetg4ooo: 38314, Varenyk: 33203, '07_YM': 11640, BEFF: 824, hirtir: 352 }, play: { maksik_paksik7: 1084, ForteCa228: 637, TIKTOK_BMW_EDIT: 397, edazfetg4ooo: 354, Vityappro11: 223, '07_YM': 121, treaforik: 110 } },
 ];
 
 const donationByPlayer = {
@@ -22,6 +23,7 @@ const donationByPlayer = {
   Vityappro11: 'debryli', Varenyk: 'debryli', treaforik: 'debryli', 'wontz': 'debryli', Vortex1k: 'debryli', hipoma: 'debryli',
   kasikm1: 'GOD', jtx_by: 'GOD', Paolo_Fermer: 'GOD', kampys231231: 'GOD', FairDemonYT: 'GOD',
   '07_YM': 'status', '05LONE12': 'status',
+  TIKTOK_BMW_EDIT: 'CONTENT MAKER',
   maksik_paksik7: 'ADMIN', PravyiNosok777: 'ADMIN'
 };
 
@@ -31,13 +33,19 @@ const donationHistoryByPlayer = {
     { from: '2025-02-21', donation: 'гравець' },
     { from: '2025-02-27', donation: 'debryli' },
   ],
-  edazfetg4ooo: [
-    { from: '2025-02-21', donation: 'keerinam' },
-    { from: '2025-03-05', donation: 'prista' },
-  ],
   Vityappro11: [
     { from: '2025-02-21', donation: 'debryli' },
     { from: '2025-03-05', donation: 'GOD' },
+    { from: '2025-03-08', donation: 'CONTENT MAKER' },
+  ],
+  ForteCa228: [
+    { from: '2025-02-21', donation: 'keerinam' },
+    { from: '2025-03-08', donation: 'DM+' },
+  ],
+  edazfetg4ooo: [
+    { from: '2025-02-21', donation: 'keerinam' },
+    { from: '2025-03-05', donation: 'prista' },
+    { from: '2025-03-08', donation: 'DM+' },
   ],
 };
 
@@ -50,14 +58,30 @@ const clans = {
       { date: '2025-02-26', player: 'SIGMA', role: 'senior', action: 'join' },
       { date: '2025-03-07', player: 'lukyan187', role: 'senior', action: 'leave' },
       { date: '2025-03-07', player: 'SIGMA', role: 'senior', action: 'leave' },
+      { date: '2025-03-08', player: 'lukyan187', role: 'senior', action: 'join' },
     ],
   },
   treaf: {
     createdAt: '2025-02-25',
+    deletedAt: '2025-03-08',
     events: [
       { date: '2025-02-25', player: 'treaforik', role: 'leader', action: 'join' },
       { date: '2025-03-05', player: 'jtx_by', role: 'member', action: 'join' },
       { date: '2025-03-07', player: 'jtx_by', role: 'member', action: 'leave' },
+      { date: '2025-03-08', player: 'treaforik', role: 'leader', action: 'leave' },
+    ],
+  },
+  bitwi: {
+    createdAt: '2025-03-08',
+    events: [
+      { date: '2025-03-08', player: 'ForteCa228', role: 'leader', action: 'join' },
+      { date: '2025-03-08', player: 'treaforik', role: 'member', action: 'join' },
+    ],
+  },
+  pipki: {
+    createdAt: '2025-03-08',
+    events: [
+      { date: '2025-03-08', player: 'edazfetg4ooo', role: 'leader', action: 'join' },
     ],
   },
 };
@@ -69,7 +93,7 @@ const serverUpdates = [
   { title: 'ОСІННІЙ ВАЙП', period: '31 серпня - 30 вересня', start: '2025-08-31', end: '2025-09-30', items: ['Переробили спавн', '9 вересня добавили сферу Останнього'] },
   { title: 'ПОВЕРНЕННЯ ДЕМІГРО', period: '25 січня - 14 лютого', start: '2026-01-25', end: '2026-02-14', items: ['Добавили Контейнер PTE'] },
   { title: 'НОВА ЕРА', period: '21 лютого - 7 березня', start: '2025-02-21', end: '2025-03-07', items: ['Переробка сервера на новому хостингу', '21 лютого добавили /site, Клани, Кейс Талісманів', '22 лютого добавили Призи,Купця та Чарівника', '25 лютого добавили новий кейс ТнТ і нові 3 вида ТнТ', '27 лютого заміна кейса ТнТ', '28 лютого добавили TAB, /report, валюту Демігрики, Топ по часу на сервері, Рівні ендер Скрині, Новий магазин, Оновлення кітів'] },
-  { title: 'ВЕСНЯНА ГРА', period: '7 березня - 1 квітня', start: '2025-03-07', end: '2025-04-01', items: ['Новий статус', 'Новий квест', 'Новий кейс', 'Новий Донат', 'Новий івент', 'Нові донат речі', 'Зміна сайту', 'Зміна цін привілегій', 'Видалення Талісмана Бога', 'Оновлення спавна', 'Оновлення ПвП арени', 'Скорборд у режимі ПвП'] },
+  { title: 'ВЕСНЯНА ГРА', period: '7 березня - 1 квітня', start: '2025-03-07', end: '2025-04-01', items: ['Новий статус', 'Новий квест', 'Новий кейс', 'Новий Донат', 'Новий івент', 'Нові донат речі', 'Зміна сайту', 'Зміна цін привілегій', 'Видалення Талісмана Бога', 'Оновлення спавна', 'Оновлення ПвП арени', 'Скорборд у режимі ПвП', '8 березня: Покращення донатів, нові клани bitwi/pipki, видалення клану treaf, вайп балансу'] },
 ];
 
 const INFO_LINES = [
@@ -122,8 +146,8 @@ const pvpFights = [
 ];
 
 const manualLastSeen = {
-  Vityappro11: '2025-03-07', ForteCa228: '2025-03-07', treaforik: '2025-03-07', '07_YM': '2025-03-07',
-  edazfetg4ooo: '2025-03-07', BEFF: '2025-03-07', Varenyk: '2025-03-07',
+  Vityappro11: '2025-03-08', ForteCa228: '2025-03-08', treaforik: '2025-03-08', '07_YM': '2025-03-08',
+  edazfetg4ooo: '2025-03-08', BEFF: '2025-03-08', Varenyk: '2025-03-08', TIKTOK_BMW_EDIT: '2025-03-08', hirtir: '2025-03-08',
   maksik_paksik7: '2025-03-07', PravyiNosok777: '2025-03-07', hipoma: '2025-03-07',
   kasikm1: '2025-03-01'
 };
@@ -225,7 +249,7 @@ function allowedDatesForView(v) {
   if (v === 'content') return ['2025-03-05'];
 
   let allowed = dates;
-  if (v === 'play') allowed = dates.filter((d) => d >= '2025-03-02' && d <= '2025-03-07');
+  if (v === 'play') allowed = dates.filter((d) => d >= '2025-03-02' && d <= '2025-03-08');
   if (v === 'clans') allowed = dates.filter((d) => d >= '2025-02-22');
   if (isTopView(v)) {
     const inWipe = new Set(datesInActiveWipe());
@@ -320,8 +344,14 @@ function positionDelta(prevRank, curRank) {
   return `↓${curRank - prevRank}`;
 }
 
+function isClanActiveAtDate(clanName, date) {
+  const clan = clans[clanName];
+  return clan.createdAt <= date && (!clan.deletedAt || date < clan.deletedAt);
+}
+
 function getClanForPlayerAtDate(player, date) {
   for (const [clanName, clan] of Object.entries(clans)) {
+    if (!isClanActiveAtDate(clanName, date)) continue;
     const event = clan.events
       .filter((e) => e.player === player && e.date <= date)
       .sort((a, b) => a.date.localeCompare(b.date))
@@ -332,6 +362,7 @@ function getClanForPlayerAtDate(player, date) {
 }
 
 function getClanMembersAtDate(clanName, date) {
+  if (!isClanActiveAtDate(clanName, date)) return [];
   const latestByPlayer = {};
   for (const e of clans[clanName].events.filter((x) => x.date <= date).sort((a, b) => a.date.localeCompare(b.date))) {
     latestByPlayer[e.player] = e;
@@ -667,17 +698,17 @@ function renderLeaderboard() {
     rows = Object.entries(snap.players).map(([n, v]) => ({ name: n, value: v, click: () => showPlayerDetails(n), display: formatCurrency(v) }));
   } else if (view === 'play') {
     tableTitle.textContent = 'Top Play'; nameHeader.textContent = 'Гравець'; valueHeader.textContent = 'Час';
-    if (date === '2025-03-07' || Object.keys(snap.play).length === 0) {
+    if ((date === '2025-03-07' && activeWipe === 'springGame') || Object.keys(snap.play).length === 0) {
       tableSubtitle.textContent = 'Нажаль на сьогодні інформації нема, спробуй подивитися топ за минулий вайп.';
       rows = [];
     } else {
-      tableSubtitle.textContent = `Доступно лише 2-7 березня • ${dateLabel(date)} • Всього на сервері: ${formatCurrency(totalMoneyAtDate(date))}`;
+      tableSubtitle.textContent = `Доступно лише 2-8 березня • ${dateLabel(date)} • Всього на сервері: ${formatCurrency(totalMoneyAtDate(date))}`;
       rows = Object.entries(snap.play).map(([n, v]) => ({ name: n, value: v, click: () => showPlayerDetails(n), display: formatPlay(v) }));
     }
   } else if (view === 'clans') {
     tableTitle.textContent = 'Топ Кланів'; nameHeader.textContent = 'Клан'; valueHeader.textContent = 'Баланс клану';
     tableSubtitle.textContent = `Доступно з 22 лютого • ${dateLabel(date)} • Всього на сервері: ${formatCurrency(totalMoneyAtDate(date))}`;
-    const visibleClans = Object.keys(clans).filter((c) => clans[c].createdAt <= date);
+    const visibleClans = Object.keys(clans).filter((c) => isClanActiveAtDate(c, date));
     rows = visibleClans.map((c) => ({ name: c, value: clanBalanceAtDate(c, date), click: () => showClanDetails(c), display: formatCurrency(clanBalanceAtDate(c, date)) }));
   } else if (view === 'donates') {
     tableTitle.textContent = 'Топ Донатів'; nameHeader.textContent = 'Група'; valueHeader.textContent = 'Баланс групи';
