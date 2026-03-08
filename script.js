@@ -121,12 +121,18 @@ const pvpFights = [
   { date: '5 березня', player1: 'treaforik', player2: 'kasikm1', winner: 'kasikm1' },
 ];
 
-const manualLastSeen = { Varenyk: '2025-03-02', ForteCa228: '2025-03-02', kasikm1: '2025-03-01' };
+const manualLastSeen = {
+  Vityappro11: '2025-03-07', ForteCa228: '2025-03-07', treaforik: '2025-03-07', '07_YM': '2025-03-07',
+  edazfetg4ooo: '2025-03-07', BEFF: '2025-03-07', Varenyk: '2025-03-07',
+  maksik_paksik7: '2025-03-07', PravyiNosok777: '2025-03-07', hipoma: '2025-03-07',
+  kasikm1: '2025-03-01'
+};
 
 const dateSelect = document.getElementById('dateSelect');
 const dateSelectWrap = document.getElementById('dateSelectWrap');
 const wipeSelect = document.getElementById('wipeSelect');
 const wipeSelectWrap = document.getElementById('wipeSelectWrap');
+const heroSubtitle = document.getElementById('heroSubtitle');
 const leaderboardBody = document.getElementById('leaderboardBody');
 const tableTitle = document.getElementById('tableTitle');
 const tableSubtitle = document.getElementById('tableSubtitle');
@@ -145,6 +151,8 @@ const history1 = document.getElementById('history1');
 const history2 = document.getElementById('history2');
 const history3Title = document.getElementById('history3Title');
 const history3 = document.getElementById('history3');
+const detailsWipeWrap = document.getElementById('detailsWipeWrap');
+const detailsWipeSelect = document.getElementById('detailsWipeSelect');
 const contentControls = document.getElementById('contentControls');
 const contentPlatformTikTok = document.getElementById('contentPlatformTikTok');
 const contentPlatformYouTube = document.getElementById('contentPlatformYouTube');
@@ -164,7 +172,7 @@ const dates = snapshots.map((s) => s.date);
 const latestDate = dates[dates.length - 1];
 
 const wipeRanges = {
-  novaEra: { label: 'Нова Ера (21 лютого - 7 березня)', start: '2025-02-21', end: '2025-03-07' },
+  novaEra: { label: 'Нова Ера (21 лютого - 7 березня)', start: '2025-02-21', end: '2025-03-06' },
   springGame: { label: 'Весняна Гра (7 березня - 1 квітня)', start: '2025-03-07', end: '2025-04-01' },
 };
 
@@ -201,6 +209,18 @@ function datesInActiveWipe() {
   return dates.filter((d) => d >= range.start && d <= range.end);
 }
 
+function snapshotsInActiveWipe() {
+  const inWipe = new Set(datesInActiveWipe());
+  return snapshots.filter((s) => inWipe.has(s.date));
+}
+
+function currentDateInActiveWipe(preferredDate = dateSelect.value) {
+  const allowed = datesInActiveWipe();
+  if (!allowed.length) return latestDate;
+  if (allowed.includes(preferredDate)) return preferredDate;
+  return allowed[allowed.length - 1];
+}
+
 function allowedDatesForView(v) {
   if (v === 'content') return ['2025-03-05'];
 
@@ -215,8 +235,11 @@ function allowedDatesForView(v) {
 }
 
 function refreshWipeSelect() {
-  wipeSelect.innerHTML = Object.entries(wipeRanges).map(([id, info]) => `<option value="${id}">${info.label}</option>`).join('');
+  const options = Object.entries(wipeRanges).map(([id, info]) => `<option value="${id}">${info.label}</option>`).join('');
+  wipeSelect.innerHTML = options;
+  detailsWipeSelect.innerHTML = options;
   wipeSelect.value = activeWipe;
+  detailsWipeSelect.value = activeWipe;
 }
 
 function refreshDateSelect() {
@@ -239,6 +262,11 @@ function setDateSelectVisibility() {
 
 function setWipeSelectVisibility() {
   wipeSelectWrap.classList.toggle('hidden', !isTopView(view));
+}
+
+function setDetailsWipeVisibility(visible) {
+  detailsWipeWrap.classList.toggle('hidden', !visible);
+  if (visible) detailsWipeSelect.value = activeWipe;
 }
 
 function setContentControlsVisible(visible) {
@@ -266,6 +294,13 @@ function getPlayerChannels(player) {
 
 function getPlayerVideos(player) {
   return contentVideos.filter((v) => videoOwners(v).includes(player));
+}
+
+function updateHeroSubtitle() {
+  const endDay = Number(latestDate.split('-')[2]);
+  if (!Number.isNaN(endDay)) {
+    heroSubtitle.textContent = `Сучасна панель перегляду статистики за 21 лютого — ${endDay} березня.`;
+  }
 }
 
 function totalMoneyAtDate(date) {
@@ -381,21 +416,29 @@ function showPlayerDetails(player) {
   selected = { type: 'player', id: player };
   detailsHint.classList.add('hidden');
   detailsContent.classList.remove('hidden');
+  setDetailsWipeVisibility(true);
 
-  const date = dateSelect.value;
+  const date = currentDateInActiveWipe(dateSelect.value);
+  const wipeSnapshots = snapshotsInActiveWipe();
   const clanInfo = getClanForPlayerAtDate(player, date);
   const group = donationOfAtDate(player, date);
-  const balanceHistory = snapshots.filter((s) => s.players[player] !== undefined).map((s) => ({ date: s.date, value: s.players[player] }));
-  const playHistory = snapshots.filter((s) => s.play[player] !== undefined).map((s) => ({ date: s.date, value: s.play[player] }));
+  const balanceHistory = wipeSnapshots.filter((s) => s.players[player] !== undefined).map((s) => ({ date: s.date, value: s.players[player] }));
+  const playHistory = wipeSnapshots.filter((s) => s.play[player] !== undefined).map((s) => ({ date: s.date, value: s.play[player] }));
   const peakBalance = balanceHistory.reduce((m, x) => (x.value > m.value ? x : m), { value: -1, date: '' });
   const currentBalance = getSnapshot(date).players[player] ?? 0;
   const firstSeen = firstSeenDate(player);
-  const best = bestRankInfo(player);
   const pvp = playerPvpStats(player);
+
+  let best = null;
+  for (const s of wipeSnapshots) {
+    if (s.players[player] === undefined) continue;
+    const r = rankMapForDate(s.players)[player];
+    if (!best || r < best.rank) best = { rank: r, date: s.date };
+  }
 
   detailsTitle.textContent = 'Профіль гравця';
   entityName.textContent = player;
-  metaInfo.textContent = `Клан: ${clanInfo.clan} • Донат: ${group}`;
+  metaInfo.textContent = `Клан: ${clanInfo.clan} • Донат: ${group} • Вайп: ${wipeRanges[activeWipe].label}`;
   renderStats([
     { label: 'Макс. баланс', value: peakBalance.value >= 0 ? `${formatCurrency(peakBalance.value)} (${dateLabel(peakBalance.date)})` : '—' },
     { label: 'Баланс', value: formatCurrency(currentBalance) },
@@ -445,6 +488,7 @@ function hideThirdHistoryBlock() {
   history3Title.classList.add('hidden');
   history3.classList.add('hidden');
   history3.innerHTML = '';
+  setDetailsWipeVisibility(false);
 }
 
 function showClanDetails(clanName) {
@@ -453,9 +497,11 @@ function showClanDetails(clanName) {
   detailsContent.classList.remove('hidden');
   hideThirdHistoryBlock();
 
-  const date = dateSelect.value;
+  setDetailsWipeVisibility(true);
+  const date = currentDateInActiveWipe(dateSelect.value);
+  const wipeDates = datesInActiveWipe();
   const membersNow = getClanMembersAtDate(clanName, date);
-  const history = dates.filter((d) => d >= clans[clanName].createdAt).map((d) => ({ date: d, value: clanBalanceAtDate(clanName, d) }));
+  const history = wipeDates.filter((d) => d >= clans[clanName].createdAt).map((d) => ({ date: d, value: clanBalanceAtDate(clanName, d) }));
 
   let latestMemberActivity = null;
   for (const m of membersNow) {
@@ -466,7 +512,7 @@ function showClanDetails(clanName) {
 
   detailsTitle.textContent = 'Профіль клану';
   entityName.textContent = clanName;
-  metaInfo.textContent = `Створено: ${dateLabel(clans[clanName].createdAt)} • Остання активність: ${latestMemberActivity ? dateLabel(latestMemberActivity) : '—'}`;
+  metaInfo.textContent = `Створено: ${dateLabel(clans[clanName].createdAt)} • Остання активність: ${latestMemberActivity ? dateLabel(latestMemberActivity) : '—'} • Вайп: ${wipeRanges[activeWipe].label}`;
   renderStats([
     { label: 'Поточний баланс клану', value: formatCurrency(clanBalanceAtDate(clanName, date)) },
     { label: 'Макс. баланс клану', value: formatCurrency(Math.max(...history.map((h) => h.value))) },
@@ -484,13 +530,15 @@ function showDonateDetails(group) {
   detailsContent.classList.remove('hidden');
   hideThirdHistoryBlock();
 
-  const date = dateSelect.value;
+  setDetailsWipeVisibility(true);
+  const date = currentDateInActiveWipe(dateSelect.value);
+  const wipeDates = datesInActiveWipe();
   const players = Object.keys(getSnapshot(date).players).filter((p) => donationOfAtDate(p, date) === group);
-  const history = dates.map((d) => ({ date: d, value: donationBalanceAtDate(group, d) }));
+  const history = wipeDates.map((d) => ({ date: d, value: donationBalanceAtDate(group, d) }));
 
   detailsTitle.textContent = 'Профіль групи';
   entityName.textContent = group;
-  metaInfo.textContent = 'Об’єднаний баланс усіх гравців цієї групи';
+  metaInfo.textContent = `Об’єднаний баланс усіх гравців цієї групи • Вайп: ${wipeRanges[activeWipe].label}`;
   renderStats([
     { label: 'Поточний баланс групи', value: formatCurrency(donationBalanceAtDate(group, date)) },
     { label: 'Макс. баланс групи', value: formatCurrency(Math.max(...history.map((h) => h.value))) },
@@ -719,14 +767,23 @@ function renderLeaderboard() {
 }
 
 function init() {
+  updateHeroSubtitle();
   refreshWipeSelect();
   refreshDateSelect();
   dateSelect.value = allowedDatesForView(view).at(-1) || latestDate;
   dateSelect.addEventListener('change', renderLeaderboard);
   wipeSelect.addEventListener('change', () => {
     activeWipe = wipeSelect.value;
+    refreshWipeSelect();
     refreshDateSelect();
     selected = null;
+    renderLeaderboard();
+  });
+
+  detailsWipeSelect.addEventListener('change', () => {
+    activeWipe = detailsWipeSelect.value;
+    refreshWipeSelect();
+    refreshDateSelect();
     renderLeaderboard();
   });
 
