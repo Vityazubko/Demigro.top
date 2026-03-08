@@ -14,7 +14,7 @@
       <header class="hero card">
         <p class="hero-badge">Demigro Analytics</p>
         <h1>Рейтинги гравців, кланів і донатів</h1>
-        <p class="hero-subtitle">Сучасна панель перегляду статистики за 21 лютого — 6 березня.</p>
+        <p class="hero-subtitle">Сучасна панель перегляду статистики за 21 лютого — 4 березня.</p>
       </header>
 
       <section class="controls card">
@@ -29,10 +29,16 @@
           <button class="tab" data-view="pvp">ПвП</button>
         </div>
 
-        <label class="date-select" id="dateSelectWrap">
-          <span>Дата</span>
-          <select id="dateSelect"></select>
-        </label>
+        <div class="selectors">
+          <label class="date-select" id="dateSelectWrap">
+            <span>Дата</span>
+            <select id="dateSelect"></select>
+          </label>
+          <label class="date-select" id="wipeSelectWrap">
+            <span>Вайп</span>
+            <select id="wipeSelect"></select>
+          </label>
+        </div>
       </section>
 
       <main class="layout">
@@ -87,6 +93,10 @@
         </aside>
       </main>
     </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
 
     <script src="script.js"></script>
   </body>
