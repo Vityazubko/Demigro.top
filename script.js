@@ -349,8 +349,28 @@ function fullStatsForPlayer(player, wipeId, platform='tiktok') {
   const allBal = snapshots
     .filter((s) => s.players[player] !== undefined)
     .map((s) => ({ date: s.date, v: s.players[player] }));
-  const currentBalanceAllTime = allBal.length ? allBal[allBal.length - 1].v : 0;
-  const xp = Math.floor(currentBalanceAllTime / 50);
+  const allPlay = snapshots
+    .filter((s) => s.play[player] !== undefined)
+    .map((s) => ({ date: s.date, v: s.play[player] }));
+
+  let earnedAllTime = 0;
+  for (let i = 1; i < allBal.length; i++) {
+    const diff = allBal[i].v - allBal[i - 1].v;
+    if (diff > 0) earnedAllTime += diff;
+  }
+
+  let playIncAllTime = 0;
+  for (let i = 1; i < allPlay.length; i++) {
+    playIncAllTime += Math.max(0, allPlay[i].v - allPlay[i - 1].v);
+  }
+
+  const fightsAllTime = pvpFights.filter((f) => f.player1 === player || f.player2 === player);
+  const winsAllTime = fightsAllTime.filter((f) => f.winner === player).length;
+  const clanJoinsAllTime = Object.values(clans)
+    .flatMap((c) => c.events)
+    .filter((e) => e.player === player && e.action === 'join').length;
+
+  const xp = Math.floor(earnedAllTime / 50) + winsAllTime * 100 + Math.floor(playIncAllTime / 5) + clanJoinsAllTime * 100;
   const thresholds = [0, 100, 150, 200, 250, 300, 400, 500, 600, 750, 1000, 1250, 1500, 1750, 2000, 2500, 5000];
   let rawLevel = 0;
   for (let i = 0; i < thresholds.length; i++) if (xp >= thresholds[i]) rawLevel = i;
