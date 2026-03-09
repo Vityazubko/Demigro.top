@@ -93,7 +93,7 @@ const serverUpdates = [
   { title: 'ОСІННІЙ ВАЙП', period: '31 серпня - 30 вересня', start: '2025-08-31', end: '2025-09-30', items: ['Переробили спавн', '9 вересня добавили сферу Останнього'] },
   { title: 'ПОВЕРНЕННЯ ДЕМІГРО', period: '25 січня - 14 лютого', start: '2026-01-25', end: '2026-02-14', items: ['Добавили Контейнер PTE'] },
   { title: 'НОВА ЕРА', period: '21 лютого - 7 березня', start: '2025-02-21', end: '2025-03-07', items: ['Переробка сервера на новому хостингу', '21 лютого добавили /site, Клани, Кейс Талісманів', '22 лютого добавили Призи,Купця та Чарівника', '25 лютого добавили новий кейс ТнТ і нові 3 вида ТнТ', '27 лютого заміна кейса ТнТ', '28 лютого добавили TAB, /report, валюту Демігрики, Топ по часу на сервері, Рівні ендер Скрині, Новий магазин, Оновлення кітів'] },
-  { title: 'ВЕСНЯНА ГРА', period: '7 березня - 1 квітня', start: '2025-03-07', end: '2025-04-01', items: ['Новий статус', 'Новий квест', 'Новий кейс', 'Новий Донат', 'Новий івент', 'Нові донат речі', 'Зміна сайту', 'Зміна цін привілегій', 'Видалення Талісмана Бога', 'Оновлення спавна', 'Оновлення ПвП арени', 'Скорборд у режимі ПвП', '8 березня: Покращення донатів, нові клани bitwi/pipki, видалення клану treaf, вайп балансу'] },
+  { title: 'ВЕСНЯНА ГРА', period: '7 березня - 1 квітня', start: '2025-03-07', end: '2025-04-01', items: ['Новий статус', 'Новий квест', 'Новий кейс', 'Новий Донат', 'Новий івент', 'Нові донат речі', 'Зміна сайту', 'Зміна цін привілегій', 'Видалення Талісмана Бога', 'Оновлення спавна', 'Оновлення ПвП арени', 'Скорборд у режимі ПвП'] },
 ];
 
 const INFO_LINES = [
@@ -121,16 +121,16 @@ const firstSeenOverrides = {
 };
 
 const contentVideos = [
-  { platform: 'tiktok', author: 'Varenyk/treaforik', title: 'Відкриття сервера', url: 'https://vt.tiktok.com/ZSud2Q6aJ/', date: '14 лютого', views: 273, likes: 9 },
-  { platform: 'tiktok', author: 'Varenyk/treaforik', title: 'ПвП', url: 'https://vt.tiktok.com/ZSud2u5Er/', date: '18 лютого', views: 371, likes: 10 },
-  { platform: 'tiktok', author: 'Varenyk/treaforik', title: 'Битва з Vortex1k', url: 'https://vt.tiktok.com/ZSud2nhMV/', date: '21 лютого', views: 211, likes: 8 },
-  { platform: 'tiktok', author: 'Varenyk/treaforik', title: 'Топ 1 сервера', url: 'https://vt.tiktok.com/ZSud2shgW/', date: '21 лютого', views: 320, likes: 7 },
-  { platform: 'tiktok', author: 'Varenyk/treaforik', title: 'Битва з FairDemonYT', url: 'https://vt.tiktok.com/ZSudjdED7/', date: '22 лютого', views: 221, likes: 5 },
-  { platform: 'tiktok', author: 'Vityappro11', title: 'Вбиваю Ендер Дракона на Деміґро', url: 'https://vt.tiktok.com/ZSudjkrrn/', date: '11 вересня', views: 267, likes: 11 },
-  { platform: 'tiktok', author: 'Vityappro11', title: 'AKSELEND vs DEMIGRO', url: 'https://vt.tiktok.com/ZSudjtwVQ/', date: '', views: 244, likes: 15 },
-  { platform: 'tiktok', author: 'Vityappro11', title: 'Сервер Демігро', url: '', date: '', views: 239, likes: 10 },
-  { platform: 'youtube', author: 'Vityappro11', title: 'Вбиваю Ендер Дракона на Демігро', url: 'https://youtube.com/shorts/hsXJGZhCAs8?si=ZFe9-hOGMZrwe1Sz', date: '11 вересня', views: 346, likes: 3 },
-  { platform: 'youtube', author: 'Vityappro11', title: 'AKSELEND vs DEMIGRO', url: 'https://youtube.com/shorts/KWamPGCoPsg?si=fdI65BANOtvFekP4', date: '22 листопада', views: 1599, likes: 8 },
+  { platform: 'tiktok', author: 'Varenyk/treaforik', title: 'Відкриття сервера', url: 'https://vt.tiktok.com/ZSud2Q6aJ/', date: '14 лютого', views: 277, likes: 9 },
+  { platform: 'tiktok', author: 'Varenyk/treaforik', title: 'ПвП', url: 'https://vt.tiktok.com/ZSud2u5Er/', date: '18 лютого', views: 378, likes: 10 },
+  { platform: 'tiktok', author: 'Varenyk/treaforik', title: 'Битва з Vortex1k', url: 'https://vt.tiktok.com/ZSud2nhMV/', date: '21 лютого', views: 217, likes: 8 },
+  { platform: 'tiktok', author: 'Varenyk/treaforik', title: 'Топ 1 сервера', url: 'https://vt.tiktok.com/ZSud2shgW/', date: '21 лютого', views: 329, likes: 7 },
+  { platform: 'tiktok', author: 'Varenyk/treaforik', title: 'Битва з FairDemonYT', url: 'https://vt.tiktok.com/ZSudjdED7/', date: '22 лютого', views: 230, likes: 5 },
+  { platform: 'tiktok', author: 'Vityappro11', title: 'Вбиваю Ендер Дракона на Деміґро', url: 'https://vt.tiktok.com/ZSudjkrrn/', date: '11 вересня', views: 268, likes: 11 },
+  { platform: 'tiktok', author: 'Vityappro11', title: 'AKSELEND vs DEMIGRO', url: 'https://vt.tiktok.com/ZSudjtwVQ/', date: '', views: 249, likes: 15 },
+  { platform: 'tiktok', author: 'Vityappro11', title: 'Сервер Демігро', url: '', date: '', views: 259, likes: 11 },
+  { platform: 'youtube', author: 'Vityappro11', title: 'Вбиваю Ендер Дракона на Демігро', url: 'https://youtube.com/shorts/hsXJGZhCAs8?si=ZFe9-hOGMZrwe1Sz', date: '11 вересня', views: 348, likes: 3 },
+  { platform: 'youtube', author: 'Vityappro11', title: 'AKSELEND vs DEMIGRO', url: 'https://youtube.com/shorts/KWamPGCoPsg?si=fdI65BANOtvFekP4', date: '22 листопада', views: 1605, likes: 8 },
 ];
 
 const contentChannels = [
@@ -143,12 +143,15 @@ const contentChannels = [
 
 const pvpFights = [
   { date: '5 березня', player1: 'treaforik', player2: 'kasikm1', winner: 'kasikm1' },
+  { date: '8 березня', player1: 'Vityappro11', player2: 'Varenyk', winner: 'Vityappro11' },
+  { date: '8 березня', player1: 'Vityappro11', player2: 'ForteCa228', winner: 'ForteCa228' },
 ];
 
 const manualLastSeen = {
   Vityappro11: '2025-03-08', ForteCa228: '2025-03-08', treaforik: '2025-03-08', '07_YM': '2025-03-08',
   edazfetg4ooo: '2025-03-08', BEFF: '2025-03-08', Varenyk: '2025-03-08', TIKTOK_BMW_EDIT: '2025-03-08', hirtir: '2025-03-08',
-  maksik_paksik7: '2025-03-07', PravyiNosok777: '2025-03-07', hipoma: '2025-03-07',
+  lukyan187: '2025-03-08', Paolo_Fermer: '2025-03-08', belui228: '2025-03-08', maksik_paksik7: '2025-03-08',
+  PravyiNosok777: '2025-03-07', hipoma: '2025-03-07', wontz: '2025-03-07',
   kasikm1: '2025-03-01'
 };
 
@@ -683,7 +686,7 @@ function showPvpDetails() {
   renderStats([{ label: 'Кількість боїв', value: String(pvpFights.length) }]);
   history1Title.textContent = 'Бої';
   history2Title.textContent = 'Результати';
-  history1.innerHTML = pvpFights.map((f) => `<li>${f.date}: ${f.player1} vs ${f.player2}</li>`).join('');
+  history1.innerHTML = pvpFights.map((f) => `<li>${f.date}: ${f.player1} vs ${f.player2} — Переможець: ${f.winner}</li>`).join('');
   history2.innerHTML = pvpFights.map((f) => `<li>Переможець: ${f.winner}</li>`).join('');
 }
 
