@@ -333,8 +333,12 @@ function fullStatsForPlayer(player, wipeId, platform='tiktok') {
   const bal = snaps.filter((s) => s.players[player] !== undefined).map((s) => ({ date:s.date, v:s.players[player] }));
   const play = snaps.filter((s) => s.play[player] !== undefined).map((s) => ({ date:s.date, v:s.play[player] }));
   const maxBalance = bal.reduce((m,x)=>x.v>m?x.v:m,0);
-  const currentBalance = bal.length ? bal[bal.length-1].v : 0;
-  const playTime = play.length ? play[play.length-1].v : 0;
+  const currentBalance = wipeId === 'allTime'
+    ? combinedValueAcrossWipesForPlayer(player, 'players')
+    : (bal.length ? bal[bal.length-1].v : 0);
+  const playTime = wipeId === 'allTime'
+    ? combinedValueAcrossWipesForPlayer(player, 'play')
+    : (play.length ? play[play.length-1].v : 0);
   const fights = pvpFights.filter((f)=>{
     const iso = fightDateToIso(f.date);
     const inWipe = wipeId === 'allTime' || (iso >= wipeRanges[wipeId].start && iso <= wipeRanges[wipeId].end);
@@ -591,6 +595,36 @@ function playerPvpStats(player) {
   return { wins, losses, rate };
 }
 
+
+function combinedValueAcrossWipesForPlayer(player, field) {
+  const realWipes = Object.keys(wipeRanges).filter((w) => w !== 'allTime');
+  return realWipes.reduce((sum, wipeId) => {
+    const value = snapshotsForWipe(wipeId)
+      .filter((snap) => snap[field]?.[player] !== undefined)
+      .map((snap) => snap[field][player])
+      .at(-1);
+    return sum + (value || 0);
+  }, 0);
+}
+
+function combinedValueAcrossWipesForClan(clanName) {
+  const realWipes = Object.keys(wipeRanges).filter((w) => w !== 'allTime');
+  return realWipes.reduce((sum, wipeId) => {
+    const lastDate = snapshotsForWipe(wipeId).map((s) => s.date).at(-1);
+    if (!lastDate || lastDate < clans[clanName].createdAt) return sum;
+    return sum + clanBalanceAtDate(clanName, lastDate);
+  }, 0);
+}
+
+function combinedValueAcrossWipesForDonate(group) {
+  const realWipes = Object.keys(wipeRanges).filter((w) => w !== 'allTime');
+  return realWipes.reduce((sum, wipeId) => {
+    const lastDate = snapshotsForWipe(wipeId).map((s) => s.date).at(-1);
+    if (!lastDate) return sum;
+    return sum + donationBalanceAtDate(group, lastDate);
+  }, 0);
+}
+
 function showPlayerDetails(player) {
   selected = { type: 'player', id: player };
   detailsHint.classList.add('hidden');
@@ -606,7 +640,9 @@ function showPlayerDetails(player) {
   const balanceHistory = wipeSnapshots.filter((s) => s.players[player] !== undefined).map((s) => ({ date: s.date, value: s.players[player] }));
   const playHistory = wipeSnapshots.filter((s) => s.play[player] !== undefined).map((s) => ({ date: s.date, value: s.play[player] }));
   const peakBalance = balanceHistory.reduce((m, x) => (x.value > m.value ? x : m), { value: -1, date: '' });
-  const currentBalance = getSnapshot(date).players[player] ?? 0;
+  const currentBalance = scopeWipe === 'allTime'
+    ? combinedValueAcrossWipesForPlayer(player, 'players')
+    : (getSnapshot(date).players[player] ?? 0);
   const firstSeen = firstSeenDate(player);
   const pvp = playerPvpStats(player);
 
@@ -626,7 +662,9 @@ function showPlayerDetails(player) {
     { label: 'Перший раз на сервері', value: firstSeen ? dateLabel(firstSeen) : '—' },
     { label: 'Найвище місце', value: best ? `#${best.rank} (${dateLabel(best.date)})` : '—' },
     { label: 'Останній раз в мережі', value: detectLastSeen(player) },
-    { label: 'Час на Сервері', value: playHistory.at(-1) ? formatPlay(playHistory.at(-1).value) : '—' },
+    { label: 'Час на Сервері', value: (scopeWipe === 'allTime'
+      ? formatPlay(combinedValueAcrossWipesForPlayer(player, 'play'))
+      : formatPlay(playHistory.at(-1)?.value || 0)) },
     { label: 'ПвП', value: `${pvp.wins} перемог / ${pvp.losses} поразок (${pvp.rate}% winrate)` },
   ]);
 
@@ -699,7 +737,9 @@ function showClanDetails(clanName) {
   entityName.textContent = clanName;
   metaInfo.textContent = `Створено: ${dateLabel(clans[clanName].createdAt)} • Остання активність: ${latestMemberActivity ? dateLabel(latestMemberActivity) : '—'} • Вайп: ${wipeRanges[scopeWipe].label}`;
   renderStats([
-    { label: 'Поточний баланс клану', value: formatCurrency(clanBalanceAtDate(clanName, date)) },
+    { label: 'Поточний баланс клану', value: formatCurrency(scopeWipe === 'allTime'
+      ? combinedValueAcrossWipesForClan(clanName)
+      : clanBalanceAtDate(clanName, date)) },
     { label: 'Макс. баланс клану', value: formatCurrency(Math.max(...history.map((h) => h.value))) },
   ]);
 
@@ -727,7 +767,9 @@ function showDonateDetails(group) {
   entityName.textContent = group;
   metaInfo.textContent = `Об’єднаний баланс усіх гравців цієї групи • Вайп: ${wipeRanges[scopeWipe].label}`;
   renderStats([
-    { label: 'Поточний баланс групи', value: formatCurrency(donationBalanceAtDate(group, date)) },
+    { label: 'Поточний баланс групи', value: formatCurrency(scopeWipe === 'allTime'
+      ? combinedValueAcrossWipesForDonate(group)
+      : donationBalanceAtDate(group, date)) },
     { label: 'Макс. баланс групи', value: formatCurrency(Math.max(...history.map((h) => h.value))) },
   ]);
 
