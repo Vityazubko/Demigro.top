@@ -121,11 +121,11 @@ const firstSeenOverrides = {
 };
 
 const contentVideos = [
-  { platform: 'tiktok', author: 'Varenyk/treaforik', title: 'Відкриття сервера', url: 'https://vt.tiktok.com/ZSud2Q6aJ/', date: '14 лютого', views: 277, likes: 9 },
-  { platform: 'tiktok', author: 'Varenyk/treaforik', title: 'ПвП', url: 'https://vt.tiktok.com/ZSud2u5Er/', date: '18 лютого', views: 378, likes: 10 },
-  { platform: 'tiktok', author: 'Varenyk/treaforik', title: 'Битва з Vortex1k', url: 'https://vt.tiktok.com/ZSud2nhMV/', date: '21 лютого', views: 217, likes: 8 },
-  { platform: 'tiktok', author: 'Varenyk/treaforik', title: 'Топ 1 сервера', url: 'https://vt.tiktok.com/ZSud2shgW/', date: '21 лютого', views: 329, likes: 7 },
-  { platform: 'tiktok', author: 'Varenyk/treaforik', title: 'Битва з FairDemonYT', url: 'https://vt.tiktok.com/ZSudjdED7/', date: '22 лютого', views: 230, likes: 5 },
+  { platform: 'tiktok', author: 'Varenyk', title: 'Відкриття сервера', url: 'https://vt.tiktok.com/ZSud2Q6aJ/', date: '14 лютого', views: 277, likes: 9 },
+  { platform: 'tiktok', author: 'Varenyk', title: 'ПвП', url: 'https://vt.tiktok.com/ZSud2u5Er/', date: '18 лютого', views: 378, likes: 10 },
+  { platform: 'tiktok', author: 'Varenyk', title: 'Битва з Vortex1k', url: 'https://vt.tiktok.com/ZSud2nhMV/', date: '21 лютого', views: 217, likes: 8 },
+  { platform: 'tiktok', author: 'Varenyk', title: 'Топ 1 сервера', url: 'https://vt.tiktok.com/ZSud2shgW/', date: '21 лютого', views: 329, likes: 7 },
+  { platform: 'tiktok', author: 'Varenyk', title: 'Битва з FairDemonYT', url: 'https://vt.tiktok.com/ZSudjdED7/', date: '22 лютого', views: 230, likes: 5 },
   { platform: 'tiktok', author: 'Vityappro11', title: 'Вбиваю Ендер Дракона на Деміґро', url: 'https://vt.tiktok.com/ZSudjkrrn/', date: '11 вересня', views: 268, likes: 11 },
   { platform: 'tiktok', author: 'Vityappro11', title: 'AKSELEND vs DEMIGRO', url: 'https://vt.tiktok.com/ZSudjtwVQ/', date: '', views: 249, likes: 15 },
   { platform: 'tiktok', author: 'Vityappro11', title: 'Сервер Демігро', url: '', date: '', views: 259, likes: 11 },
@@ -134,7 +134,7 @@ const contentVideos = [
 ];
 
 const contentChannels = [
-  { platform: 'tiktok', name: 'Varenyk/treaforik', followers: 538, label: 'слідкувачів', url: 'https://www.tiktok.com/@zadr1t', owners: ['Varenyk', 'treaforik'] },
+  { platform: 'tiktok', name: 'Varenyk', followers: 538, label: 'слідкувачів', url: 'https://www.tiktok.com/@zadr1t', owners: ['Varenyk'] },
   { platform: 'tiktok', name: 'Maksik_paksik7', followers: 88, label: 'слідкувачів', url: 'https://www.tiktok.com/@maksik_paksik70', owners: ['maksik_paksik7'] },
   { platform: 'tiktok', name: 'Vityappro11', followers: 50, label: 'слідкувачів', url: 'https://www.tiktok.com/@vityapro132', owners: ['Vityappro11'] },
   { platform: 'youtube', name: 'Vityappro11', followers: 33, label: 'підписники', url: '', owners: ['Vityappro11'] },
@@ -188,12 +188,21 @@ const contentTypeChannels = document.getElementById('contentTypeChannels');
 const videoSortControls = document.getElementById('videoSortControls');
 const contentSortViews = document.getElementById('contentSortViews');
 const contentSortLikes = document.getElementById('contentSortLikes');
+const openFullStatsBtn = document.getElementById('openFullStatsBtn');
+const fullStatsModal = document.getElementById('fullStatsModal');
+const closeFullStatsBtn = document.getElementById('closeFullStatsBtn');
+const fullStatsTitle = document.getElementById('fullStatsTitle');
+const fullStatsWipeSelect = document.getElementById('fullStatsWipeSelect');
+const fullStatsBody = document.getElementById('fullStatsBody');
+const fullStatsContentPlatformWrap = document.getElementById('fullStatsContentPlatformWrap');
+const fullStatsContentPlatform = document.getElementById('fullStatsContentPlatform');
 
 let view = 'balance';
 let selected = null;
 let contentPlatform = 'tiktok';
 let contentType = 'videos';
 let contentSort = 'views';
+let fullStatsPlayer = null;
 
 const dates = snapshots.map((s) => s.date);
 const latestDate = dates[dates.length - 1];
@@ -201,6 +210,7 @@ const latestDate = dates[dates.length - 1];
 const wipeRanges = {
   novaEra: { label: 'Нова Ера (21 лютого - 7 березня)', start: '2025-02-21', end: '2025-03-06' },
   springGame: { label: 'Весняна Гра (7 березня - 1 квітня)', start: '2025-03-07', end: '2025-04-01' },
+  allTime: { label: 'За весь час', start: '2025-02-21', end: '2025-12-31' },
 };
 
 let activeWipe = 'springGame';
@@ -241,11 +251,15 @@ function snapshotsInActiveWipe() {
   return snapshots.filter((s) => inWipe.has(s.date));
 }
 
-function currentDateInActiveWipe(preferredDate = dateSelect.value) {
-  const allowed = datesInActiveWipe();
+function currentDateInWipe(wipeId, preferredDate = dateSelect.value) {
+  const allowed = wipeId === 'allTime' ? dates : snapshotsForWipe(wipeId).map((s) => s.date);
   if (!allowed.length) return latestDate;
   if (allowed.includes(preferredDate)) return preferredDate;
   return allowed[allowed.length - 1];
+}
+
+function currentDateInActiveWipe(preferredDate = dateSelect.value) {
+  return currentDateInWipe(activeWipe, preferredDate);
 }
 
 function allowedDatesForView(v) {
@@ -261,8 +275,142 @@ function allowedDatesForView(v) {
   return allowed;
 }
 
+
+function snapshotsForWipe(wipeId) {
+  if (wipeId === 'allTime') return snapshots;
+  const range = wipeRanges[wipeId];
+  return snapshots.filter((x) => x.date >= range.start && x.date <= range.end);
+}
+
+function entityExistsInWipe(type, id, wipeId) {
+  const data = snapshotsForWipe(wipeId);
+  if (type === 'player') return data.some((s) => s.players[id] !== undefined || s.play[id] !== undefined);
+  if (type === 'clan') return data.some((s) => isClanActiveAtDate(id, s.date));
+  if (type === 'donate') return data.some((s) => Object.keys(s.players).some((p) => donationOfAtDate(p, s.date) === id));
+  return true;
+}
+
+function setupDetailsWipeOptions(type, id) {
+  const wipeIds = ['allTime', 'novaEra', 'springGame'];
+  detailsWipeSelect.innerHTML = wipeIds
+    .map((w) => `<option value="${w}" ${entityExistsInWipe(type, id, w) ? '' : 'disabled'}>${wipeRanges[w].label}</option>`)
+    .join('');
+
+  if (!entityExistsInWipe(type, id, activeWipe)) {
+    const fallback = wipeIds.find((w) => entityExistsInWipe(type, id, w)) || 'allTime';
+    detailsWipeSelect.value = fallback;
+  } else {
+    detailsWipeSelect.value = activeWipe;
+  }
+}
+
+function getReputation(player) {
+  const map = {
+    GGlolick: 1, Varenyk228: 1, hirtir: 1,
+    m0NESY: 2, Nazar3321: 2, kostya2103: 2, maksyarosh: 2,
+    SIGMA: 3, kampys231231: 3, jtx_by: 3, '05LONE12': 3,
+    BEFF: 4, Vortex1k: 4, belui228: 4,
+    lukyan187: 5, FairDemonYT: 5, wontz: 5, TIKTOK_BMW_EDIT: 5,
+    kasikm1: 6, aboba2032: 6, hipoma: 6, Varenyk: 6,
+    PravyiNosok777: 7, edazfetg4ooo: 7, Paolo_Fermer: 7, '07_YM': 7, treaforik: 7,
+    ForteCa228: 8,
+    Vityappro11: 9,
+    maksik_paksik7: 10,
+  };
+  const score = map[player] || 1;
+  const color = score <= 2 ? '#7f1d1d' : score <= 4 ? '#dc2626' : score <= 6 ? '#f59e0b' : score <= 8 ? '#16a34a' : '#166534';
+  return { score, color };
+}
+
+function fightDateToIso(dateText) {
+  const m = /^(\d+)\s+березня$/i.exec(dateText || '');
+  if (!m) return '2025-03-01';
+  return `2025-03-${m[1].padStart(2, '0')}`;
+}
+
+function fullStatsForPlayer(player, wipeId, platform='tiktok') {
+  const snaps = snapshotsForWipe(wipeId);
+  const bal = snaps.filter((s) => s.players[player] !== undefined).map((s) => ({ date:s.date, v:s.players[player] }));
+  const play = snaps.filter((s) => s.play[player] !== undefined).map((s) => ({ date:s.date, v:s.play[player] }));
+  const totalBalance = bal.reduce((a,b)=>a+b.v,0);
+  let earned=0, spent=0;
+  for (let i=1;i<bal.length;i++) {
+    const d = bal[i].v - bal[i-1].v;
+    if (d>0) earned += d;
+    if (d<0) spent += Math.abs(d);
+  }
+  const maxBalance = bal.reduce((m,x)=>x.v>m?x.v:m,0);
+  const currentBalance = bal.length ? bal[bal.length-1].v : 0;
+  const playTime = play.length ? play[play.length-1].v : 0;
+  const playInc = play.reduce((a,x,i)=> i? a + Math.max(0, x.v-play[i-1].v):a, 0);
+  const fights = pvpFights.filter((f)=>{
+    const iso = fightDateToIso(f.date);
+    const inWipe = wipeId === 'allTime' || (iso >= wipeRanges[wipeId].start && iso <= wipeRanges[wipeId].end);
+    return inWipe && (f.player1===player || f.player2===player);
+  });
+  const wins = fights.filter((f)=>f.winner===player).length;
+  const losses = fights.length - wins;
+  const clanJoins = Object.values(clans).flatMap((c)=>c.events).filter((e)=>e.player===player && e.action==='join').filter((e)=> wipeId==='allTime' || (e.date>=wipeRanges[wipeId].start && e.date<=wipeRanges[wipeId].end)).length;
+  const xp = Math.floor(earned/50) + wins*100 + Math.floor(playInc/5) + clanJoins*100;
+  const thresholds=[0,100,150,200,250,300,400,500,600,750,1000,1250,1500,1750,2000,2500,5000];
+  let level=0;
+  for(let i=0;i<thresholds.length;i++) if (xp>=thresholds[i]) level=i;
+  const nextReq = thresholds[Math.min(level+1, thresholds.length-1)];
+  const toNext = Math.max(0, nextReq-xp);
+  const rep = getReputation(player);
+  const channels = getPlayerChannels(player).filter((c)=>c.platform===platform);
+  const vids = getPlayerVideos(player).filter((v)=>v.platform===platform);
+  const content = {
+    totalVideos: vids.length,
+    totalViews: vids.reduce((a,v)=>a+(v.views||0),0),
+    totalLikes: vids.reduce((a,v)=>a+(v.likes||0),0),
+    followers: channels.reduce((a,c)=>a+c.followers,0),
+  };
+  return {totalBalance,rep,level,xp,toNext,earned,spent,maxBalance,currentBalance,playTime,wins,losses,fights,content};
+}
+
+function renderFullStatsModal(player) {
+  fullStatsPlayer = player;
+  const wipeId = fullStatsWipeSelect.value || 'allTime';
+  const platform = fullStatsContentPlatform.value;
+  const stat = fullStatsForPlayer(player, wipeId, platform);
+  const repFill = Math.max(0, Math.min(100, stat.rep.score*10));
+  const repLabel = `${stat.rep.score}/10`;
+  const canContent = ['maksik_paksik7','Varenyk','Vityappro11'].includes(player);
+  fullStatsContentPlatformWrap.classList.toggle('hidden', !canContent);
+
+  fullStatsTitle.textContent = `Повна статистика: ${player}`;
+  fullStatsBody.innerHTML = `
+    <h3>Загальне</h3>
+    <div class="full-grid">
+      <div class="stat"><strong>Всього баланс</strong><p>${formatCurrency(stat.totalBalance)}</p></div>
+      <div class="stat"><strong>Рівень</strong><p>${stat.level} (XP: ${stat.xp}, до наступного: ${stat.toNext})</p></div>
+      <div class="stat"><strong>Отримано Грошей</strong><p>${formatCurrency(stat.earned)}</p></div>
+      <div class="stat"><strong>Потрачено Грошей</strong><p>${formatCurrency(stat.spent)}</p></div>
+      <div class="stat"><strong>Макс Баланс</strong><p>${formatCurrency(stat.maxBalance)}</p></div>
+      <div class="stat"><strong>Баланс</strong><p>${formatCurrency(stat.currentBalance)}</p></div>
+      <div class="stat"><strong>Перший Раз на сервері</strong><p>${firstSeenDate(player) ? dateLabel(firstSeenDate(player)) : '—'}</p></div>
+      <div class="stat"><strong>Останній раз в мережі</strong><p>${detectLastSeen(player)}</p></div>
+      <div class="stat"><strong>Час на сервері</strong><p>${formatPlay(stat.playTime)}</p></div>
+    </div>
+    <div class="rep-wrap">
+      <strong>Репутація на Сервері</strong>
+      <div class="rep-gauge" style="background: conic-gradient(${stat.rep.color} 0deg ${repFill*1.8}deg, #2a3247 ${repFill*1.8}deg 180deg);"></div>
+      <div class="rep-value">${repLabel}</div>
+    </div>
+    <h3>PvP</h3>
+    <div class="full-grid">
+      <div class="stat"><strong>Всього боїв</strong><p>${stat.fights.length}</p></div>
+      <div class="stat"><strong>Всього Перемог</strong><p>${stat.wins}</p></div>
+      <div class="stat"><strong>Всього Поразок</strong><p>${stat.losses}</p></div>
+      <div class="stat"><strong>Winrate</strong><p>${stat.fights.length ? Math.round((stat.wins/stat.fights.length)*100) : 0}%</p></div>
+    </div>
+    ${canContent ? `<h3>Content (${platform.toUpperCase()})</h3><div class="full-grid"><div class="stat"><strong>Всього відео</strong><p>${stat.content.totalVideos}</p></div><div class="stat"><strong>Всього переглядів</strong><p>${new Intl.NumberFormat('uk-UA').format(stat.content.totalViews)}</p></div><div class="stat"><strong>Всього Лайків</strong><p>${new Intl.NumberFormat('uk-UA').format(stat.content.totalLikes)}</p></div><div class="stat"><strong>${platform==='youtube' ? 'Всього Підписників' : 'Всього Слідкувачів'}</strong><p>${new Intl.NumberFormat('uk-UA').format(stat.content.followers)}</p></div></div>` : ''}
+  `;
+}
+
 function refreshWipeSelect() {
-  const options = Object.entries(wipeRanges).map(([id, info]) => `<option value="${id}">${info.label}</option>`).join('');
+  const options = Object.entries(wipeRanges).filter(([id]) => id !== 'allTime').map(([id, info]) => `<option value="${id}">${info.label}</option>`).join('');
   wipeSelect.innerHTML = options;
   detailsWipeSelect.innerHTML = options;
   wipeSelect.value = activeWipe;
@@ -451,9 +599,11 @@ function showPlayerDetails(player) {
   detailsHint.classList.add('hidden');
   detailsContent.classList.remove('hidden');
   setDetailsWipeVisibility(true);
+  setupDetailsWipeOptions('player', player);
+  const scopeWipe = detailsWipeSelect.value;
 
-  const date = currentDateInActiveWipe(dateSelect.value);
-  const wipeSnapshots = snapshotsInActiveWipe();
+  const date = currentDateInWipe(scopeWipe, dateSelect.value);
+  const wipeSnapshots = snapshotsForWipe(scopeWipe);
   const clanInfo = getClanForPlayerAtDate(player, date);
   const group = donationOfAtDate(player, date);
   const balanceHistory = wipeSnapshots.filter((s) => s.players[player] !== undefined).map((s) => ({ date: s.date, value: s.players[player] }));
@@ -472,7 +622,7 @@ function showPlayerDetails(player) {
 
   detailsTitle.textContent = 'Профіль гравця';
   entityName.textContent = player;
-  metaInfo.textContent = `Клан: ${clanInfo.clan} • Донат: ${group} • Вайп: ${wipeRanges[activeWipe].label}`;
+  metaInfo.textContent = `Клан: ${clanInfo.clan} • Донат: ${group} • Вайп: ${wipeRanges[scopeWipe].label}`;
   renderStats([
     { label: 'Макс. баланс', value: peakBalance.value >= 0 ? `${formatCurrency(peakBalance.value)} (${dateLabel(peakBalance.date)})` : '—' },
     { label: 'Баланс', value: formatCurrency(currentBalance) },
@@ -488,6 +638,7 @@ function showPlayerDetails(player) {
   history3Title.textContent = 'Контент гравця';
   history3Title.classList.remove('hidden');
   history3.classList.remove('hidden');
+  openFullStatsBtn.classList.remove('hidden');
 
   const balanceRows = balanceHistory.map((row, idx) => {
     const ranksNow = rankMapForDate(getSnapshot(row.date).players);
@@ -519,6 +670,7 @@ function showPlayerDetails(player) {
 
 
 function hideThirdHistoryBlock() {
+  openFullStatsBtn.classList.add('hidden');
   history3Title.classList.add('hidden');
   history3.classList.add('hidden');
   history3.innerHTML = '';
@@ -532,8 +684,10 @@ function showClanDetails(clanName) {
   hideThirdHistoryBlock();
 
   setDetailsWipeVisibility(true);
-  const date = currentDateInActiveWipe(dateSelect.value);
-  const wipeDates = datesInActiveWipe();
+  setupDetailsWipeOptions('clan', clanName);
+  const scopeWipe = detailsWipeSelect.value;
+  const date = currentDateInWipe(scopeWipe, dateSelect.value);
+  const wipeDates = snapshotsForWipe(scopeWipe).map((s) => s.date);
   const membersNow = getClanMembersAtDate(clanName, date);
   const history = wipeDates.filter((d) => d >= clans[clanName].createdAt).map((d) => ({ date: d, value: clanBalanceAtDate(clanName, d) }));
 
@@ -546,7 +700,7 @@ function showClanDetails(clanName) {
 
   detailsTitle.textContent = 'Профіль клану';
   entityName.textContent = clanName;
-  metaInfo.textContent = `Створено: ${dateLabel(clans[clanName].createdAt)} • Остання активність: ${latestMemberActivity ? dateLabel(latestMemberActivity) : '—'} • Вайп: ${wipeRanges[activeWipe].label}`;
+  metaInfo.textContent = `Створено: ${dateLabel(clans[clanName].createdAt)} • Остання активність: ${latestMemberActivity ? dateLabel(latestMemberActivity) : '—'} • Вайп: ${wipeRanges[scopeWipe].label}`;
   renderStats([
     { label: 'Поточний баланс клану', value: formatCurrency(clanBalanceAtDate(clanName, date)) },
     { label: 'Макс. баланс клану', value: formatCurrency(Math.max(...history.map((h) => h.value))) },
@@ -565,14 +719,16 @@ function showDonateDetails(group) {
   hideThirdHistoryBlock();
 
   setDetailsWipeVisibility(true);
-  const date = currentDateInActiveWipe(dateSelect.value);
-  const wipeDates = datesInActiveWipe();
+  setupDetailsWipeOptions('donate', group);
+  const scopeWipe = detailsWipeSelect.value;
+  const date = currentDateInWipe(scopeWipe, dateSelect.value);
+  const wipeDates = snapshotsForWipe(scopeWipe).map((s) => s.date);
   const players = Object.keys(getSnapshot(date).players).filter((p) => donationOfAtDate(p, date) === group);
   const history = wipeDates.map((d) => ({ date: d, value: donationBalanceAtDate(group, d) }));
 
   detailsTitle.textContent = 'Профіль групи';
   entityName.textContent = group;
-  metaInfo.textContent = `Об’єднаний баланс усіх гравців цієї групи • Вайп: ${wipeRanges[activeWipe].label}`;
+  metaInfo.textContent = `Об’єднаний баланс усіх гравців цієї групи • Вайп: ${wipeRanges[scopeWipe].label}`;
   renderStats([
     { label: 'Поточний баланс групи', value: formatCurrency(donationBalanceAtDate(group, date)) },
     { label: 'Макс. баланс групи', value: formatCurrency(Math.max(...history.map((h) => h.value))) },
@@ -682,7 +838,7 @@ function showPvpDetails() {
   hideThirdHistoryBlock();
   detailsTitle.textContent = 'ПвП';
   entityName.textContent = 'ПвП-статистика сервера';
-  metaInfo.textContent = 'ПвП ще в бета-версії, бо був лише один бій.';
+  metaInfo.textContent = 'ПвП-режим активний.';
   renderStats([{ label: 'Кількість боїв', value: String(pvpFights.length) }]);
   history1Title.textContent = 'Бої';
   history2Title.textContent = 'Результати';
@@ -755,7 +911,7 @@ function renderLeaderboard() {
     }
   } else {
     tableTitle.textContent = 'ПвП'; nameHeader.textContent = 'ГРАВЕЦЬ'; valueHeader.textContent = 'WINRATE';
-    tableSubtitle.textContent = 'ПвП ще в бета-версії';
+    tableSubtitle.textContent = 'ПвП статистика гравців';
     const pvpPlayers = [...new Set(pvpFights.flatMap((f) => [f.player1, f.player2]))];
     rows = pvpPlayers.map((player) => {
       const stats = playerPvpStats(player);
@@ -815,11 +971,20 @@ function init() {
   });
 
   detailsWipeSelect.addEventListener('change', () => {
-    activeWipe = detailsWipeSelect.value;
-    refreshWipeSelect();
-    refreshDateSelect();
     renderLeaderboard();
   });
+
+  openFullStatsBtn.addEventListener('click', () => {
+    if (!selected || selected.type !== 'player') return;
+    fullStatsWipeSelect.innerHTML = detailsWipeSelect.innerHTML;
+    fullStatsWipeSelect.value = detailsWipeSelect.value;
+    renderFullStatsModal(selected.id);
+    fullStatsModal.classList.remove('hidden');
+  });
+
+  closeFullStatsBtn.addEventListener('click', () => fullStatsModal.classList.add('hidden'));
+  fullStatsWipeSelect.addEventListener('change', () => { if (fullStatsPlayer) renderFullStatsModal(fullStatsPlayer); });
+  fullStatsContentPlatform.addEventListener('change', () => { if (fullStatsPlayer) renderFullStatsModal(fullStatsPlayer); });
 
 
   contentPlatformTikTok.addEventListener('click', () => {
