@@ -15,6 +15,7 @@ const snapshots = [
   { date: '2025-03-06', players: { Vityappro11: 1148491, Varenyk: 636068, treaforik: 326169, 'wontz': 304418, aboba2032: 184738, kasikm1: 169968, '07_YM': 148856, lukyan187: 135042, belui228: 80000, ForteCa228: 104682, hipoma: 68863, Vortex1k: 40000, Nazar3321: 32000, jtx_by: 25000, '05LONE12': 25000, Paolo_Fermer: 22669, m0NESY: 10000, maksyarosh: 10000, kampys231231: 10000, kostya2103: 9175, BEFF: 9087, FairDemonYT: 7726, SIGMA: 3478, Varenyk228: 2100, GGlolick: 46, edazfetg4ooo: 8602 }, play: { maksik_paksik7: 5377, edazfetg4ooo: 2565, '07_YM': 1946, PravyiNosok777: 1600, ForteCa228: 1920, treaforik: 1302, Vityappro11: 1496, Paolo_Fermer: 1138, Varenyk: 864, hipoma: 744 } },
   { date: '2025-03-07', players: { Vityappro11: 107255, ForteCa228: 61482, treaforik: 39546, '07_YM': 11640, edazfetg4ooo: 2222, BEFF: 824, Varenyk: 733 }, play: {} },
   { date: '2025-03-08', players: { Vityappro11: 362621, ForteCa228: 336032, TIKTOK_BMW_EDIT: 187566, treaforik: 55145, edazfetg4ooo: 38314, Varenyk: 33203, '07_YM': 11640, BEFF: 824, hirtir: 352 }, play: { maksik_paksik7: 1084, ForteCa228: 637, TIKTOK_BMW_EDIT: 397, edazfetg4ooo: 354, Vityappro11: 223, '07_YM': 121, treaforik: 110 } },
+  { date: '2025-03-09', players: { Vityappro11: 592247, treaforik: 427882, ForteCa228: 336032, edazfetg4ooo: 109991, TIKTOK_BMW_EDIT: 89298, Paolo_Fermer: 68828, Varenyk: 33203, '07_YM': 11640, lukyan187: 3296, robot: 863, BEFF: 824, hirtir: 352 }, play: { maksik_paksik7: 1200, ForteCa228: 638, TIKTOK_BMW_EDIT: 541, Vityappro11: 463, edazfetg4ooo: 427, Paolo_Fermer: 200, '07_YM': 131, treaforik: 115 } },
 ];
 
 const donationByPlayer = {
@@ -23,7 +24,7 @@ const donationByPlayer = {
   Vityappro11: 'debryli', Varenyk: 'debryli', treaforik: 'debryli', 'wontz': 'debryli', Vortex1k: 'debryli', hipoma: 'debryli',
   kasikm1: 'GOD', jtx_by: 'GOD', Paolo_Fermer: 'GOD', kampys231231: 'GOD', FairDemonYT: 'GOD',
   '07_YM': 'status', '05LONE12': 'status',
-  TIKTOK_BMW_EDIT: 'CONTENT MAKER',
+  TIKTOK_BMW_EDIT: 'CONTENT MAKER', robot: 'гравець',
   maksik_paksik7: 'ADMIN', PravyiNosok777: 'ADMIN'
 };
 
@@ -59,6 +60,7 @@ const clans = {
       { date: '2025-03-07', player: 'lukyan187', role: 'senior', action: 'leave' },
       { date: '2025-03-07', player: 'SIGMA', role: 'senior', action: 'leave' },
       { date: '2025-03-08', player: 'lukyan187', role: 'senior', action: 'join' },
+      { date: '2025-03-09', player: 'robot', role: 'member', action: 'join' },
     ],
   },
   treaf: {
@@ -148,11 +150,10 @@ const pvpFights = [
 ];
 
 const manualLastSeen = {
-  Vityappro11: '2025-03-08', ForteCa228: '2025-03-08', treaforik: '2025-03-08', '07_YM': '2025-03-08',
-  edazfetg4ooo: '2025-03-08', BEFF: '2025-03-08', Varenyk: '2025-03-08', TIKTOK_BMW_EDIT: '2025-03-08', hirtir: '2025-03-08',
-  lukyan187: '2025-03-08', Paolo_Fermer: '2025-03-08', belui228: '2025-03-08', maksik_paksik7: '2025-03-08',
-  PravyiNosok777: '2025-03-07', hipoma: '2025-03-07', wontz: '2025-03-07',
-  kasikm1: '2025-03-01'
+  Vityappro11: '2025-03-09', ForteCa228: '2025-03-09', treaforik: '2025-03-09', '07_YM': '2025-03-09',
+  edazfetg4ooo: '2025-03-09', BEFF: '2025-03-09', Varenyk: '2025-03-08', TIKTOK_BMW_EDIT: '2025-03-09', hirtir: '2025-03-08',
+  lukyan187: '2025-03-09', Paolo_Fermer: '2025-03-09', belui228: '2025-03-08', maksik_paksik7: '2025-03-09',
+  PravyiNosok777: '2025-03-07', hipoma: '2025-03-07', wontz: '2025-03-07', kasikm1: '2025-03-01', robot: '2025-03-09'
 };
 
 const dateSelect = document.getElementById('dateSelect');
@@ -266,7 +267,7 @@ function allowedDatesForView(v) {
   if (v === 'content') return ['2025-03-05'];
 
   let allowed = dates;
-  if (v === 'play') allowed = dates.filter((d) => d >= '2025-03-02' && d <= '2025-03-08');
+  if (v === 'play') allowed = dates.filter((d) => d >= '2025-03-02' && d <= '2025-03-09');
   if (v === 'clans') allowed = dates.filter((d) => d >= '2025-02-22');
   if (isTopView(v)) {
     const inWipe = new Set(datesInActiveWipe());
@@ -371,13 +372,13 @@ function fullStatsForPlayer(player, wipeId, platform='tiktok') {
     .filter((e) => e.player === player && e.action === 'join').length;
 
   const xp = Math.floor(earnedAllTime / 50) + winsAllTime * 100 + Math.floor(playIncAllTime / 5) + clanJoinsAllTime * 100;
-  const thresholds = [0, 100, 150, 200, 250, 300, 400, 500, 600, 750, 1000, 1250, 1500, 1750, 2000, 2500, 5000];
+  const thresholds = [0, 100, 150, 200, 250, 300, 400, 500, 600, 750, 1000, 1250, 1500, 1750, 2000, 2500, 3000, 3500, 4000, 4500, 5000, 10000];
   let rawLevel = 0;
   for (let i = 0; i < thresholds.length; i++) if (xp >= thresholds[i]) rawLevel = i;
-  const isMaxLevel = xp >= 5000;
-  const level = isMaxLevel ? 15 : Math.min(rawLevel, 15);
+  const isMaxLevel = xp >= 10000;
+  const level = isMaxLevel ? 20 : Math.min(rawLevel, 20);
   const toNext = isMaxLevel ? 0 : Math.max(0, thresholds[level + 1] - xp);
-  const xpAfterMax = isMaxLevel ? xp - 5000 : 0;
+  const xpAfterMax = isMaxLevel ? xp - 10000 : 0;
   const rep = getReputation(player);
   const channels = getPlayerChannels(player).filter((c)=>c.platform===platform);
   const vids = getPlayerVideos(player).filter((v)=>v.platform===platform);
