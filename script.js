@@ -332,17 +332,9 @@ function fullStatsForPlayer(player, wipeId, platform='tiktok') {
   const snaps = snapshotsForWipe(wipeId);
   const bal = snaps.filter((s) => s.players[player] !== undefined).map((s) => ({ date:s.date, v:s.players[player] }));
   const play = snaps.filter((s) => s.play[player] !== undefined).map((s) => ({ date:s.date, v:s.play[player] }));
-  const totalBalance = bal.reduce((a,b)=>a+b.v,0);
-  let earned=0, spent=0;
-  for (let i=1;i<bal.length;i++) {
-    const d = bal[i].v - bal[i-1].v;
-    if (d>0) earned += d;
-    if (d<0) spent += Math.abs(d);
-  }
   const maxBalance = bal.reduce((m,x)=>x.v>m?x.v:m,0);
   const currentBalance = bal.length ? bal[bal.length-1].v : 0;
   const playTime = play.length ? play[play.length-1].v : 0;
-  const playInc = play.reduce((a,x,i)=> i? a + Math.max(0, x.v-play[i-1].v):a, 0);
   const fights = pvpFights.filter((f)=>{
     const iso = fightDateToIso(f.date);
     const inWipe = wipeId === 'allTime' || (iso >= wipeRanges[wipeId].start && iso <= wipeRanges[wipeId].end);
@@ -350,13 +342,18 @@ function fullStatsForPlayer(player, wipeId, platform='tiktok') {
   });
   const wins = fights.filter((f)=>f.winner===player).length;
   const losses = fights.length - wins;
-  const clanJoins = Object.values(clans).flatMap((c)=>c.events).filter((e)=>e.player===player && e.action==='join').filter((e)=> wipeId==='allTime' || (e.date>=wipeRanges[wipeId].start && e.date<=wipeRanges[wipeId].end)).length;
-  const xp = Math.floor(earned/50) + wins*100 + Math.floor(playInc/5) + clanJoins*100;
-  const thresholds=[0,100,150,200,250,300,400,500,600,750,1000,1250,1500,1750,2000,2500,5000];
-  let level=0;
-  for(let i=0;i<thresholds.length;i++) if (xp>=thresholds[i]) level=i;
-  const nextReq = thresholds[Math.min(level+1, thresholds.length-1)];
-  const toNext = Math.max(0, nextReq-xp);
+  const allBal = snapshots
+    .filter((s) => s.players[player] !== undefined)
+    .map((s) => ({ date: s.date, v: s.players[player] }));
+  const currentBalanceAllTime = allBal.length ? allBal[allBal.length - 1].v : 0;
+  const xp = Math.floor(currentBalanceAllTime / 50);
+  const thresholds = [0, 100, 150, 200, 250, 300, 400, 500, 600, 750, 1000, 1250, 1500, 1750, 2000, 2500, 5000];
+  let rawLevel = 0;
+  for (let i = 0; i < thresholds.length; i++) if (xp >= thresholds[i]) rawLevel = i;
+  const isMaxLevel = xp >= 5000;
+  const level = isMaxLevel ? 15 : Math.min(rawLevel, 15);
+  const toNext = isMaxLevel ? 0 : Math.max(0, thresholds[level + 1] - xp);
+  const xpAfterMax = isMaxLevel ? xp - 5000 : 0;
   const rep = getReputation(player);
   const channels = getPlayerChannels(player).filter((c)=>c.platform===platform);
   const vids = getPlayerVideos(player).filter((v)=>v.platform===platform);
@@ -366,7 +363,7 @@ function fullStatsForPlayer(player, wipeId, platform='tiktok') {
     totalLikes: vids.reduce((a,v)=>a+(v.likes||0),0),
     followers: channels.reduce((a,c)=>a+c.followers,0),
   };
-  return {totalBalance,rep,level,xp,toNext,earned,spent,maxBalance,currentBalance,playTime,wins,losses,fights,content};
+  return {rep,level,xp,toNext,xpAfterMax,isMaxLevel,maxBalance,currentBalance,playTime,wins,losses,fights,content};
 }
 
 function renderFullStatsModal(player) {
@@ -374,8 +371,11 @@ function renderFullStatsModal(player) {
   const wipeId = fullStatsWipeSelect.value || 'allTime';
   const platform = fullStatsContentPlatform.value;
   const stat = fullStatsForPlayer(player, wipeId, platform);
-  const repFill = Math.max(0, Math.min(100, stat.rep.score*10));
+  const repFill = Math.max(0, Math.min(100, stat.rep.score * 10));
   const repLabel = `${stat.rep.score}/10`;
+  const levelText = stat.isMaxLevel
+    ? `max level (XP після max level: ${stat.xpAfterMax})`
+    : `${stat.level} (XP: ${stat.xp}, до наступного: ${stat.toNext})`;
   const canContent = ['maksik_paksik7','Varenyk','Vityappro11'].includes(player);
   fullStatsContentPlatformWrap.classList.toggle('hidden', !canContent);
 
@@ -383,10 +383,7 @@ function renderFullStatsModal(player) {
   fullStatsBody.innerHTML = `
     <h3>Загальне</h3>
     <div class="full-grid">
-      <div class="stat"><strong>Всього баланс</strong><p>${formatCurrency(stat.totalBalance)}</p></div>
-      <div class="stat"><strong>Рівень</strong><p>${stat.level} (XP: ${stat.xp}, до наступного: ${stat.toNext})</p></div>
-      <div class="stat"><strong>Отримано Грошей</strong><p>${formatCurrency(stat.earned)}</p></div>
-      <div class="stat"><strong>Потрачено Грошей</strong><p>${formatCurrency(stat.spent)}</p></div>
+      <div class="stat"><strong>Рівень</strong><p>${levelText}</p></div>
       <div class="stat"><strong>Макс Баланс</strong><p>${formatCurrency(stat.maxBalance)}</p></div>
       <div class="stat"><strong>Баланс</strong><p>${formatCurrency(stat.currentBalance)}</p></div>
       <div class="stat"><strong>Перший Раз на сервері</strong><p>${firstSeenDate(player) ? dateLabel(firstSeenDate(player)) : '—'}</p></div>
@@ -395,7 +392,7 @@ function renderFullStatsModal(player) {
     </div>
     <div class="rep-wrap">
       <strong>Репутація на Сервері</strong>
-      <div class="rep-gauge" style="background: conic-gradient(${stat.rep.color} 0deg ${repFill*1.8}deg, #2a3247 ${repFill*1.8}deg 180deg);"></div>
+      <div class="rep-rect"><span style="width:${repFill}%; background:${stat.rep.color};"></span></div>
       <div class="rep-value">${repLabel}</div>
     </div>
     <h3>PvP</h3>
