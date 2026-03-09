@@ -14,7 +14,7 @@
       <header class="hero card">
         <p class="hero-badge">Demigro Analytics</p>
         <h1>Рейтинги гравців, кланів і донатів</h1>
-        <p class="hero-subtitle" id="heroSubtitle">Сучасна панель перегляду статистики за 21 лютого — 8 березня.</p>
+        <p class="hero-subtitle" id="heroSubtitle">Сучасна панель перегляду статистики за 21 лютого — 4 березня.</p>
       </header>
 
       <section class="controls card">
@@ -83,6 +83,7 @@
               <span>Вайп у профілі</span>
               <select id="detailsWipeSelect"></select>
             </div>
+            <button id="openFullStatsBtn" class="control-btn hidden" type="button">Повна статистика</button>
             <div class="stats-grid" id="statsGrid"></div>
 
             <h4 id="history1Title">Історія</h4>
@@ -96,6 +97,29 @@
           </div>
         </aside>
       </main>
+    </div>
+
+    <div id="fullStatsModal" class="modal hidden">
+      <div class="modal-content card">
+        <div class="modal-head">
+          <h2 id="fullStatsTitle">Повна статистика</h2>
+          <button id="closeFullStatsBtn" class="control-btn" type="button">Закрити</button>
+        </div>
+        <div class="selectors">
+          <label class="date-select">
+            <span>Вайп</span>
+            <select id="fullStatsWipeSelect"></select>
+          </label>
+          <label class="date-select" id="fullStatsContentPlatformWrap">
+            <span>Платформа</span>
+            <select id="fullStatsContentPlatform">
+              <option value="tiktok">TikTok</option>
+              <option value="youtube">YouTube</option>
+            </select>
+          </label>
+        </div>
+        <div id="fullStatsBody"></div>
+      </div>
     </div>
 
     <script src="script.js"></script>
