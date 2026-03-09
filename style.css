@@ -242,21 +242,19 @@ tr.player-row.top-3 td:first-child { color: var(--bronze); font-weight: 700; }
   margin: 12px 0;
 }
 
-.rep-gauge {
-  width: 220px;
-  height: 110px;
-  border-radius: 220px 220px 0 0;
+.rep-rect {
+  width: 100%;
+  max-width: 360px;
+  height: 18px;
+  border-radius: 6px;
   overflow: hidden;
-  position: relative;
   background: #2a3247;
+  border: 1px solid #364361;
 }
 
-.rep-gauge::before {
-  content: '';
-  position: absolute;
-  inset: 10px;
-  border-radius: 200px 200px 0 0;
-  background: #111a30;
+.rep-rect span {
+  display: block;
+  height: 100%;
 }
 
 .rep-value {
