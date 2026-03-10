@@ -15,7 +15,7 @@ const snapshots = [
   { date: '2025-03-06', players: { Vityappro11: 1148491, Varenyk: 636068, treaforik: 326169, 'wontz': 304418, aboba2032: 184738, kasikm1: 169968, '07_YM': 148856, lukyan187: 135042, belui228: 80000, ForteCa228: 104682, hipoma: 68863, Vortex1k: 40000, Nazar3321: 32000, jtx_by: 25000, '05LONE12': 25000, Paolo_Fermer: 22669, m0NESY: 10000, maksyarosh: 10000, kampys231231: 10000, kostya2103: 9175, BEFF: 9087, FairDemonYT: 7726, SIGMA: 3478, Varenyk228: 2100, GGlolick: 46, edazfetg4ooo: 8602 }, play: { maksik_paksik7: 5377, edazfetg4ooo: 2565, '07_YM': 1946, PravyiNosok777: 1600, ForteCa228: 1920, treaforik: 1302, Vityappro11: 1496, Paolo_Fermer: 1138, Varenyk: 864, hipoma: 744 } },
   { date: '2025-03-07', players: { Vityappro11: 107255, ForteCa228: 61482, treaforik: 39546, '07_YM': 11640, edazfetg4ooo: 2222, BEFF: 824, Varenyk: 733 }, play: {} },
   { date: '2025-03-08', players: { Vityappro11: 362621, ForteCa228: 336032, TIKTOK_BMW_EDIT: 187566, treaforik: 55145, edazfetg4ooo: 38314, Varenyk: 33203, '07_YM': 11640, BEFF: 824, hirtir: 352 }, play: { maksik_paksik7: 1084, ForteCa228: 637, TIKTOK_BMW_EDIT: 397, edazfetg4ooo: 354, Vityappro11: 223, '07_YM': 121, treaforik: 110 } },
-  { date: '2025-03-09', players: { Vityappro11: 592247, treaforik: 427882, ForteCa228: 336032, edazfetg4ooo: 109991, TIKTOK_BMW_EDIT: 89298, Paolo_Fermer: 68828, Varenyk: 33203, '07_YM': 11640, lukyan187: 3296, robot: 863, BEFF: 824, hirtir: 352 }, play: { maksik_paksik7: 1200, ForteCa228: 638, TIKTOK_BMW_EDIT: 541, Vityappro11: 463, edazfetg4ooo: 427, Paolo_Fermer: 200, '07_YM': 131, treaforik: 115 } },
+  { date: '2025-03-09', players: { Vityappro11: 620803, treaforik: 427882, ForteCa228: 336032, edazfetg4ooo: 109991, TIKTOK_BMW_EDIT: 89298, Paolo_Fermer: 68828, Varenyk: 33203, '07_YM': 11010, lukyan187: 3296, robot: 863, BEFF: 824, hirtir: 352 }, play: { maksik_paksik7: 1200, ForteCa228: 638, TIKTOK_BMW_EDIT: 541, Vityappro11: 463, edazfetg4ooo: 427, Paolo_Fermer: 200, '07_YM': 131, treaforik: 115 } },
 ];
 
 const donationByPlayer = {
@@ -147,7 +147,37 @@ const pvpFights = [
   { date: '5 березня', player1: 'treaforik', player2: 'kasikm1', winner: 'kasikm1' },
   { date: '8 березня', player1: 'Vityappro11', player2: 'Varenyk', winner: 'Vityappro11' },
   { date: '8 березня', player1: 'Vityappro11', player2: 'ForteCa228', winner: 'ForteCa228' },
+  { date: '9 березня', player1: 'lukyan187', player2: 'robot', winner: 'lukyan187' },
 ];
+
+
+const medalsByPlayer = {
+  Vityappro11: ['🥇 Баланс (золота)'],
+  Varenyk: ['🥈 Баланс (срібна)'],
+  treaforik: ['🥉 Баланс (бронзова)'],
+  edazfetg4ooo: ['🥇 Час (золота)'],
+  '07_YM': ['🥈 Час (срібна)'],
+  ForteCa228: ['🥉 Час (бронзова)'],
+};
+
+const medalXpByType = { gold: 2500, silver: 1500, bronze: 750 };
+
+const extraXpByPlayer = {
+  Vityappro11: 300,
+  ForteCa228: 200,
+  kasikm1: 100,
+  lukyan187: 100,
+};
+
+function medalXpForPlayer(player) {
+  const medals = medalsByPlayer[player] || [];
+  return medals.reduce((sum, text) => {
+    if (text.includes('золота')) return sum + medalXpByType.gold;
+    if (text.includes('срібна')) return sum + medalXpByType.silver;
+    if (text.includes('бронзова')) return sum + medalXpByType.bronze;
+    return sum;
+  }, 0);
+}
 
 const manualLastSeen = {
   Vityappro11: '2025-03-09', ForteCa228: '2025-03-09', treaforik: '2025-03-09', '07_YM': '2025-03-09',
@@ -371,14 +401,14 @@ function fullStatsForPlayer(player, wipeId, platform='tiktok') {
     .flatMap((c) => c.events)
     .filter((e) => e.player === player && e.action === 'join').length;
 
-  const xp = Math.floor(earnedAllTime / 50) + winsAllTime * 100 + Math.floor(playIncAllTime / 5) + clanJoinsAllTime * 100;
-  const thresholds = [0, 100, 150, 200, 250, 300, 400, 500, 600, 750, 1000, 1250, 1500, 1750, 2000, 2500, 3000, 3500, 4000, 4500, 5000, 10000];
+  const xp = Math.floor(earnedAllTime / 30) + Math.floor(playIncAllTime / 3) + winsAllTime * 100 + clanJoinsAllTime * 100 + (extraXpByPlayer[player] || 0) + medalXpForPlayer(player);
+  const thresholds = [0, 100, 150, 200, 250, 300, 400, 500, 600, 750, 1000, 1250, 1500, 1750, 2000, 2500, 3000, 3500, 4000, 4500, 5000, 6000, 7000, 8000, 9000, 10000, 12000, 14000, 16000, 18000, 20000, 50000];
   let rawLevel = 0;
   for (let i = 0; i < thresholds.length; i++) if (xp >= thresholds[i]) rawLevel = i;
-  const isMaxLevel = xp >= 10000;
-  const level = isMaxLevel ? 20 : Math.min(rawLevel, 20);
+  const isMaxLevel = xp >= 50000;
+  const level = isMaxLevel ? 30 : Math.min(rawLevel, 30);
   const toNext = isMaxLevel ? 0 : Math.max(0, thresholds[level + 1] - xp);
-  const xpAfterMax = isMaxLevel ? xp - 10000 : 0;
+  const xpAfterMax = isMaxLevel ? xp - 50000 : 0;
   const rep = getReputation(player);
   const channels = getPlayerChannels(player).filter((c)=>c.platform===platform);
   const vids = getPlayerVideos(player).filter((v)=>v.platform===platform);
@@ -388,7 +418,7 @@ function fullStatsForPlayer(player, wipeId, platform='tiktok') {
     totalLikes: vids.reduce((a,v)=>a+(v.likes||0),0),
     followers: channels.reduce((a,c)=>a+c.followers,0),
   };
-  return {rep,level,xp,toNext,xpAfterMax,isMaxLevel,maxBalance,currentBalance,playTime,wins,losses,fights,content};
+  return {rep,level,xp,toNext,xpAfterMax,isMaxLevel,maxBalance,currentBalance,playTime,wins,losses,fights,content,medals: medalsByPlayer[player] || []};
 }
 
 function renderFullStatsModal(player) {
@@ -399,7 +429,7 @@ function renderFullStatsModal(player) {
   const repFill = Math.max(0, Math.min(100, stat.rep.score * 10));
   const repLabel = `${stat.rep.score}/10`;
   const levelText = stat.isMaxLevel
-    ? `max level (XP після max level: ${stat.xpAfterMax})`
+    ? `max level (потрібно 50000 XP, XP після max level: ${stat.xpAfterMax})`
     : `${stat.level} (XP: ${stat.xp}, до наступного: ${stat.toNext})`;
   const canContent = ['maksik_paksik7','Varenyk','Vityappro11'].includes(player);
   fullStatsContentPlatformWrap.classList.toggle('hidden', !canContent);
@@ -428,6 +458,8 @@ function renderFullStatsModal(player) {
       <div class="stat"><strong>Winrate</strong><p>${stat.fights.length ? Math.round((stat.wins/stat.fights.length)*100) : 0}%</p></div>
     </div>
     ${canContent ? `<h3>Content (${platform.toUpperCase()})</h3><div class="full-grid"><div class="stat"><strong>Всього відео</strong><p>${stat.content.totalVideos}</p></div><div class="stat"><strong>Всього переглядів</strong><p>${new Intl.NumberFormat('uk-UA').format(stat.content.totalViews)}</p></div><div class="stat"><strong>Всього Лайків</strong><p>${new Intl.NumberFormat('uk-UA').format(stat.content.totalLikes)}</p></div><div class="stat"><strong>${platform==='youtube' ? 'Всього Підписників' : 'Всього Слідкувачів'}</strong><p>${new Intl.NumberFormat('uk-UA').format(stat.content.followers)}</p></div></div>` : ''}
+    <h3>Медалі</h3>
+    <ul>${(stat.medals.length ? stat.medals : ['Немає медалей']).map((m) => `<li>${m}</li>`).join('')}</ul>
   `;
 }
 
@@ -687,6 +719,7 @@ function showPlayerDetails(player) {
       ? formatPlay(combinedValueAcrossWipesForPlayer(player, 'play'))
       : formatPlay(playHistory.at(-1)?.value || 0)) },
     { label: 'ПвП', value: `${pvp.wins} перемог / ${pvp.losses} поразок (${pvp.rate}% winrate)` },
+    { label: 'Медалі', value: (medalsByPlayer[player] || []).join(', ') || 'Немає медалей' },
   ]);
 
   history1Title.textContent = 'Історія балансу (місце та зміна)';
