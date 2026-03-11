@@ -16,6 +16,7 @@ const snapshots = [
   { date: '2025-03-07', players: { Vityappro11: 107255, ForteCa228: 61482, treaforik: 39546, '07_YM': 11640, edazfetg4ooo: 2222, BEFF: 824, Varenyk: 733 }, play: {} },
   { date: '2025-03-08', players: { Vityappro11: 362621, ForteCa228: 336032, TIKTOK_BMW_EDIT: 187566, treaforik: 55145, edazfetg4ooo: 38314, Varenyk: 33203, '07_YM': 11640, BEFF: 824, hirtir: 352 }, play: { maksik_paksik7: 1084, ForteCa228: 637, TIKTOK_BMW_EDIT: 397, edazfetg4ooo: 354, Vityappro11: 223, '07_YM': 121, treaforik: 110 } },
   { date: '2025-03-09', players: { Vityappro11: 620803, treaforik: 427882, ForteCa228: 336032, edazfetg4ooo: 109991, TIKTOK_BMW_EDIT: 89298, Paolo_Fermer: 68828, Varenyk: 33203, '07_YM': 11010, lukyan187: 3296, robot: 863, BEFF: 824, hirtir: 352 }, play: { maksik_paksik7: 1200, ForteCa228: 638, TIKTOK_BMW_EDIT: 541, Vityappro11: 463, edazfetg4ooo: 427, Paolo_Fermer: 200, '07_YM': 131, treaforik: 115 } },
+  { date: '2025-03-10', players: { Vityappro11: 791692, treaforik: 427882, ForteCa228: 336032, Paolo_Fermer: 129061, TIKTOK_BMW_EDIT: 89298, edazfetg4ooo: 87468, Varenyk: 33203, '07_YM': 17707, Topix__: 7533, lukyan187: 3022, robot: 863, BEFF: 824, hirtir: 352 }, play: { maksik_paksik7: 1303, ForteCa228: 638, Vityappro11: 684, TIKTOK_BMW_EDIT: 593, edazfetg4ooo: 488, '07_YM': 460, Paolo_Fermer: 352, treaforik: 115 } },
 ];
 
 const donationByPlayer = {
@@ -47,6 +48,10 @@ const donationHistoryByPlayer = {
     { from: '2025-02-21', donation: 'keerinam' },
     { from: '2025-03-05', donation: 'prista' },
     { from: '2025-03-08', donation: 'DM+' },
+  ],
+  '07_YM': [
+    { from: '2025-02-21', donation: 'status' },
+    { from: '2025-03-10', donation: 'prista' },
   ],
 };
 
@@ -180,10 +185,10 @@ function medalXpForPlayer(player) {
 }
 
 const manualLastSeen = {
-  Vityappro11: '2025-03-09', ForteCa228: '2025-03-09', treaforik: '2025-03-09', '07_YM': '2025-03-09',
-  edazfetg4ooo: '2025-03-09', BEFF: '2025-03-09', Varenyk: '2025-03-08', TIKTOK_BMW_EDIT: '2025-03-09', hirtir: '2025-03-08',
-  lukyan187: '2025-03-09', Paolo_Fermer: '2025-03-09', belui228: '2025-03-08', maksik_paksik7: '2025-03-09',
-  PravyiNosok777: '2025-03-07', hipoma: '2025-03-07', wontz: '2025-03-07', kasikm1: '2025-03-01', robot: '2025-03-09'
+  Vityappro11: '2025-03-10', ForteCa228: '2025-03-09', treaforik: '2025-03-09', '07_YM': '2025-03-10',
+  edazfetg4ooo: '2025-03-10', BEFF: '2025-03-09', Varenyk: '2025-03-08', TIKTOK_BMW_EDIT: '2025-03-10', hirtir: '2025-03-08',
+  lukyan187: '2025-03-10', Paolo_Fermer: '2025-03-10', belui228: '2025-03-08', maksik_paksik7: '2025-03-10',
+  PravyiNosok777: '2025-03-07', hipoma: '2025-03-07', wontz: '2025-03-07', kasikm1: '2025-03-01', robot: '2025-03-09', Topix__: '2025-03-10'
 };
 
 const dateSelect = document.getElementById('dateSelect');
@@ -297,7 +302,7 @@ function allowedDatesForView(v) {
   if (v === 'content') return ['2025-03-05'];
 
   let allowed = dates;
-  if (v === 'play') allowed = dates.filter((d) => d >= '2025-03-02' && d <= '2025-03-09');
+  if (v === 'play') allowed = dates.filter((d) => d >= '2025-03-02' && d <= '2025-03-10');
   if (v === 'clans') allowed = dates.filter((d) => d >= '2025-02-22');
   if (isTopView(v)) {
     const inWipe = new Set(datesInActiveWipe());
