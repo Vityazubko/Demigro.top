@@ -18,6 +18,7 @@ const snapshots = [
   { date: '2025-03-09', players: { Vityappro11: 620803, treaforik: 427882, ForteCa228: 336032, edazfetg4ooo: 109991, TIKTOK_BMW_EDIT: 89298, Paolo_Fermer: 68828, Varenyk: 33203, '07_YM': 11010, lukyan187: 3296, robot: 863, BEFF: 824, hirtir: 352 }, play: { maksik_paksik7: 1200, ForteCa228: 638, TIKTOK_BMW_EDIT: 541, Vityappro11: 463, edazfetg4ooo: 427, Paolo_Fermer: 200, '07_YM': 131, treaforik: 115 } },
   { date: '2025-03-10', players: { Vityappro11: 791692, treaforik: 427882, ForteCa228: 336032, Paolo_Fermer: 129061, TIKTOK_BMW_EDIT: 89298, edazfetg4ooo: 87468, Varenyk: 33203, '07_YM': 17707, Topix__: 7533, lukyan187: 3022, robot: 863, BEFF: 824, hirtir: 352 }, play: { maksik_paksik7: 1303, ForteCa228: 638, Vityappro11: 684, TIKTOK_BMW_EDIT: 593, edazfetg4ooo: 488, '07_YM': 460, Paolo_Fermer: 352, treaforik: 115 } },
   { date: '2025-03-11', players: { Vityappro11: 811023, treaforik: 427882, ForteCa228: 336032, Paolo_Fermer: 131053, TIKTOK_BMW_EDIT: 89298, edazfetg4ooo: 44934, Varenyk: 33203, '07_YM': 26177, maksik_paksik7: 21000, Topix__: 7533, robot: 5722, lukyan187: 3022, BEFF: 824, hirtir: 352 }, play: { maksik_paksik7: 1492, Vityappro11: 747, ForteCa228: 638, TIKTOK_BMW_EDIT: 595, edazfetg4ooo: 566, '07_YM': 566, Paolo_Fermer: 462, treaforik: 115 } },
+  { date: '2025-03-12', players: { Vityappro11: 889745, Varenyk: 494196, treaforik: 418882, ForteCa228: 336032, Paolo_Fermer: 146186, TIKTOK_BMW_EDIT: 89298, Restioynik1: 82589, '07_YM': 49188, Bear228: 34160, maksik_paksik7: 21000, edazfetg4ooo: 7295, Topix__: 7533, robot: 5722, lukyan187: 3022, ivan_strogo: 2057, dddooooppp: 1000, BEFF: 824, hirtir: 352 }, play: { maksik_paksik7: 1663, Vityappro11: 880, edazfetg4ooo: 815, '07_YM': 734, ForteCa228: 638, TIKTOK_BMW_EDIT: 597, Paolo_Fermer: 550, treaforik: 115 } },
 ];
 
 const donationByPlayer = {
@@ -186,10 +187,11 @@ function medalXpForPlayer(player) {
 }
 
 const manualLastSeen = {
-  Vityappro11: '2025-03-11', ForteCa228: '2025-03-09', treaforik: '2025-03-09', '07_YM': '2025-03-11',
-  edazfetg4ooo: '2025-03-11', BEFF: '2025-03-09', Varenyk: '2025-03-08', TIKTOK_BMW_EDIT: '2025-03-11', hirtir: '2025-03-08',
-  lukyan187: '2025-03-10', Paolo_Fermer: '2025-03-11', belui228: '2025-03-08', maksik_paksik7: '2025-03-11',
-  PravyiNosok777: '2025-03-07', hipoma: '2025-03-07', wontz: '2025-03-07', kasikm1: '2025-03-01', robot: '2025-03-11', Topix__: '2025-03-10'
+  Vityappro11: '2025-03-12', ForteCa228: '2025-03-09', treaforik: '2025-03-12', '07_YM': '2025-03-12',
+  edazfetg4ooo: '2025-03-12', BEFF: '2025-03-09', Varenyk: '2025-03-12', TIKTOK_BMW_EDIT: '2025-03-12', hirtir: '2025-03-08',
+  lukyan187: '2025-03-10', Paolo_Fermer: '2025-03-12', belui228: '2025-03-08', maksik_paksik7: '2025-03-12',
+  PravyiNosok777: '2025-03-12', hipoma: '2025-03-07', wontz: '2025-03-07', kasikm1: '2025-03-01', robot: '2025-03-12', Topix__: '2025-03-10',
+  Restioynik1: '2025-03-12', Bear228: '2025-03-12', ivan_strogo: '2025-03-12', dddooooppp: '2025-03-12'
 };
 
 const dateSelect = document.getElementById('dateSelect');
@@ -245,7 +247,7 @@ const dates = snapshots.map((s) => s.date);
 const latestDate = dates[dates.length - 1];
 
 const wipeRanges = {
-  novaEra: { label: 'Нова Ера (21 лютого - 7 березня)', start: '2025-02-21', end: '2025-03-06' },
+  novaEra: { label: 'Нова Ера (14 лютого - 7 березня)', start: '2025-02-14', end: '2025-03-06' },
   springGame: { label: 'Весняна Гра (7 березня - 1 квітня)', start: '2025-03-07', end: '2025-04-01' },
   allTime: { label: 'За весь час', start: '2025-02-21', end: '2025-12-31' },
 };
@@ -303,7 +305,7 @@ function allowedDatesForView(v) {
   if (v === 'content') return ['2025-03-05'];
 
   let allowed = dates;
-  if (v === 'play') allowed = dates.filter((d) => d >= '2025-03-02' && d <= '2025-03-11');
+  if (v === 'play') allowed = dates.filter((d) => d >= '2025-03-02' && d <= '2025-03-12' && d !== '2025-03-07');
   if (v === 'clans') allowed = dates.filter((d) => d >= '2025-02-22');
   if (isTopView(v)) {
     const inWipe = new Set(datesInActiveWipe());
@@ -546,6 +548,10 @@ function totalMoneyAtDate(date) {
 function rankMapForDate(sourceObj) {
   const sorted = Object.entries(sourceObj).sort((a, b) => b[1] - a[1]).map(([name], idx) => [name, idx + 1]);
   return Object.fromEntries(sorted);
+}
+
+function isHiddenFromLeaderboard(name, date) {
+  return name === 'maksik_paksik7' && (date === '2025-03-11' || date === '2025-03-12');
 }
 
 function positionDelta(prevRank, curRank) {
@@ -953,15 +959,15 @@ function renderLeaderboard() {
   if (view === 'balance') {
     tableTitle.textContent = 'Топ Баланс'; nameHeader.textContent = 'Гравець'; valueHeader.textContent = 'Баланс';
     tableSubtitle.textContent = `Актуальні баланси на ${dateLabel(date)} • Всього на сервері: ${formatCurrency(totalMoneyAtDate(date))}`;
-    rows = Object.entries(snap.players).map(([n, v]) => ({ name: n, value: v, click: () => showPlayerDetails(n), display: formatCurrency(v) }));
+    rows = Object.entries(snap.players).filter(([n]) => !isHiddenFromLeaderboard(n, date)).map(([n, v]) => ({ name: n, value: v, click: () => showPlayerDetails(n), display: formatCurrency(v) }));
   } else if (view === 'play') {
     tableTitle.textContent = 'Top Play'; nameHeader.textContent = 'Гравець'; valueHeader.textContent = 'Час';
     if ((date === '2025-03-07' && activeWipe === 'springGame') || Object.keys(snap.play).length === 0) {
       tableSubtitle.textContent = 'Нажаль на сьогодні інформації нема, спробуй подивитися топ за минулий вайп.';
       rows = [];
     } else {
-      tableSubtitle.textContent = `Доступно лише 2-8 березня • ${dateLabel(date)} • Всього на сервері: ${formatCurrency(totalMoneyAtDate(date))}`;
-      rows = Object.entries(snap.play).map(([n, v]) => ({ name: n, value: v, click: () => showPlayerDetails(n), display: formatPlay(v) }));
+      tableSubtitle.textContent = `${dateLabel(date)} • Всього на сервері: ${formatCurrency(totalMoneyAtDate(date))}`;
+      rows = Object.entries(snap.play).filter(([n]) => !isHiddenFromLeaderboard(n, date)).map(([n, v]) => ({ name: n, value: v, click: () => showPlayerDetails(n), display: formatPlay(v) }));
     }
   } else if (view === 'clans') {
     tableTitle.textContent = 'Топ Кланів'; nameHeader.textContent = 'Клан'; valueHeader.textContent = 'Баланс клану';
