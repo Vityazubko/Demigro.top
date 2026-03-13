@@ -19,6 +19,7 @@ const snapshots = [
   { date: '2025-03-10', players: { Vityappro11: 791692, treaforik: 427882, ForteCa228: 336032, Paolo_Fermer: 129061, TIKTOK_BMW_EDIT: 89298, edazfetg4ooo: 87468, Varenyk: 33203, '07_YM': 17707, Topix__: 7533, lukyan187: 3022, robot: 863, BEFF: 824, hirtir: 352 }, play: { maksik_paksik7: 1303, ForteCa228: 638, Vityappro11: 684, TIKTOK_BMW_EDIT: 593, edazfetg4ooo: 488, '07_YM': 460, Paolo_Fermer: 352, treaforik: 115 } },
   { date: '2025-03-11', players: { Vityappro11: 811023, treaforik: 427882, ForteCa228: 336032, Paolo_Fermer: 131053, TIKTOK_BMW_EDIT: 89298, edazfetg4ooo: 44934, Varenyk: 33203, '07_YM': 26177, maksik_paksik7: 21000, Topix__: 7533, robot: 5722, lukyan187: 3022, BEFF: 824, hirtir: 352 }, play: { maksik_paksik7: 1492, Vityappro11: 747, ForteCa228: 638, TIKTOK_BMW_EDIT: 595, edazfetg4ooo: 566, '07_YM': 566, Paolo_Fermer: 462, treaforik: 115 } },
   { date: '2025-03-12', players: { Vityappro11: 889745, Varenyk: 494196, treaforik: 418882, ForteCa228: 336032, Paolo_Fermer: 146186, TIKTOK_BMW_EDIT: 89298, Restioynik1: 82589, '07_YM': 49188, Bear228: 34160, maksik_paksik7: 21000, edazfetg4ooo: 7295, Topix__: 7533, robot: 5722, lukyan187: 3022, ivan_strogo: 2057, dddooooppp: 1000, BEFF: 824, hirtir: 352 }, play: { maksik_paksik7: 1663, Vityappro11: 880, edazfetg4ooo: 815, '07_YM': 734, ForteCa228: 638, TIKTOK_BMW_EDIT: 597, Paolo_Fermer: 550, treaforik: 115 } },
+  { date: '2025-03-13', players: { Vityappro11: 911618, Varenyk: 494146, treaforik: 409882, ForteCa228: 336032, Paolo_Fermer: 114089, Restioynik1: 102507, goiida11: 100929, TIKTOK_BMW_EDIT: 90298, '07_YM': 49092, Bear228: 34160, maksik_paksik7: 21000, Topix__: 7533, edazfetg4ooo: 220, robot: 5722, lukyan187: 3022, ivan_strogo: 2057, dddooooppp: 1000, BEFF: 824, hirtir: 352 }, play: { Vityappro11: 967, edazfetg4ooo: 895, '07_YM': 765, Paolo_Fermer: 664, maksik_paksik7: 1663, ForteCa228: 638, TIKTOK_BMW_EDIT: 602, treaforik: 115 } },
 ];
 
 const donationByPlayer = {
@@ -101,7 +102,7 @@ const serverUpdates = [
   { title: 'ОСТАННЄ ЛІТО', period: '12 серпня - 30 серпня', start: '2025-08-12', end: '2025-08-30', items: ['видалили Замок Весторі і Аірдроп', 'Переробили спавн'] },
   { title: 'ОСІННІЙ ВАЙП', period: '31 серпня - 30 вересня', start: '2025-08-31', end: '2025-09-30', items: ['Переробили спавн', '9 вересня добавили сферу Останнього'] },
   { title: 'ПОВЕРНЕННЯ ДЕМІГРО', period: '25 січня - 14 лютого', start: '2026-01-25', end: '2026-02-14', items: ['Добавили Контейнер PTE'] },
-  { title: 'НОВА ЕРА', period: '21 лютого - 7 березня', start: '2025-02-21', end: '2025-03-07', items: ['Переробка сервера на новому хостингу', '21 лютого добавили /site, Клани, Кейс Талісманів', '22 лютого добавили Призи,Купця та Чарівника', '25 лютого добавили новий кейс ТнТ і нові 3 вида ТнТ', '27 лютого заміна кейса ТнТ', '28 лютого добавили TAB, /report, валюту Демігрики, Топ по часу на сервері, Рівні ендер Скрині, Новий магазин, Оновлення кітів'] },
+  { title: 'НОВА ЕРА', period: '14 лютого - 7 березня', start: '2025-02-14', end: '2025-03-07', items: ['Переробка сервера на новому хостингу', '21 лютого добавили /site, Клани, Кейс Талісманів', '22 лютого добавили Призи,Купця та Чарівника', '25 лютого добавили новий кейс ТнТ і нові 3 вида ТнТ', '27 лютого заміна кейса ТнТ', '28 лютого добавили TAB, /report, валюту Демігрики, Топ по часу на сервері, Рівні ендер Скрині, Новий магазин, Оновлення кітів'] },
   { title: 'ВЕСНЯНА ГРА', period: '7 березня - 1 квітня', start: '2025-03-07', end: '2025-04-01', items: ['Новий статус', 'Новий квест', 'Новий кейс', 'Новий Донат', 'Новий івент', 'Нові донат речі', 'Зміна сайту', 'Зміна цін привілегій', 'Видалення Талісмана Бога', 'Оновлення спавна', 'Оновлення ПвП арени', 'Скорборд у режимі ПвП'] },
 ];
 
@@ -187,11 +188,11 @@ function medalXpForPlayer(player) {
 }
 
 const manualLastSeen = {
-  Vityappro11: '2025-03-12', ForteCa228: '2025-03-09', treaforik: '2025-03-12', '07_YM': '2025-03-12',
-  edazfetg4ooo: '2025-03-12', BEFF: '2025-03-09', Varenyk: '2025-03-12', TIKTOK_BMW_EDIT: '2025-03-12', hirtir: '2025-03-08',
-  lukyan187: '2025-03-10', Paolo_Fermer: '2025-03-12', belui228: '2025-03-08', maksik_paksik7: '2025-03-12',
-  PravyiNosok777: '2025-03-12', hipoma: '2025-03-07', wontz: '2025-03-07', kasikm1: '2025-03-01', robot: '2025-03-12', Topix__: '2025-03-10',
-  Restioynik1: '2025-03-12', Bear228: '2025-03-12', ivan_strogo: '2025-03-12', dddooooppp: '2025-03-12'
+  Vityappro11: '2025-03-13', ForteCa228: '2025-03-09', treaforik: '2025-03-13', '07_YM': '2025-03-13',
+  edazfetg4ooo: '2025-03-13', BEFF: '2025-03-09', Varenyk: '2025-03-13', TIKTOK_BMW_EDIT: '2025-03-13', hirtir: '2025-03-08',
+  lukyan187: '2025-03-13', Paolo_Fermer: '2025-03-13', belui228: '2025-03-08', maksik_paksik7: '2025-03-12',
+  PravyiNosok777: '2025-03-12', hipoma: '2025-03-07', wontz: '2025-03-07', kasikm1: '2025-03-01', robot: '2025-03-13', Topix__: '2025-03-10',
+  Restioynik1: '2025-03-13', Bear228: '2025-03-12', ivan_strogo: '2025-03-12', dddooooppp: '2025-03-12', goiida11: '2025-03-13'
 };
 
 const dateSelect = document.getElementById('dateSelect');
@@ -305,7 +306,7 @@ function allowedDatesForView(v) {
   if (v === 'content') return ['2025-03-05'];
 
   let allowed = dates;
-  if (v === 'play') allowed = dates.filter((d) => d >= '2025-03-02' && d <= '2025-03-12' && d !== '2025-03-07');
+  if (v === 'play') allowed = dates.filter((d) => d >= '2025-03-02' && d <= '2025-03-13' && d !== '2025-03-07');
   if (v === 'clans') allowed = dates.filter((d) => d >= '2025-02-22');
   if (isTopView(v)) {
     const inWipe = new Set(datesInActiveWipe());
@@ -503,7 +504,7 @@ function setWipeSelectVisibility() {
 
 function setDetailsWipeVisibility(visible) {
   detailsWipeWrap.classList.toggle('hidden', !visible);
-  if (visible) detailsWipeSelect.value = activeWipe;
+  if (visible && !detailsWipeSelect.value) detailsWipeSelect.value = activeWipe;
 }
 
 function setContentControlsVisible(visible) {
