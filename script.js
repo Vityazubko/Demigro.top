@@ -20,6 +20,7 @@ const snapshots = [
   { date: '2025-03-11', players: { Vityappro11: 811023, treaforik: 427882, ForteCa228: 336032, Paolo_Fermer: 131053, TIKTOK_BMW_EDIT: 89298, edazfetg4ooo: 44934, Varenyk: 33203, '07_YM': 26177, maksik_paksik7: 21000, Topix__: 7533, robot: 5722, lukyan187: 3022, BEFF: 824, hirtir: 352 }, play: { maksik_paksik7: 1492, Vityappro11: 747, ForteCa228: 638, TIKTOK_BMW_EDIT: 595, edazfetg4ooo: 566, '07_YM': 566, Paolo_Fermer: 462, treaforik: 115 } },
   { date: '2025-03-12', players: { Vityappro11: 889745, Varenyk: 494196, treaforik: 418882, ForteCa228: 336032, Paolo_Fermer: 146186, TIKTOK_BMW_EDIT: 89298, Restioynik1: 82589, '07_YM': 49188, Bear228: 34160, maksik_paksik7: 21000, edazfetg4ooo: 7295, Topix__: 7533, robot: 5722, lukyan187: 3022, ivan_strogo: 2057, dddooooppp: 1000, BEFF: 824, hirtir: 352 }, play: { maksik_paksik7: 1663, Vityappro11: 880, edazfetg4ooo: 815, '07_YM': 734, ForteCa228: 638, TIKTOK_BMW_EDIT: 597, Paolo_Fermer: 550, treaforik: 115 } },
   { date: '2025-03-13', players: { Vityappro11: 911618, Varenyk: 494146, treaforik: 409882, ForteCa228: 336032, Paolo_Fermer: 114089, Restioynik1: 102507, goiida11: 100929, TIKTOK_BMW_EDIT: 90298, '07_YM': 49092, Bear228: 34160, maksik_paksik7: 21000, Topix__: 7533, edazfetg4ooo: 220, robot: 5722, lukyan187: 3022, ivan_strogo: 2057, dddooooppp: 1000, BEFF: 824, hirtir: 352 }, play: { Vityappro11: 967, edazfetg4ooo: 895, '07_YM': 765, Paolo_Fermer: 664, maksik_paksik7: 1663, ForteCa228: 638, TIKTOK_BMW_EDIT: 602, treaforik: 115 } },
+  { date: '2025-03-14', players: { Vityappro11: 936432, Varenyk: 494136, treaforik: 418882, ForteCa228: 336032, Paolo_Fermer: 114089, Restioynik1: 102507, goiida11: 100929, TIKTOK_BMW_EDIT: 90298, XIN_jonu: 29573, illwix: 18335, Bear228: 34160, '07_YM': 11767, maksik_paksik7: 21000, Topix__: 7533, robot: 5722, ivan_strogo: 2057, ulquiorra2: 1589, dddooooppp: 1000, BEFF: 824, edazfetg4ooo: 701, lukyan187: 3022, hirtir: 352 }, play: { Vityappro11: 1100, edazfetg4ooo: 983, '07_YM': 841, Paolo_Fermer: 666, ForteCa228: 638, TIKTOK_BMW_EDIT: 602, treaforik: 115, maksik_paksik7: 1663 } },
 ];
 
 const donationByPlayer = {
@@ -188,11 +189,12 @@ function medalXpForPlayer(player) {
 }
 
 const manualLastSeen = {
-  Vityappro11: '2025-03-13', ForteCa228: '2025-03-09', treaforik: '2025-03-13', '07_YM': '2025-03-13',
-  edazfetg4ooo: '2025-03-13', BEFF: '2025-03-09', Varenyk: '2025-03-13', TIKTOK_BMW_EDIT: '2025-03-13', hirtir: '2025-03-08',
-  lukyan187: '2025-03-13', Paolo_Fermer: '2025-03-13', belui228: '2025-03-08', maksik_paksik7: '2025-03-12',
-  PravyiNosok777: '2025-03-12', hipoma: '2025-03-07', wontz: '2025-03-07', kasikm1: '2025-03-01', robot: '2025-03-13', Topix__: '2025-03-10',
-  Restioynik1: '2025-03-13', Bear228: '2025-03-12', ivan_strogo: '2025-03-12', dddooooppp: '2025-03-12', goiida11: '2025-03-13'
+  Vityappro11: '2025-03-14', ForteCa228: '2025-03-09', treaforik: '2025-03-14', '07_YM': '2025-03-14',
+  edazfetg4ooo: '2025-03-14', BEFF: '2025-03-09', Varenyk: '2025-03-14', TIKTOK_BMW_EDIT: '2025-03-13', hirtir: '2025-03-08',
+  lukyan187: '2025-03-13', Paolo_Fermer: '2025-03-14', belui228: '2025-03-08', maksik_paksik7: '2025-03-12',
+  PravyiNosok777: '2025-03-12', hipoma: '2025-03-07', wontz: '2025-03-07', kasikm1: '2025-03-01', robot: '2025-03-14', Topix__: '2025-03-10',
+  Restioynik1: '2025-03-13', Bear228: '2025-03-12', ivan_strogo: '2025-03-14', dddooooppp: '2025-03-12', goiida11: '2025-03-13',
+  XIN_jonu: '2025-03-14', illwix: '2025-03-14', ulquiorra2: '2025-03-14', kampys231231: '2025-03-13'
 };
 
 const dateSelect = document.getElementById('dateSelect');
@@ -306,7 +308,7 @@ function allowedDatesForView(v) {
   if (v === 'content') return ['2025-03-05'];
 
   let allowed = dates;
-  if (v === 'play') allowed = dates.filter((d) => d >= '2025-03-02' && d <= '2025-03-13' && d !== '2025-03-07');
+  if (v === 'play') allowed = dates.filter((d) => d >= '2025-03-02' && d <= '2025-03-14' && d !== '2025-03-07');
   if (v === 'clans') allowed = dates.filter((d) => d >= '2025-02-22');
   if (isTopView(v)) {
     const inWipe = new Set(datesInActiveWipe());
@@ -551,8 +553,8 @@ function rankMapForDate(sourceObj) {
   return Object.fromEntries(sorted);
 }
 
-function isHiddenFromLeaderboard(name, date) {
-  return name === 'maksik_paksik7' && (date === '2025-03-11' || date === '2025-03-12');
+function isHiddenFromPlayLeaderboard(name, date) {
+  return name === 'maksik_paksik7' && date >= '2025-03-13';
 }
 
 function positionDelta(prevRank, curRank) {
@@ -960,7 +962,7 @@ function renderLeaderboard() {
   if (view === 'balance') {
     tableTitle.textContent = 'Топ Баланс'; nameHeader.textContent = 'Гравець'; valueHeader.textContent = 'Баланс';
     tableSubtitle.textContent = `Актуальні баланси на ${dateLabel(date)} • Всього на сервері: ${formatCurrency(totalMoneyAtDate(date))}`;
-    rows = Object.entries(snap.players).filter(([n]) => !isHiddenFromLeaderboard(n, date)).map(([n, v]) => ({ name: n, value: v, click: () => showPlayerDetails(n), display: formatCurrency(v) }));
+    rows = Object.entries(snap.players).map(([n, v]) => ({ name: n, value: v, click: () => showPlayerDetails(n), display: formatCurrency(v) }));
   } else if (view === 'play') {
     tableTitle.textContent = 'Top Play'; nameHeader.textContent = 'Гравець'; valueHeader.textContent = 'Час';
     if ((date === '2025-03-07' && activeWipe === 'springGame') || Object.keys(snap.play).length === 0) {
@@ -968,7 +970,7 @@ function renderLeaderboard() {
       rows = [];
     } else {
       tableSubtitle.textContent = `${dateLabel(date)} • Всього на сервері: ${formatCurrency(totalMoneyAtDate(date))}`;
-      rows = Object.entries(snap.play).filter(([n]) => !isHiddenFromLeaderboard(n, date)).map(([n, v]) => ({ name: n, value: v, click: () => showPlayerDetails(n), display: formatPlay(v) }));
+      rows = Object.entries(snap.play).filter(([n]) => !isHiddenFromPlayLeaderboard(n, date)).map(([n, v]) => ({ name: n, value: v, click: () => showPlayerDetails(n), display: formatPlay(v) }));
     }
   } else if (view === 'clans') {
     tableTitle.textContent = 'Топ Кланів'; nameHeader.textContent = 'Клан'; valueHeader.textContent = 'Баланс клану';
