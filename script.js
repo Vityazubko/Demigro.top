@@ -194,7 +194,7 @@ const manualLastSeen = {
   lukyan187: '2025-03-13', Paolo_Fermer: '2025-03-14', belui228: '2025-03-08', maksik_paksik7: '2025-03-12',
   PravyiNosok777: '2025-03-12', hipoma: '2025-03-07', wontz: '2025-03-07', kasikm1: '2025-03-01', robot: '2025-03-14', Topix__: '2025-03-10',
   Restioynik1: '2025-03-13', Bear228: '2025-03-12', ivan_strogo: '2025-03-14', dddooooppp: '2025-03-12', goiida11: '2025-03-13',
-  XIN_jonu: '2025-03-14', illwix: '2025-03-14', ulquiorra2: '2025-03-14', kampys231231: '2025-03-13'
+  XIN_jonu: '2025-03-14', illwix: '2025-03-14', ulquiorra2: '2025-03-14', kampys231231: '2025-03-14'
 };
 
 const dateSelect = document.getElementById('dateSelect');
@@ -352,11 +352,12 @@ function getReputation(player) {
     m0NESY: 2, Nazar3321: 2, kostya2103: 2, maksyarosh: 2,
     SIGMA: 3, kampys231231: 3, jtx_by: 3, '05LONE12': 3,
     BEFF: 4, Vortex1k: 4, belui228: 4,
-    lukyan187: 5, FairDemonYT: 5, wontz: 5, TIKTOK_BMW_EDIT: 5,
+    lukyan187: 4, FairDemonYT: 5, wontz: 5, TIKTOK_BMW_EDIT: 5,
     kasikm1: 6, aboba2032: 6, hipoma: 6, Varenyk: 6,
     PravyiNosok777: 7, edazfetg4ooo: 7, Paolo_Fermer: 7, '07_YM': 7, treaforik: 7,
-    ForteCa228: 8,
+    ForteCa228: 7,
     Vityappro11: 9,
+    Restioynik1: 3, goiida11: 3, Bear228: 3, XIN_jonu: 2, illwix: 2,
     maksik_paksik7: 10,
   };
   const score = map[player] || 1;
@@ -395,13 +396,13 @@ function fullStatsForPlayer(player, wipeId, platform='tiktok') {
     .filter((s) => s.play[player] !== undefined)
     .map((s) => ({ date: s.date, v: s.play[player] }));
 
-  let earnedAllTime = 0;
+  let earnedAllTime = allBal.length ? allBal[0].v : 0;
   for (let i = 1; i < allBal.length; i++) {
     const diff = allBal[i].v - allBal[i - 1].v;
     if (diff > 0) earnedAllTime += diff;
   }
 
-  let playIncAllTime = 0;
+  let playIncAllTime = allPlay.length ? allPlay[0].v : 0;
   for (let i = 1; i < allPlay.length; i++) {
     playIncAllTime += Math.max(0, allPlay[i].v - allPlay[i - 1].v);
   }
@@ -413,13 +414,13 @@ function fullStatsForPlayer(player, wipeId, platform='tiktok') {
     .filter((e) => e.player === player && e.action === 'join').length;
 
   const xp = Math.floor(earnedAllTime / 30) + Math.floor(playIncAllTime / 3) + winsAllTime * 100 + clanJoinsAllTime * 100 + (extraXpByPlayer[player] || 0) + medalXpForPlayer(player);
-  const thresholds = [0, 100, 150, 200, 250, 300, 400, 500, 600, 750, 1000, 1250, 1500, 1750, 2000, 2500, 3000, 3500, 4000, 4500, 5000, 6000, 7000, 8000, 9000, 10000, 12000, 14000, 16000, 18000, 20000, 50000];
+  const thresholds = [0, 100, 150, 200, 250, 300, 400, 500, 600, 750, 1000, 1250, 1500, 1750, 2000, 2500, 3000, 3500, 4000, 4500, 5000, 6000, 7000, 8000, 9000, 10000, 12000, 14000, 16000, 18000, 20000, 22500, 25000, 27500, 30000, 35000, 40000, 45000, 50000, 55000, 60000, 100000];
   let rawLevel = 0;
   for (let i = 0; i < thresholds.length; i++) if (xp >= thresholds[i]) rawLevel = i;
-  const isMaxLevel = xp >= 50000;
-  const level = isMaxLevel ? 30 : Math.min(rawLevel, 30);
+  const isMaxLevel = xp >= 100000;
+  const level = isMaxLevel ? 40 : Math.min(rawLevel, 40);
   const toNext = isMaxLevel ? 0 : Math.max(0, thresholds[level + 1] - xp);
-  const xpAfterMax = isMaxLevel ? xp - 50000 : 0;
+  const xpAfterMax = isMaxLevel ? xp - 100000 : 0;
   const rep = getReputation(player);
   const channels = getPlayerChannels(player).filter((c)=>c.platform===platform);
   const vids = getPlayerVideos(player).filter((v)=>v.platform===platform);
@@ -440,7 +441,7 @@ function renderFullStatsModal(player) {
   const repFill = Math.max(0, Math.min(100, stat.rep.score * 10));
   const repLabel = `${stat.rep.score}/10`;
   const levelText = stat.isMaxLevel
-    ? `max level (потрібно 50000 XP, XP після max level: ${stat.xpAfterMax})`
+    ? `max level (потрібно 100000 XP, XP після max level: ${stat.xpAfterMax})`
     : `${stat.level} (XP: ${stat.xp}, до наступного: ${stat.toNext})`;
   const canContent = ['maksik_paksik7','Varenyk','Vityappro11'].includes(player);
   fullStatsContentPlatformWrap.classList.toggle('hidden', !canContent);
@@ -471,6 +472,8 @@ function renderFullStatsModal(player) {
     ${canContent ? `<h3>Content (${platform.toUpperCase()})</h3><div class="full-grid"><div class="stat"><strong>Всього відео</strong><p>${stat.content.totalVideos}</p></div><div class="stat"><strong>Всього переглядів</strong><p>${new Intl.NumberFormat('uk-UA').format(stat.content.totalViews)}</p></div><div class="stat"><strong>Всього Лайків</strong><p>${new Intl.NumberFormat('uk-UA').format(stat.content.totalLikes)}</p></div><div class="stat"><strong>${platform==='youtube' ? 'Всього Підписників' : 'Всього Слідкувачів'}</strong><p>${new Intl.NumberFormat('uk-UA').format(stat.content.followers)}</p></div></div>` : ''}
     <h3>Медалі</h3>
     <ul>${(stat.medals.length ? stat.medals : ['Немає медалей']).map((m) => `<li>${m}</li>`).join('')}</ul>
+    <h3>Вимоги до нових рівнів</h3>
+    <ul><li>31 — 22500 XP</li><li>32 — 25000 XP</li><li>33 — 27500 XP</li><li>34 — 30000 XP</li><li>35 — 35000 XP</li><li>36 — 40000 XP</li><li>37 — 45000 XP</li><li>38 — 50000 XP</li><li>39 — 55000 XP</li><li>40 — 60000 XP</li><li>max level — 100000 XP</li></ul>
   `;
 }
 
@@ -555,6 +558,10 @@ function rankMapForDate(sourceObj) {
 
 function isHiddenFromPlayLeaderboard(name, date) {
   return name === 'maksik_paksik7' && date >= '2025-03-13';
+}
+
+function isHiddenFromBalanceLeaderboard(name) {
+  return name === 'maksik_paksik7';
 }
 
 function positionDelta(prevRank, curRank) {
@@ -962,7 +969,7 @@ function renderLeaderboard() {
   if (view === 'balance') {
     tableTitle.textContent = 'Топ Баланс'; nameHeader.textContent = 'Гравець'; valueHeader.textContent = 'Баланс';
     tableSubtitle.textContent = `Актуальні баланси на ${dateLabel(date)} • Всього на сервері: ${formatCurrency(totalMoneyAtDate(date))}`;
-    rows = Object.entries(snap.players).map(([n, v]) => ({ name: n, value: v, click: () => showPlayerDetails(n), display: formatCurrency(v) }));
+    rows = Object.entries(snap.players).filter(([n]) => !isHiddenFromBalanceLeaderboard(n)).map(([n, v]) => ({ name: n, value: v, click: () => showPlayerDetails(n), display: formatCurrency(v) }));
   } else if (view === 'play') {
     tableTitle.textContent = 'Top Play'; nameHeader.textContent = 'Гравець'; valueHeader.textContent = 'Час';
     if ((date === '2025-03-07' && activeWipe === 'springGame') || Object.keys(snap.play).length === 0) {
