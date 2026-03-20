@@ -304,7 +304,7 @@ function daysDiffInclusive(start, end) {
 }
 
 function isTopView(v) {
-  return ['balance', 'play', 'clans', 'donates', 'demigryky', 'kills'].includes(v);
+  return ['balance', 'play', 'clans', 'donates'].includes(v);
 }
 
 function datesInActiveWipe() {
@@ -330,6 +330,7 @@ function currentDateInActiveWipe(preferredDate = dateSelect.value) {
 
 function allowedDatesForView(v) {
   if (v === 'content') return ['2025-03-05'];
+  if (v === 'demigryky' || v === 'kills') return ['2025-03-17', '2025-03-18'];
 
   let allowed = dates;
   if (v === 'play') allowed = dates.filter((d) => d >= '2025-03-02' && d <= '2025-03-18' && d !== '2025-03-07');
@@ -528,8 +529,10 @@ function setDateSelectVisibility() {
 }
 
 function setWipeSelectVisibility() {
-  wipeSelectWrap.classList.toggle('hidden', !isTopView(view));
+  const show = ['balance', 'play', 'clans', 'donates'].includes(view);
+  wipeSelectWrap.classList.toggle('hidden', !show);
 }
+
 
 function setDetailsWipeVisibility(visible) {
   detailsWipeWrap.classList.toggle('hidden', !visible);
