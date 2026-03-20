@@ -22,7 +22,9 @@ const snapshots = [
   { date: '2025-03-13', players: { Vityappro11: 911618, Varenyk: 494146, treaforik: 409882, ForteCa228: 336032, Paolo_Fermer: 114089, Restioynik1: 102507, goiida11: 100929, TIKTOK_BMW_EDIT: 90298, '07_YM': 49092, Bear228: 34160, maksik_paksik7: 21000, Topix__: 7533, edazfetg4ooo: 220, robot: 5722, lukyan187: 3022, ivan_strogo: 2057, dddooooppp: 1000, BEFF: 824, hirtir: 352 }, play: { Vityappro11: 967, edazfetg4ooo: 895, '07_YM': 765, Paolo_Fermer: 664, maksik_paksik7: 1663, ForteCa228: 638, TIKTOK_BMW_EDIT: 602, treaforik: 115 } },
   { date: '2025-03-14', players: { Vityappro11: 936432, Varenyk: 494136, treaforik: 418882, ForteCa228: 336032, Paolo_Fermer: 114089, Restioynik1: 102507, goiida11: 100929, TIKTOK_BMW_EDIT: 90298, XIN_jonu: 29573, illwix: 18335, Bear228: 34160, '07_YM': 11767, maksik_paksik7: 21000, Topix__: 7533, robot: 5722, ivan_strogo: 2057, ulquiorra2: 1589, dddooooppp: 1000, BEFF: 824, edazfetg4ooo: 701, lukyan187: 3022, hirtir: 352 }, play: { Vityappro11: 1040, edazfetg4ooo: 983, '07_YM': 841, Paolo_Fermer: 666, ForteCa228: 638, TIKTOK_BMW_EDIT: 602, treaforik: 115, maksik_paksik7: 1663 } },
   { date: '2025-03-15', players: { Vityappro11: 1001057, Varenyk: 518696, treaforik: 418882, ForteCa228: 336032, Paolo_Fermer: 126217, Restioynik1: 102507, goiida11: 100929, TIKTOK_BMW_EDIT: 90298, XIN_jonu: 29573, illwix: 18335, Bear228: 34160, '07_YM': 11737, maksik_paksik7: 21000, Topix__: 7533, robot: 5722, ivan_strogo: 2057, ulquiorra2: 1589, dddooooppp: 1000, BEFF: 824, edazfetg4ooo: 286, lukyan187: 3022, hirtir: 352 }, play: { Vityappro11: 1068, edazfetg4ooo: 1160, '07_YM': 922, Paolo_Fermer: 735, Varenyk: 269, ForteCa228: 638, TIKTOK_BMW_EDIT: 609, treaforik: 115, maksik_paksik7: 1663 } },
-  { date: '2025-03-16', players: { Vityappro11: 965388, Varenyk: 518496, treaforik: 418882, ForteCa228: 336032, edazfetg4ooo: 201351, Paolo_Fermer: 104930, Restioynik1: 102507, goiida11: 100929, TIKTOK_BMW_EDIT: 90298, XIN_jonu: 29573, illwix: 18335, Bear228: 34160, Inzio_: 32150, '07_YM': 11737, maksik_paksik7: 21000, Topix__: 7533, robot: 5722, ivan_strogo: 2057, ulquiorra2: 1589, dddooooppp: 1000, BEFF: 824, lukyan187: 3022, hirtir: 352 }, play: { Vityappro11: 1131, edazfetg4ooo: 1300, '07_YM': 941, Paolo_Fermer: 773, Varenyk: 280, ForteCa228: 638, TIKTOK_BMW_EDIT: 609, treaforik: 115, maksik_paksik7: 1663 } },
+  { date: '2025-03-16', players: { Vityappro11: 965388, Varenyk: 518496, treaforik: 418882, ForteCa228: 336032, edazfetg4ooo: 201351, Paolo_Fermer: 104930, Restioynik1: 102507, goiida11: 100929, TIKTOK_BMW_EDIT: 90298, XIN_jonu: 29573, illwix: 18335, Bear228: 34160, Inzio_: 32150, '07_YM': 11737, maksik_paksik7: 21000, Topix__: 7533, robot: 5722, ivan_strogo: 2057, ulquiorra2: 1589, dddooooppp: 1000, BEFF: 824, lukyan187: 3022, hirtir: 352 }, play: { Vityappro11: 1131, edazfetg4ooo: 1240, '07_YM': 941, Paolo_Fermer: 773, Varenyk: 280, ForteCa228: 638, TIKTOK_BMW_EDIT: 609, treaforik: 115, maksik_paksik7: 1663 } },
+  { date: '2025-03-17', players: { Vityappro11: 1072119, Varenyk: 518496, Inzio_: 476978, treaforik: 418882, ForteCa228: 336032, edazfetg4ooo: 201351, Restioynik1: 122507, Paolo_Fermer: 110932, goiida11: 100929, TIKTOK_BMW_EDIT: 90298, XIN_jonu: 29573, ulquiorra2: 26589, illwix: 18335, Bear228: 34160, '07_YM': 11737, maksik_paksik7: 21000, Topix__: 7533, robot: 5722, ivan_strogo: 2057, dddooooppp: 1000, BEFF: 824, lukyan187: 3022, hirtir: 352 }, play: { edazfetg4ooo: 1295, Vityappro11: 1223, '07_YM': 944, Paolo_Fermer: 911, Inzio_: 406, TIKTOK_BMW_EDIT: 609, Varenyk: 280, ForteCa228: 638, treaforik: 115, maksik_paksik7: 1663 } },
+  { date: '2025-03-18', players: { Vityappro11: 1072119, Varenyk: 518496, Inzio_: 81613, treaforik: 418882, ForteCa228: 336032, edazfetg4ooo: 301291, Restioynik1: 122507, Paolo_Fermer: 16349, goiida11: 100929, TIKTOK_BMW_EDIT: 90298, XIN_jonu: 29573, ulquiorra2: 26589, illwix: 18335, Bear228: 34160, '07_YM': 11737, maksik_paksik7: 21000, Topix__: 7533, robot: 5722, ivan_strogo: 2057, dddooooppp: 1000, BEFF: 824, lukyan187: 3022, hirtir: 352, _ilovemygf_: 5000 }, play: { edazfetg4ooo: 1380, Vityappro11: 1223, Paolo_Fermer: 1051, '07_YM': 947, TIKTOK_BMW_EDIT: 655, Inzio_: 507, treaforik: 217, _ilovemygf_: 83, Varenyk: 280, ForteCa228: 638, maksik_paksik7: 1663 } },
 ];
 
 const donationByPlayer = {
@@ -97,6 +99,12 @@ const clans = {
       { date: '2025-03-08', player: 'edazfetg4ooo', role: 'leader', action: 'join' },
     ],
   },
+  '[n-word]': {
+    createdAt: '2025-03-17',
+    events: [
+      { date: '2025-03-17', player: 'Inzio_', role: 'member', action: 'join' },
+    ],
+  },
 };
 
 const serverUpdates = [
@@ -120,6 +128,20 @@ const INFO_LINES = [
   'TIKTOK: Канал Макса www.tiktok.com/@maksik_paksik0',
   'IP сервера: demigro.play.ski',
 ];
+
+
+const demigrykyByDate = {
+  '2025-03-17': { Vityappro11: 100, Paolo_Fermer: 100, TIKTOK_BMW_EDIT: 100, '07_YM': 21, edazfetg4ooo: 2 },
+};
+
+const killsByDate = {
+  '2025-03-17': { Paolo_Fermer: 10, edazfetg4ooo: 8, TIKTOK_BMW_EDIT: 4, Vityappro11: 3, Inzio_: 1 },
+  '2025-03-18': { Paolo_Fermer: 17, edazfetg4ooo: 12, TIKTOK_BMW_EDIT: 4, Vityappro11: 3, treaforik: 2, Inzio_: 1 },
+};
+
+function statAtDate(mapByDate, player, date) {
+  return mapByDate[date]?.[player] || 0;
+}
 
 const firstSeenOverrides = {
   maksik_paksik7: '2025-02-14',
@@ -191,12 +213,12 @@ function medalXpForPlayer(player) {
 }
 
 const manualLastSeen = {
-  Vityappro11: '2025-03-16', ForteCa228: '2025-03-09', treaforik: '2025-03-14', '07_YM': '2025-03-16',
-  edazfetg4ooo: '2025-03-16', BEFF: '2025-03-09', Varenyk: '2025-03-16', TIKTOK_BMW_EDIT: '2025-03-15', hirtir: '2025-03-08',
-  lukyan187: '2025-03-13', Paolo_Fermer: '2025-03-16', belui228: '2025-03-08', maksik_paksik7: '2025-03-12',
-  PravyiNosok777: '2025-03-12', hipoma: '2025-03-07', wontz: '2025-03-07', kasikm1: '2025-03-01', robot: '2025-03-14', Topix__: '2025-03-10',
-  Restioynik1: '2025-03-13', Bear228: '2025-03-12', ivan_strogo: '2025-03-14', dddooooppp: '2025-03-12', goiida11: '2025-03-13',
-  XIN_jonu: '2025-03-14', illwix: '2025-03-14', ulquiorra2: '2025-03-14', kampys231231: '2025-03-14', Inzio_: '2025-03-16'
+  Vityappro11: '2025-03-17', ForteCa228: '2025-03-09', treaforik: '2025-03-18', '07_YM': '2025-03-18',
+  edazfetg4ooo: '2025-03-18', BEFF: '2025-03-09', Varenyk: '2025-03-17', TIKTOK_BMW_EDIT: '2025-03-18', hirtir: '2025-03-08',
+  lukyan187: '2025-03-13', Paolo_Fermer: '2025-03-18', belui228: '2025-03-08', maksik_paksik7: '2025-03-12',
+  PravyiNosok777: '2025-03-12', hipoma: '2025-03-07', wontz: '2025-03-07', kasikm1: '2025-03-01', robot: '2025-03-17', Topix__: '2025-03-10',
+  Restioynik1: '2025-03-17', Bear228: '2025-03-12', ivan_strogo: '2025-03-14', dddooooppp: '2025-03-12', goiida11: '2025-03-13',
+  XIN_jonu: '2025-03-14', illwix: '2025-03-14', ulquiorra2: '2025-03-17', kampys231231: '2025-03-14', Inzio_: '2025-03-18', _ilovemygf_: '2025-03-18'
 };
 
 const dateSelect = document.getElementById('dateSelect');
@@ -282,7 +304,7 @@ function daysDiffInclusive(start, end) {
 }
 
 function isTopView(v) {
-  return ['balance', 'play', 'clans', 'donates'].includes(v);
+  return ['balance', 'play', 'clans', 'donates', 'demigryky', 'kills'].includes(v);
 }
 
 function datesInActiveWipe() {
@@ -310,7 +332,7 @@ function allowedDatesForView(v) {
   if (v === 'content') return ['2025-03-05'];
 
   let allowed = dates;
-  if (v === 'play') allowed = dates.filter((d) => d >= '2025-03-02' && d <= '2025-03-16' && d !== '2025-03-07');
+  if (v === 'play') allowed = dates.filter((d) => d >= '2025-03-02' && d <= '2025-03-18' && d !== '2025-03-07');
   if (v === 'clans') allowed = dates.filter((d) => d >= '2025-02-22');
   if (isTopView(v)) {
     const inWipe = new Set(datesInActiveWipe());
@@ -743,6 +765,8 @@ function showPlayerDetails(player) {
       ? formatPlay(combinedValueAcrossWipesForPlayer(player, 'play'))
       : formatPlay(playHistory.at(-1)?.value || 0)) },
     { label: 'ПвП', value: `${pvp.wins} перемог / ${pvp.losses} поразок (${pvp.rate}% winrate)` },
+    { label: 'Демігрики', value: String(statAtDate(demigrykyByDate, player, date)) },
+    { label: 'Кіли', value: String(statAtDate(killsByDate, player, date)) },
     { label: 'Медалі', value: (medalsByPlayer[player] || []).join(', ') || 'Немає медалей' },
   ]);
 
@@ -991,6 +1015,16 @@ function renderLeaderboard() {
     tableSubtitle.textContent = `${dateLabel(date)} • Всього на сервері: ${formatCurrency(totalMoneyAtDate(date))}`;
     const groups = [...new Set(Object.keys(snap.players).map((p) => donationOfAtDate(p, date)))].filter((g) => g !== 'ADMIN');
     rows = groups.map((d) => ({ name: d, value: donationBalanceAtDate(d, date), click: () => showDonateDetails(d), display: formatCurrency(donationBalanceAtDate(d, date)) }));
+  } else if (view === 'demigryky') {
+    tableTitle.textContent = 'Топ Демігрики'; nameHeader.textContent = 'Гравець'; valueHeader.textContent = 'Демігрики';
+    const points = demigrykyByDate[date] || {};
+    tableSubtitle.textContent = `${dateLabel(date)} • Топ за Демігриками`;
+    rows = Object.entries(points).map(([n, v]) => ({ name: n, value: v, click: () => showPlayerDetails(n), display: String(v) }));
+  } else if (view === 'kills') {
+    tableTitle.textContent = 'Топ Кіли'; nameHeader.textContent = 'Гравець'; valueHeader.textContent = 'Кіли';
+    const points = killsByDate[date] || {};
+    tableSubtitle.textContent = `${dateLabel(date)} • Топ за кількістю кілів`;
+    rows = Object.entries(points).map(([n, v]) => ({ name: n, value: v, click: () => showPlayerDetails(n), display: String(v) }));
   } else if (view === 'updates') {
     tableTitle.textContent = 'Оновлення сервера'; nameHeader.textContent = 'Етап'; valueHeader.textContent = 'Період';
     tableSubtitle.textContent = 'Натисни на етап для деталей';
