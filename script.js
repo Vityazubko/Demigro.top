@@ -139,8 +139,16 @@ const killsByDate = {
   '2025-03-18': { Paolo_Fermer: 17, edazfetg4ooo: 12, TIKTOK_BMW_EDIT: 4, Vityappro11: 3, treaforik: 2, Inzio_: 1 },
 };
 
+function latestStatsMapAtDate(mapByDate, date) {
+  return Object.keys(mapByDate)
+    .filter((d) => d <= date)
+    .sort()
+    .map((d) => mapByDate[d])
+    .at(-1) || {};
+}
+
 function statAtDate(mapByDate, player, date) {
-  return mapByDate[date]?.[player] || 0;
+  return latestStatsMapAtDate(mapByDate, date)[player] || 0;
 }
 
 const firstSeenOverrides = {
@@ -1020,14 +1028,14 @@ function renderLeaderboard() {
     rows = groups.map((d) => ({ name: d, value: donationBalanceAtDate(d, date), click: () => showDonateDetails(d), display: formatCurrency(donationBalanceAtDate(d, date)) }));
   } else if (view === 'demigryky') {
     tableTitle.textContent = 'Топ Демігрики'; nameHeader.textContent = 'Гравець'; valueHeader.textContent = 'Демігрики';
-    const points = demigrykyByDate[date] || {};
+    const points = latestStatsMapAtDate(demigrykyByDate, date);
     tableSubtitle.textContent = `${dateLabel(date)} • Топ за Демігриками`;
-    rows = Object.entries(points).map(([n, v]) => ({ name: n, value: v, click: () => showPlayerDetails(n), display: String(v) }));
+    rows = Object.entries(points).sort((a, b) => b[1] - a[1]).map(([n, v]) => ({ name: n, value: v, click: () => showPlayerDetails(n), display: String(v) }));
   } else if (view === 'kills') {
     tableTitle.textContent = 'Топ Кіли'; nameHeader.textContent = 'Гравець'; valueHeader.textContent = 'Кіли';
-    const points = killsByDate[date] || {};
+    const points = latestStatsMapAtDate(killsByDate, date);
     tableSubtitle.textContent = `${dateLabel(date)} • Топ за кількістю кілів`;
-    rows = Object.entries(points).map(([n, v]) => ({ name: n, value: v, click: () => showPlayerDetails(n), display: String(v) }));
+    rows = Object.entries(points).sort((a, b) => b[1] - a[1]).map(([n, v]) => ({ name: n, value: v, click: () => showPlayerDetails(n), display: String(v) }));
   } else if (view === 'updates') {
     tableTitle.textContent = 'Оновлення сервера'; nameHeader.textContent = 'Етап'; valueHeader.textContent = 'Період';
     tableSubtitle.textContent = 'Натисни на етап для деталей';
