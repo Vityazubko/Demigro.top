@@ -341,10 +341,10 @@ function currentDateInActiveWipe(preferredDate = dateSelect.value) {
 
 function allowedDatesForView(v) {
   if (v === 'content') return ['2025-03-05'];
-  if (v === 'demigryky' || v === 'kills') return ['2025-03-17', '2025-03-18'];
+  if (v === 'demigryky' || v === 'kills') return ['2025-03-17', '2025-03-18', '2025-03-20'];
 
   let allowed = dates;
-  if (v === 'play') allowed = dates.filter((d) => d >= '2025-03-02' && d <= '2025-03-18' && d !== '2025-03-07');
+  if (v === 'play') allowed = dates.filter((d) => d >= '2025-03-02' && d <= '2025-03-20' && d !== '2025-03-07');
   if (v === 'clans') allowed = dates.filter((d) => d >= '2025-02-22');
   if (isTopView(v)) {
     const inWipe = new Set(datesInActiveWipe());
