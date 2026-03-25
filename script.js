@@ -36,7 +36,7 @@ const donationByPlayer = {
   Vityappro11: 'debryli', Varenyk: 'debryli', treaforik: 'debryli', 'wontz': 'debryli', Vortex1k: 'debryli', hipoma: 'debryli',
   kasikm1: 'GOD', jtx_by: 'GOD', Paolo_Fermer: 'GOD', kampys231231: 'GOD', FairDemonYT: 'moder',
   '07_YM': 'status', '05LONE12': 'status',
-  TIKTOK_BMW_EDIT: 'CONTENT MAKER', robot: 'гравець',
+  TIKTOK_BMW_EDIT: 'CONTENT MAKER', robot: 'гравець', Xeyo_pa: 'keerinam', Inzio_: 'TEX_ADMIN',
   maksik_paksik7: 'ADMIN', PravyiNosok777: 'ADMIN'
 };
 
@@ -128,7 +128,7 @@ const serverUpdates = [
   { title: 'ОСІННІЙ ВАЙП', period: '31 серпня - 30 вересня', start: '2025-08-31', end: '2025-09-30', items: ['Переробили спавн', '9 вересня добавили сферу Останнього'] },
   { title: 'ПОВЕРНЕННЯ ДЕМІГРО', period: '25 січня - 14 лютого', start: '2026-01-25', end: '2026-02-14', items: ['Добавили Контейнер PTE'] },
   { title: 'НОВА ЕРА', period: '14 лютого - 7 березня', start: '2025-02-14', end: '2025-03-07', items: ['Переробка сервера на новому хостингу', '21 лютого добавили /site, Клани, Кейс Талісманів', '22 лютого добавили Призи,Купця та Чарівника', '25 лютого добавили новий кейс ТнТ і нові 3 вида ТнТ', '27 лютого заміна кейса ТнТ', '28 лютого добавили TAB, /report, валюту Демігрики, Топ по часу на сервері, Рівні ендер Скрині, Новий магазин, Оновлення кітів'] },
-  { title: 'ВЕСНЯНА ГРА', period: '7 березня - 1 квітня', start: '2025-03-07', end: '2025-04-01', items: ['Новий статус', 'Новий квест', 'Новий кейс', 'Новий Донат', 'Новий івент', 'Нові донат речі', 'Зміна сайту', 'Зміна цін привілегій', 'Видалення Талісмана Бога', 'Оновлення спавна', 'Оновлення ПвП арени', 'Скорборд у режимі ПвП'] },
+  { title: 'ВЕСНЯНА ГРА', period: '7 березня - 1 квітня', start: '2025-03-07', end: '2025-04-01', items: ['Новий статус', 'Новий квест', 'Новий кейс', 'Новий Донат', 'Новий івент', 'Нові донат речі', 'Зміна сайту', 'Зміна цін привілегій', 'Видалення Талісмана Бога', 'Оновлення спавна', 'Оновлення ПвП арени', 'Скорборд у режимі ПвП', '18 березня — Новий Спавн, команда /worpes', '22 березня — Нові ТнТ'] },
 ];
 
 const INFO_LINES = [
@@ -272,6 +272,11 @@ const history1 = document.getElementById('history1');
 const history2 = document.getElementById('history2');
 const history3Title = document.getElementById('history3Title');
 const history3 = document.getElementById('history3');
+const compareSection = document.getElementById('compareSection');
+const chartMetric = document.getElementById('chartMetric');
+const compareSearch = document.getElementById('compareSearch');
+const compareChoices = document.getElementById('compareChoices');
+const compareChart = document.getElementById('compareChart');
 const detailsWipeWrap = document.getElementById('detailsWipeWrap');
 const detailsWipeSelect = document.getElementById('detailsWipeSelect');
 const contentControls = document.getElementById('contentControls');
@@ -297,6 +302,7 @@ let contentPlatform = 'tiktok';
 let contentType = 'videos';
 let contentSort = 'views';
 let fullStatsPlayer = null;
+let compareContext = null;
 
 const dates = snapshots.map((s) => s.date);
 const latestDate = dates[dates.length - 1];
@@ -385,17 +391,19 @@ function entityExistsInWipe(type, id, wipeId) {
   return true;
 }
 
-function setupDetailsWipeOptions(type, id) {
+function setupDetailsWipeOptions(type, id, preferredWipe = detailsWipeSelect.value) {
   const wipeIds = ['allTime', 'novaEra', 'springGame'];
   detailsWipeSelect.innerHTML = wipeIds
     .map((w) => `<option value="${w}" ${entityExistsInWipe(type, id, w) ? '' : 'disabled'}>${wipeRanges[w].label}</option>`)
     .join('');
 
-  if (!entityExistsInWipe(type, id, activeWipe)) {
+  if (preferredWipe && entityExistsInWipe(type, id, preferredWipe)) {
+    detailsWipeSelect.value = preferredWipe;
+  } else if (entityExistsInWipe(type, id, activeWipe)) {
+    detailsWipeSelect.value = activeWipe;
+  } else {
     const fallback = wipeIds.find((w) => entityExistsInWipe(type, id, w)) || 'allTime';
     detailsWipeSelect.value = fallback;
-  } else {
-    detailsWipeSelect.value = activeWipe;
   }
 }
 
@@ -755,6 +763,93 @@ function combinedValueAcrossWipesForDonate(group) {
   }, 0);
 }
 
+function hideCompareSection() {
+  compareSection.classList.add('hidden');
+  compareContext = null;
+  compareChart.innerHTML = '';
+  compareChoices.innerHTML = '';
+}
+
+function metricLabel(metric) {
+  if (metric === 'balance') return 'Баланс';
+  if (metric === 'play') return 'Час';
+  if (metric === 'demigryky') return 'Демігрики';
+  if (metric === 'kills') return 'Кіли';
+  return 'Значення';
+}
+
+function formatMetricValue(metric, value) {
+  if (metric === 'balance') return formatCurrency(value);
+  if (metric === 'play') return formatPlay(value);
+  return String(value);
+}
+
+function renderCompareChoices() {
+  if (!compareContext) return;
+  const q = (compareSearch.value || '').trim().toLowerCase();
+  const filtered = compareContext.candidates.filter((name) => name.toLowerCase().includes(q)).slice(0, 40);
+  compareChoices.innerHTML = filtered.map((name) => `
+    <button type="button" class="compare-choice ${compareContext.selected.has(name) ? 'active' : ''}" data-name="${name}">${name}</button>
+  `).join('') || '<span class="meta">Нічого не знайдено</span>';
+}
+
+function renderCompareChart() {
+  if (!compareContext) return;
+  const metric = chartMetric.value;
+  const selectedNames = [...compareContext.selected];
+  if (!selectedNames.length) {
+    compareChart.innerHTML = '<p class="empty-state">Вибери хоча б одного учасника для графіка.</p>';
+    return;
+  }
+  const datesInScope = snapshotsForWipe(compareContext.wipeId).map((s) => s.date);
+  const palette = ['#22d3ee', '#f59e0b', '#a78bfa', '#34d399', '#f472b6', '#60a5fa'];
+  const allValues = [];
+  const series = selectedNames.map((name, i) => {
+    const values = datesInScope.map((d) => compareContext.valueAt(name, metric, d));
+    values.forEach((v) => { if (v !== null && v !== undefined) allValues.push(v); });
+    return { name, color: palette[i % palette.length], values };
+  });
+  if (!allValues.length) {
+    compareChart.innerHTML = '<p class="empty-state">Немає даних для побудови графіка.</p>';
+    return;
+  }
+  const min = Math.min(...allValues);
+  const max = Math.max(...allValues);
+  const range = Math.max(1, max - min);
+  const h = 220;
+  const w = 1000;
+  const pointsFor = (values) => values.map((v, idx) => {
+    if (v === null || v === undefined) return null;
+    const x = datesInScope.length <= 1 ? 0 : (idx / (datesInScope.length - 1)) * w;
+    const y = h - ((v - min) / range) * h;
+    return `${x.toFixed(1)},${y.toFixed(1)}`;
+  }).filter(Boolean).join(' ');
+
+  const lines = series.map((s) => `<polyline points="${pointsFor(s.values)}" fill="none" stroke="${s.color}" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>`).join('');
+  const legend = series.map((s) => {
+    const last = [...s.values].reverse().find((v) => v !== null && v !== undefined);
+    return `<li><span style="color:${s.color}">●</span> ${s.name}: ${formatMetricValue(metric, last ?? 0)}</li>`;
+  }).join('');
+
+  compareChart.innerHTML = `
+    <svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none">
+      <line x1="0" y1="${h}" x2="${w}" y2="${h}" stroke="rgba(148,163,184,.4)" />
+      ${lines}
+    </svg>
+    <ul class="history-list">${legend}</ul>
+  `;
+}
+
+function setupCompareContext(ctx) {
+  compareContext = ctx;
+  compareSection.classList.remove('hidden');
+  chartMetric.innerHTML = ctx.metrics.map((m) => `<option value="${m}">${metricLabel(m)}</option>`).join('');
+  chartMetric.value = ctx.metrics[0];
+  compareSearch.value = '';
+  renderCompareChoices();
+  renderCompareChart();
+}
+
 function showPlayerDetails(player) {
   selected = { type: 'player', id: player };
   detailsHint.classList.add('hidden');
@@ -824,6 +919,7 @@ function showPlayerDetails(player) {
 
   const channels = getPlayerChannels(player);
   const videos = getPlayerVideos(player).sort((a, b) => b.views - a.views);
+  const allPlayers = [...new Set(snapshots.flatMap((s) => [...Object.keys(s.players), ...Object.keys(s.play)]))].sort();
 
   const channelRows = channels.map((c) => `<li>Канал ${c.platform === 'tiktok' ? 'TikTok' : 'YouTube'}: ${c.name} — ${c.followers} ${c.label}${c.url ? ` • <a href="${c.url}" target="_blank" rel="noopener noreferrer">посилання</a>` : ''}</li>`);
   const videoRows = videos.map((v) => `<li>${v.platform === 'tiktok' ? 'TikTok' : 'YouTube'} • ${v.title} — ${v.views} переглядів, ${v.likes} лайків${v.url ? ` • <a href="${v.url}" target="_blank" rel="noopener noreferrer">дивитись</a>` : ''}</li>`);
@@ -834,6 +930,21 @@ function showPlayerDetails(player) {
     ...(channelRows.length ? channelRows : ['<li>Каналів не знайдено</li>']),
     ...(videoRows.length ? videoRows : ['<li>Відео не знайдено</li>']),
   ].join('');
+
+  setupCompareContext({
+    wipeId: scopeWipe,
+    candidates: allPlayers,
+    selected: new Set([player]),
+    metrics: ['balance', 'play', 'demigryky', 'kills'],
+    valueAt: (name, metric, date) => {
+      const snap = getSnapshot(date);
+      if (metric === 'balance') return snap.players[name] ?? null;
+      if (metric === 'play') return snap.play[name] ?? null;
+      if (metric === 'demigryky') return statAtDate(demigrykyByDate, name, date);
+      if (metric === 'kills') return statAtDate(killsByDate, name, date);
+      return null;
+    },
+  });
 }
 
 
@@ -843,6 +954,7 @@ function hideThirdHistoryBlock() {
   history3.classList.add('hidden');
   history3.innerHTML = '';
   setDetailsWipeVisibility(false);
+  hideCompareSection();
 }
 
 function showClanDetails(clanName) {
@@ -880,6 +992,14 @@ function showClanDetails(clanName) {
   history2Title.textContent = 'Історія балансу клану';
   history1.innerHTML = membersNow.map((m) => `<li>${m.player} — ${m.role}</li>`).join('') || '<li>Немає учасників</li>';
   history2.innerHTML = history.map((h) => `<li>${dateLabel(h.date)} — ${formatCurrency(h.value)}</li>`).join('');
+
+  setupCompareContext({
+    wipeId: scopeWipe,
+    candidates: Object.keys(clans),
+    selected: new Set([clanName]),
+    metrics: ['balance'],
+    valueAt: (name, _metric, d) => (isClanActiveAtDate(name, d) ? clanBalanceAtDate(name, d) : null),
+  });
 }
 
 function showDonateDetails(group) {
@@ -910,6 +1030,15 @@ function showDonateDetails(group) {
   history2Title.textContent = 'Історія балансу групи';
   history1.innerHTML = players.map((p) => `<li>${p}</li>`).join('') || '<li>Немає гравців на цю дату</li>';
   history2.innerHTML = history.map((h) => `<li>${dateLabel(h.date)} — ${formatCurrency(h.value)}</li>`).join('');
+
+  const groups = [...new Set(snapshots.flatMap((s) => Object.keys(s.players).map((p) => donationOfAtDate(p, s.date))))].filter((g) => g !== 'ADMIN');
+  setupCompareContext({
+    wipeId: scopeWipe,
+    candidates: groups.sort(),
+    selected: new Set([group]),
+    metrics: ['balance'],
+    valueAt: (name, _metric, d) => donationBalanceAtDate(name, d),
+  });
 }
 
 function showSingleUpdateDetails(update) {
@@ -1154,6 +1283,19 @@ function init() {
 
   detailsWipeSelect.addEventListener('change', () => {
     renderLeaderboard();
+  });
+  chartMetric.addEventListener('change', renderCompareChart);
+  compareSearch.addEventListener('input', () => {
+    renderCompareChoices();
+  });
+  compareChoices.addEventListener('click', (e) => {
+    const btn = e.target.closest('button.compare-choice');
+    if (!btn || !compareContext) return;
+    const { name } = btn.dataset;
+    if (compareContext.selected.has(name)) compareContext.selected.delete(name);
+    else compareContext.selected.add(name);
+    renderCompareChoices();
+    renderCompareChart();
   });
 
   openFullStatsBtn.addEventListener('click', () => {
