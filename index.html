@@ -87,6 +87,20 @@
             </div>
             <button id="openFullStatsBtn" class="control-btn hidden" type="button">Повна статистика</button>
             <div class="stats-grid" id="statsGrid"></div>
+            <div id="compareSection" class="compare-section hidden">
+              <div class="compare-controls">
+                <label class="date-select">
+                  <span>Метрика</span>
+                  <select id="chartMetric"></select>
+                </label>
+                <label class="date-select">
+                  <span>Пошук</span>
+                  <input id="compareSearch" type="text" placeholder="Введи нік / клан / донат" />
+                </label>
+              </div>
+              <div id="compareChoices" class="compare-choices"></div>
+              <div id="compareChart" class="compare-chart"></div>
+            </div>
 
             <h4 id="history1Title">Історія</h4>
             <ul id="history1" class="history-list"></ul>
