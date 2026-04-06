@@ -36,6 +36,7 @@ const snapshots = [
   { date: '2025-04-01', players: { Vityappro11: 51171, shurik_xx19: 26000, Paolo_Fermer: 10000, ItzFrillz: 7000, edazfetg4ooo: 5091, gord: 1710, '07_YM': 314, lukyan187: 69 }, play: {} },
   { date: '2025-04-02', players: { edazfetg4ooo: 127573, Vityappro11: 72875, shurik_xx19: 26000, piromanyakk: 20000, Paolo_Fermer: 19472, ItzFrillz: 7000, gord: 1710, '07_YM': 314, lukyan187: 69 }, play: {} },
   { date: '2025-04-03', players: { edazfetg4ooo: 127689, Vityappro11: 73480, shurik_xx19: 26000, piromanyakk: 20000, Paolo_Fermer: 19472, ItzFrillz: 7000, gord: 1710, '07_YM': 314, '30FPS': 426, aniqum: 69, lukyan187: 69 }, play: { edazfetg4ooo: 435, Vityappro11: 415, ForteCa228: 241, '07_YM': 181 } },
+  { date: '2025-04-04', players: { Vityappro11: 455245, ForteCa228: 432685, edazfetg4ooo: 129867, shurik_xx19: 46000, piromanyakk: 40000, treaforik: 40000, Paolo_Fermer: 39472, ItzFrillz: 27000, gord: 26710, lukyan187: 26276, Varenyk: 25605, aetu: 21000, '30FPS': 20426, '07_YM': 20314, aniqum: 20069 }, play: { ForteCa228: 654, Vityappro11: 496, edazfetg4ooo: 440, '07_YM': 181, gord: 136 } },
 ];
 
 const donationByPlayer = {
@@ -111,10 +112,12 @@ const clans = {
   },
   bitwi: {
     createdAt: '2025-03-08',
+    deletedAt: '2025-04-04',
     events: [
       { date: '2025-03-08', player: 'ForteCa228', role: 'leader', action: 'join' },
       { date: '2025-03-08', player: 'treaforik', role: 'member', action: 'join' },
       { date: '2025-03-31', player: 'treaforik', role: 'member', action: 'leave' },
+      { date: '2025-04-04', player: 'ForteCa228', role: 'leader', action: 'leave' },
     ],
   },
   pipki: {
@@ -135,6 +138,13 @@ const clans = {
     events: [
       { date: '2025-03-23', player: 'Paolo_Fermer', role: 'member', action: 'join' },
       { date: '2025-04-01', player: 'Paolo_Fermer', role: 'member', action: 'join' },
+    ],
+  },
+  '[d-word]': {
+    createdAt: '2025-04-04',
+    events: [
+      { date: '2025-04-04', player: 'ForteCa228', role: 'leader', action: 'join' },
+      { date: '2025-04-04', player: 'Varenyk', role: 'member', action: 'join' },
     ],
   },
 };
@@ -183,6 +193,7 @@ const killsByDate = {
   '2025-03-25': { edazfetg4ooo: 18, Paolo_Fermer: 17, treaforik: 13, TIKTOK_BMW_EDIT: 10, illwix: 10, ForteCa228: 4, Vityappro11: 4, Varenyk: 3, Xeyo_pa: 3, Inzio_: 1 },
   '2025-03-31': { edazfetg4ooo: 23, Paolo_Fermer: 17, treaforik: 13, TIKTOK_BMW_EDIT: 10, illwix: 10, ForteCa228: 4, Vityappro11: 4, SKAM3000: 3, Varenyk: 3, Xeyo_pa: 3, Inzio_: 1 },
   '2025-04-01': { edazfetg4ooo: 23, Paolo_Fermer: 17, treaforik: 13, TIKTOK_BMW_EDIT: 10, illwix: 10, ForteCa228: 4, Vityappro11: 4, SKAM3000: 3, Varenyk: 3, Xeyo_pa: 3, Inzio_: 1, ItzFrillz: 1 },
+  '2025-04-04': { edazfetg4ooo: 23, Paolo_Fermer: 17, treaforik: 13, TIKTOK_BMW_EDIT: 10, illwix: 10, ForteCa228: 6, Vityappro11: 4, SKAM3000: 3, Varenyk: 3, Xeyo_pa: 3, Inzio_: 1, ItzFrillz: 1 },
 };
 
 function latestStatsMapAtDate(mapByDate, date) {
@@ -391,10 +402,10 @@ function currentDateInActiveWipe(preferredDate = dateSelect.value) {
 
 function allowedDatesForView(v) {
   if (v === 'content') return ['2025-03-05'];
-  if (v === 'demigryky' || v === 'kills') return ['2025-03-17', '2025-03-18', '2025-03-20', '2025-03-23', '2025-03-24', '2025-03-25', '2025-03-31', '2025-04-01', '2025-04-02'];
+  if (v === 'demigryky' || v === 'kills') return ['2025-03-17', '2025-03-18', '2025-03-20', '2025-03-23', '2025-03-24', '2025-03-25', '2025-03-31', '2025-04-01', '2025-04-02', '2025-04-04'];
 
   let allowed = dates;
-  if (v === 'play') allowed = dates.filter((d) => d >= '2025-03-02' && d <= '2025-04-03' && d !== '2025-03-07' && d !== '2025-03-31');
+  if (v === 'play') allowed = dates.filter((d) => d >= '2025-03-02' && d <= '2025-04-04' && d !== '2025-03-07' && d !== '2025-03-31');
   if (v === 'clans') allowed = dates.filter((d) => d >= '2025-02-22');
   if (isTopView(v)) {
     const inWipe = new Set(datesInActiveWipe());
