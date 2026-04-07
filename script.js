@@ -38,6 +38,7 @@ const snapshots = [
   { date: '2025-04-03', players: { edazfetg4ooo: 127689, Vityappro11: 73480, shurik_xx19: 26000, piromanyakk: 20000, Paolo_Fermer: 19472, ItzFrillz: 7000, gord: 1710, '07_YM': 314, '30FPS': 426, aniqum: 69, lukyan187: 69 }, play: { edazfetg4ooo: 435, Vityappro11: 415, ForteCa228: 241, '07_YM': 181 } },
   { date: '2025-04-04', players: { Vityappro11: 455245, ForteCa228: 432685, edazfetg4ooo: 129867, shurik_xx19: 46000, piromanyakk: 40000, treaforik: 40000, Paolo_Fermer: 39472, ItzFrillz: 27000, gord: 26710, lukyan187: 26276, Varenyk: 25605, aetu: 21000, '30FPS': 20426, '07_YM': 20314, aniqum: 20069 }, play: { ForteCa228: 654, Vityappro11: 496, edazfetg4ooo: 440, '07_YM': 181, gord: 136 } },
   { date: '2025-04-05', players: { Vityappro11: 933426, ForteCa228: 731400, Varenyk: 391566, Paolo_Fermer: 203192, Inzio_: 74000, shurik_xx19: 46000, piromanyakk: 40000, treaforik: 40000, galavastik: 33950, ItzFrillz: 27000, gord: 26710, lukyan187: 26276, '30FPS': 20426, '07_YM': 20314, aniqum: 20069, aetu: 16072, edazfetg4ooo: 7576, wontz: 6000, aboba2032: 5000, masloprosto: 1000 }, play: { ForteCa228: 1006, Vityappro11: 759, edazfetg4ooo: 493, Varenyk: 414, galavastik: 355, '07_YM': 216, gord: 136 } },
+  { date: '2025-04-06', players: { ForteCa228: 1348313, Vityappro11: 1098496, Paolo_Fermer: 280907, Varenyk: 228979, Inzio_: 124000, fakemed1: 61175, walleb0y: 53864, shurik_xx19: 46000, piromanyakk: 40000, treaforik: 40000, galavastik: 38950, ItzFrillz: 27000, gord: 26710, lukyan187: 26276, '30FPS': 20426, '07_YM': 20314, aniqum: 20069, aetu: 16072, aboba2032: 10000, IlyaiyaYT: 6006, masloprosto: 6000, edazfetg4ooo: 3546, wontz: 2683, dima111p: 1000, zxcnotezxc1: 1000, PixelReaper1337: 461 }, play: { ForteCa228: 1212, Vityappro11: 813, Varenyk: 637, galavastik: 538, edazfetg4ooo: 536, PixelReaper1337: 335, walleb0y: 320, aboba2032: 270, '07_YM': 216, gord: 136 } },
 ];
 
 const donationByPlayer = {
@@ -47,7 +48,8 @@ const donationByPlayer = {
   kasikm1: 'GOD', jtx_by: 'GOD', Paolo_Fermer: 'GOD', kampys231231: 'GOD', FairDemonYT: 'moder',
   '07_YM': 'status', '05LONE12': 'status', shurik_xx19: 'status',
   TIKTOK_BMW_EDIT: 'CONTENT MAKER', robot: 'гравець', Xeyo_pa: 'keerinam', Inzio_: 'TEX_ADMIN',
-  maksik_paksik7: 'ADMIN', PravyiNosok777: 'ADMIN', aetu: 'status'
+  maksik_paksik7: 'ADMIN', PravyiNosok777: 'ADMIN', aetu: 'status', fakemed1: 'debryli',
+  walleb0y: 'status', PixelReaper1337: 'status'
 };
 
 const donationHistoryByPlayer = {
@@ -87,6 +89,10 @@ const donationHistoryByPlayer = {
   aetu: [
     { from: '2025-04-05', donation: 'status' },
   ],
+  aboba2032: [
+    { from: '2025-02-21', donation: 'keerinam' },
+    { from: '2025-04-06', donation: 'prista' },
+  ],
 };
 
 const clans = {
@@ -105,6 +111,11 @@ const clans = {
       { date: '2025-04-05', player: 'ForteCa228', role: 'member', action: 'join' },
       { date: '2025-04-05', player: 'masloprosto', role: 'member', action: 'join' },
       { date: '2025-04-05', player: 'sigmakriper', role: 'member', action: 'join' },
+      { date: '2025-04-06', player: 'lukyan187', role: 'senior', action: 'leave' },
+      { date: '2025-04-06', player: 'gord', role: 'member', action: 'leave' },
+      { date: '2025-04-06', player: 'ForteCa228', role: 'member', action: 'leave' },
+      { date: '2025-04-06', player: 'masloprosto', role: 'member', action: 'leave' },
+      { date: '2025-04-06', player: 'sigmakriper', role: 'member', action: 'leave' },
     ],
   },
   treaf: {
@@ -161,6 +172,12 @@ const clans = {
       { date: '2025-04-05', player: 'aetu', role: 'member', action: 'join' },
     ],
   },
+  hahah: {
+    createdAt: '2025-04-06',
+    events: [
+      { date: '2025-04-06', player: 'walleb0y', role: 'member', action: 'join' },
+    ],
+  },
 };
 
 const serverUpdates = [
@@ -209,6 +226,7 @@ const killsByDate = {
   '2025-04-01': { edazfetg4ooo: 23, Paolo_Fermer: 17, treaforik: 13, TIKTOK_BMW_EDIT: 10, illwix: 10, ForteCa228: 4, Vityappro11: 4, SKAM3000: 3, Varenyk: 3, Xeyo_pa: 3, Inzio_: 1, ItzFrillz: 1 },
   '2025-04-04': { edazfetg4ooo: 23, Paolo_Fermer: 17, treaforik: 13, TIKTOK_BMW_EDIT: 10, illwix: 10, ForteCa228: 6, Vityappro11: 4, SKAM3000: 3, Varenyk: 3, Xeyo_pa: 3, Inzio_: 1, ItzFrillz: 1 },
   '2025-04-05': { edazfetg4ooo: 24, Paolo_Fermer: 17, treaforik: 13, TIKTOK_BMW_EDIT: 10, illwix: 10, ForteCa228: 9, Vityappro11: 5, SKAM3000: 3, Varenyk: 3, Xeyo_pa: 3, Inzio_: 1, ItzFrillz: 1 },
+  '2025-04-06': { edazfetg4ooo: 25, Paolo_Fermer: 17, treaforik: 13, TIKTOK_BMW_EDIT: 10, illwix: 10, ForteCa228: 11, Vityappro11: 5, SKAM3000: 3, Varenyk: 10, Xeyo_pa: 3, Inzio_: 1, ItzFrillz: 1, fakemed1: 4, aboba2032: 3 },
 };
 
 function latestStatsMapAtDate(mapByDate, date) {
@@ -417,10 +435,10 @@ function currentDateInActiveWipe(preferredDate = dateSelect.value) {
 
 function allowedDatesForView(v) {
   if (v === 'content') return ['2025-03-05'];
-  if (v === 'demigryky' || v === 'kills') return ['2025-03-17', '2025-03-18', '2025-03-20', '2025-03-23', '2025-03-24', '2025-03-25', '2025-03-31', '2025-04-01', '2025-04-02', '2025-04-04', '2025-04-05'];
+  if (v === 'demigryky' || v === 'kills') return ['2025-03-17', '2025-03-18', '2025-03-20', '2025-03-23', '2025-03-24', '2025-03-25', '2025-03-31', '2025-04-01', '2025-04-02', '2025-04-04', '2025-04-05', '2025-04-06'];
 
   let allowed = dates;
-  if (v === 'play') allowed = dates.filter((d) => d >= '2025-03-02' && d <= '2025-04-05' && d !== '2025-03-07' && d !== '2025-03-31');
+  if (v === 'play') allowed = dates.filter((d) => d >= '2025-03-02' && d <= '2025-04-06' && d !== '2025-03-07' && d !== '2025-03-31');
   if (v === 'clans') allowed = dates.filter((d) => d >= '2025-02-22');
   if (isTopView(v)) {
     const inWipe = new Set(datesInActiveWipe());
@@ -594,7 +612,6 @@ function renderFullStatsModal(player) {
 function refreshWipeSelect() {
   const options = Object.entries(wipeRanges)
     .filter(([id]) => id !== 'allTime')
-    .filter(([id]) => !(view === 'play' && id === 'vipeGood'))
     .map(([id, info]) => `<option value="${id}">${info.label}</option>`)
     .join('');
   wipeSelect.innerHTML = options;
