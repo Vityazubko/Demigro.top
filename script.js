@@ -40,6 +40,7 @@ const snapshots = [
   { date: '2025-04-05', players: { Vityappro11: 933426, ForteCa228: 731400, Varenyk: 391566, Paolo_Fermer: 203192, Inzio_: 74000, shurik_xx19: 46000, piromanyakk: 40000, treaforik: 40000, galavastik: 33950, ItzFrillz: 27000, gord: 26710, lukyan187: 26276, '30FPS': 20426, '07_YM': 20314, aniqum: 20069, aetu: 16072, edazfetg4ooo: 7576, wontz: 6000, aboba2032: 5000, masloprosto: 1000 }, play: { ForteCa228: 1006, Vityappro11: 759, edazfetg4ooo: 493, Varenyk: 414, galavastik: 355, '07_YM': 216, gord: 136 } },
   { date: '2025-04-06', players: { ForteCa228: 1348313, Vityappro11: 1098496, Paolo_Fermer: 125477, Varenyk: 228979, Inzio_: 124000, fakemed1: 61175, walleb0y: 53864, shurik_xx19: 46000, piromanyakk: 40000, treaforik: 40000, galavastik: 38950, ItzFrillz: 27000, gord: 26710, lukyan187: 26276, '30FPS': 20426, '07_YM': 20314, aniqum: 20069, aetu: 16072, aboba2032: 10000, IlyaiyaYT: 6006, masloprosto: 6000, edazfetg4ooo: 3546, wontz: 2683, dima111p: 1000, zxcnotezxc1: 1000, PixelReaper1337: 461 }, play: { ForteCa228: 1212, Vityappro11: 813, Varenyk: 637, galavastik: 538, edazfetg4ooo: 536, PixelReaper1337: 335, walleb0y: 320, aboba2032: 270, '07_YM': 216, gord: 136 } },
   { date: '2025-04-08', players: { ForteCa228: 1657851, Vityappro11: 1456770, Varenyk: 832867, Paolo_Fermer: 324149, edazfetg4ooo: 310135, Inzio_: 24000, fakemed1: 179212, Genderpatty_2: 95000, PixelReaper1337: 64495, walleb0y: 52226, shurik_xx19: 46000, piromanyakk: 40000, galavastik: 38950, ItzFrillz: 27000, gord: 26710, lukyan187: 26276, '07_YM': 23265, aetu: 16072, treaforik: 1657, '30FPS': 20426, aniqum: 20069, aboba2032: 10000, IlyaiyaYT: 6006, masloprosto: 6000, wontz: 2683, dima111p: 1000, zxcnotezxc1: 1000 }, play: { ForteCa228: 1464, fakemed1: 1087, PixelReaper1337: 898, Vityappro11: 859, Varenyk: 782, galavastik: 743, edazfetg4ooo: 731, walleb0y: 499, aboba2032: 468, '07_YM': 216, gord: 136 } },
+  { date: '2025-04-09', players: { ForteCa228: 1657851, Vityappro11: 1536770, Varenyk: 832867, Paolo_Fermer: 305760, edazfetg4ooo: 189845, walleb0y: 123210, Genderpatty_2: 95000, lukyan187: 54784, PixelReaper1337: 54719, piromanyakk: 40000, galavastik: 38950, aetu: 36072, ItzFrillz: 27000, '07_YM': 24265, Inzio_: 24000, nag1bator11: 22080, CAT228sus1: 16842, treaforik: 15910, aboba2032: 10381, fakemed1: 7387, IlyaiyaYT: 6006, masloprosto: 6000, nag1bator12: 5000, shurik_xx19: 46000, gord: 26710, '30FPS': 20426, aniqum: 20069, wontz: 2683, dima111p: 1000, zxcnotezxc1: 1000, superholik: 1000 }, play: { fakemed1: 1526, ForteCa228: 1464, PixelReaper1337: 977, edazfetg4ooo: 883, Vityappro11: 859, galavastik: 804, Varenyk: 782, walleb0y: 742, aboba2032: 639, '07_YM': 216, gord: 136 } },
 ];
 
 const donationByPlayer = {
@@ -180,6 +181,12 @@ const clans = {
       { date: '2025-04-06', player: 'walleb0y', role: 'member', action: 'join' },
     ],
   },
+  goga: {
+    createdAt: '2025-04-09',
+    events: [
+      { date: '2025-04-09', player: 'PixelReaper1337', role: 'member', action: 'join' },
+    ],
+  },
 };
 
 const serverUpdates = [
@@ -230,6 +237,7 @@ const killsByDate = {
   '2025-04-05': { edazfetg4ooo: 24, Paolo_Fermer: 17, treaforik: 13, TIKTOK_BMW_EDIT: 10, illwix: 10, ForteCa228: 9, Vityappro11: 5, SKAM3000: 3, Varenyk: 3, Xeyo_pa: 3, Inzio_: 1, ItzFrillz: 1 },
   '2025-04-06': { edazfetg4ooo: 25, Paolo_Fermer: 17, treaforik: 13, TIKTOK_BMW_EDIT: 10, illwix: 10, ForteCa228: 11, Vityappro11: 5, SKAM3000: 3, Varenyk: 10, Xeyo_pa: 3, Inzio_: 1, ItzFrillz: 1, fakemed1: 4, aboba2032: 3 },
   '2025-04-08': { edazfetg4ooo: 28, Paolo_Fermer: 17, treaforik: 18, TIKTOK_BMW_EDIT: 10, illwix: 10, ForteCa228: 11, Vityappro11: 5, SKAM3000: 3, Varenyk: 14, Xeyo_pa: 3, Inzio_: 16, ItzFrillz: 1, fakemed1: 51, aboba2032: 3, PixelReaper1337: 9 },
+  '2025-04-09': { edazfetg4ooo: 41, Paolo_Fermer: 28, treaforik: 18, TIKTOK_BMW_EDIT: 10, illwix: 10, ForteCa228: 11, Vityappro11: 5, SKAM3000: 3, Varenyk: 14, Xeyo_pa: 3, Inzio_: 16, ItzFrillz: 1, fakemed1: 62, aboba2032: 3, PixelReaper1337: 9, sachakorpan: 7 },
 };
 
 function latestStatsMapAtDate(mapByDate, date) {
@@ -438,10 +446,10 @@ function currentDateInActiveWipe(preferredDate = dateSelect.value) {
 
 function allowedDatesForView(v) {
   if (v === 'content') return ['2025-03-05'];
-  if (v === 'demigryky' || v === 'kills') return ['2025-03-17', '2025-03-18', '2025-03-20', '2025-03-23', '2025-03-24', '2025-03-25', '2025-03-31', '2025-04-01', '2025-04-02', '2025-04-04', '2025-04-05', '2025-04-06', '2025-04-08'];
+  if (v === 'demigryky' || v === 'kills') return ['2025-03-17', '2025-03-18', '2025-03-20', '2025-03-23', '2025-03-24', '2025-03-25', '2025-03-31', '2025-04-01', '2025-04-02', '2025-04-04', '2025-04-05', '2025-04-06', '2025-04-08', '2025-04-09'];
 
   let allowed = dates;
-  if (v === 'play') allowed = dates.filter((d) => d >= '2025-03-02' && d <= '2025-04-08' && d !== '2025-03-07' && d !== '2025-03-31');
+  if (v === 'play') allowed = dates.filter((d) => d >= '2025-03-02' && d <= '2025-04-09' && d !== '2025-03-07' && d !== '2025-03-31');
   if (v === 'clans') allowed = dates.filter((d) => d >= '2025-02-22');
   if (isTopView(v)) {
     const inWipe = new Set(datesInActiveWipe());
