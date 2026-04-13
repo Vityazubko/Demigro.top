@@ -30,6 +30,25 @@ body {
     linear-gradient(145deg, var(--bg-2) 0%, var(--bg-1) 55%);
 }
 
+body.easter-theme {
+  background:
+    radial-gradient(circle at 15% -10%, rgba(255, 194, 113, .28) 0%, transparent 35%),
+    radial-gradient(circle at 95% 110%, rgba(188, 255, 161, .20) 0%, transparent 30%),
+    linear-gradient(145deg, #2a1f0f 0%, #120f07 55%);
+}
+
+body.easter-theme .hero-badge {
+  border-color: rgba(255, 215, 110, .65);
+  background: rgba(255, 215, 110, .2);
+  color: #ffe7a5;
+}
+
+body.easter-theme .tab.active,
+body.easter-theme .control-btn.active {
+  background: linear-gradient(130deg, #ffd166, #94d97a);
+  color: #1a1204;
+}
+
 .bg-glow {
   position: fixed;
   width: 420px;
