@@ -229,7 +229,7 @@ const serverUpdates = [
   { title: 'ПОВЕРНЕННЯ ДЕМІГРО', period: '25 січня - 14 лютого', start: '2026-01-25', end: '2026-02-14', items: ['Добавили Контейнер PTE'] },
   { title: 'НОВА ЕРА', period: '14 лютого - 7 березня', start: '2025-02-14', end: '2025-03-07', items: ['Переробка сервера на новому хостингу', '21 лютого добавили /site, Клани, Кейс Талісманів', '22 лютого добавили Призи,Купця та Чарівника', '25 лютого добавили новий кейс ТнТ і нові 3 вида ТнТ', '27 лютого заміна кейса ТнТ', '28 лютого добавили TAB, /report, валюту Демігрики, Топ по часу на сервері, Рівні ендер Скрині, Новий магазин, Оновлення кітів'] },
   { title: 'ВЕСНЯНА ГРА', period: '7 березня - 29 березня', start: '2025-03-07', end: '2025-03-29', items: ['Новий статус', 'Новий квест', 'Новий кейс', 'Новий Донат', 'Новий івент', 'Нові донат речі', 'Зміна сайту', 'Зміна цін привілегій', 'Видалення Талісмана Бога', 'Оновлення спавна', 'Оновлення ПвП арени', 'Скорборд у режимі ПвП', '18 березня — Новий Спавн, команда /worpes', '22 березня — Нові ТнТ'] },
-  { title: 'VIPE GOOD', period: '29 березня - 26 квітня', start: '2025-03-29', end: '2025-04-26', items: ['Новий вайп: VIPE GOOD'] },
+  { title: 'VIPE GOOD', period: '29 березня - 26 квітня', start: '2025-03-29', end: '2025-04-26', items: ['Новий вайп: VIPE GOOD', '12 квітня — Вхід з 1.16.5 до 1.21.5', '12 квітня — Топ по яйцях в честь пасхи', '12 квітня — Невелика зміна спавну', '12 квітня — Заміна купця', '13 квітня — Нова автошахта', '13 квітня — Нові Кастомні Зілля'] },
 ];
 
 const INFO_LINES = [
@@ -273,6 +273,10 @@ const killsByDate = {
   '2025-04-10': { edazfetg4ooo: 41, Paolo_Fermer: 28, treaforik: 18, TIKTOK_BMW_EDIT: 10, illwix: 10, ForteCa228: 11, Vityappro11: 5, SKAM3000: 3, Varenyk: 16, Xeyo_pa: 3, Inzio_: 16, ItzFrillz: 1, fakemed1: 62, aboba2032: 3, PixelReaper1337: 9, sachakorpan: 7, nag1bator12: 32 },
   '2025-04-11': { edazfetg4ooo: 43, Paolo_Fermer: 28, treaforik: 40, TIKTOK_BMW_EDIT: 10, illwix: 10, ForteCa228: 11, Vityappro11: 5, SKAM3000: 3, Varenyk: 16, Xeyo_pa: 3, Inzio_: 16, ItzFrillz: 1, fakemed1: 84, aboba2032: 3, PixelReaper1337: 9, sachakorpan: 7, nag1bator12: 66, collected: 10 },
   '2025-04-12': { edazfetg4ooo: 43, Paolo_Fermer: 28, treaforik: 41, TIKTOK_BMW_EDIT: 10, illwix: 10, ForteCa228: 11, Vityappro11: 5, SKAM3000: 3, Varenyk: 16, Xeyo_pa: 3, Inzio_: 16, ItzFrillz: 1, fakemed1: 85, aboba2032: 3, PixelReaper1337: 9, sachakorpan: 7, nag1bator12: 67, collected: 10 },
+};
+
+const eggsByDate = {
+  '2025-04-12': { treaforik: 19, nag1bator12: 17, fakemed1: 16, allcash: 13, edazfetg4ooo: 11, Paolo_Fermer: 8, Vityappro11: 6, '07_YM': 3 },
 };
 
 function latestStatsMapAtDate(mapByDate, date) {
@@ -332,12 +336,13 @@ const pvpFights = [
 
 
 const medalsByPlayer = {
-  Vityappro11: ['🥇 Баланс (золота)'],
-  Varenyk: ['🥈 Баланс (срібна)'],
-  treaforik: ['🥉 Баланс (бронзова)'],
-  edazfetg4ooo: ['🥇 Час (золота)'],
+  Vityappro11: ['🥇 Баланс (золота)', '🥇 Баланс (минулий вайп)'],
+  Varenyk: ['🥈 Баланс (срібна)', '🥇 Демігрики (минулий вайп)'],
+  treaforik: ['🥉 Баланс (бронзова)', '🥉 Кіли (минулий вайп)'],
+  edazfetg4ooo: ['🥇 Час (золота)', '🥇 Час (минулий вайп)', '🥈 Демігрики (минулий вайп)', '🥇 Кіли (минулий вайп)'],
   '07_YM': ['🥈 Час (срібна)'],
-  ForteCa228: ['🥉 Час (бронзова)'],
+  ForteCa228: ['🥉 Час (бронзова)', '🥉 Час (минулий вайп)'],
+  Paolo_Fermer: ['🥉 Демігрики (минулий вайп)', '🥈 Кіли (минулий вайп)'],
 };
 
 const medalXpByType = { gold: 2500, silver: 1500, bronze: 750 };
@@ -462,7 +467,7 @@ function daysDiffInclusive(start, end) {
 }
 
 function isTopView(v) {
-  return ['balance', 'play', 'clans', 'donates'].includes(v);
+  return ['balance', 'play', 'clans', 'donates', 'eggs'].includes(v);
 }
 
 function datesInActiveWipe() {
@@ -490,6 +495,7 @@ function allowedDatesForView(v) {
   if (v === 'content') return ['2025-03-05'];
   if (v === 'demigryky') return ['2025-03-17', '2025-03-18', '2025-03-20', '2025-03-23', '2025-03-24', '2025-03-25', '2025-03-31', '2025-04-01', '2025-04-02'];
   if (v === 'kills') return ['2025-03-17', '2025-03-18', '2025-03-20', '2025-03-23', '2025-03-24', '2025-03-25', '2025-03-31', '2025-04-01', '2025-04-02', '2025-04-04', '2025-04-05', '2025-04-06', '2025-04-08', '2025-04-09', '2025-04-10', '2025-04-11', '2025-04-12'];
+  if (v === 'eggs') return dates.filter((d) => d >= '2025-04-12' && d <= '2025-04-26');
 
   let allowed = dates;
   if (v === 'play') allowed = dates.filter((d) => d >= '2025-03-02' && d <= '2025-04-12' && d !== '2025-03-07' && d !== '2025-03-31');
@@ -1293,6 +1299,7 @@ function renderLeaderboard() {
   const date = dateSelect.value;
   const snap = getSnapshot(date);
   let rows = [];
+  document.body.classList.toggle('easter-theme', date >= '2025-04-12' && date <= '2025-04-26');
 
   if (view === 'balance') {
     tableTitle.textContent = 'Топ Баланс'; nameHeader.textContent = 'Гравець'; valueHeader.textContent = 'Баланс';
@@ -1326,6 +1333,11 @@ function renderLeaderboard() {
     tableTitle.textContent = 'Топ Кіли'; nameHeader.textContent = 'Гравець'; valueHeader.textContent = 'Кіли';
     const points = latestStatsMapAtDate(killsByDate, date);
     tableSubtitle.textContent = `${dateLabel(date)} • Топ за кількістю кілів`;
+    rows = Object.entries(points).sort((a, b) => b[1] - a[1]).map(([n, v]) => ({ name: n, value: v, click: () => showPlayerDetails(n), display: String(v) }));
+  } else if (view === 'eggs') {
+    tableTitle.textContent = 'Топ Яєць'; nameHeader.textContent = 'Гравець'; valueHeader.textContent = 'Яйця';
+    const points = latestStatsMapAtDate(eggsByDate, date);
+    tableSubtitle.textContent = `${dateLabel(date)} • Пасховий івент до 26 квітня`;
     rows = Object.entries(points).sort((a, b) => b[1] - a[1]).map(([n, v]) => ({ name: n, value: v, click: () => showPlayerDetails(n), display: String(v) }));
   } else if (view === 'updates') {
     tableTitle.textContent = 'Оновлення сервера'; nameHeader.textContent = 'Етап'; valueHeader.textContent = 'Період';
