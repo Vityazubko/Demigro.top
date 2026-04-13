@@ -43,6 +43,7 @@ const snapshots = [
   { date: '2025-04-09', players: { ForteCa228: 1657851, Vityappro11: 1536770, Varenyk: 832867, Paolo_Fermer: 305760, edazfetg4ooo: 189845, walleb0y: 123210, Genderpatty_2: 95000, lukyan187: 54784, PixelReaper1337: 54719, piromanyakk: 40000, galavastik: 38950, aetu: 36072, ItzFrillz: 27000, '07_YM': 24265, Inzio_: 24000, nag1bator11: 22080, CAT228sus1: 16842, treaforik: 15910, aboba2032: 10381, fakemed1: 7387, IlyaiyaYT: 6006, masloprosto: 6000, nag1bator12: 5000, shurik_xx19: 46000, gord: 26710, '30FPS': 20426, aniqum: 20069, wontz: 2683, dima111p: 1000, zxcnotezxc1: 1000, superholik: 1000 }, play: { fakemed1: 1526, ForteCa228: 1464, PixelReaper1337: 977, edazfetg4ooo: 883, Vityappro11: 859, galavastik: 804, Varenyk: 782, walleb0y: 742, aboba2032: 639, '07_YM': 216, gord: 136 } },
   { date: '2025-04-10', players: { ForteCa228: 1657851, Vityappro11: 1536770, Varenyk: 832867, nag1bator12: 381792, Paolo_Fermer: 175478, walleb0y: 123210, Genderpatty_2: 95000, CAT228sus1: 58115, lukyan187: 57176, PixelReaper1337: 54719, piromanyakk: 40000, galavastik: 38950, edazfetg4ooo: 35425, ItzFrillz: 27000, Inzio_: 25540, '07_YM': 24265, aetu: 36072, aboba2032: 13679, treaforik: 8923, Xeyo_pa: 8869, IlyaiyaYT: 6006, masloprosto: 6000, zxcnotezxc1: 3584, wontz: 2683, fakemed1: 1590, dima111p: 1000, superholik: 1000, night_850: 1000, nag1bator11: 1, shurik_xx19: 46000, gord: 26710, '30FPS': 20426, aniqum: 20069 }, play: { fakemed1: 1742, ForteCa228: 1464, edazfetg4ooo: 1007, PixelReaper1337: 977, Vityappro11: 859, galavastik: 804, Varenyk: 800, walleb0y: 742, aboba2032: 639, '07_YM': 216, gord: 136 } },
   { date: '2025-04-11', players: { Vityappro11: 2019433, ForteCa228: 1702920, Varenyk: 832867, nag1bator12: 729824, collected: 432165, Paolo_Fermer: 175478, Inzio_: 171540, walleb0y: 123210, treaforik: 97907, Genderpatty_2: 95000, zxcnotezxc1: 82732, Craz1k: 60142, night_850: 58665, CAT228sus1: 58115, PixelReaper1337: 54719, edazfetg4ooo: 53506, shurik_xx19: 46000, piromanyakk: 40000, galavastik: 38950, aetu: 36072, ItzFrillz: 27000, lukyan187: 24614, '07_YM': 24265, '30FPS': 20426, aniqum: 20069, aboba2032: 6897, zxcnotezxc: 6737, IlyaiyaYT: 6006, masloprosto: 6000, Xeyo_pa: 8869, wontz: 2683, gord: 11550, fakemed1: 10274, dima111p: 1000, superholik: 1000, maun3914: 1000, nag1bator11: 1 }, play: { fakemed1: 2165, ForteCa228: 1622, Vityappro11: 1161, edazfetg4ooo: 1144, nag1bator12: 1131, PixelReaper1337: 977, aboba2032: 825, galavastik: 804, Varenyk: 804, walleb0y: 742, '07_YM': 216, gord: 136 } },
+  { date: '2025-04-12', players: { Vityappro11: 2129912, ForteCa228: 1784890, Varenyk: 882867, nag1bator12: 819824, Nazarius6: 621000, collected: 432165, zxcnotezxc1: 332732, Paolo_Fermer: 286089, walleb0y: 173210, Inzio_: 171540, fakemed1: 160274, Genderpatty_2: 145000, allcash: 138253, edazfetg4ooo: 113008, Craz1k: 110142, night_850: 108665, CAT228sus1: 108115, DarkPuma69: 106000, PixelReaper1337: 104719, shurik_xx19: 96000, piromanyakk: 90000, galavastik: 88950, aetu: 86072, '07_YM': 79352, ItzFrillz: 77000, IlyaiyaYT: 76006, lukyan187: 74614, wontz: 72683, '30FPS': 70426, aniqum: 70069, gord: 61550, treaforik: 59295, Xeyo_pa: 58869, aboba2032: 56897, zxcnotezxc: 56737, masloprosto: 56000, dima111p: 51000, superholik: 51000, maun3914: 51000, nag1bator11: 50001 }, play: { fakemed1: 2262, ForteCa228: 1955, Vityappro11: 1228, nag1bator12: 1203, edazfetg4ooo: 1172, PixelReaper1337: 977, aboba2032: 862, galavastik: 804, Varenyk: 804, walleb0y: 742, '07_YM': 216, gord: 136 } },
 ];
 
 const donationByPlayer = {
@@ -108,11 +109,15 @@ const donationHistoryByPlayer = {
   Craz1k: [
     { from: '2025-04-11', donation: 'debryli' },
   ],
+  Nazarius6: [
+    { from: '2025-04-12', donation: 'status' },
+  ],
 };
 
 const clans = {
   Vitya: {
     createdAt: '2025-02-22',
+    deletedAt: '2025-04-12',
     events: [
       { date: '2025-02-22', player: 'Vityappro11', role: 'leader', action: 'join' },
       { date: '2025-02-25', player: 'lukyan187', role: 'senior', action: 'join' },
@@ -156,6 +161,7 @@ const clans = {
   },
   pipki: {
     createdAt: '2025-03-08',
+    deletedAt: '2025-04-12',
     events: [
       { date: '2025-03-08', player: 'edazfetg4ooo', role: 'leader', action: 'join' },
     ],
@@ -169,6 +175,7 @@ const clans = {
   },
   fermi: {
     createdAt: '2025-03-23',
+    deletedAt: '2025-04-12',
     events: [
       { date: '2025-03-23', player: 'Paolo_Fermer', role: 'member', action: 'join' },
       { date: '2025-04-01', player: 'Paolo_Fermer', role: 'member', action: 'join' },
@@ -186,24 +193,28 @@ const clans = {
   },
   '[g-word]': {
     createdAt: '2025-04-05',
+    deletedAt: '2025-04-12',
     events: [
       { date: '2025-04-05', player: 'aetu', role: 'member', action: 'join' },
     ],
   },
   hahah: {
     createdAt: '2025-04-06',
+    deletedAt: '2025-04-12',
     events: [
       { date: '2025-04-06', player: 'walleb0y', role: 'member', action: 'join' },
     ],
   },
   goga: {
     createdAt: '2025-04-09',
+    deletedAt: '2025-04-12',
     events: [
       { date: '2025-04-09', player: 'PixelReaper1337', role: 'member', action: 'join' },
     ],
   },
   TS: {
     createdAt: '2025-04-10',
+    deletedAt: '2025-04-12',
     events: [
       { date: '2025-04-10', player: 'Varenyk', role: 'leader', action: 'join' },
     ],
@@ -261,6 +272,7 @@ const killsByDate = {
   '2025-04-09': { edazfetg4ooo: 41, Paolo_Fermer: 28, treaforik: 18, TIKTOK_BMW_EDIT: 10, illwix: 10, ForteCa228: 11, Vityappro11: 5, SKAM3000: 3, Varenyk: 14, Xeyo_pa: 3, Inzio_: 16, ItzFrillz: 1, fakemed1: 62, aboba2032: 3, PixelReaper1337: 9, sachakorpan: 7 },
   '2025-04-10': { edazfetg4ooo: 41, Paolo_Fermer: 28, treaforik: 18, TIKTOK_BMW_EDIT: 10, illwix: 10, ForteCa228: 11, Vityappro11: 5, SKAM3000: 3, Varenyk: 16, Xeyo_pa: 3, Inzio_: 16, ItzFrillz: 1, fakemed1: 62, aboba2032: 3, PixelReaper1337: 9, sachakorpan: 7, nag1bator12: 32 },
   '2025-04-11': { edazfetg4ooo: 43, Paolo_Fermer: 28, treaforik: 40, TIKTOK_BMW_EDIT: 10, illwix: 10, ForteCa228: 11, Vityappro11: 5, SKAM3000: 3, Varenyk: 16, Xeyo_pa: 3, Inzio_: 16, ItzFrillz: 1, fakemed1: 84, aboba2032: 3, PixelReaper1337: 9, sachakorpan: 7, nag1bator12: 66, collected: 10 },
+  '2025-04-12': { edazfetg4ooo: 43, Paolo_Fermer: 28, treaforik: 41, TIKTOK_BMW_EDIT: 10, illwix: 10, ForteCa228: 11, Vityappro11: 5, SKAM3000: 3, Varenyk: 16, Xeyo_pa: 3, Inzio_: 16, ItzFrillz: 1, fakemed1: 85, aboba2032: 3, PixelReaper1337: 9, sachakorpan: 7, nag1bator12: 67, collected: 10 },
 };
 
 function latestStatsMapAtDate(mapByDate, date) {
@@ -353,7 +365,11 @@ const manualLastSeen = {
   lukyan187: '2025-03-13', Paolo_Fermer: '2025-03-18', belui228: '2025-03-08', maksik_paksik7: '2025-03-12',
   PravyiNosok777: '2025-03-12', hipoma: '2025-03-07', wontz: '2025-03-07', kasikm1: '2025-03-01', robot: '2025-03-17', Topix__: '2025-03-10',
   Restioynik1: '2025-03-17', Bear228: '2025-03-12', ivan_strogo: '2025-03-14', dddooooppp: '2025-03-12', goiida11: '2025-03-13',
-  XIN_jonu: '2025-03-14', illwix: '2025-03-14', ulquiorra2: '2025-03-17', kampys231231: '2025-03-14', Inzio_: '2025-03-18', _ilovemygf_: '2025-03-18'
+  XIN_jonu: '2025-03-14', illwix: '2025-03-14', ulquiorra2: '2025-03-17', kampys231231: '2025-03-14', Inzio_: '2025-03-18', _ilovemygf_: '2025-03-18',
+  Varenyk: '2025-04-11', walleb0y: '2025-04-11', Genderpatty_2: '2025-04-11', Craz1k: '2025-04-11', night_850: '2025-04-11', CAT228sus1: '2025-04-11',
+  PixelReaper1337: '2025-04-11', shurik_xx19: '2025-04-11', piromanyakk: '2025-04-11', galavastik: '2025-04-11', aetu: '2025-04-11', ItzFrillz: '2025-04-11',
+  lukyan187: '2025-04-11', '30FPS': '2025-04-11', aniqum: '2025-04-11', gord: '2025-04-11', Xeyo_pa: '2025-04-11', aboba2032: '2025-04-11',
+  zxcnotezxc: '2025-04-11', masloprosto: '2025-04-11', dima111p: '2025-04-11', superholik: '2025-04-11', maun3914: '2025-04-11', nag1bator11: '2025-04-11'
 };
 
 const dateSelect = document.getElementById('dateSelect');
@@ -473,10 +489,10 @@ function currentDateInActiveWipe(preferredDate = dateSelect.value) {
 function allowedDatesForView(v) {
   if (v === 'content') return ['2025-03-05'];
   if (v === 'demigryky') return ['2025-03-17', '2025-03-18', '2025-03-20', '2025-03-23', '2025-03-24', '2025-03-25', '2025-03-31', '2025-04-01', '2025-04-02'];
-  if (v === 'kills') return ['2025-03-17', '2025-03-18', '2025-03-20', '2025-03-23', '2025-03-24', '2025-03-25', '2025-03-31', '2025-04-01', '2025-04-02', '2025-04-04', '2025-04-05', '2025-04-06', '2025-04-08', '2025-04-09', '2025-04-10', '2025-04-11'];
+  if (v === 'kills') return ['2025-03-17', '2025-03-18', '2025-03-20', '2025-03-23', '2025-03-24', '2025-03-25', '2025-03-31', '2025-04-01', '2025-04-02', '2025-04-04', '2025-04-05', '2025-04-06', '2025-04-08', '2025-04-09', '2025-04-10', '2025-04-11', '2025-04-12'];
 
   let allowed = dates;
-  if (v === 'play') allowed = dates.filter((d) => d >= '2025-03-02' && d <= '2025-04-11' && d !== '2025-03-07' && d !== '2025-03-31');
+  if (v === 'play') allowed = dates.filter((d) => d >= '2025-03-02' && d <= '2025-04-12' && d !== '2025-03-07' && d !== '2025-03-31');
   if (v === 'clans') allowed = dates.filter((d) => d >= '2025-02-22');
   if (isTopView(v)) {
     const inWipe = new Set(datesInActiveWipe());
@@ -530,14 +546,14 @@ function getReputation(player) {
     Restioynik1: 3, goiida11: 3, Bear228: 3, XIN_jonu: 2, illwix: 2,
     maksik_paksik7: 10,
   };
-  const overrides = {
+  const adjustments = {
     nag1bator12: 4, collected: 4, Inzio_: 4,
     walleb0y: 3, fakemed1: 3,
     GenderPatty_2: 2, Genderpatty_2: 2, CAT228sus1: 2, lukyan187: 2, PixelReaper1337: 2, piromanyakk: 2, galavastik: 2,
     ForteCa228: 1, Varenyk: 1, shurik_xx19: 1, aetu: 1, gord: 1,
     wontz: -2, '07_YM': -2,
   };
-  const score = overrides[player] ?? map[player] ?? 1;
+  const score = (map[player] ?? 1) + (adjustments[player] ?? 0);
   const color = score <= 2 ? '#7f1d1d' : score <= 4 ? '#dc2626' : score <= 6 ? '#f59e0b' : score <= 8 ? '#16a34a' : '#166534';
   return { score, color };
 }
