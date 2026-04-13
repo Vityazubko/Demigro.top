@@ -336,14 +336,24 @@ const pvpFights = [
 
 
 const medalsByPlayer = {
-  Vityappro11: ['🥇 Баланс (золота)', '🥇 Баланс (минулий вайп)'],
-  Varenyk: ['🥈 Баланс (срібна)', '🥇 Демігрики (минулий вайп)'],
-  treaforik: ['🥉 Баланс (бронзова)', '🥉 Кіли (минулий вайп)'],
-  edazfetg4ooo: ['🥇 Час (золота)', '🥇 Час (минулий вайп)', '🥈 Демігрики (минулий вайп)', '🥇 Кіли (минулий вайп)'],
+  Vityappro11: ['🥇 Баланс (золота)', '🥇 Баланс'],
+  Varenyk: ['🥈 Баланс (срібна)', '🥇 Демігрики'],
+  treaforik: ['🥉 Баланс (бронзова)', '🥉 Кіли'],
+  edazfetg4ooo: ['🥇 Час (золота)', '🥇 Час', '🥈 Демігрики', '🥇 Кіли'],
   '07_YM': ['🥈 Час (срібна)'],
-  ForteCa228: ['🥉 Час (бронзова)', '🥉 Час (минулий вайп)'],
-  Paolo_Fermer: ['🥉 Демігрики (минулий вайп)', '🥈 Кіли (минулий вайп)'],
+  ForteCa228: ['🥉 Час (бронзова)', '🥉 Час'],
+  Paolo_Fermer: ['🥉 Демігрики', '🥈 Кіли'],
 };
+
+const pastWipeMedalHint = 'Вайп: ВЕСНЯНА ГРА (7 березня — 29 березня 2025)';
+function medalBadgesHtml(player) {
+  const medals = medalsByPlayer[player] || [];
+  if (!medals.length) return 'Немає медалей';
+  return medals.map((m) => {
+    const title = /(Баланс|Час|Демігрики|Кіли)/.test(m) ? pastWipeMedalHint : 'Медаль';
+    return `<span class="medal-chip" title="${title}">${m}</span>`;
+  }).join(' ');
+}
 
 const medalXpByType = { gold: 2500, silver: 1500, bronze: 750 };
 
@@ -673,7 +683,7 @@ function renderFullStatsModal(player) {
     </div>
     ${canContent ? `<h3>Content (${platform.toUpperCase()})</h3><div class="full-grid"><div class="stat"><strong>Всього відео</strong><p>${stat.content.totalVideos}</p></div><div class="stat"><strong>Всього переглядів</strong><p>${new Intl.NumberFormat('uk-UA').format(stat.content.totalViews)}</p></div><div class="stat"><strong>Всього Лайків</strong><p>${new Intl.NumberFormat('uk-UA').format(stat.content.totalLikes)}</p></div><div class="stat"><strong>${platform==='youtube' ? 'Всього Підписників' : 'Всього Слідкувачів'}</strong><p>${new Intl.NumberFormat('uk-UA').format(stat.content.followers)}</p></div></div>` : ''}
     <h3>Медалі</h3>
-    <ul>${(stat.medals.length ? stat.medals : ['Немає медалей']).map((m) => `<li>${m}</li>`).join('')}</ul>
+    <div class="medals-wrap">${medalBadgesHtml(player)}</div>
     <h3>Вимоги до нових рівнів</h3>
     <ul><li>31 — 22500 XP</li><li>32 — 25000 XP</li><li>33 — 27500 XP</li><li>34 — 30000 XP</li><li>35 — 35000 XP</li><li>36 — 40000 XP</li><li>37 — 45000 XP</li><li>38 — 50000 XP</li><li>39 — 55000 XP</li><li>40 — 60000 XP</li><li>max level — 100000 XP</li></ul>
   `;
@@ -1041,7 +1051,7 @@ function showPlayerDetails(player) {
     { label: 'ПвП', value: `${pvp.wins} перемог / ${pvp.losses} поразок (${pvp.rate}% winrate)` },
     { label: 'Демігрики', value: String(statAtDate(demigrykyByDate, player, date)) },
     { label: 'Кіли', value: String(statAtDate(killsByDate, player, date)) },
-    { label: 'Медалі', value: (medalsByPlayer[player] || []).join(', ') || 'Немає медалей' },
+    { label: 'Медалі', value: medalBadgesHtml(player) },
   ]);
 
   history1Title.textContent = 'Історія балансу (місце та зміна)';
@@ -1299,7 +1309,7 @@ function renderLeaderboard() {
   const date = dateSelect.value;
   const snap = getSnapshot(date);
   let rows = [];
-  document.body.classList.toggle('easter-theme', date >= '2025-04-12' && date <= '2025-04-26');
+  document.body.classList.add('easter-theme');
 
   if (view === 'balance') {
     tableTitle.textContent = 'Топ Баланс'; nameHeader.textContent = 'Гравець'; valueHeader.textContent = 'Баланс';
