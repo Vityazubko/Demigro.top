@@ -37,6 +37,18 @@ body.easter-theme {
     linear-gradient(145deg, #2a1f0f 0%, #120f07 55%);
 }
 
+body.easter-theme::before {
+  content: '🥚 ✨ 🥚 ✨ 🥚';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .12;
+  font-size: 26px;
+  letter-spacing: 42px;
+  text-align: center;
+  padding-top: 18px;
+}
+
 body.easter-theme .hero-badge {
   border-color: rgba(255, 215, 110, .65);
   background: rgba(255, 215, 110, .2);
@@ -48,6 +60,18 @@ body.easter-theme .control-btn.active {
   background: linear-gradient(130deg, #ffd166, #94d97a);
   color: #1a1204;
 }
+
+.medal-chip {
+  display: inline-flex;
+  margin: 2px 4px 2px 0;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.2);
+  background: rgba(255,255,255,.08);
+  font-size: .84rem;
+}
+
+.medals-wrap { line-height: 1.8; }
 
 .bg-glow {
   position: fixed;
