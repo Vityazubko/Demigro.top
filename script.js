@@ -43,7 +43,8 @@ const snapshots = [
   { date: '2025-04-09', players: { ForteCa228: 1657851, Vityappro11: 1536770, Varenyk: 832867, Paolo_Fermer: 305760, edazfetg4ooo: 189845, walleb0y: 123210, Genderpatty_2: 95000, lukyan187: 54784, PixelReaper1337: 54719, piromanyakk: 40000, galavastik: 38950, aetu: 36072, ItzFrillz: 27000, '07_YM': 24265, Inzio_: 24000, nag1bator11: 22080, CAT228sus1: 16842, treaforik: 15910, aboba2032: 10381, fakemed1: 7387, IlyaiyaYT: 6006, masloprosto: 6000, nag1bator12: 5000, shurik_xx19: 46000, gord: 26710, '30FPS': 20426, aniqum: 20069, wontz: 2683, dima111p: 1000, zxcnotezxc1: 1000, superholik: 1000 }, play: { fakemed1: 1526, ForteCa228: 1464, PixelReaper1337: 977, edazfetg4ooo: 883, Vityappro11: 859, galavastik: 804, Varenyk: 782, walleb0y: 742, aboba2032: 639, '07_YM': 216, gord: 136 } },
   { date: '2025-04-10', players: { ForteCa228: 1657851, Vityappro11: 1536770, Varenyk: 832867, nag1bator12: 381792, Paolo_Fermer: 175478, walleb0y: 123210, Genderpatty_2: 95000, CAT228sus1: 58115, lukyan187: 57176, PixelReaper1337: 54719, piromanyakk: 40000, galavastik: 38950, edazfetg4ooo: 35425, ItzFrillz: 27000, Inzio_: 25540, '07_YM': 24265, aetu: 36072, aboba2032: 13679, treaforik: 8923, Xeyo_pa: 8869, IlyaiyaYT: 6006, masloprosto: 6000, zxcnotezxc1: 3584, wontz: 2683, fakemed1: 1590, dima111p: 1000, superholik: 1000, night_850: 1000, nag1bator11: 1, shurik_xx19: 46000, gord: 26710, '30FPS': 20426, aniqum: 20069 }, play: { fakemed1: 1742, ForteCa228: 1464, edazfetg4ooo: 1007, PixelReaper1337: 977, Vityappro11: 859, galavastik: 804, Varenyk: 800, walleb0y: 742, aboba2032: 639, '07_YM': 216, gord: 136 } },
   { date: '2025-04-11', players: { Vityappro11: 2019433, ForteCa228: 1702920, Varenyk: 832867, nag1bator12: 729824, collected: 432165, Paolo_Fermer: 175478, Inzio_: 171540, walleb0y: 123210, treaforik: 97907, Genderpatty_2: 95000, zxcnotezxc1: 82732, Craz1k: 60142, night_850: 58665, CAT228sus1: 58115, PixelReaper1337: 54719, edazfetg4ooo: 53506, shurik_xx19: 46000, piromanyakk: 40000, galavastik: 38950, aetu: 36072, ItzFrillz: 27000, lukyan187: 24614, '07_YM': 24265, '30FPS': 20426, aniqum: 20069, aboba2032: 6897, zxcnotezxc: 6737, IlyaiyaYT: 6006, masloprosto: 6000, Xeyo_pa: 8869, wontz: 2683, gord: 11550, fakemed1: 10274, dima111p: 1000, superholik: 1000, maun3914: 1000, nag1bator11: 1 }, play: { fakemed1: 2165, ForteCa228: 1622, Vityappro11: 1161, edazfetg4ooo: 1144, nag1bator12: 1131, PixelReaper1337: 977, aboba2032: 825, galavastik: 804, Varenyk: 804, walleb0y: 742, '07_YM': 216, gord: 136 } },
-  { date: '2025-04-12', players: { Vityappro11: 2129912, ForteCa228: 1784890, Varenyk: 882867, nag1bator12: 819824, Nazarius6: 621000, collected: 432165, zxcnotezxc1: 332732, Paolo_Fermer: 286089, walleb0y: 173210, Inzio_: 171540, fakemed1: 160274, Genderpatty_2: 145000, allcash: 138253, edazfetg4ooo: 113008, Craz1k: 110142, night_850: 108665, CAT228sus1: 108115, DarkPuma69: 106000, PixelReaper1337: 104719, shurik_xx19: 96000, piromanyakk: 90000, galavastik: 88950, aetu: 86072, '07_YM': 79352, ItzFrillz: 77000, IlyaiyaYT: 76006, lukyan187: 74614, wontz: 72683, '30FPS': 70426, aniqum: 70069, gord: 61550, treaforik: 59295, Xeyo_pa: 58869, aboba2032: 56897, zxcnotezxc: 56737, masloprosto: 56000, dima111p: 51000, superholik: 51000, maun3914: 51000, nag1bator11: 50001 }, play: { fakemed1: 2262, ForteCa228: 1955, Vityappro11: 1228, nag1bator12: 1203, edazfetg4ooo: 1172, PixelReaper1337: 977, aboba2032: 862, galavastik: 804, Varenyk: 804, walleb0y: 742, '07_YM': 216, gord: 136 } },
+  { date: '2025-04-12', players: { Vityappro11: 2129912, ForteCa228: 1784890, Varenyk: 882867, nag1bator12: 819824, Nazarius6: 621000, collected: 432165, zxcnotezxc1: 332732, Paolo_Fermer: 286089, walleb0y: 173210, Inzio_: 6767, fakemed1: 160274, Genderpatty_2: 145000, allcash: 138253, edazfetg4ooo: 113008, Craz1k: 110142, night_850: 108665, CAT228sus1: 108115, DarkPuma69: 106000, PixelReaper1337: 104719, shurik_xx19: 96000, piromanyakk: 90000, galavastik: 88950, aetu: 86072, '07_YM': 79352, ItzFrillz: 77000, IlyaiyaYT: 76006, lukyan187: 74614, wontz: 72683, '30FPS': 70426, aniqum: 70069, gord: 61550, treaforik: 32295, Xeyo_pa: 58869, aboba2032: 56897, zxcnotezxc: 56737, masloprosto: 56000, dima111p: 51000, superholik: 51000, maun3914: 51000, nag1bator11: 50001 }, play: { fakemed1: 2262, ForteCa228: 1955, Vityappro11: 1228, nag1bator12: 1203, edazfetg4ooo: 1172, PixelReaper1337: 977, aboba2032: 862, galavastik: 804, Varenyk: 804, walleb0y: 742, '07_YM': 216, gord: 136 } },
+  { date: '2025-04-13', players: { Vityappro11: 2258463, ForteCa228: 1788872, collected: 986946, nag1bator12: 915484, zxcnotezxc1: 452732, Paolo_Fermer: 254089, fakemed1: 207774, aboba2032: 191897, walleb0y: 173210, allcash: 158253, edazfetg4ooo: 146844, Genderpatty_2: 145000, Craz1k: 110142, night_850: 108665, CAT228sus1: 108115, DarkPuma69: 106000, PixelReaper1337: 104719, shurik_xx19: 96000, piromanyakk: 90000, galavastik: 88950, aetu: 86123, lukyan187: 84614, '07_YM': 79352, ItzFrillz: 77000, IlyaiyaYT: 76006, wontz: 26751, '30FPS': 70426, aniqum: 70069, gord: 61550, Varenyk: 882867, Xeyo_pa: 58869, zxcnotezxc: 56737, masloprosto: 56000, dima111p: 51000, superholik: 51000, maun3914: 51000, nag1bator11: 50001, mykolanos: 42407, CDmDqjjk: 6668, Inzio_: 4267 }, play: { fakemed1: 2624, ForteCa228: 2413, nag1bator12: 1579, edazfetg4ooo: 1510, Vityappro11: 1416, Inzio_: 1296, PixelReaper1337: 977, aboba2032: 879, galavastik: 804, Varenyk: 804, walleb0y: 742, '07_YM': 216 } },
 ];
 
 const donationByPlayer = {
@@ -111,6 +112,9 @@ const donationHistoryByPlayer = {
   ],
   Nazarius6: [
     { from: '2025-04-12', donation: 'status' },
+  ],
+  allcash: [
+    { from: '2025-04-13', donation: 'prista' },
   ],
 };
 
@@ -273,10 +277,12 @@ const killsByDate = {
   '2025-04-10': { edazfetg4ooo: 41, Paolo_Fermer: 28, treaforik: 18, TIKTOK_BMW_EDIT: 10, illwix: 10, ForteCa228: 11, Vityappro11: 5, SKAM3000: 3, Varenyk: 16, Xeyo_pa: 3, Inzio_: 16, ItzFrillz: 1, fakemed1: 62, aboba2032: 3, PixelReaper1337: 9, sachakorpan: 7, nag1bator12: 32 },
   '2025-04-11': { edazfetg4ooo: 43, Paolo_Fermer: 28, treaforik: 40, TIKTOK_BMW_EDIT: 10, illwix: 10, ForteCa228: 11, Vityappro11: 5, SKAM3000: 3, Varenyk: 16, Xeyo_pa: 3, Inzio_: 16, ItzFrillz: 1, fakemed1: 84, aboba2032: 3, PixelReaper1337: 9, sachakorpan: 7, nag1bator12: 66, collected: 10 },
   '2025-04-12': { edazfetg4ooo: 43, Paolo_Fermer: 28, treaforik: 41, TIKTOK_BMW_EDIT: 10, illwix: 10, ForteCa228: 11, Vityappro11: 5, SKAM3000: 3, Varenyk: 16, Xeyo_pa: 3, Inzio_: 16, ItzFrillz: 1, fakemed1: 85, aboba2032: 3, PixelReaper1337: 9, sachakorpan: 7, nag1bator12: 67, collected: 10 },
+  '2025-04-13': { edazfetg4ooo: 55, Paolo_Fermer: 31, treaforik: 41, TIKTOK_BMW_EDIT: 10, illwix: 10, ForteCa228: 11, Vityappro11: 5, SKAM3000: 3, Varenyk: 16, Xeyo_pa: 3, Inzio_: 17, ItzFrillz: 1, fakemed1: 91, aboba2032: 3, PixelReaper1337: 9, sachakorpan: 7, nag1bator12: 69, collected: 10, Nazarius6: 13, zxcnotezxc1: 12 },
 };
 
 const eggsByDate = {
   '2025-04-12': { treaforik: 19, nag1bator12: 17, fakemed1: 16, allcash: 13, edazfetg4ooo: 11, Paolo_Fermer: 8, Vityappro11: 6, '07_YM': 3 },
+  '2025-04-13': { Vityappro11: 131, fakemed1: 115, nag1bator12: 85, ForteCa228: 56, IlyaiyaYT: 46, edazfetg4ooo: 27, treaforik: 20, allcash: 13, Paolo_Fermer: 8, '07_YM': 3 },
 };
 
 function latestStatsMapAtDate(mapByDate, date) {
@@ -289,6 +295,23 @@ function latestStatsMapAtDate(mapByDate, date) {
 
 function statAtDate(mapByDate, player, date) {
   return latestStatsMapAtDate(mapByDate, date)[player] || 0;
+}
+
+const legacyByPlayer = {
+  Nazarius6: { droppedAt: '2025-04-13', balance: 4054 },
+  treaforik: { droppedAt: '2025-04-13', balance: 295 },
+};
+
+function legacyEntryAtDate(player, date) {
+  const entry = legacyByPlayer[player];
+  if (!entry) return null;
+  return date >= entry.droppedAt ? entry : null;
+}
+
+function legacyRowsAtDate(date) {
+  return Object.entries(legacyByPlayer)
+    .filter(([, info]) => date >= info.droppedAt)
+    .map(([name, info]) => ({ name, value: info.balance }));
 }
 
 const firstSeenOverrides = {
@@ -504,11 +527,11 @@ function currentDateInActiveWipe(preferredDate = dateSelect.value) {
 function allowedDatesForView(v) {
   if (v === 'content') return ['2025-03-05'];
   if (v === 'demigryky') return ['2025-03-17', '2025-03-18', '2025-03-20', '2025-03-23', '2025-03-24', '2025-03-25', '2025-03-31', '2025-04-01', '2025-04-02'];
-  if (v === 'kills') return ['2025-03-17', '2025-03-18', '2025-03-20', '2025-03-23', '2025-03-24', '2025-03-25', '2025-03-31', '2025-04-01', '2025-04-02', '2025-04-04', '2025-04-05', '2025-04-06', '2025-04-08', '2025-04-09', '2025-04-10', '2025-04-11', '2025-04-12'];
+  if (v === 'kills') return ['2025-03-17', '2025-03-18', '2025-03-20', '2025-03-23', '2025-03-24', '2025-03-25', '2025-03-31', '2025-04-01', '2025-04-02', '2025-04-04', '2025-04-05', '2025-04-06', '2025-04-08', '2025-04-09', '2025-04-10', '2025-04-11', '2025-04-12', '2025-04-13'];
   if (v === 'eggs') return dates.filter((d) => d >= '2025-04-12' && d <= '2025-04-26');
 
   let allowed = dates;
-  if (v === 'play') allowed = dates.filter((d) => d >= '2025-03-02' && d <= '2025-04-12' && d !== '2025-03-07' && d !== '2025-03-31');
+  if (v === 'play') allowed = dates.filter((d) => d >= '2025-03-02' && d <= '2025-04-13' && d !== '2025-03-07' && d !== '2025-03-31');
   if (v === 'clans') allowed = dates.filter((d) => d >= '2025-02-22');
   if (isTopView(v)) {
     const inWipe = new Set(datesInActiveWipe());
@@ -1023,9 +1046,10 @@ function showPlayerDetails(player) {
   const balanceHistory = wipeSnapshots.filter((s) => s.players[player] !== undefined).map((s) => ({ date: s.date, value: s.players[player] }));
   const playHistory = wipeSnapshots.filter((s) => s.play[player] !== undefined).map((s) => ({ date: s.date, value: s.play[player] }));
   const peakBalance = balanceHistory.reduce((m, x) => (x.value > m.value ? x : m), { value: -1, date: '' });
+  const legacyNow = legacyEntryAtDate(player, date);
   const currentBalance = scopeWipe === 'allTime'
     ? combinedValueAcrossWipesForPlayer(player, 'players')
-    : (getSnapshot(date).players[player] ?? 0);
+    : (getSnapshot(date).players[player] ?? legacyNow?.balance ?? 0);
   const firstSeen = firstSeenDate(player);
   const pvp = playerPvpStats(player);
 
@@ -1051,6 +1075,7 @@ function showPlayerDetails(player) {
     { label: 'ПвП', value: `${pvp.wins} перемог / ${pvp.losses} поразок (${pvp.rate}% winrate)` },
     { label: 'Демігрики', value: String(statAtDate(demigrykyByDate, player, date)) },
     { label: 'Кіли', value: String(statAtDate(killsByDate, player, date)) },
+    { label: 'Статус топу', value: legacyNow ? 'Гравець випав з топ 50, рахування припиняється.' : 'У топ 50' },
     { label: 'Медалі', value: medalBadgesHtml(player) },
   ]);
 
@@ -1314,7 +1339,10 @@ function renderLeaderboard() {
   if (view === 'balance') {
     tableTitle.textContent = 'Топ Баланс'; nameHeader.textContent = 'Гравець'; valueHeader.textContent = 'Баланс';
     tableSubtitle.textContent = `Актуальні баланси на ${dateLabel(date)} • Всього на сервері: ${formatCurrency(totalMoneyAtDate(date))}`;
-    rows = Object.entries(snap.players).filter(([n]) => !isHiddenFromBalanceLeaderboard(n)).map(([n, v]) => ({ name: n, value: v, click: () => showPlayerDetails(n), display: formatCurrency(v) }));
+    const topRows = Object.entries(snap.players).filter(([n]) => !isHiddenFromBalanceLeaderboard(n)).sort((a, b) => b[1] - a[1]).slice(0, 50).map(([n, v]) => ({ name: n, value: v, click: () => showPlayerDetails(n), display: formatCurrency(v) }));
+    const legacyRows = legacyRowsAtDate(date).map((x) => ({ name: `Legacy.${x.name}`, value: x.value, click: () => showPlayerDetails(x.name), display: `${formatCurrency(x.value)} (Legacy)` }));
+    tableSubtitle.textContent = `Актуальні баланси на ${dateLabel(date)} • Всього на сервері: ${formatCurrency(totalMoneyAtDate(date))} • Бар'єр baltop: max 50`;
+    rows = [...topRows, ...legacyRows];
   } else if (view === 'play') {
     tableTitle.textContent = 'Top Play'; nameHeader.textContent = 'Гравець'; valueHeader.textContent = 'Час';
     if ((date === '2025-03-07' && activeWipe === 'springGame') || Object.keys(snap.play).length === 0) {
