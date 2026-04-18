@@ -47,7 +47,7 @@ const snapshots = [
   { date: '2025-04-13', players: { Vityappro11: 2258463, ForteCa228: 1788872, collected: 596946, nag1bator12: 915484, zxcnotezxc1: 452732, Paolo_Fermer: 254089, fakemed1: 207774, aboba2032: 191897, walleb0y: 173210, allcash: 158253, edazfetg4ooo: 146844, Genderpatty_2: 145000, Craz1k: 110142, night_850: 108665, CAT228sus1: 108115, DarkPuma69: 106000, PixelReaper1337: 104719, shurik_xx19: 96000, piromanyakk: 90000, galavastik: 88950, aetu: 86123, lukyan187: 84614, '07_YM': 79352, ItzFrillz: 77000, IlyaiyaYT: 76006, wontz: 26751, '30FPS': 70426, aniqum: 70069, gord: 61550, Varenyk: 882867, Xeyo_pa: 58869, zxcnotezxc: 56737, masloprosto: 56000, dima111p: 51000, superholik: 51000, maun3914: 51000, nag1bator11: 50001, mykolanos: 42407, CDmDqjjk: 6668, Inzio_: 4267 }, play: { fakemed1: 2624, ForteCa228: 2413, nag1bator12: 1579, edazfetg4ooo: 1510, Vityappro11: 1416, Inzio_: 1296, PixelReaper1337: 977, aboba2032: 879, galavastik: 804, Varenyk: 804, walleb0y: 742, '07_YM': 216 } },
   { date: '2025-04-14', players: { Vityappro11: 2410204, ForteCa228: 1808872, nag1bator12: 935484, Varenyk: 932867, collected: 597946, zxcnotezxc1: 452732, Paolo_Fermer: 254089, fakemed1: 227774, aboba2032: 191897, walleb0y: 173210, allcash: 158253, edazfetg4ooo: 131844, Genderpatty_2: 145000, Craz1k: 110142, night_850: 108665, CAT228sus1: 108115, DarkPuma69: 106000, PixelReaper1337: 104719, '07_YM': 99352, shurik_xx19: 96000, piromanyakk: 90000, galavastik: 88950, aetu: 86123, lukyan187: 84614, ItzFrillz: 77000, IlyaiyaYT: 76006, '05LONE12': 71000, wontz: 26751, '30FPS': 70426, aniqum: 70069, gord: 61550, Xeyo_pa: 58869, zxcnotezxc: 56737, masloprosto: 56000, dima111p: 51000, superholik: 51000, maun3914: 51000, nag1bator11: 50001, CherryKira: 36613, mykolanos: 1108, Inzio_: 17347, CDmDqjjk: 6668, Nightpiers: 1000, Its_NaiferRbx: 1000 }, play: { fakemed1: 2706, ForteCa228: 2487, edazfetg4ooo: 1774, nag1bator12: 1675, Vityappro11: 1600, Inzio_: 1333, PixelReaper1337: 977, Varenyk: 915, aboba2032: 896, galavastik: 804, walleb0y: 742, '07_YM': 216 } },
   { date: '2025-04-15', players: { Vityappro11: 2410875, ForteCa228: 1808872, nag1bator12: 935484, Varenyk: 932867, collected: 597946, zxcnotezxc1: 452732, Paolo_Fermer: 254089, fakemed1: 247774, aboba2032: 191897, walleb0y: 173210, allcash: 158253, edazfetg4ooo: 133196, Genderpatty_2: 145000, Craz1k: 110142, night_850: 108665, CAT228sus1: 108115, DarkPuma69: 106000, PixelReaper1337: 104719, '07_YM': 99352, shurik_xx19: 96000, piromanyakk: 90000, galavastik: 88950, aetu: 86123, lukyan187: 84614, ItzFrillz: 77000, IlyaiyaYT: 76006, '05LONE12': 71000, wontz: 26751, '30FPS': 70426, aniqum: 70069, gord: 61550, Xeyo_pa: 58869, zxcnotezxc: 56737, masloprosto: 56000, dima111p: 51000, superholik: 51000, maun3914: 51000, nag1bator11: 50001, CherryKira: 46613, mykolanos: 1108, Inzio_: 17347, handbloood: 26000, Couldmind: 6568, Kira: 2216, CDmDqjjk: 6668, Nightpiers: 1000, Its_NaiferRbx: 1000, XdeadForMatvij41: 1000 }, play: { fakemed1: 2725, ForteCa228: 2538, edazfetg4ooo: 1804, Vityappro11: 1694, nag1bator12: 1679, Inzio_: 1333, Varenyk: 999, PixelReaper1337: 977, aboba2032: 896, galavastik: 804, walleb0y: 742, '07_YM': 216 } },
-  { date: '2025-04-16', players: { Vityappro11: 2410875, ForteCa228: 1808872, nag1bator12: 935484, Varenyk: 932867, collected: 597946, zxcnotezxc1: 452732, Paolo_Fermer: 254089, fakemed1: 247774, aboba2032: 191897, walleb0y: 173210, allcash: 158253, edazfetg4ooo: 133196, Genderpatty_2: 145000, Craz1k: 110142, night_850: 108665, CAT228sus1: 108115, DarkPuma69: 106000, PixelReaper1337: 104719, '07_YM': 99352, shurik_xx19: 96000, piromanyakk: 90000, galavastik: 88950, aetu: 86123, lukyan187: 84614, ItzFrillz: 77000, IlyaiyaYT: 76006, '05LONE12': 71000, wontz: 26751, '30FPS': 70426, aniqum: 70069, gord: 61550, Xeyo_pa: 58869, zxcnotezxc: 56737, masloprosto: 56000, dima111p: 51000, superholik: 51000, maun3914: 51000, nag1bator11: 50001, CherryKira: 46613, mykolanos: 1108, Inzio_: 17347, handbloood: 26000, Couldmind: 6568, Kira: 2216, CDmDqjjk: 6668, Nightpiers: 1000, Its_NaiferRbx: 1000, XdeadForMatvij41: 1000 }, play: { fakemed1: 2725, ForteCa228: 2538, edazfetg4ooo: 1804, Vityappro11: 1694, nag1bator12: 1679, Inzio_: 1333, Varenyk: 999, PixelReaper1337: 977, aboba2032: 896, galavastik: 804, walleb0y: 742, '07_YM': 216 } },
+  { date: '2025-04-16', players: { Vityappro11: 2441192, ForteCa228: 1808872, nag1bator12: 925484, Varenyk: 933121, collected: 597946, zxcnotezxc1: 452732, Paolo_Fermer: 212236, fakemed1: 232150, aboba2032: 191897, walleb0y: 173210, allcash: 158253, edazfetg4ooo: 374332, Genderpatty_2: 145000, Craz1k: 110142, night_850: 108665, CAT228sus1: 108115, DarkPuma69: 106000, PixelReaper1337: 104719, '07_YM': 99352, Inzio_: 98447, shurik_xx19: 96000, galavastik: 88950, aetu: 86123, lukyan187: 84614, ItzFrillz: 77000, IlyaiyaYT: 76006, '05LONE12': 71000, '30FPS': 70426, aniqum: 70069, gord: 61550, Xeyo_pa: 58869, zxcnotezxc: 56737, masloprosto: 56000, Kira: 52187, dima111p: 51000, superholik: 51000, maun3914: 51000, nag1bator11: 50001, piromanyakk: 46418, CherryKira: 36613, BobrKyrba: 34847, handbloood: 1506, mykolanos: 1108, XdeadForMatvij41: 11000, Couldmind: 3576, CDmDqjjk: 6668, Nightpiers: 1000 }, play: { fakemed1: 2753, ForteCa228: 2563, edazfetg4ooo: 2016, Vityappro11: 1846, nag1bator12: 1813, Inzio_: 1333, Varenyk: 1067, Paolo_Fermer: 1013, PixelReaper1337: 977, aboba2032: 896, galavastik: 804, walleb0y: 742, '07_YM': 216 } },
 ];
 
 const donationByPlayer = {
@@ -297,7 +297,7 @@ const killsByDate = {
   '2025-04-13': { edazfetg4ooo: 55, Paolo_Fermer: 31, treaforik: 41, TIKTOK_BMW_EDIT: 10, illwix: 10, ForteCa228: 11, Vityappro11: 5, SKAM3000: 3, Varenyk: 16, Xeyo_pa: 3, Inzio_: 17, ItzFrillz: 1, fakemed1: 91, aboba2032: 3, PixelReaper1337: 9, sachakorpan: 7, nag1bator12: 69, collected: 10, Nazarius6: 13, zxcnotezxc1: 12 },
   '2025-04-14': { edazfetg4ooo: 55, Paolo_Fermer: 31, treaforik: 42, TIKTOK_BMW_EDIT: 10, illwix: 10, ForteCa228: 11, Vityappro11: 6, SKAM3000: 3, Varenyk: 16, Xeyo_pa: 3, Inzio_: 18, ItzFrillz: 1, fakemed1: 92, aboba2032: 3, PixelReaper1337: 9, sachakorpan: 7, nag1bator12: 71, collected: 10, Nazarius6: 13, zxcnotezxc1: 12 },
   '2025-04-15': { edazfetg4ooo: 55, Paolo_Fermer: 31, treaforik: 42, TIKTOK_BMW_EDIT: 10, illwix: 10, ForteCa228: 11, Vityappro11: 6, SKAM3000: 3, Varenyk: 16, Xeyo_pa: 3, Inzio_: 18, ItzFrillz: 1, fakemed1: 93, aboba2032: 3, PixelReaper1337: 9, sachakorpan: 7, nag1bator12: 71, collected: 10, Nazarius6: 13, zxcnotezxc1: 12 },
-  '2025-04-16': { edazfetg4ooo: 55, Paolo_Fermer: 31, treaforik: 42, TIKTOK_BMW_EDIT: 10, illwix: 10, ForteCa228: 11, Vityappro11: 6, SKAM3000: 3, Varenyk: 16, Xeyo_pa: 3, Inzio_: 18, ItzFrillz: 1, fakemed1: 93, aboba2032: 3, PixelReaper1337: 9, sachakorpan: 7, nag1bator12: 71, collected: 10, Nazarius6: 13, zxcnotezxc1: 12 },
+  '2025-04-16': { nag1bator12: 110, fakemed1: 101, edazfetg4ooo: 63, treaforik: 42, Paolo_Fermer: 31, Inzio_: 18, collected: 16, Varenyk: 16, Vityappro11: 6, ForteCa228: 11, TIKTOK_BMW_EDIT: 10, illwix: 10, PixelReaper1337: 9, sachakorpan: 7, SKAM3000: 3, Xeyo_pa: 3, aboba2032: 3, ItzFrillz: 1, Nazarius6: 13, zxcnotezxc1: 12 },
 };
 
 const eggsByDate = {
@@ -305,7 +305,7 @@ const eggsByDate = {
   '2025-04-13': { Vityappro11: 131, fakemed1: 115, nag1bator12: 85, ForteCa228: 56, IlyaiyaYT: 46, edazfetg4ooo: 27, treaforik: 20, allcash: 13, Paolo_Fermer: 8, '07_YM': 3 },
   '2025-04-14': { TIKTOK_BMW_EDIT: 244, Vityappro11: 221, nag1bator12: 85, ForteCa228: 100, IlyaiyaYT: 46, edazfetg4ooo: 43, treaforik: 20, allcash: 13, Paolo_Fermer: 8, '07_YM': 31, fakemed1: 115 },
   '2025-04-15': { Vityappro11: 378, TIKTOK_BMW_EDIT: 244, ForteCa228: 133, fakemed1: 115, nag1bator12: 85, CherryKira: 72, IlyaiyaYT: 46, edazfetg4ooo: 43, treaforik: 20, allcash: 13, Paolo_Fermer: 8, '07_YM': 31 },
-  '2025-04-16': { Vityappro11: 378, TIKTOK_BMW_EDIT: 244, ForteCa228: 133, fakemed1: 115, nag1bator12: 85, CherryKira: 72, IlyaiyaYT: 46, edazfetg4ooo: 43, treaforik: 20, allcash: 13, Paolo_Fermer: 8, '07_YM': 31 },
+  '2025-04-16': { Vityappro11: 390, nag1bator12: 329, TIKTOK_BMW_EDIT: 244, ForteCa228: 133, edazfetg4ooo: 128, fakemed1: 115, CherryKira: 72, IlyaiyaYT: 46, treaforik: 20, allcash: 13, Paolo_Fermer: 8, '07_YM': 31 },
 };
 
 function latestStatsMapAtDate(mapByDate, date) {
@@ -573,7 +573,7 @@ function allowedDatesForView(v) {
 
   let allowed = dates;
   if (v === 'play') allowed = dates.filter((d) => d >= '2025-03-02' && d <= '2025-04-16' && d !== '2025-03-07' && d !== '2025-03-31');
-  if (v === 'clans') allowed = dates.filter((d) => d >= '2025-02-22');
+  if (v === 'clans') allowed = dates.filter((d) => d >= '2025-02-22' && d <= '2025-04-11');
   if (isTopView(v)) {
     const inWipe = new Set(datesInActiveWipe());
     allowed = allowed.filter((d) => inWipe.has(d));
@@ -824,10 +824,7 @@ function getPlayerVideos(player) {
 }
 
 function updateHeroSubtitle() {
-  const endDay = Number(latestDate.split('-')[2]);
-  if (!Number.isNaN(endDay)) {
-    heroSubtitle.textContent = `Сучасна панель перегляду статистики за 21 лютого — ${endDay} березня.`;
-  }
+  heroSubtitle.textContent = 'Сучасна панель перегляду статистики за 21 лютого — 16 квітня.';
 }
 
 function totalMoneyAtDate(date) {
