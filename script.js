@@ -44,9 +44,9 @@ const snapshots = [
   { date: '2025-04-10', players: { ForteCa228: 1657851, Vityappro11: 1536770, Varenyk: 832867, nag1bator12: 381792, Paolo_Fermer: 175478, walleb0y: 123210, Genderpatty_2: 95000, CAT228sus1: 58115, lukyan187: 57176, PixelReaper1337: 54719, piromanyakk: 40000, galavastik: 38950, edazfetg4ooo: 35425, ItzFrillz: 27000, Inzio_: 25540, '07_YM': 24265, aetu: 36072, aboba2032: 13679, treaforik: 8923, Xeyo_pa: 8869, IlyaiyaYT: 6006, masloprosto: 6000, zxcnotezxc1: 3584, wontz: 2683, fakemed1: 1590, dima111p: 1000, superholik: 1000, night_850: 1000, nag1bator11: 1, shurik_xx19: 46000, gord: 26710, '30FPS': 20426, aniqum: 20069 }, play: { fakemed1: 1742, ForteCa228: 1464, edazfetg4ooo: 1007, PixelReaper1337: 977, Vityappro11: 859, galavastik: 804, Varenyk: 800, walleb0y: 742, aboba2032: 639, '07_YM': 216, gord: 136 } },
   { date: '2025-04-11', players: { Vityappro11: 2019433, ForteCa228: 1702920, Varenyk: 832867, nag1bator12: 729824, collected: 432165, Paolo_Fermer: 175478, Inzio_: 171540, walleb0y: 123210, treaforik: 97907, Genderpatty_2: 95000, zxcnotezxc1: 82732, Craz1k: 60142, night_850: 58665, CAT228sus1: 58115, PixelReaper1337: 54719, edazfetg4ooo: 53506, shurik_xx19: 46000, piromanyakk: 40000, galavastik: 38950, aetu: 36072, ItzFrillz: 27000, lukyan187: 24614, '07_YM': 24265, '30FPS': 20426, aniqum: 20069, aboba2032: 6897, zxcnotezxc: 6737, IlyaiyaYT: 6006, masloprosto: 6000, Xeyo_pa: 8869, wontz: 2683, gord: 11550, fakemed1: 10274, dima111p: 1000, superholik: 1000, maun3914: 1000, nag1bator11: 1 }, play: { fakemed1: 2165, ForteCa228: 1622, Vityappro11: 1161, edazfetg4ooo: 1144, nag1bator12: 1131, PixelReaper1337: 977, aboba2032: 825, galavastik: 804, Varenyk: 804, walleb0y: 742, '07_YM': 216, gord: 136 } },
   { date: '2025-04-12', players: { Vityappro11: 2129912, ForteCa228: 1784890, Varenyk: 882867, nag1bator12: 819824, Nazarius6: 621000, collected: 432165, zxcnotezxc1: 332732, Paolo_Fermer: 286089, walleb0y: 173210, Inzio_: 6767, fakemed1: 160274, Genderpatty_2: 145000, allcash: 138253, edazfetg4ooo: 113008, Craz1k: 110142, night_850: 108665, CAT228sus1: 108115, DarkPuma69: 106000, PixelReaper1337: 104719, shurik_xx19: 96000, piromanyakk: 90000, galavastik: 88950, aetu: 86072, '07_YM': 79352, ItzFrillz: 77000, IlyaiyaYT: 76006, lukyan187: 74614, wontz: 72683, '30FPS': 70426, aniqum: 70069, gord: 61550, treaforik: 32295, Xeyo_pa: 58869, aboba2032: 56897, zxcnotezxc: 56737, masloprosto: 56000, dima111p: 51000, superholik: 51000, maun3914: 51000, nag1bator11: 50001 }, play: { fakemed1: 2262, ForteCa228: 1955, Vityappro11: 1228, nag1bator12: 1203, edazfetg4ooo: 1172, PixelReaper1337: 977, aboba2032: 862, galavastik: 804, Varenyk: 804, walleb0y: 742, '07_YM': 216, gord: 136 } },
-  { date: '2025-04-13', players: { Vityappro11: 2258463, ForteCa228: 1788872, collected: 986946, nag1bator12: 915484, zxcnotezxc1: 452732, Paolo_Fermer: 254089, fakemed1: 207774, aboba2032: 191897, walleb0y: 173210, allcash: 158253, edazfetg4ooo: 146844, Genderpatty_2: 145000, Craz1k: 110142, night_850: 108665, CAT228sus1: 108115, DarkPuma69: 106000, PixelReaper1337: 104719, shurik_xx19: 96000, piromanyakk: 90000, galavastik: 88950, aetu: 86123, lukyan187: 84614, '07_YM': 79352, ItzFrillz: 77000, IlyaiyaYT: 76006, wontz: 26751, '30FPS': 70426, aniqum: 70069, gord: 61550, Varenyk: 882867, Xeyo_pa: 58869, zxcnotezxc: 56737, masloprosto: 56000, dima111p: 51000, superholik: 51000, maun3914: 51000, nag1bator11: 50001, mykolanos: 42407, CDmDqjjk: 6668, Inzio_: 4267 }, play: { fakemed1: 2624, ForteCa228: 2413, nag1bator12: 1579, edazfetg4ooo: 1510, Vityappro11: 1416, Inzio_: 1296, PixelReaper1337: 977, aboba2032: 879, galavastik: 804, Varenyk: 804, walleb0y: 742, '07_YM': 216 } },
-  { date: '2025-04-14', players: { Vityappro11: 2410204, ForteCa228: 1808872, nag1bator12: 935484, Varenyk: 932867, collected: 987946, zxcnotezxc1: 452732, Paolo_Fermer: 254089, fakemed1: 227774, aboba2032: 191897, walleb0y: 173210, allcash: 158253, edazfetg4ooo: 131844, Genderpatty_2: 145000, Craz1k: 110142, night_850: 108665, CAT228sus1: 108115, DarkPuma69: 106000, PixelReaper1337: 104719, '07_YM': 99352, shurik_xx19: 96000, piromanyakk: 90000, galavastik: 88950, aetu: 86123, lukyan187: 84614, ItzFrillz: 77000, IlyaiyaYT: 76006, '05LONE12': 71000, wontz: 26751, '30FPS': 70426, aniqum: 70069, gord: 61550, Xeyo_pa: 58869, zxcnotezxc: 56737, masloprosto: 56000, dima111p: 51000, superholik: 51000, maun3914: 51000, nag1bator11: 50001, CherryKira: 36613, mykolanos: 1108, Inzio_: 17347, CDmDqjjk: 6668, Nightpiers: 1000, Its_NaiferRbx: 1000 }, play: { fakemed1: 2706, ForteCa228: 2487, edazfetg4ooo: 1774, nag1bator12: 1675, Vityappro11: 1600, Inzio_: 1333, PixelReaper1337: 977, Varenyk: 915, aboba2032: 896, galavastik: 804, walleb0y: 742, '07_YM': 216 } },
-  { date: '2025-04-15', players: { Vityappro11: 2410875, ForteCa228: 1808872, nag1bator12: 935484, Varenyk: 932867, collected: 987946, zxcnotezxc1: 452732, Paolo_Fermer: 254089, fakemed1: 247774, aboba2032: 191897, walleb0y: 173210, allcash: 158253, edazfetg4ooo: 133196, Genderpatty_2: 145000, Craz1k: 110142, night_850: 108665, CAT228sus1: 108115, DarkPuma69: 106000, PixelReaper1337: 104719, '07_YM': 99352, shurik_xx19: 96000, piromanyakk: 90000, galavastik: 88950, aetu: 86123, lukyan187: 84614, ItzFrillz: 77000, IlyaiyaYT: 76006, '05LONE12': 71000, wontz: 26751, '30FPS': 70426, aniqum: 70069, gord: 61550, Xeyo_pa: 58869, zxcnotezxc: 56737, masloprosto: 56000, dima111p: 51000, superholik: 51000, maun3914: 51000, nag1bator11: 50001, CherryKira: 46613, mykolanos: 1108, Inzio_: 17347, handbloood: 26000, Couldmind: 6568, Kira: 2216, CDmDqjjk: 6668, Nightpiers: 1000, Its_NaiferRbx: 1000, XdeadForMatvij41: 1000 }, play: { fakemed1: 2725, ForteCa228: 2538, edazfetg4ooo: 1804, Vityappro11: 1694, nag1bator12: 1679, Inzio_: 1333, Varenyk: 999, PixelReaper1337: 977, aboba2032: 896, galavastik: 804, walleb0y: 742, '07_YM': 216 } },
+  { date: '2025-04-13', players: { Vityappro11: 2258463, ForteCa228: 1788872, collected: 596946, nag1bator12: 915484, zxcnotezxc1: 452732, Paolo_Fermer: 254089, fakemed1: 207774, aboba2032: 191897, walleb0y: 173210, allcash: 158253, edazfetg4ooo: 146844, Genderpatty_2: 145000, Craz1k: 110142, night_850: 108665, CAT228sus1: 108115, DarkPuma69: 106000, PixelReaper1337: 104719, shurik_xx19: 96000, piromanyakk: 90000, galavastik: 88950, aetu: 86123, lukyan187: 84614, '07_YM': 79352, ItzFrillz: 77000, IlyaiyaYT: 76006, wontz: 26751, '30FPS': 70426, aniqum: 70069, gord: 61550, Varenyk: 882867, Xeyo_pa: 58869, zxcnotezxc: 56737, masloprosto: 56000, dima111p: 51000, superholik: 51000, maun3914: 51000, nag1bator11: 50001, mykolanos: 42407, CDmDqjjk: 6668, Inzio_: 4267 }, play: { fakemed1: 2624, ForteCa228: 2413, nag1bator12: 1579, edazfetg4ooo: 1510, Vityappro11: 1416, Inzio_: 1296, PixelReaper1337: 977, aboba2032: 879, galavastik: 804, Varenyk: 804, walleb0y: 742, '07_YM': 216 } },
+  { date: '2025-04-14', players: { Vityappro11: 2410204, ForteCa228: 1808872, nag1bator12: 935484, Varenyk: 932867, collected: 597946, zxcnotezxc1: 452732, Paolo_Fermer: 254089, fakemed1: 227774, aboba2032: 191897, walleb0y: 173210, allcash: 158253, edazfetg4ooo: 131844, Genderpatty_2: 145000, Craz1k: 110142, night_850: 108665, CAT228sus1: 108115, DarkPuma69: 106000, PixelReaper1337: 104719, '07_YM': 99352, shurik_xx19: 96000, piromanyakk: 90000, galavastik: 88950, aetu: 86123, lukyan187: 84614, ItzFrillz: 77000, IlyaiyaYT: 76006, '05LONE12': 71000, wontz: 26751, '30FPS': 70426, aniqum: 70069, gord: 61550, Xeyo_pa: 58869, zxcnotezxc: 56737, masloprosto: 56000, dima111p: 51000, superholik: 51000, maun3914: 51000, nag1bator11: 50001, CherryKira: 36613, mykolanos: 1108, Inzio_: 17347, CDmDqjjk: 6668, Nightpiers: 1000, Its_NaiferRbx: 1000 }, play: { fakemed1: 2706, ForteCa228: 2487, edazfetg4ooo: 1774, nag1bator12: 1675, Vityappro11: 1600, Inzio_: 1333, PixelReaper1337: 977, Varenyk: 915, aboba2032: 896, galavastik: 804, walleb0y: 742, '07_YM': 216 } },
+  { date: '2025-04-15', players: { Vityappro11: 2410875, ForteCa228: 1808872, nag1bator12: 935484, Varenyk: 932867, collected: 597946, zxcnotezxc1: 452732, Paolo_Fermer: 254089, fakemed1: 247774, aboba2032: 191897, walleb0y: 173210, allcash: 158253, edazfetg4ooo: 133196, Genderpatty_2: 145000, Craz1k: 110142, night_850: 108665, CAT228sus1: 108115, DarkPuma69: 106000, PixelReaper1337: 104719, '07_YM': 99352, shurik_xx19: 96000, piromanyakk: 90000, galavastik: 88950, aetu: 86123, lukyan187: 84614, ItzFrillz: 77000, IlyaiyaYT: 76006, '05LONE12': 71000, wontz: 26751, '30FPS': 70426, aniqum: 70069, gord: 61550, Xeyo_pa: 58869, zxcnotezxc: 56737, masloprosto: 56000, dima111p: 51000, superholik: 51000, maun3914: 51000, nag1bator11: 50001, CherryKira: 46613, mykolanos: 1108, Inzio_: 17347, handbloood: 26000, Couldmind: 6568, Kira: 2216, CDmDqjjk: 6668, Nightpiers: 1000, Its_NaiferRbx: 1000, XdeadForMatvij41: 1000 }, play: { fakemed1: 2725, ForteCa228: 2538, edazfetg4ooo: 1804, Vityappro11: 1694, nag1bator12: 1679, Inzio_: 1333, Varenyk: 999, PixelReaper1337: 977, aboba2032: 896, galavastik: 804, walleb0y: 742, '07_YM': 216 } },
 ];
 
 const donationByPlayer = {
@@ -318,20 +318,36 @@ function statAtDate(mapByDate, player, date) {
 }
 
 const legacyByPlayer = {
-  Nazarius6: { droppedAt: '2025-04-13', balance: 4054 },
   treaforik: { droppedAt: '2025-04-15', balance: 295 },
 };
 
 function legacyEntryAtDate(player, date) {
   const entry = legacyByPlayer[player];
   if (!entry) return null;
-  return date >= entry.droppedAt ? entry : null;
+  if (date < entry.droppedAt) return null;
+  return top50NamesAtDate(date).has(player) ? null : entry;
 }
 
 function legacyRowsAtDate(date) {
   return Object.entries(legacyByPlayer)
     .filter(([, info]) => date >= info.droppedAt)
     .map(([name, info]) => ({ name, value: info.balance }));
+}
+
+function top50NamesAtDate(date) {
+  const snap = getSnapshot(date);
+  return new Set(
+    Object.entries(snap.players)
+      .filter(([name]) => !isHiddenFromBalanceLeaderboard(name))
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 50)
+      .map(([name]) => name),
+  );
+}
+
+function visibleLegacyRowsAtDate(date) {
+  const top50 = top50NamesAtDate(date);
+  return legacyRowsAtDate(date).filter((row) => !top50.has(row.name));
 }
 
 const firstSeenOverrides = {
@@ -434,6 +450,7 @@ const dateSelect = document.getElementById('dateSelect');
 const dateSelectWrap = document.getElementById('dateSelectWrap');
 const wipeSelect = document.getElementById('wipeSelect');
 const wipeSelectWrap = document.getElementById('wipeSelectWrap');
+const legacyListBtn = document.getElementById('legacyListBtn');
 const heroSubtitle = document.getElementById('heroSubtitle');
 const leaderboardBody = document.getElementById('leaderboardBody');
 const tableTitle = document.getElementById('tableTitle');
@@ -482,6 +499,7 @@ let selected = null;
 let contentPlatform = 'tiktok';
 let contentType = 'videos';
 let contentSort = 'views';
+let showLegacyList = false;
 let fullStatsPlayer = null;
 let compareContext = null;
 
@@ -1063,7 +1081,11 @@ function showPlayerDetails(player) {
   const wipeSnapshots = snapshotsForWipe(scopeWipe);
   const clanInfo = getClanForPlayerAtDate(player, date);
   const group = donationOfAtDate(player, date);
-  const balanceHistory = wipeSnapshots.filter((s) => s.players[player] !== undefined).map((s) => ({ date: s.date, value: s.players[player] }));
+  const legacyProfileInfo = legacyByPlayer[player] || null;
+  const cutoffDate = legacyProfileInfo?.droppedAt || null;
+  const balanceHistory = wipeSnapshots
+    .filter((s) => s.players[player] !== undefined && (!cutoffDate || s.date <= cutoffDate))
+    .map((s) => ({ date: s.date, value: s.players[player] }));
   const playHistory = wipeSnapshots.filter((s) => s.play[player] !== undefined).map((s) => ({ date: s.date, value: s.play[player] }));
   const peakBalance = balanceHistory.reduce((m, x) => (x.value > m.value ? x : m), { value: -1, date: '' });
   const legacyNow = legacyEntryAtDate(player, date);
@@ -1112,6 +1134,10 @@ function showPlayerDetails(player) {
     const prevRank = idx > 0 ? rankMapForDate(getSnapshot(balanceHistory[idx - 1].date).players)[player] : null;
     return `<li>${dateLabel(row.date)} — ${formatCurrency(row.value)} • #${curRank} • ${positionDelta(prevRank, curRank)}</li>`;
   });
+
+  if (legacyProfileInfo) {
+    balanceRows.push(`<li><strong>${dateLabel(legacyProfileInfo.droppedAt)}</strong> — гравець вибув з топ 50, наступні дні не показуються.</li>`);
+  }
 
   const playRows = playHistory.map((row, idx) => {
     const ranksNow = rankMapForDate(getSnapshot(row.date).play);
@@ -1360,9 +1386,17 @@ function renderLeaderboard() {
     tableTitle.textContent = 'Топ Баланс'; nameHeader.textContent = 'Гравець'; valueHeader.textContent = 'Баланс';
     tableSubtitle.textContent = `Актуальні баланси на ${dateLabel(date)} • Всього на сервері: ${formatCurrency(totalMoneyAtDate(date))}`;
     const topRows = Object.entries(snap.players).filter(([n]) => !isHiddenFromBalanceLeaderboard(n)).sort((a, b) => b[1] - a[1]).slice(0, 50).map(([n, v]) => ({ name: n, value: v, click: () => showPlayerDetails(n), display: formatCurrency(v) }));
-    const legacyRows = legacyRowsAtDate(date).map((x) => ({ name: `Legacy.${x.name}`, value: x.value, click: () => showPlayerDetails(x.name), display: `${formatCurrency(x.value)} (Legacy)` }));
+    const legacyRows = visibleLegacyRowsAtDate(date).map((x) => ({ name: `Legacy.${x.name}`, value: x.value, click: () => showPlayerDetails(x.name), display: `${formatCurrency(x.value)} (Legacy)` }));
     tableSubtitle.textContent = `Актуальні баланси на ${dateLabel(date)} • Всього на сервері: ${formatCurrency(totalMoneyAtDate(date))} • Бар'єр baltop: max 50`;
-    rows = [...topRows, ...legacyRows];
+    if (showLegacyList) {
+      tableTitle.textContent = 'Legacy List';
+      nameHeader.textContent = 'Гравець';
+      valueHeader.textContent = 'Баланс на момент вильоту';
+      tableSubtitle.textContent = `Гравці, що вибули з топ 50 станом на ${dateLabel(date)}`;
+      rows = legacyRows;
+    } else {
+      rows = [...topRows, ...legacyRows];
+    }
   } else if (view === 'play') {
     tableTitle.textContent = 'Top Play'; nameHeader.textContent = 'Гравець'; valueHeader.textContent = 'Час';
     if ((date === '2025-03-07' && activeWipe === 'springGame') || Object.keys(snap.play).length === 0) {
@@ -1493,6 +1527,17 @@ function init() {
     renderLeaderboard();
   });
 
+  if (legacyListBtn) {
+    legacyListBtn.addEventListener('click', () => {
+      showLegacyList = !showLegacyList;
+      legacyListBtn.classList.toggle('active', showLegacyList);
+      view = 'balance';
+      tabs.forEach((t) => t.classList.toggle('active', t.dataset.view === 'balance'));
+      refreshDateSelect();
+      renderLeaderboard();
+    });
+  }
+
   detailsWipeSelect.addEventListener('change', () => {
     renderLeaderboard();
   });
@@ -1558,6 +1603,8 @@ function init() {
     tabs.forEach((t) => t.classList.remove('active'));
     tab.classList.add('active');
     view = tab.dataset.view;
+    if (view !== 'balance') showLegacyList = false;
+    if (legacyListBtn) legacyListBtn.classList.toggle('active', showLegacyList);
     if (view === 'pvp') {
       selected = { type: 'pvp', id: 'pvp' };
     } else if (view !== 'balance' && selected?.type === 'pvp') {
