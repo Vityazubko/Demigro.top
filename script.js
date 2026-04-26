@@ -58,13 +58,13 @@ const snapshots = [
 ];
 
 const donationByPlayer = {
-  SIGMA: 'гравець', BEFF: 'гравець', kostya2103: 'гравець', maksyarosh: 'гравець', lukyan187: 'status',
+  SIGMA: 'гравець', BEFF: 'гравець', kostya2103: 'гравець', maksyarosh: 'гравець', lukyan187: 'debryli',
   ForteCa228: 'keerinam', edazfetg4ooo: 'keerinam', aboba2032: 'keerinam',
   Vityappro11: 'debryli', Varenyk: 'debryli', treaforik: 'debryli', 'wontz': 'debryli', Vortex1k: 'debryli', hipoma: 'debryli',
   kasikm1: 'NINJA', jtx_by: 'GOD', Paolo_Fermer: 'GOD', kampys231231: 'GOD', FairDemonYT: 'moder', towerpvpTT: 'MEDIA',
   '07_YM': 'status', '05LONE12': 'debryli', shurik_xx19: 'status', nag1bator12: 'MEDIA',
   TIKTOK_BMW_EDIT: 'CONTENT', robot: 'гравець', Xeyo_pa: 'keerinam', Inzio_: 'TEX_ADMIN',
-  maksik_paksik7: 'ADMIN', PravyiNosok777: 'ADMIN', aetu: 'status', fakemed1: 'debryli',
+  maksik_paksik7: 'ADMIN', PravyiNosok777: 'ADMIN', aetu: 'status', fakemed1: 'debryli', IlyaiyaYT: 'TEX_ADMIN',
   walleb0y: 'status', PixelReaper1337: 'status', fakemed: 'debryli', zxcnotezxc1: 'status', piromanyakk: 'prista'
 };
 
@@ -108,6 +108,10 @@ const donationHistoryByPlayer = {
   shurik_xx19: [
     { from: '2025-03-31', donation: 'status' },
   ],
+  lukyan187: [
+    { from: '2025-02-21', donation: 'status' },
+    { from: '2025-04-25', donation: 'debryli' },
+  ],
   aetu: [
     { from: '2025-04-05', donation: 'status' },
   ],
@@ -138,6 +142,9 @@ const donationHistoryByPlayer = {
   mykolanos: [
     { from: '2025-04-13', donation: 'гравець' },
     { from: '2025-04-15', donation: 'prista' },
+  ],
+  IlyaiyaYT: [
+    { from: '2025-04-25', donation: 'TEX_ADMIN' },
   ],
   ddddddxxxx: [
     { from: '2025-04-18', donation: 'status' },
@@ -283,7 +290,7 @@ const serverUpdates = [
   { title: 'НОВА ЕРА', period: '14 лютого - 7 березня', start: '2025-02-14', end: '2025-03-07', items: ['Переробка сервера на новому хостингу', '21 лютого добавили /site, Клани, Кейс Талісманів', '22 лютого добавили Призи,Купця та Чарівника', '25 лютого добавили новий кейс ТнТ і нові 3 вида ТнТ', '27 лютого заміна кейса ТнТ', '28 лютого добавили TAB, /report, валюту Демігрики, Топ по часу на сервері, Рівні ендер Скрині, Новий магазин, Оновлення кітів'] },
   { title: 'ВЕСНЯНА ГРА', period: '7 березня - 29 березня', start: '2025-03-07', end: '2025-03-29', items: ['Новий статус', 'Новий квест', 'Новий кейс', 'Новий Донат', 'Новий івент', 'Нові донат речі', 'Зміна сайту', 'Зміна цін привілегій', 'Видалення Талісмана Бога', 'Оновлення спавна', 'Оновлення ПвП арени', 'Скорборд у режимі ПвП', '18 березня — Новий Спавн, команда /worpes', '22 березня — Нові ТнТ'] },
   { title: 'VIPE GOOD', period: '29 березня - 25 квітня', start: '2025-03-29', end: '2025-04-25', items: ['Новий вайп: VIPE GOOD', '10 квітня — Добавили Афкзону', '12 квітня — Вхід з 1.16.5 до 1.21.5', '12 квітня — Топ по яйцях в честь пасхи', '12 квітня — Невелика зміна спавну', '12 квітня — Заміна купця', '13 квітня — Нова автошахта', '13 квітня — Нові Кастомні Зілля', '16 квітня — Оновлення статистики на сайті'] },
-  { title: 'РОЖЕВИЙ ВАЙП', period: '25 квітня - 26 травня', start: '2025-04-25', end: '2025-05-26', items: ['Стався вайп', 'Добавили Титули', 'Добавили Квести', 'Добавили Нове Меню', 'Добавили ДонатШоп', 'Добавили Магазин', 'Оновлення кітів', 'Добавили ELO'] },
+  { title: 'RED DAY', period: '25 квітня - 26 травня', start: '2025-04-25', end: '2025-05-26', items: ['Стався вайп', 'Добавили Титули', 'Добавили Квести', 'Добавили Нове Меню', 'Добавили ДонатШоп', 'Добавили Магазин', 'Оновлення кітів', 'Добавили ELO'] },
 ];
 
 const INFO_LINES = [
@@ -427,14 +434,14 @@ const contentVideos = [
 ];
 
 const contentChannels = [
-  { platform: 'tiktok', name: 'maksik_paksik7', followers: 133, videos: 69, streams: 13, url: 'https://www.tiktok.com/@maksik_paksik70?_r=1&_t=ZS-95fys06HUY8', owners: ['maksik_paksik7'], history: [{ date: '2025-04-18', followers: 133, videos: 69, streams: 13 }] },
-  { platform: 'tiktok', name: 'Vityappro11', followers: 55, videos: 8, streams: 0, url: 'https://www.tiktok.com/@vityapro132?_r=1&_t=ZS-95fz11PjFTA', owners: ['Vityappro11'], history: [{ date: '2025-04-18', followers: 55, videos: 8, streams: 0 }] },
-  { platform: 'tiktok', name: 'Nazarius6', followers: 21, videos: 4, streams: 0, url: 'https://www.tiktok.com/@kashatan67dexter?_r=1&_t=ZS-95fyGW0iZj2', owners: ['Nazarius6'], history: [{ date: '2025-04-18', followers: 21, videos: 4, streams: 0 }] },
-  { platform: 'tiktok', name: 'ForteCa228', followers: 9, videos: 5, streams: 0, url: 'https://www.tiktok.com/@forteca228?_r=1&_t=ZS-95fyaCqKtjp', owners: ['ForteCa228'], history: [{ date: '2025-04-18', followers: 9, videos: 5, streams: 0 }] },
-  { platform: 'tiktok', name: 'nag1bator12', followers: 18, videos: 7, streams: 0, url: 'https://www.tiktok.com/@chickennugget1996?_r=1&_t=ZS-95fykxJJmZY', owners: ['nag1bator12'], history: [{ date: '2025-04-18', followers: 18, videos: 7, streams: 0 }] },
-  { platform: 'tiktok', name: 'Varenyk', followers: 560, videos: 9, streams: 7, url: 'https://www.tiktok.com/@zadr1t?_r=1&_t=ZS-95fzCR3kJ7t', owners: ['Varenyk'], history: [{ date: '2025-04-18', followers: 560, videos: 9, streams: 7 }] },
-  { platform: 'youtube', name: 'Vityappro11', followers: 35, videos: 7, shorts: 7, longs: 0, streams: 0, url: 'https://youtube.com/channel/UCEOL6x4uzVT31SRwXBG1tRQ?si=8wMn5Ygb7sJmXaoX', owners: ['Vityappro11'], history: [{ date: '2025-04-20', followers: 35, videos: 7, shorts: 7, longs: 0, streams: 0 }] },
-  { platform: 'youtube', name: 'maksik_paksik7', followers: 18, videos: 14, shorts: 8, longs: 6, streams: 0, url: 'https://youtube.com/@max1milian018?si=gpYA90bKmNJmC_bR', owners: ['maksik_paksik7'], history: [{ date: '2025-04-20', followers: 18, videos: 14, shorts: 8, longs: 6, streams: 0 }] },
+  { platform: 'tiktok', name: 'maksik_paksik7', followers: 137, videos: 72, streams: 13, url: 'https://www.tiktok.com/@maksik_paksik70?_r=1&_t=ZS-95fys06HUY8', owners: ['maksik_paksik7'], history: [{ date: '2025-04-18', followers: 133, videos: 69, streams: 13 }, { date: '2025-04-26', followers: 137, videos: 72, streams: 13 }] },
+  { platform: 'tiktok', name: 'Vityappro11', followers: 56, videos: 10, streams: 0, url: 'https://www.tiktok.com/@vityapro132?_r=1&_t=ZS-95fz11PjFTA', owners: ['Vityappro11'], history: [{ date: '2025-04-18', followers: 55, videos: 8, streams: 0 }, { date: '2025-04-26', followers: 56, videos: 10, streams: 0 }] },
+  { platform: 'tiktok', name: 'Nazarius6', followers: 29, videos: 4, streams: 0, url: 'https://www.tiktok.com/@kashatan67dexter?_r=1&_t=ZS-95fyGW0iZj2', owners: ['Nazarius6'], history: [{ date: '2025-04-18', followers: 21, videos: 4, streams: 0 }, { date: '2025-04-26', followers: 29, videos: 4, streams: 0 }] },
+  { platform: 'tiktok', name: 'ForteCa228', followers: 14, videos: 9, streams: 0, url: 'https://www.tiktok.com/@forteca228?_r=1&_t=ZS-95fyaCqKtjp', owners: ['ForteCa228'], history: [{ date: '2025-04-18', followers: 9, videos: 5, streams: 0 }, { date: '2025-04-26', followers: 14, videos: 9, streams: 0 }] },
+  { platform: 'tiktok', name: 'nag1bator12', followers: 23, videos: 8, streams: 0, url: 'https://www.tiktok.com/@chickennugget1996?_r=1&_t=ZS-95fykxJJmZY', owners: ['nag1bator12'], history: [{ date: '2025-04-18', followers: 18, videos: 7, streams: 0 }, { date: '2025-04-26', followers: 23, videos: 8, streams: 0 }] },
+  { platform: 'tiktok', name: 'Varenyk', followers: 559, videos: 9, streams: 7, url: 'https://www.tiktok.com/@zadr1t?_r=1&_t=ZS-95fzCR3kJ7t', owners: ['Varenyk'], history: [{ date: '2025-04-18', followers: 560, videos: 9, streams: 7 }, { date: '2025-04-26', followers: 559, videos: 9, streams: 7 }] },
+  { platform: 'youtube', name: 'Vityappro11', followers: 36, videos: 9, shorts: 9, longs: 0, streams: 0, url: 'https://youtube.com/channel/UCEOL6x4uzVT31SRwXBG1tRQ?si=8wMn5Ygb7sJmXaoX', owners: ['Vityappro11'], history: [{ date: '2025-04-20', followers: 35, videos: 7, shorts: 7, longs: 0, streams: 0 }, { date: '2025-04-26', followers: 36, videos: 9, shorts: 9, longs: 0, streams: 0 }] },
+  { platform: 'youtube', name: 'maksik_paksik7', followers: 19, videos: 15, shorts: 8, longs: 7, streams: 0, url: 'https://youtube.com/@max1milian018?si=gpYA90bKmNJmC_bR', owners: ['maksik_paksik7'], history: [{ date: '2025-04-20', followers: 18, videos: 14, shorts: 8, longs: 6, streams: 0 }, { date: '2025-04-26', followers: 19, videos: 15, shorts: 8, longs: 7, streams: 0 }] },
 ];
 
 const pvpFights = [
@@ -562,11 +569,11 @@ const wipeRanges = {
   novaEra: { label: 'Нова Ера (14 лютого - 7 березня)', start: '2025-02-14', end: '2025-03-06' },
   springGame: { label: 'Весняна Гра (7 березня - 29 березня)', start: '2025-03-07', end: '2025-03-29' },
   vipeGood: { label: 'VIPE GOOD (29 березня - 24 квітня)', start: '2025-03-29', end: '2025-04-24' },
-  pinkWipe: { label: 'РОЖЕВИЙ ВАЙП (25 квітня - 26 травня)', start: '2025-04-25', end: '2025-05-26' },
+  redDay: { label: 'RED DAY (25 квітня - 26 травня)', start: '2025-04-25', end: '2025-05-26' },
   allTime: { label: 'За весь час', start: '2025-02-21', end: '2025-12-31' },
 };
 
-let activeWipe = 'pinkWipe';
+let activeWipe = 'redDay';
 
 const formatCurrency = (v) => `$${new Intl.NumberFormat('uk-UA').format(v ?? 0)}`;
 const formatPlay = (m) => `${Math.floor(m / 1440)}d ${Math.floor((m % 1440) / 60)}h ${m % 60}m`;
@@ -647,7 +654,7 @@ function entityExistsInWipe(type, id, wipeId) {
 }
 
 function setupDetailsWipeOptions(type, id, preferredWipe = detailsWipeSelect.value) {
-  const wipeIds = ['allTime', 'novaEra', 'springGame', 'vipeGood', 'pinkWipe'];
+  const wipeIds = ['allTime', 'novaEra', 'springGame', 'vipeGood', 'redDay'];
   detailsWipeSelect.innerHTML = wipeIds
     .map((w) => `<option value="${w}" ${entityExistsInWipe(type, id, w) ? '' : 'disabled'}>${wipeRanges[w].label}</option>`)
     .join('');
@@ -805,7 +812,7 @@ function renderFullStatsModal(player) {
 
 function refreshWipeSelect() {
   const options = Object.entries(wipeRanges)
-    .filter(([id]) => id !== 'allTime')
+    .filter(([id]) => id !== 'allTime' && !(view === 'clans' && id === 'redDay'))
     .map(([id, info]) => `<option value="${id}">${info.label}</option>`)
     .join('');
   wipeSelect.innerHTML = options;
