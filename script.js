@@ -56,6 +56,7 @@ const snapshots = [
   { date: '2025-04-22', players: { Vityappro11: 2689828, ForteCa228: 1960376, nag1bator12: 1126362, Varenyk: 1173121, fakemed: 856156, Nazarius6: 627054, Paolo_Fermer: 503440, Famt1ok: 419531, zxcnotezxc1: 402732, aboba2032: 377647, Couldmind: 312035, handbloood: 254505, collected: 946, Kira: 192461, walleb0y: 173210, allcash: 158253, Genderpatty_2: 145000, Craz1k: 110142, '07_YM': 109934, night_850: 108665, CAT228sus1: 108115, edazfetg4ooo: 105515, DarkPuma69: 106000, lukyan187: 105028, PixelReaper1337: 104719, shurik_xx19: 96000, ddddddxxxx: 94794, BobrKyrba: 88622, '05LONE12': 86781, ItzFrillz: 77000, IlyaiyaYT: 76006, '30FPS': 70426, aniqum: 70069, gord: 61550, Xeyo_pa: 58869, zxcnotezxc: 56737, masloprosto: 56000, dima111p: 51000, superholik: 51000, maun3914: 51000, Axolotl_Games: 51000, piromanyakk: 46418, nag1bator11: 40001, kasikm1: 37000, towerpvpTT: 36000, Nalzy: 27509, coZoinkk: 26000, FairDemonYT: 20000, mykolanos: 17143, CherryKira: 197, fakemed1: 24150, Kolya: 26720, IgkOWWtW: 9073, XdeadForMatvij41: 11000, toplik567: 8702, CDmDqjjk: 6668, Treaforj: 5000, wontz: 2821, Inzio_: 2059, Its_NaiferRbx: 1000, Nightpiers: 1000, Stasichpek1: 1000, gorillaspidran: 1000, frgc: 500, treaforik: 295, aetu: 123, f1hanom: 29 }, play: { Inzio_: 3639, fakemed: 1567, mykolanos: 1305, fakemed1: 2789, ForteCa228: 2907, Vityappro11: 2561, nag1bator12: 2397, edazfetg4ooo: 2144, Varenyk: 1169, Paolo_Fermer: 1131, aboba2032: 1040, PixelReaper1337: 977, galavastik: 804, walleb0y: 742, '07_YM': 216 } },
   { date: '2025-04-25', players: { Vityappro11: 94940, '05LONE12': 36003, ForteCa228: 33511, '07_YM': 9350, Nightpiers: 6942, lukyan187: 6928, crystalsbyangel: 3146, ddddddxxxx: 1615, edazfetg4ooo: 872, nag1bator12: 634, Paolo_Fermer: 250, IlyaiyaYT: 16 }, play: { IlyaiyaYT: 500, Inzio_: 282, towerpvpTT: 235, ForteCa228: 111, Vityappro11: 100, '05LONE12': 93, lukyan187: 84, crystalsbyangel: 80, Nightpiers: 65 } },
   { date: '2025-04-27', players: { Vityappro11: 118367, Paolo_Fermer: 50250, ForteCa228: 49374, ddddddxxxx: 35178, aboba2032: 35000, '05LONE12': 29148, nag1bator12: 16863, fakemed: 13804, '07_YM': 9350, BobrKyrba: 7247, Nightpiers: 6942, lukyan187: 6928, crystalsbyangel: 3146, edazfetg4ooo: 872, Famt1ok: 303, Nazarius6: 1, IlyaiyaYT: 16 }, play: { IlyaiyaYT: 1694, ddddddxxxx: 770, nag1bator12: 768, ForteCa228: 664, '05LONE12': 484, towerpvpTT: 429, Vityappro11: 367, fakemed: 351, Inzio_: 282, lukyan187: 84, crystalsbyangel: 80, Nightpiers: 65 } },
+  { date: '2025-04-28', players: { Vityappro11: 120627, ForteCa228: 50670, Paolo_Fermer: 50250, ddddddxxxx: 35178, aboba2032: 35000, nag1bator12: 22863, '05LONE12': 22148, fakemed: 14804, '07_YM': 9350, lukyan187: 7438, BobrKyrba: 7247, Nightpiers: 6942, crystalsbyangel: 3146, edazfetg4ooo: 872, Famt1ok: 303, IlyaiyaYT: 16, Nazarius6: 1 }, play: { IlyaiyaYT: 2127, ForteCa228: 774, ddddddxxxx: 770, nag1bator12: 768, towerpvpTT: 578, '05LONE12': 521, Vityappro11: 482, fakemed: 351, Inzio_: 282, lukyan187: 84, crystalsbyangel: 80, Nightpiers: 65 } },
 ];
 
 const donationByPlayer = {
@@ -355,6 +356,7 @@ const killsByDate = {
   '2025-04-22': { nag1bator12: 143, Vityappro11: 84, edazfetg4ooo: 76, fakemed: 52, '05LONE12': 51, Inzio_: 29, lukyan187: 26, zxcnotezxc1: 24, Varenyk: 24, nag1bator11: 20, Nazarius6: 20, LEGENDA: 17, fakemed1: 102, treaforik: 42, Paolo_Fermer: 31, collected: 16, ForteCa228: 11, TIKTOK_BMW_EDIT: 10, illwix: 10, PixelReaper1337: 9, sachakorpan: 7, SKAM3000: 3, Xeyo_pa: 3, aboba2032: 3, ItzFrillz: 1 },
   '2025-04-25': { kasikm1: 9, towerpvpTT: 8, Nightpiers: 5, Vityappro11: 3, ForteCa228: 3, '05LONE12': 3, lukyan187: 2, ddddddxxxx: 2, IlyaiyaYT: 2 },
   '2025-04-27': { '05LONE12': 23, ddddddxxxx: 19, IlyaiyaYT: 18, nag1bator12: 14, towerpvpTT: 12, Nazarius6: 12, kasikm1: 9, ForteCa228: 9, Vityappro11: 8, Nightpiers: 5, lukyan187: 2 },
+  '2025-04-28': { '05LONE12': 23, IlyaiyaYT: 21, ddddddxxxx: 19, nag1bator12: 14, towerpvpTT: 13, Nazarius6: 12, kasikm1: 9, ForteCa228: 9, Vityappro11: 8, Nightpiers: 5, lukyan187: 2 },
 };
 
 const eggsByDate = {
@@ -367,6 +369,11 @@ const eggsByDate = {
   '2025-04-18': { Vityappro11: 625, nag1bator12: 473, ForteCa228: 318, TIKTOK_BMW_EDIT: 244, BobrKyrba: 228, Famt1ok: 196, edazfetg4ooo: 128, fakemed1: 127, CherryKira: 72, IlyaiyaYT: 46, treaforik: 20, allcash: 13, Paolo_Fermer: 8, '07_YM': 31 },
   '2025-04-25': { Nightpiers: 53, nag1bator12: 43, Vityappro11: 17, Inzio_: 3, '07_YM': 2, Paolo_Fermer: 1 },
   '2025-04-27': { nag1bator12: 85, Vityappro11: 70, Nightpiers: 53, '05LONE12': 8, IlyaiyaYT: 4, Inzio_: 3, '07_YM': 2, BobrKyrba: 2, ForteCa228: 2, Paolo_Fermer: 1 },
+  '2025-04-28': { Vityappro11: 89, nag1bator12: 85, Nightpiers: 53, '05LONE12': 8, IlyaiyaYT: 4, Inzio_: 3, '07_YM': 2, BobrKyrba: 2, ForteCa228: 2, Paolo_Fermer: 1 },
+};
+
+const eloByDate = {
+  '2025-04-28': { handbloood: 294, ForteCa228: 130, '05LONE12': 100, IlyaiyaYT: 100, ddddddxxxx: 100, towerpvpTT: 60 },
 };
 
 function latestStatsMapAtDate(mapByDate, date) {
@@ -604,7 +611,7 @@ function daysDiffInclusive(start, end) {
 }
 
 function isTopView(v) {
-  return ['balance', 'play', 'clans', 'donates', 'eggs'].includes(v);
+  return ['balance', 'play', 'clans', 'donates', 'eggs', 'elo'].includes(v);
 }
 
 function datesInActiveWipe() {
@@ -631,11 +638,12 @@ function currentDateInActiveWipe(preferredDate = dateSelect.value) {
 function allowedDatesForView(v) {
   if (v === 'content') return ['2025-03-05'];
   if (v === 'demigryky') return ['2025-03-17', '2025-03-18', '2025-03-20', '2025-03-23', '2025-03-24', '2025-03-25', '2025-03-31', '2025-04-01', '2025-04-02', '2025-04-18', '2025-04-19', '2025-04-20', '2025-04-21', '2025-04-22', '2025-04-25', '2025-04-27'];
-  if (v === 'kills') return ['2025-03-17', '2025-03-18', '2025-03-20', '2025-03-23', '2025-03-24', '2025-03-25', '2025-03-31', '2025-04-01', '2025-04-02', '2025-04-04', '2025-04-05', '2025-04-06', '2025-04-08', '2025-04-09', '2025-04-10', '2025-04-11', '2025-04-12', '2025-04-13', '2025-04-14', '2025-04-15', '2025-04-16', '2025-04-17', '2025-04-18', '2025-04-19', '2025-04-20', '2025-04-21', '2025-04-22', '2025-04-25', '2025-04-27'];
-  if (v === 'eggs') return ['2025-04-25', '2025-04-27'];
+  if (v === 'kills') return ['2025-03-17', '2025-03-18', '2025-03-20', '2025-03-23', '2025-03-24', '2025-03-25', '2025-03-31', '2025-04-01', '2025-04-02', '2025-04-04', '2025-04-05', '2025-04-06', '2025-04-08', '2025-04-09', '2025-04-10', '2025-04-11', '2025-04-12', '2025-04-13', '2025-04-14', '2025-04-15', '2025-04-16', '2025-04-17', '2025-04-18', '2025-04-19', '2025-04-20', '2025-04-21', '2025-04-22', '2025-04-25', '2025-04-27', '2025-04-28'];
+  if (v === 'eggs') return ['2025-04-25', '2025-04-27', '2025-04-28'];
+  if (v === 'elo') return ['2025-04-28'];
 
   let allowed = dates;
-  if (v === 'play') allowed = dates.filter((d) => d >= '2025-03-02' && d <= '2025-04-27' && d !== '2025-03-07' && d !== '2025-03-31');
+  if (v === 'play') allowed = dates.filter((d) => d >= '2025-03-02' && d <= '2025-04-28' && d !== '2025-03-07' && d !== '2025-03-31');
   if (v === 'clans') allowed = dates.filter((d) => d >= '2025-02-22' && d <= '2025-04-11');
   if (isTopView(v)) {
     const inWipe = new Set(datesInActiveWipe());
@@ -889,7 +897,7 @@ function getPlayerVideos(player) {
 }
 
 function updateHeroSubtitle() {
-  heroSubtitle.textContent = 'Сучасна панель перегляду статистики з 21 лютого — 27 квітня.';
+  heroSubtitle.textContent = 'Сучасна панель перегляду статистики з 21 лютого — 28 квітня.';
 }
 
 function totalMoneyAtDate(date) {
@@ -1483,6 +1491,11 @@ function renderLeaderboard() {
     tableTitle.textContent = 'Свиновбивці'; nameHeader.textContent = 'Гравець'; valueHeader.textContent = 'Очки';
     const points = latestStatsMapAtDate(eggsByDate, date);
     tableSubtitle.textContent = `${dateLabel(date)} • Івент "Свиновбивці"`;
+    rows = Object.entries(points).sort((a, b) => b[1] - a[1]).map(([n, v]) => ({ name: n, value: v, click: () => showPlayerDetails(n), display: String(v) }));
+  } else if (view === 'elo') {
+    tableTitle.textContent = 'ELO Top'; nameHeader.textContent = 'Гравець'; valueHeader.textContent = 'ELO';
+    const points = latestStatsMapAtDate(eloByDate, date);
+    tableSubtitle.textContent = `${dateLabel(date)} • Новий ELO рейтинг`;
     rows = Object.entries(points).sort((a, b) => b[1] - a[1]).map(([n, v]) => ({ name: n, value: v, click: () => showPlayerDetails(n), display: String(v) }));
   } else if (view === 'updates') {
     tableTitle.textContent = 'Оновлення сервера'; nameHeader.textContent = 'Етап'; valueHeader.textContent = 'Період';
