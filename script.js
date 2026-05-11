@@ -66,6 +66,7 @@ const snapshots = [
   { date: '2025-05-07', players: { Vityappro11: 245283, crystalsbyangel: 90000, aboba2032: 59500, ForteCa228: 50670, Paolo_Fermer: 50250, fakemed: 46084, Varenyk: 37932, ddddddxxxx: 33477, Famt1ok: 29585, jtx_by: 23793, nag1bator12: 22863, PashokWW: 16000, '05LONE12': 10662, '07_YM': 10315, bobrik: 10000, BobrKyrba: 8017, lukyan187: 7693, Nightpiers: 6942, MrBober228228: 4032, Nazarius6: 3001, edazfetg4ooo: 872, Couldmind: 175, IlyaiyaYT: 16 }, play: { IlyaiyaYT: 3320, Vityappro11: 1194, towerpvpTT: 989, ddddddxxxx: 876, '05LONE12': 850, ForteCa228: 820, nag1bator12: 770, fakemed: 703, Inzio_: 388, lukyan187: 84, crystalsbyangel: 80, Nightpiers: 65 } },
   { date: '2025-05-08', players: { Vityappro11: 311272, Varenyk: 107064, fakemed: 103438, crystalsbyangel: 100000, aboba2032: 69500, ForteCa228: 60670, Paolo_Fermer: 60250, PashokWW: 51000, ddddddxxxx: 43477, Famt1ok: 39585, jtx_by: 33793, nag1bator12: 32863, MrBober228228: 25701, '05LONE12': 22782, '07_YM': 20315, bobrik: 20000, BobrKyrba: 18017, lukyan187: 17693, Nightpiers: 16942, towerpvpTT: 15000, Nazarius6: 13001, Nazar3321: 10943, edazfetg4ooo: 10872, cat3no4bed5: 10472, ne_domer_igrok0: 10250, Couldmind: 10175, IlyaiyaYT: 16 }, play: { IlyaiyaYT: 3323, maksik_paksik7: 2157, Vityappro11: 1260, towerpvpTT: 1053, '05LONE12': 954, ddddddxxxx: 876, ForteCa228: 820, fakemed: 809, nag1bator12: 770, handbloood: 753, Inzio_: 388, lukyan187: 84, crystalsbyangel: 80, Nightpiers: 65 } },
   { date: '2025-05-09', players: { Vityappro11: 397831, Varenyk: 109692, fakemed: 106223, mwowl1: 102063, crystalsbyangel: 100000, '05LONE12': 100700, aboba2032: 69500, ForteCa228: 60670, Paolo_Fermer: 60250, PashokWW: 51000, Famt1ok: 39585, jtx_by: 33793, nag1bator12: 32863, MrBober228228: 25701, '07_YM': 20315, bobrik: 20000, BobrKyrba: 18017, lukyan187: 17693, Nightpiers: 16942, towerpvpTT: 15000, Nazarius6: 13001, Nazar3321: 10943, edazfetg4ooo: 10872, ne_domer_igrok0: 10250, Couldmind: 10175, ddddddxxxx: 3477, cat3no4bed5: 472, BAMBAM54: 234, IlyaiyaYT: 16 }, play: { IlyaiyaYT: 3334, maksik_paksik7: 2157, Vityappro11: 1403, '05LONE12': 1279, mwowl1: 1175, fakemed: 1174, towerpvpTT: 1135, ddddddxxxx: 1073, nag1bator12: 905, ForteCa228: 821, handbloood: 753, Inzio_: 388, lukyan187: 84, crystalsbyangel: 80, Nightpiers: 65 } },
+  { date: '2025-05-10', players: { Vityappro11: 409591, mwowl1: 136681, fakemed: 129973, Varenyk: 109692, '05LONE12': 106181, crystalsbyangel: 100000, aboba2032: 69500, ddddddxxxx: 69542, ForteCa228: 60670, Paolo_Fermer: 60250, PashokWW: 51000, Famt1ok: 39585, nag1bator12: 67601, jtx_by: 33793, MrBober228228: 25701, '07_YM': 20315, bobrik: 20000, BobrKyrba: 18017, lukyan187: 17693, Nightpiers: 16942, towerpvpTT: 15000, Nazarius6: 13001, Nazar3321: 10943, edazfetg4ooo: 10872, ne_domer_igrok0: 10250, Kira: 10142, Couldmind: 10175, cat3no4bed5: 472, BAMBAM54: 234, IlyaiyaYT: 16 }, play: { IlyaiyaYT: 3334, maksik_paksik7: 2175, mwowl1: 1625, fakemed: 1563, ddddddxxxx: 1557, Vityappro11: 1494, '05LONE12': 1433, nag1bator12: 1390, towerpvpTT: 1149, ForteCa228: 821, handbloood: 753, Inzio_: 388, lukyan187: 84, crystalsbyangel: 80, Nightpiers: 65 } },
 ];
 
 const donationByPlayer = {
@@ -379,6 +380,7 @@ const killsByDate = {
   '2025-05-07': { IlyaiyaYT: 27, PashokWW: 17, '05LONE12': 23, ddddddxxxx: 19, Nazarius6: 17, nag1bator12: 14, towerpvpTT: 14, Vityappro11: 8, kasikm1: 9, ForteCa228: 9, Nightpiers: 5, lukyan187: 2 },
   '2025-05-08': { IlyaiyaYT: 27, PashokWW: 17, '05LONE12': 23, ddddddxxxx: 19, Nazarius6: 17, towerpvpTT: 15, nag1bator12: 14, Vityappro11: 8, kasikm1: 9, ForteCa228: 9, Nightpiers: 5, lukyan187: 2 },
   '2025-05-09': { IlyaiyaYT: 27, '05LONE12': 27, PashokWW: 17, ddddddxxxx: 19, Nazarius6: 17, towerpvpTT: 16, nag1bator12: 15, Vityappro11: 8, kasikm1: 9, ForteCa228: 9, Nightpiers: 5, lukyan187: 2 },
+  '2025-05-10': { '05LONE12': 30, IlyaiyaYT: 27, ddddddxxxx: 21, nag1bator12: 21, PashokWW: 17, Nazarius6: 18, towerpvpTT: 17, Vityappro11: 8, kasikm1: 9, ForteCa228: 9, Nightpiers: 5, lukyan187: 2 },
 };
 
 const eggsByDate = {
@@ -398,12 +400,13 @@ const eggsByDate = {
   '2025-05-05': { Vityappro11: 117, nag1bator12: 85, Nightpiers: 53, IlyaiyaYT: 13, '05LONE12': 8, Inzio_: 3, '07_YM': 2, BobrKyrba: 2, ForteCa228: 2, YanePupsik: 2, Paolo_Fermer: 1 },
   '2025-05-07': { Vityappro11: 118, nag1bator12: 85, Nightpiers: 53, fakemed: 34, IlyaiyaYT: 13, '05LONE12': 8, Inzio_: 3, '07_YM': 2, BobrKyrba: 2, ForteCa228: 2, YanePupsik: 2, Paolo_Fermer: 1 },
   '2025-05-09': { Vityappro11: 118, nag1bator12: 85, Nightpiers: 53, fakemed: 42, IlyaiyaYT: 13, mwowl1: 7, '05LONE12': 8, Inzio_: 3, '07_YM': 2, BobrKyrba: 2, ForteCa228: 2, YanePupsik: 2, Paolo_Fermer: 1 },
+  '2025-05-10': { Vityappro11: 118, nag1bator12: 98, Nightpiers: 53, fakemed: 55, IlyaiyaYT: 13, '05LONE12': 12, mwowl1: 7, Inzio_: 3, '07_YM': 2, BobrKyrba: 2, ForteCa228: 2, YanePupsik: 2, Paolo_Fermer: 1 },
 };
 
 const eloByDate = {
   '2025-04-28': { ForteCa228: 130, '05LONE12': 100, IlyaiyaYT: 100, ddddddxxxx: 100, towerpvpTT: 60 },
-  '2025-04-29': { Couldmind: 162, ForteCa228: 130, '05LONE12': 100, IlyaiyaYT: 100, ddddddxxxx: 100, towerpvpTT: 60 },
-  '2025-05-01': { Couldmind: 162, ForteCa228: 130, '05LONE12': 100, IlyaiyaYT: 100, ddddddxxxx: 100, towerpvpTT: 60, igrokNPC50: 49 },
+  '2025-04-29': { ForteCa228: 130, '05LONE12': 100, IlyaiyaYT: 100, ddddddxxxx: 100, towerpvpTT: 60 },
+  '2025-05-01': { ForteCa228: 130, '05LONE12': 100, IlyaiyaYT: 100, ddddddxxxx: 100, towerpvpTT: 60, igrokNPC50: 49 },
 };
 
 const legacyEggsByDate = {
@@ -487,14 +490,14 @@ const contentVideos = [
 ];
 
 const contentChannels = [
-  { platform: 'tiktok', name: 'maksik_paksik7', followers: 137, videos: 72, streams: 13, url: 'https://www.tiktok.com/@maksik_paksik70?_r=1&_t=ZS-95fys06HUY8', owners: ['maksik_paksik7'], history: [{ date: '2025-04-18', followers: 133, videos: 69, streams: 13 }, { date: '2025-04-26', followers: 137, videos: 72, streams: 13 }] },
-  { platform: 'tiktok', name: 'Vityappro11', followers: 56, videos: 10, streams: 0, url: 'https://www.tiktok.com/@vityapro132?_r=1&_t=ZS-95fz11PjFTA', owners: ['Vityappro11'], history: [{ date: '2025-04-18', followers: 55, videos: 8, streams: 0 }, { date: '2025-04-26', followers: 56, videos: 10, streams: 0 }] },
-  { platform: 'tiktok', name: 'Nazarius6', followers: 29, videos: 4, streams: 0, url: 'https://www.tiktok.com/@kashatan67dexter?_r=1&_t=ZS-95fyGW0iZj2', owners: ['Nazarius6'], history: [{ date: '2025-04-18', followers: 21, videos: 4, streams: 0 }, { date: '2025-04-26', followers: 29, videos: 4, streams: 0 }] },
-  { platform: 'tiktok', name: 'ForteCa228', followers: 14, videos: 9, streams: 0, url: 'https://www.tiktok.com/@forteca228?_r=1&_t=ZS-95fyaCqKtjp', owners: ['ForteCa228'], history: [{ date: '2025-04-18', followers: 9, videos: 5, streams: 0 }, { date: '2025-04-26', followers: 14, videos: 9, streams: 0 }] },
-  { platform: 'tiktok', name: 'nag1bator12', followers: 23, videos: 8, streams: 0, url: 'https://www.tiktok.com/@chickennugget1996?_r=1&_t=ZS-95fykxJJmZY', owners: ['nag1bator12'], history: [{ date: '2025-04-18', followers: 18, videos: 7, streams: 0 }, { date: '2025-04-26', followers: 23, videos: 8, streams: 0 }] },
+  { platform: 'tiktok', name: 'maksik_paksik7', followers: 148, videos: 74, streams: 13, url: 'https://www.tiktok.com/@maksik_paksik70?_r=1&_t=ZS-95fys06HUY8', owners: ['maksik_paksik7'], history: [{ date: '2025-04-18', followers: 133, videos: 69, streams: 13 }, { date: '2025-04-26', followers: 137, videos: 72, streams: 13 }, { date: '2025-05-10', followers: 148, videos: 74, streams: 13 }] },
+  { platform: 'tiktok', name: 'Vityappro11', followers: 60, videos: 13, streams: 0, url: 'https://www.tiktok.com/@vityapro132?_r=1&_t=ZS-95fz11PjFTA', owners: ['Vityappro11'], history: [{ date: '2025-04-18', followers: 55, videos: 8, streams: 0 }, { date: '2025-04-26', followers: 56, videos: 10, streams: 0 }, { date: '2025-05-10', followers: 60, videos: 13, streams: 0 }] },
+  { platform: 'tiktok', name: 'Nazarius6', followers: 33, videos: 6, streams: 0, url: 'https://www.tiktok.com/@kashatan67dexter?_r=1&_t=ZS-95fyGW0iZj2', owners: ['Nazarius6'], history: [{ date: '2025-04-18', followers: 21, videos: 4, streams: 0 }, { date: '2025-04-26', followers: 29, videos: 4, streams: 0 }, { date: '2025-05-10', followers: 33, videos: 6, streams: 0 }] },
+  { platform: 'tiktok', name: 'ForteCa228', followers: 20, videos: 11, streams: 0, url: 'https://www.tiktok.com/@forteca228?_r=1&_t=ZS-95fyaCqKtjp', owners: ['ForteCa228'], history: [{ date: '2025-04-18', followers: 9, videos: 5, streams: 0 }, { date: '2025-04-26', followers: 14, videos: 9, streams: 0 }, { date: '2025-05-10', followers: 20, videos: 11, streams: 0 }] },
+  { platform: 'tiktok', name: 'nag1bator12', followers: 24, videos: 11, streams: 0, url: 'https://www.tiktok.com/@chickennugget1996?_r=1&_t=ZS-95fykxJJmZY', owners: ['nag1bator12'], history: [{ date: '2025-04-18', followers: 18, videos: 7, streams: 0 }, { date: '2025-04-26', followers: 23, videos: 8, streams: 0 }, { date: '2025-05-10', followers: 24, videos: 11, streams: 0 }] },
   { platform: 'tiktok', name: 'Varenyk', followers: 559, videos: 9, streams: 7, url: 'https://www.tiktok.com/@zadr1t?_r=1&_t=ZS-95fzCR3kJ7t', owners: ['Varenyk'], history: [{ date: '2025-04-18', followers: 560, videos: 9, streams: 7 }, { date: '2025-04-26', followers: 559, videos: 9, streams: 7 }] },
-  { platform: 'youtube', name: 'Vityappro11', followers: 36, videos: 9, shorts: 9, longs: 0, streams: 0, url: 'https://youtube.com/channel/UCEOL6x4uzVT31SRwXBG1tRQ?si=8wMn5Ygb7sJmXaoX', owners: ['Vityappro11'], history: [{ date: '2025-04-20', followers: 35, videos: 7, shorts: 7, longs: 0, streams: 0 }, { date: '2025-04-26', followers: 36, videos: 9, shorts: 9, longs: 0, streams: 0 }] },
-  { platform: 'youtube', name: 'maksik_paksik7', followers: 19, videos: 15, shorts: 8, longs: 7, streams: 0, url: 'https://youtube.com/@max1milian018?si=gpYA90bKmNJmC_bR', owners: ['maksik_paksik7'], history: [{ date: '2025-04-20', followers: 18, videos: 14, shorts: 8, longs: 6, streams: 0 }, { date: '2025-04-26', followers: 19, videos: 15, shorts: 8, longs: 7, streams: 0 }] },
+  { platform: 'youtube', name: 'Vityappro11', followers: 41, videos: 13, shorts: 12, longs: 1, streams: 0, url: 'https://youtube.com/channel/UCEOL6x4uzVT31SRwXBG1tRQ?si=8wMn5Ygb7sJmXaoX', owners: ['Vityappro11'], history: [{ date: '2025-04-20', followers: 35, videos: 7, shorts: 7, longs: 0, streams: 0 }, { date: '2025-04-26', followers: 36, videos: 9, shorts: 9, longs: 0, streams: 0 }, { date: '2025-05-10', followers: 41, videos: 13, shorts: 12, longs: 1, streams: 0 }] },
+  { platform: 'youtube', name: 'maksik_paksik7', followers: 19, videos: 18, shorts: 9, longs: 9, streams: 0, url: 'https://youtube.com/@max1milian018?si=gpYA90bKmNJmC_bR', owners: ['maksik_paksik7'], history: [{ date: '2025-04-20', followers: 18, videos: 14, shorts: 8, longs: 6, streams: 0 }, { date: '2025-04-26', followers: 19, videos: 15, shorts: 8, longs: 7, streams: 0 }, { date: '2025-05-10', followers: 19, videos: 18, shorts: 9, longs: 9, streams: 0 }] },
 ];
 
 const pvpFights = [
@@ -682,12 +685,12 @@ function currentDateInActiveWipe(preferredDate = dateSelect.value) {
 function allowedDatesForView(v) {
   if (v === 'content') return ['2025-03-05'];
   if (v === 'demigryky') return ['2025-03-17', '2025-03-18', '2025-03-20', '2025-03-23', '2025-03-24', '2025-03-25', '2025-03-31', '2025-04-01', '2025-04-02', '2025-04-18', '2025-04-19', '2025-04-20', '2025-04-21', '2025-04-22', '2025-04-25', '2025-04-27', '2025-04-30', '2025-05-05', '2025-05-07'];
-  if (v === 'kills') return ['2025-03-17', '2025-03-18', '2025-03-20', '2025-03-23', '2025-03-24', '2025-03-25', '2025-03-31', '2025-04-01', '2025-04-02', '2025-04-04', '2025-04-05', '2025-04-06', '2025-04-08', '2025-04-09', '2025-04-10', '2025-04-11', '2025-04-12', '2025-04-13', '2025-04-14', '2025-04-15', '2025-04-16', '2025-04-17', '2025-04-18', '2025-04-19', '2025-04-20', '2025-04-21', '2025-04-22', '2025-04-25', '2025-04-27', '2025-04-28', '2025-04-29', '2025-05-01', '2025-05-04', '2025-05-05', '2025-05-07', '2025-05-08', '2025-05-09'];
-  if (v === 'eggs') return eventMode === 'past' ? ['2025-04-12', '2025-04-13', '2025-04-14', '2025-04-15', '2025-04-16', '2025-04-17', '2025-04-18'] : ['2025-04-25', '2025-04-27', '2025-04-28', '2025-04-29', '2025-04-30', '2025-05-04', '2025-05-05', '2025-05-07'];
+  if (v === 'kills') return ['2025-03-17', '2025-03-18', '2025-03-20', '2025-03-23', '2025-03-24', '2025-03-25', '2025-03-31', '2025-04-01', '2025-04-02', '2025-04-04', '2025-04-05', '2025-04-06', '2025-04-08', '2025-04-09', '2025-04-10', '2025-04-11', '2025-04-12', '2025-04-13', '2025-04-14', '2025-04-15', '2025-04-16', '2025-04-17', '2025-04-18', '2025-04-19', '2025-04-20', '2025-04-21', '2025-04-22', '2025-04-25', '2025-04-27', '2025-04-28', '2025-04-29', '2025-05-01', '2025-05-04', '2025-05-05', '2025-05-07', '2025-05-08', '2025-05-09', '2025-05-10'];
+  if (v === 'eggs') return eventMode === 'past' ? ['2025-04-12', '2025-04-13', '2025-04-14', '2025-04-15', '2025-04-16', '2025-04-17', '2025-04-18'] : ['2025-04-25', '2025-04-27', '2025-04-28', '2025-04-29', '2025-04-30', '2025-05-04', '2025-05-05', '2025-05-07', '2025-05-09', '2025-05-10'];
   if (v === 'elo') return ['2025-04-28', '2025-04-29', '2025-05-01'];
 
   let allowed = dates;
-  if (v === 'play') allowed = dates.filter((d) => d >= '2025-03-02' && d <= '2025-05-09' && d !== '2025-03-07' && d !== '2025-03-31');
+  if (v === 'play') allowed = dates.filter((d) => d >= '2025-03-02' && d <= '2025-05-10' && d !== '2025-03-07' && d !== '2025-03-31');
   if (v === 'clans') allowed = dates.filter((d) => d >= '2025-02-22' && d <= '2025-04-11');
   if (isTopView(v)) {
     const inWipe = new Set(datesInActiveWipe());
@@ -944,7 +947,7 @@ function getPlayerVideos(player) {
 }
 
 function updateHeroSubtitle() {
-  heroSubtitle.textContent = 'Сучасна панель перегляду статистики з 21 лютого — 9 травня.';
+  heroSubtitle.textContent = 'Сучасна панель перегляду статистики з 21 лютого — 10 травня.';
 }
 
 function totalMoneyAtDate(date) {
