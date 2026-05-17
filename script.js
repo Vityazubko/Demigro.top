@@ -69,6 +69,8 @@ const snapshots = [
   { date: '2025-05-10', players: { Vityappro11: 409591, mwowl1: 136681, fakemed: 129973, Varenyk: 109692, '05LONE12': 106181, crystalsbyangel: 100000, aboba2032: 69500, ddddddxxxx: 69542, ForteCa228: 60670, Paolo_Fermer: 60250, PashokWW: 51000, Famt1ok: 39585, nag1bator12: 67601, jtx_by: 33793, MrBober228228: 25701, '07_YM': 20315, bobrik: 20000, BobrKyrba: 18017, lukyan187: 17693, Nightpiers: 16942, towerpvpTT: 15000, Nazarius6: 13001, Nazar3321: 10943, edazfetg4ooo: 10872, ne_domer_igrok0: 10250, Kira: 10142, Couldmind: 10175, cat3no4bed5: 472, BAMBAM54: 234, IlyaiyaYT: 16 }, play: { IlyaiyaYT: 3334, maksik_paksik7: 2175, mwowl1: 1625, fakemed: 1563, ddddddxxxx: 1557, Vityappro11: 1494, '05LONE12': 1433, nag1bator12: 1390, towerpvpTT: 1149, ForteCa228: 821, handbloood: 753, Inzio_: 388, lukyan187: 84, crystalsbyangel: 80, Nightpiers: 65 } },
   { date: '2025-05-11', players: { Vityappro11: 424373, fakemed: 131973, mwowl1: 128714, Varenyk: 125692, '05LONE12': 106181, crystalsbyangel: 100000, ddddddxxxx: 87974, nag1bator12: 80901, aboba2032: 69500, ForteCa228: 60670, Paolo_Fermer: 60250, PashokWW: 51000, Famt1ok: 39585, jtx_by: 33793, MrBober228228: 25701, '07_YM': 20315, bobrik: 20000, BobrKyrba: 18017, lukyan187: 17693, Nightpiers: 16942, towerpvpTT: 15000, Nazarius6: 13001, Nazar3321: 10943, edazfetg4ooo: 10872, ne_domer_igrok0: 10250, Kira: 10142, Couldmind: 10175, cat3no4bed5: 472, BAMBAM54: 234, IlyaiyaYT: 16 }, play: { IlyaiyaYT: 3334, maksik_paksik7: 2262, fakemed: 2059, mwowl1: 2006, ddddddxxxx: 1623, Vityappro11: 1620, '05LONE12': 1563, nag1bator12: 1470, towerpvpTT: 1149, ForteCa228: 826, handbloood: 753, Inzio_: 388, lukyan187: 84, crystalsbyangel: 80, Nightpiers: 65 } },
   { date: '2025-05-12', players: { Vityappro11: 426613, nag1bator12: 224901, mwowl1: 148914, fakemed: 131973, Varenyk: 125692, '05LONE12': 106181, crystalsbyangel: 92222, ddddddxxxx: 94756, aboba2032: 69500, ForteCa228: 60670, Paolo_Fermer: 60250, PashokWW: 51000, Famt1ok: 39585, jtx_by: 33793, MrBober228228: 25701, '07_YM': 20315, bobrik: 20000, BobrKyrba: 18017, lukyan187: 17693, Nightpiers: 16942, towerpvpTT: 15000, Nazarius6: 13001, Nazar3321: 10943, edazfetg4ooo: 10872, ne_domer_igrok0: 10250, Kira: 10142, Couldmind: 10175, cat3no4bed5: 472, BAMBAM54: 234, mwowl: 88, IlyaiyaYT: 16 }, play: { IlyaiyaYT: 3336, mwowl1: 2816, maksik_paksik7: 2268, fakemed: 2183, ddddddxxxx: 1746, Vityappro11: 1681, '05LONE12': 1665, nag1bator12: 1583, towerpvpTT: 1149, ForteCa228: 831, handbloood: 753, Inzio_: 388, lukyan187: 84, crystalsbyangel: 80, Nightpiers: 65 } },
+  { date: '2025-05-13', players: { Vityappro11: 449721, nag1bator12: 344436, mwowl1: 177641, fakemed: 131973, Varenyk: 125692, '05LONE12': 106181, crystalsbyangel: 92222, ddddddxxxx: 104756, aboba2032: 69500, ForteCa228: 60670, Paolo_Fermer: 60250, PashokWW: 51000, Famt1ok: 39585, jtx_by: 33793, MrBober228228: 25701, '07_YM': 20315, bobrik: 20000, BobrKyrba: 18017, lukyan187: 17693, Nightpiers: 16942, towerpvpTT: 15000, Nazarius6: 13001, Nazar3321: 10943, edazfetg4ooo: 10872, ne_domer_igrok0: 10250, Kira: 10142, Couldmind: 10175, cat3no4bed5: 472, BAMBAM54: 234, mwowl: 88, IlyaiyaYT: 16 }, play: { IlyaiyaYT: 3336, mwowl1: 3306, fakemed: 2392, nag1bator12: 1852, ddddddxxxx: 1819, Vityappro11: 1742, '05LONE12': 1730, maksik_paksik7: 2268, towerpvpTT: 1149, ForteCa228: 835, handbloood: 753, Inzio_: 388, lukyan187: 84, crystalsbyangel: 80, Nightpiers: 65 } },
+  { date: '2025-05-15', players: { Vityappro11: 482089, fakemed: 281973, nag1bator12: 344436, Varenyk: 125692, ddddddxxxx: 139751, '05LONE12': 106181, crystalsbyangel: 92242, mwowl1: 87616, aboba2032: 69500, ForteCa228: 60670, Paolo_Fermer: 60250, PashokWW: 51000, Famt1ok: 39585, jtx_by: 33793, MrBober228228: 25701, '07_YM': 20315, bobrik: 20000, BobrKyrba: 18017, lukyan187: 17693, Nightpiers: 16942, towerpvpTT: 15000, Nazarius6: 13001, Nazar3321: 10943, edazfetg4ooo: 10872, ne_domer_igrok0: 10250, Kira: 10142, FasTik150: 10019, Couldmind: 10175, cat3no4bed5: 472, BAMBAM54: 234, mwowl: 88, IlyaiyaYT: 16 }, play: { mwowl1: 4338, IlyaiyaYT: 3336, fakemed: 2428, maksik_paksik7: 2300, nag1bator12: 1919, ddddddxxxx: 1850, Vityappro11: 1760, '05LONE12': 1731, towerpvpTT: 1151, handbloood: 1048, ForteCa228: 835, Inzio_: 388, lukyan187: 84, crystalsbyangel: 80, Nightpiers: 65 } },
 ];
 
 const donationByPlayer = {
@@ -343,6 +345,7 @@ const demigrykyByDate = {
   '2025-04-30': { Vityappro11: 3818, Varenyk: 716, Xeyo_pa: 2, treaforik: 70, '07_YM': 21, ForteCa228: 492, aboba2032: 102, nag1bator12: 189, Famt1ok: 94 },
   '2025-05-05': { Vityappro11: 3803, Varenyk: 716, Xeyo_pa: 2, treaforik: 70, '07_YM': 21, ForteCa228: 492, aboba2032: 102, nag1bator12: 189, Famt1ok: 94 },
   '2025-05-07': { Vityappro11: 3778, Varenyk: 716, Xeyo_pa: 2, treaforik: 70, '07_YM': 21, ForteCa228: 492, aboba2032: 102, nag1bator12: 189, Famt1ok: 94, Nazarius6: 80 },
+  '2025-05-13': { Vityappro11: 3778, Varenyk: 716, Xeyo_pa: 2, treaforik: 70, '07_YM': 21, ForteCa228: 492, aboba2032: 102, nag1bator12: 135, Famt1ok: 94, Nazarius6: 80 },
 };
 
 const killsByDate = {
@@ -385,6 +388,7 @@ const killsByDate = {
   '2025-05-10': { '05LONE12': 30, IlyaiyaYT: 27, ddddddxxxx: 21, nag1bator12: 21, PashokWW: 17, Nazarius6: 18, towerpvpTT: 17, Vityappro11: 8, kasikm1: 9, ForteCa228: 9, Nightpiers: 5, lukyan187: 2 },
   '2025-05-11': { '05LONE12': 33, IlyaiyaYT: 27, ddddddxxxx: 21, nag1bator12: 21, PashokWW: 17, Nazarius6: 18, towerpvpTT: 15, Vityappro11: 8, kasikm1: 9, ForteCa228: 9, Nightpiers: 5, lukyan187: 2 },
   '2025-05-12': { '05LONE12': 44, IlyaiyaYT: 27, ddddddxxxx: 22, nag1bator12: 21, PashokWW: 17, Nazarius6: 18, towerpvpTT: 15, Vityappro11: 8, kasikm1: 9, ForteCa228: 9, Nightpiers: 5, lukyan187: 2 },
+  '2025-05-13': { '05LONE12': 44, IlyaiyaYT: 27, ddddddxxxx: 23, nag1bator12: 21, PashokWW: 17, Nazarius6: 18, towerpvpTT: 15, Vityappro11: 8, kasikm1: 9, ForteCa228: 9, Nightpiers: 5, lukyan187: 2 },
 };
 
 const eggsByDate = {
@@ -407,12 +411,15 @@ const eggsByDate = {
   '2025-05-10': { Vityappro11: 118, nag1bator12: 98, Nightpiers: 53, fakemed: 55, IlyaiyaYT: 13, '05LONE12': 12, mwowl1: 7, Inzio_: 3, '07_YM': 2, BobrKyrba: 2, ForteCa228: 2, YanePupsik: 2, Paolo_Fermer: 1 },
   '2025-05-11': { Vityappro11: 131, ddddddxxxx: 48, nag1bator12: 98, Nightpiers: 53, fakemed: 47, IlyaiyaYT: 13, '05LONE12': 12, mwowl1: 7, Inzio_: 3, '07_YM': 2, BobrKyrba: 2, ForteCa228: 2, YanePupsik: 2, Paolo_Fermer: 1 },
   '2025-05-12': { Vityappro11: 131, ddddddxxxx: 49, nag1bator12: 98, Nightpiers: 53, fakemed: 47, IlyaiyaYT: 13, '05LONE12': 12, mwowl1: 7, Inzio_: 3, '07_YM': 2, BobrKyrba: 2, ForteCa228: 2, YanePupsik: 2, Paolo_Fermer: 1 },
+  '2025-05-13': { Vityappro11: 131, ddddddxxxx: 50, nag1bator12: 102, Nightpiers: 53, fakemed: 47, IlyaiyaYT: 13, '05LONE12': 13, mwowl1: 7, allcash: 4, Inzio_: 3, '07_YM': 2, BobrKyrba: 2, ForteCa228: 2, YanePupsik: 2, Paolo_Fermer: 1 },
+  '2025-05-15': { crystalsbyangel: 240, Vityappro11: 131, ddddddxxxx: 50, nag1bator12: 102, Nightpiers: 53, fakemed: 47, IlyaiyaYT: 13, '05LONE12': 13, mwowl1: 7, allcash: 4, Inzio_: 3, '07_YM': 2, BobrKyrba: 2, ForteCa228: 2, YanePupsik: 2, Paolo_Fermer: 1 },
 };
 
 const eloByDate = {
   '2025-04-28': { ForteCa228: 130, '05LONE12': 100, IlyaiyaYT: 100, ddddddxxxx: 100, towerpvpTT: 60 },
   '2025-04-29': { ForteCa228: 130, '05LONE12': 100, IlyaiyaYT: 100, ddddddxxxx: 100, towerpvpTT: 60 },
   '2025-05-01': { ForteCa228: 130, '05LONE12': 100, IlyaiyaYT: 100, ddddddxxxx: 100, towerpvpTT: 60, igrokNPC50: 49 },
+  '2025-05-13': { '05LONE12': 152, ForteCa228: 103, IlyaiyaYT: 100, ddddddxxxx: 100, mwowl1: 72, towerpvpTT: 60, igrokNPC50: 49 },
 };
 
 const legacyEggsByDate = {
@@ -690,13 +697,13 @@ function currentDateInActiveWipe(preferredDate = dateSelect.value) {
 
 function allowedDatesForView(v) {
   if (v === 'content') return ['2025-03-05'];
-  if (v === 'demigryky') return ['2025-03-17', '2025-03-18', '2025-03-20', '2025-03-23', '2025-03-24', '2025-03-25', '2025-03-31', '2025-04-01', '2025-04-02', '2025-04-18', '2025-04-19', '2025-04-20', '2025-04-21', '2025-04-22', '2025-04-25', '2025-04-27', '2025-04-30', '2025-05-05', '2025-05-07'];
-  if (v === 'kills') return ['2025-03-17', '2025-03-18', '2025-03-20', '2025-03-23', '2025-03-24', '2025-03-25', '2025-03-31', '2025-04-01', '2025-04-02', '2025-04-04', '2025-04-05', '2025-04-06', '2025-04-08', '2025-04-09', '2025-04-10', '2025-04-11', '2025-04-12', '2025-04-13', '2025-04-14', '2025-04-15', '2025-04-16', '2025-04-17', '2025-04-18', '2025-04-19', '2025-04-20', '2025-04-21', '2025-04-22', '2025-04-25', '2025-04-27', '2025-04-28', '2025-04-29', '2025-05-01', '2025-05-04', '2025-05-05', '2025-05-07', '2025-05-08', '2025-05-09', '2025-05-10', '2025-05-11', '2025-05-12'];
-  if (v === 'eggs') return eventMode === 'past' ? ['2025-04-12', '2025-04-13', '2025-04-14', '2025-04-15', '2025-04-16', '2025-04-17', '2025-04-18'] : ['2025-04-25', '2025-04-27', '2025-04-28', '2025-04-29', '2025-04-30', '2025-05-04', '2025-05-05', '2025-05-07', '2025-05-09', '2025-05-10', '2025-05-11', '2025-05-12'];
-  if (v === 'elo') return ['2025-04-28', '2025-04-29', '2025-05-01'];
+  if (v === 'demigryky') return ['2025-03-17', '2025-03-18', '2025-03-20', '2025-03-23', '2025-03-24', '2025-03-25', '2025-03-31', '2025-04-01', '2025-04-02', '2025-04-18', '2025-04-19', '2025-04-20', '2025-04-21', '2025-04-22', '2025-04-25', '2025-04-27', '2025-04-30', '2025-05-05', '2025-05-07', '2025-05-13'];
+  if (v === 'kills') return ['2025-03-17', '2025-03-18', '2025-03-20', '2025-03-23', '2025-03-24', '2025-03-25', '2025-03-31', '2025-04-01', '2025-04-02', '2025-04-04', '2025-04-05', '2025-04-06', '2025-04-08', '2025-04-09', '2025-04-10', '2025-04-11', '2025-04-12', '2025-04-13', '2025-04-14', '2025-04-15', '2025-04-16', '2025-04-17', '2025-04-18', '2025-04-19', '2025-04-20', '2025-04-21', '2025-04-22', '2025-04-25', '2025-04-27', '2025-04-28', '2025-04-29', '2025-05-01', '2025-05-04', '2025-05-05', '2025-05-07', '2025-05-08', '2025-05-09', '2025-05-10', '2025-05-11', '2025-05-12', '2025-05-13'];
+  if (v === 'eggs') return eventMode === 'past' ? ['2025-04-12', '2025-04-13', '2025-04-14', '2025-04-15', '2025-04-16', '2025-04-17', '2025-04-18'] : ['2025-04-25', '2025-04-27', '2025-04-28', '2025-04-29', '2025-04-30', '2025-05-04', '2025-05-05', '2025-05-07', '2025-05-09', '2025-05-10', '2025-05-11', '2025-05-12', '2025-05-13'];
+  if (v === 'elo') return ['2025-04-28', '2025-04-29', '2025-05-01', '2025-05-13'];
 
   let allowed = dates;
-  if (v === 'play') allowed = dates.filter((d) => d >= '2025-03-02' && d <= '2025-05-12' && d !== '2025-03-07' && d !== '2025-03-31');
+  if (v === 'play') allowed = dates.filter((d) => d >= '2025-03-02' && d <= '2025-05-15' && d !== '2025-03-07' && d !== '2025-03-31');
   if (v === 'clans') allowed = dates.filter((d) => d >= '2025-02-22' && d <= '2025-04-11');
   if (isTopView(v)) {
     const inWipe = new Set(datesInActiveWipe());
@@ -953,7 +960,7 @@ function getPlayerVideos(player) {
 }
 
 function updateHeroSubtitle() {
-  heroSubtitle.textContent = 'Сучасна панель перегляду статистики з 21 лютого — 12 травня.';
+  heroSubtitle.textContent = 'Сучасна панель перегляду статистики з 21 лютого — 15 травня.';
 }
 
 function totalMoneyAtDate(date) {
@@ -1738,4 +1745,4 @@ function init() {
   renderLeaderboard();
 }
 
-init();
+init()
